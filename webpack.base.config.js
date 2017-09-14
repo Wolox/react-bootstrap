@@ -1,12 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
+const config = require('./config');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].js',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -26,8 +30,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {loader: 'style-loader' },
-          { loader: 'css-loader' },
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
           {
             loader: 'sass-loader',
             options: {
@@ -37,7 +46,15 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
     ]
   },
   plugins: [
@@ -49,6 +66,6 @@ module.exports = {
       name: 'commons',
       filename: 'commons.js',
       minChunks: 2
-    })    
+    })
   ]
-}
+};
