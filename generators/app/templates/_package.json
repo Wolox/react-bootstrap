@@ -1,0 +1,117 @@
+{
+  "name": "<%= projectNameSlugified %>",
+  "title": "<%= projectName %>",
+  "description": "<%= projectDescription %>",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "<%= repoUrl %>"
+  },
+  "dependencies": {
+    <% if (includeAphrodite && !includeRadium) {%>
+      "aphrodite": "^1.2.3",<%
+    }
+
+    if (!includeAphrodite && includeRadium) {%>
+    "radium": "^0.19.4",<%
+    }
+
+    if (includeInext) {%>
+    "i18next": "^9.0.0",<%
+    }
+
+    if (includeMobileDetect) {%>
+    "mobile-detect": "^1.3.7",<%
+    }
+
+    if (includeMoment) {%>
+    "moment": "^2.18.1",<%
+    }
+
+    if (includeNukaCarousel) {%>
+    "nuka-carousel": "^2.3.0",<%
+    }
+
+    if (includeNumeral) {%>
+    "numeral": "^2.0.6",<%
+    }
+
+    if (includePostcss) {%>
+    "postcss": "^6.0.11",<%
+    }
+
+    if (includeReactAlert) {%>
+    "react-alert": "^2.3.0",<%
+    }
+
+    if (includeReactModal) {%>
+    "react-modal": "^2.3.2",<%
+    }
+
+    if (includeReactResponsive) {%>
+    "react-responsive": "^1.3.4",<%
+    }
+
+    if (includeReactScroll) {%>
+    "react-scroll": "^1.5.4",<%
+    }
+
+    if (includeReactShare) {%>
+    "react-share": "^1.16.0",<%
+    }
+
+    if (includeReactVirtualized) {%>
+    "react-virtualized": "^9.9.0",<%
+    }
+
+    if (includeRecharts) {%>
+    "recharts": "^1.0.0-alpha.4",<%
+    }
+
+    if (includeReactGoogleMaps) {%>
+    "react-google-maps": "^7.3.0",<%
+    }
+
+    if (includeReselect) {%>
+    "reselect": "^3.0.1",<%
+    }%>
+    "apisauce": "^0.14.1",
+    "history": "^4.7.2",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-addons-perf": "^15.4.2",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "redux": "^3.7.2",
+    "redux-beacon": "^1.1.0",
+    "redux-form": "^7.0.4",
+    "redux-thunk": "^2.2.0",
+    "seamless-immutable": "^7.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-react": "^7.3.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.6.1",
+    "prettier-eslint": "^8.0.0",
+    "react-scripts": "^1.0.13"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "precommit": "npm run lint-diff",
+    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
+    "test":
+      "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+    "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
+    "deploy": "npm run build"
+  }
+}
