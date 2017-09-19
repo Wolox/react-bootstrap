@@ -3,23 +3,9 @@ var chalk = require("chalk");
 var pkg = require("../../package.json");
 var _ = require("lodash");
 var proptypes = require("prop-types");
-
-var apisauce = require("apisauce");
-var history = require("history");
-var react = require("react");
-var reactAddonsPerf = require("react-addons-perf");
-var reactDom = require("react-dom");
-var reactRedux = require("react-redux");
-var reactRouter = require("react-router");
-var reactRouterDom = require("react-router-dom");
-var reactRouterRedux = require("react-router-redux");
-var redux = require("redux");
-var reduxBeacon = require("redux-beacon");
-var reduxForm = require("redux-form");
-var reduxThunk = require("redux-thunk");
-var seamlessImmutable = require("seamless-immutable");
-
 var mkdirp = require("mkdirp");
+
+// var reduxBeacon = require("redux-beacon"); TODO OBLIGATORIO
 
 var Generator = require("yeoman-generator");
 
@@ -81,20 +67,8 @@ class GeneratorReact extends Generator {
       },
       {
         type: "confirm",
-        name: "aphrodite",
-        message:
-          "Would you like to enable aphrodite (or Radium - select only one of this)?"
-      },
-      {
-        type: "confirm",
         name: "radium",
-        message:
-          "Would you like to enable Radium (or Aphrodite - select only one of this)?"
-      },
-      {
-        type: "confirm",
-        name: "i18next",
-        message: "Would you like to enable i18next?"
+        message: "Would you like to enable Radium?"
       },
       {
         type: "confirm",
@@ -178,9 +152,7 @@ class GeneratorReact extends Generator {
           return prop;
         }
 
-        this.includeAphrodite = hasFeature("aphrodite", answers.aphrodite);
         this.includeRadium = hasFeature("radium", answers.radium);
-        this.includeInext = hasFeature("i18next", answers.i18next);
         this.includeMobileDetect = hasFeature(
           "mobileDetect",
           answers.mobileDetect
@@ -226,7 +198,6 @@ class GeneratorReact extends Generator {
         projectNameSlugified: _.kebabCase(this.projectName),
         projectDescription: this.projectDescription,
         repoUrl: this.repoUrl,
-        includeAphrodite: this.includeAphrodite,
         includeRadium: this.includeRadium,
         includeInext: this.includeInext,
         includeMobileDetect: this.includeMobileDetect,
@@ -314,8 +285,13 @@ class GeneratorReact extends Generator {
       {}
     );
     this.fs.copyTpl(
-      this.templatePath("src/redux/AuthHandler.js"),
-      this.destinationPath("src/redux/AuthHandler.js"),
+      this.templatePath("src/redux/Auth/actions.js"),
+      this.destinationPath("src/redux/Auth/actions.js"),
+      {}
+    );
+    this.fs.copyTpl(
+      this.templatePath("src/redux/Auth/reducer.js"),
+      this.destinationPath("src/redux/Auth/reducer.js"),
       {}
     );
     this.fs.copyTpl(
@@ -341,6 +317,11 @@ class GeneratorReact extends Generator {
     this.fs.copyTpl(
       this.templatePath("gitignore"),
       this.destinationPath(".gitignore"),
+      {}
+    );
+    this.fs.copyTpl(
+      this.templatePath("eslintrc.js"),
+      this.destinationPath(".eslintrc.js"),
       {}
     );
 

@@ -7,7 +7,7 @@ import Immutable from "seamless-immutable";
 
 // TODO Add this if you need it
 // import AnalyticsMiddleware from "../services/AnalyticsService";
-import { reducer as auth } from "./AuthHandler";
+import { reducer as auth } from "./Auth/reducer";
 export const history = createHistory();
 
 // Add reducers here

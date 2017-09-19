@@ -4,14 +4,26 @@ import PropTypes from "prop-types";
 
 import Button from "../../components/Button";
 import { transparent } from "../../../utils/colors";
-
 import Label from "../../components/Label";
 import TextInput from "../../components/TextInput";
-
+import InputValidations from "../../../utils/inputValidations";
 import { white } from "../../../utils/colors";
 
 import * as Strings from "./strings";
 import styles from "./styles";
+
+const userValidations = [
+  InputValidations.required(`El ${Strings.user} es requerido`),
+  InputValidations.minLength(7, Strings.userMinLength),
+  InputValidations.maxLength(11, Strings.userMaxLength),
+  InputValidations.numericalDigits(Strings.userFormat)
+];
+
+const passwordValidations = [
+  InputValidations.required(`El ${Strings.password} es requerido`),
+  InputValidations.minLength(8, Strings.passwordMinLength),
+  InputValidations.maxLength(255, Strings.passwordMaxLength)
+];
 
 function Login({ handleSubmit, invalidInput }) {
   return (
@@ -21,9 +33,9 @@ function Login({ handleSubmit, invalidInput }) {
           name="username"
           component={TextInput}
           placeholder={Strings.user}
-          textStyles={[styles.formElement]}
-          autoCapitalize="none"
-          autoCorrect={false}
+          shouldDisplayDescription
+          type="text"
+          validate={userValidations}
         />
       </div>
       <div style={styles.formElementContainer}>
@@ -31,11 +43,9 @@ function Login({ handleSubmit, invalidInput }) {
           name="password"
           component={TextInput}
           placeholder={Strings.password}
-          textStyles={[styles.formElement]}
-          placeholderTextColor={white}
-          secureTextEntry
-          autoCapitalize="none"
-          autoCorrect={false}
+          type="password"
+          shouldDisplayDescription
+          validate={passwordValidations}
         />
       </div>
       <Label bold transparent={!invalidInput} red={invalidInput}>

@@ -8,16 +8,8 @@
     "url": "<%= repoUrl %>"
   },
   "dependencies": {
-    <% if (includeAphrodite && !includeRadium) {%>
-      "aphrodite": "^1.2.3",<%
-    }
-
-    if (!includeAphrodite && includeRadium) {%>
+    <% if (includeRadium) {%>
     "radium": "^0.19.4",<%
-    }
-
-    if (includeInext) {%>
-    "i18next": "^9.0.0",<%
     }
 
     if (includeMobileDetect) {%>
@@ -77,6 +69,7 @@
     }%>
     "apisauce": "^0.14.1",
     "history": "^4.7.2",
+    "i18next": "^9.0.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -95,8 +88,11 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-flowtype": "^2.35.1",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.2.0",
     "eslint-plugin-react": "^7.3.0",
     "husky": "^0.14.3",
