@@ -2,7 +2,7 @@
   "name": "<%= projectNameSlugified %>",
   "title": "<%= projectName %>",
   "description": "<%= projectDescription %>",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "<%= repoUrl %>"
@@ -62,11 +62,8 @@
 
     if (includeReactGoogleMaps) {%>
     "react-google-maps": "^7.3.0",<%
-    }
-
-    if (includeReselect) {%>
-    "reselect": "^3.0.1",<%
     }%>
+    "reselect": "^3.0.1",
     "apisauce": "^0.14.1",
     "history": "^4.7.2",
     "i18next": "^9.0.0",

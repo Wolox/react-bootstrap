@@ -134,11 +134,6 @@ class GeneratorReact extends Generator {
         type: "confirm",
         name: "recharts",
         message: "Would you like to enable recharts?"
-      },
-      {
-        type: "confirm",
-        name: "reselect",
-        message: "Would you like to enable reselect?"
       }
     ];
 
@@ -184,7 +179,6 @@ class GeneratorReact extends Generator {
           answers.reactVirtualized
         );
         this.includeRecharts = hasFeature("recharts", answers.recharts);
-        this.includeReselect = hasFeature("reselect", answers.reselect);
       }.bind(this)
     );
   }
@@ -212,8 +206,7 @@ class GeneratorReact extends Generator {
         includeReactScroll: this.includeReactScroll,
         includeReactShare: this.includeReactShare,
         includeReactVirtualized: this.includeReactVirtualized,
-        includeRecharts: this.includeRecharts,
-        includeReselect: this.includeReselect
+        includeRecharts: this.includeRecharts
       }
     );
 

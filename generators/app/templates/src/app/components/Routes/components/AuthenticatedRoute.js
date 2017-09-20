@@ -9,7 +9,6 @@ import * as Routes from "../constants";
 const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
 
-debugger;
 function AuthenticatedRoute({
   // TODO Add this if you need it
   // device,
