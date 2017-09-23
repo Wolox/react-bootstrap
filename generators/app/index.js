@@ -158,7 +158,6 @@ class GeneratorReact extends Generator {
           answers.nukaCarousel
         );
         this.includeNumeral = hasFeature("numeral", answers.numeral);
-        this.includePostcss = hasFeature("postcss", answers.postcss);
         this.includeReactAlert = hasFeature("reactAlert", answers.reactAlert);
         this.includeReactModal = hasFeature("reactModal", answers.reactModal);
         this.includeReactGoogleMaps = hasFeature(
@@ -198,7 +197,6 @@ class GeneratorReact extends Generator {
         includeMoment: this.includeMoment,
         includeNukaCarousel: this.includeNukaCarousel,
         includeNumeral: this.includeNumeral,
-        includePostcss: this.includePostcss,
         includeReactAlert: this.includeReactAlert,
         includeReactModal: this.includeReactModal,
         includeReactGoogleMaps: this.includeReactGoogleMaps,

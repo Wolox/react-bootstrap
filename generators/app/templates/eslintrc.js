@@ -12,13 +12,12 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  plugins: ['react', 'prettier', 'flowtype'],
+  plugins: ['react', 'prettier'],
   extends: [
     'eslint:recommended',
     'airbnb',
     'plugin:react/recommended',
     'prettier',
-    'prettier/flowtype',
     'prettier/react'
   ],
   globals: {
