@@ -1,4 +1,3 @@
-"use strict";
 var chalk = require("chalk");
 var pkg = require("../../package.json");
 var _ = require("lodash");
@@ -143,41 +142,19 @@ class GeneratorReact extends Generator {
           this[key] = answers[key];
         }
 
-        function hasFeature(feat, prop) {
-          return prop;
-        }
-
-        this.includeRadium = hasFeature("radium", answers.radium);
-        this.includeMobileDetect = hasFeature(
-          "mobileDetect",
-          answers.mobileDetect
-        );
-        this.includeMoment = hasFeature("moment", answers.moment);
-        this.includeNukaCarousel = hasFeature(
-          "nukaCarousel",
-          answers.nukaCarousel
-        );
-        this.includeNumeral = hasFeature("numeral", answers.numeral);
-        this.includeReactAlert = hasFeature("reactAlert", answers.reactAlert);
-        this.includeReactModal = hasFeature("reactModal", answers.reactModal);
-        this.includeReactGoogleMaps = hasFeature(
-          "reactGoogleMaps",
-          answers.reactGoogleMaps
-        );
-        this.includeReactResponsive = hasFeature(
-          "reactResponsive",
-          answers.reactResponsive
-        );
-        this.includeReactScroll = hasFeature(
-          "reactScroll",
-          answers.reactScroll
-        );
-        this.includeReactShare = hasFeature("reactShare", answers.reactShare);
-        this.includeReactVirtualized = hasFeature(
-          "reactVirtualized",
-          answers.reactVirtualized
-        );
-        this.includeRecharts = hasFeature("recharts", answers.recharts);
+        this.includeRadium = answers.radium;
+        this.includeMobileDetect = answers.mobileDetect;
+        this.includeMoment = answers.moment;
+        this.includeNukaCarousel = answers.nukaCarousel;
+        this.includeNumeral = answers.numeral;
+        this.includeReactAlert = answers.reactAlert;
+        this.includeReactModal = answers.reactModal;
+        this.includeReactGoogleMaps = answers.reactGoogleMaps;
+        this.includeReactResponsive = answers.reactResponsive;
+        this.includeReactScroll = answers.reactScroll;
+        this.includeReactShare = answers.reactShare;
+        this.includeReactVirtualized = answers.reactVirtualized;
+        this.includeRecharts = answers.recharts;
       }.bind(this)
     );
   }
@@ -208,7 +185,7 @@ class GeneratorReact extends Generator {
       }
     );
 
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/index.js"),
       this.destinationPath("src/index.js"),
       {}
@@ -216,7 +193,7 @@ class GeneratorReact extends Generator {
 
     mkdirp(this.destinationPath("src/app/assets/"));
 
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath(
         "src/app/components/Routes/components/AuthenticatedRoute.js"
       ),
@@ -225,264 +202,264 @@ class GeneratorReact extends Generator {
       ),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/app/components/Routes/constants.js"),
       this.destinationPath("src/app/components/Routes/constants.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/app/components/Routes/index.js"),
       this.destinationPath("src/app/components/Routes/index.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/app/components/Routes/styles.js"),
       this.destinationPath("src/app/components/Routes/styles.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/app/index.js"),
       this.destinationPath("src/app/index.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/app/styles.js"),
       this.destinationPath("src/app/styles.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/config/api.js"),
       this.destinationPath("src/config/api.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/config/i18n.js"),
       this.destinationPath("src/config/i18n.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/config/perf.js"),
       this.destinationPath("src/config/perf.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/redux"),
       this.destinationPath("src/redux"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/redux/store.js"),
       this.destinationPath("src/redux/store.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/redux/Auth/actions.js"),
       this.destinationPath("src/redux/Auth/actions.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/redux/Auth/reducer.js"),
       this.destinationPath("src/redux/Auth/reducer.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/services"),
       this.destinationPath("src/services"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/utils"),
       this.destinationPath("src/utils"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/utils/colors.js"),
       this.destinationPath("src/utils/colors.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/utils/array.js"),
       this.destinationPath("src/utils/array.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("gitignore"),
       this.destinationPath(".gitignore"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("eslintrc.js"),
       this.destinationPath(".eslintrc.js"),
       {}
     );
 
     this.fs.copyTpl(
-      this.templatePath("public/index.html"),
+      this.templatePath("public/_index.html"),
       this.destinationPath("public/index.html"),
       { projectName: this.projectName }
     );
 
     if (this.includeNumeral) {
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/config/numeral.js"),
         this.destinationPath("src/config/numeral.js"),
         {}
       );
     }
     if (this.includeReduxBeacon) {
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/services/AnalyticsService.js"),
         this.destinationPath("src/services/AnalyticsService.js"),
         {}
       );
     }
 
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/services/AuthServices.js"),
       this.destinationPath("src/services/AuthServices.js"),
       {}
     );
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath("src/services/LocalStorageService.js"),
       this.destinationPath("src/services/LocalStorageService.js"),
       {}
     );
     if (this.includeRadium) {
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Button/index.js"),
         this.destinationPath("src/app/components/Button/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Button/styles.js"),
         this.destinationPath("src/app/components/Button/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Checkbox/index.js"),
         this.destinationPath("src/app/components/Checkbox/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Checkbox/styles.js"),
         this.destinationPath("src/app/components/Checkbox/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Label/index.js"),
         this.destinationPath("src/app/components/Label/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Label/styles.js"),
         this.destinationPath("src/app/components/Label/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/RadioButton/index.js"),
         this.destinationPath("src/app/components/RadioButton/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/RadioButton/styles.js"),
         this.destinationPath("src/app/components/RadioButton/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/TextArea/index.js"),
         this.destinationPath("src/app/components/TextArea/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/TextArea/styles.js"),
         this.destinationPath("src/app/components/TextArea/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/TextInput/index.js"),
         this.destinationPath("src/app/components/TextInput/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/TextInput/styles.js"),
         this.destinationPath("src/app/components/TextInput/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Touchable/index.js"),
         this.destinationPath("src/app/components/Touchable/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Touchable/styles.js"),
         this.destinationPath("src/app/components/Touchable/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Spinner/index.js"),
         this.destinationPath("src/app/components/Spinner/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/components/Spinner/styles.js"),
         this.destinationPath("src/app/components/Spinner/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/index.js"),
         this.destinationPath("src/app/screens/Dashboard/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/styles.js"),
         this.destinationPath("src/app/screens/Dashboard/styles.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/constants/fonts.js"),
         this.destinationPath("src/constants/fonts.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/constants/sizes.js"),
         this.destinationPath("src/constants/sizes.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/screens/Home/index.js"),
         this.destinationPath("src/app/screens/Dashboard/screens/Home/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/screens/Home/layout.js"),
         this.destinationPath(
           "src/app/screens/Dashboard/screens/Home/layout.js"
         ),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/screens/Home/styles.js"),
         this.destinationPath(
           "src/app/screens/Dashboard/screens/Home/styles.js"
         ),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Login/index.js"),
         this.destinationPath("src/app/screens/Login/index.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Login/layout.js"),
         this.destinationPath("src/app/screens/Login/layout.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Login/strings.js"),
         this.destinationPath("src/app/screens/Login/strings.js"),
         {}
       );
-      this.fs.copyTpl(
+      this.fs.copy(
         this.templatePath("src/app/screens/Login/styles.js"),
         this.destinationPath("src/app/screens/Login/styles.js"),
         {}
