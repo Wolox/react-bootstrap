@@ -464,6 +464,11 @@ class GeneratorReact extends Generator {
         this.destinationPath("src/app/screens/Login/styles.js"),
         {}
       );
+      this.fs.copy(
+        this.templatePath("pull_request_template.md"),
+        this.destinationPath("pull_request_template.md"),
+        {}
+      );
     }
   }
 
