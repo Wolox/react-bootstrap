@@ -1,13 +1,16 @@
 react-bootstrap
+==================
 
-## Run
-1- Create your folder
-2- Run: yo react
-3- Run: npm start or yarn start
-4- Track and add or delete comment lines: with: // TODO Add this if you need it with: // TODO import your {..}
-5- Add .env with your API_BASE_URL
+## Prerequisites
 
+React: https://facebook.github.io/react/docs/getting-started.html
+node & npm: https://github.com/creationix/nvm#install-script
+yarn: https://yarnpkg.com/lang/en/docs/install/#alternatives-tab
 
+## TL;DR
 
+You don't need to clone this repository. Just run the following in your terminal:
 
-bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/initial-bootstrap/run.sh) folderName
+1- bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/master/run.sh) folderName
+2- Track and add or delete comment lines: with: // TODO Add this if you need it with: // TODO import your {..}
+3- Add .env with your API_BASE_URL
