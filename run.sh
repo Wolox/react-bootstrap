@@ -24,16 +24,12 @@ elif ! system_has yarn; then
   exit 1
 fi
 
-echo "You have pass system checks"
 yarn global add create-react-app --prefix /usr/local
-echo which create-react-app
-echo $1
 create-react-app $1
 #! create-react-app $2 --scripts-version mycompany-react-scripts
-echo "Great job! now you have install react"
 cd $1/
-yarn global add yo generator-react > /dev/null 2>&1
-yo react
+yarn global add yo generator-react-bootstrap > /dev/null 2>&1
+yo react-bootstrap
 yarn start
 
 wait $!
