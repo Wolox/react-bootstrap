@@ -1,5 +1,5 @@
 {
-  "name": "wolox-react-bootstrap",
+  "name": "generator-react-bootstrap",
   "version": "0.1.0",
   "description": "wolox-react-bootstrap",
   "files": ["index.js", "generators"],
