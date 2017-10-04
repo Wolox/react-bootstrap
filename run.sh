@@ -26,10 +26,10 @@ fi
 
 yarn global add create-react-app --prefix /usr/local
 create-react-app $1
-#! create-react-app $1 --scripts-version mycompany-react-scripts
+#! create-react-app $2 --scripts-version mycompany-react-scripts
 cd $1/
-yarn global add yo generator-wolox-react-bootstrap > /dev/null 2>&1
-yo wolox-react-bootstrap
+yarn global add yo generator-react-bootstrap > /dev/null 2>&1
+yo react-bootstrap
 yarn start
 
 wait $!
