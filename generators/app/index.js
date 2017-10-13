@@ -4,8 +4,6 @@ var _ = require("lodash");
 var proptypes = require("prop-types");
 var mkdirp = require("mkdirp");
 
-// var reduxBeacon = require("redux-beacon"); TODO OBLIGATORIO
-
 var Generator = require("yeoman-generator");
 
 class GeneratorReact extends Generator {
@@ -40,8 +38,9 @@ class GeneratorReact extends Generator {
         type: "input",
         name: "projectName",
         message: "Your Project name",
-        default: "Your project name",
+        default: "Example",
         store: true,
+        required: true,
         validate: val =>
           String(val).match(/^[$A-Z_][0-9A-Z_$]*$/i)
             ? true
@@ -51,8 +50,9 @@ class GeneratorReact extends Generator {
         type: "input",
         name: "projectDescription",
         message: "Description",
-        default: "Project description",
+        default: "Description",
         store: true,
+        required: true,
         validate: val =>
           String(val).match(/^[$A-Z_][0-9A-Z_$]*$/i)
             ? true
@@ -62,77 +62,18 @@ class GeneratorReact extends Generator {
         type: "input",
         name: "repoUrl",
         message: "What is the git repo url for this project?",
-        store: true
+        store: true,
+        required: true
       },
       {
-        type: "confirm",
-        name: "radium",
-        message: "Would you like to enable Radium?"
-      },
-      {
-        type: "confirm",
-        name: "mobileDetect",
-        message: "Would you like to enable mobile-detect?"
-      },
-      {
-        type: "confirm",
-        name: "moment",
-        message: "Would you like to enable moment?"
-      },
-      {
-        type: "confirm",
-        name: "nukaCarousel",
-        message: "Would you like to enable nuka-carousel?"
-      },
-      {
-        type: "confirm",
-        name: "numeral",
-        message: "Would you like to enable numeral?"
-      },
-      {
-        type: "confirm",
-        name: "postcss",
-        message: "Would you like to enable postcss?"
-      },
-      {
-        type: "confirm",
-        name: "reactAlert",
-        message: "Would you like to enable react-alert?"
-      },
-      {
-        type: "confirm",
-        name: "reactModal",
-        message: "Would you like to enable react-modal?"
-      },
-      {
-        type: "confirm",
-        name: "reactGoogleMaps",
-        message: "Would you like to enable react-google-maps?"
-      },
-      {
-        type: "confirm",
-        name: "reactResponsive",
-        message: "Would you like to enable react-responsive?"
-      },
-      {
-        type: "confirm",
-        name: "reactScroll",
-        message: "Would you like to enable react-scroll?"
-      },
-      {
-        type: "confirm",
-        name: "reactShare",
-        message: "Would you like to enable react-share?"
-      },
-      {
-        type: "confirm",
-        name: "reactVirtualized",
-        message: "Would you like to enable react-virtualized?"
-      },
-      {
-        type: "confirm",
-        name: "recharts",
-        message: "Would you like to enable recharts?"
+        type: "list",
+        name: "typeOfBootstrap",
+        message: "What type of bootstrap do you want?",
+        default: "empty",
+        choices: [
+          "empty (react, redux, react-dom, redux-form, redux-beacon, redux-thunk, seamless-immutable, react-redux, react-router, react-router-dom, react-router-redux, react-addons-perf, apisauce, postcss, history, prop-types, lodash, i18next, reselect,)",
+          "complete (radium, mobile-detect, moment, nuka-carousel, numeral, react-alert, react-modal, react-responsive, react-scroll, react-share, react-virtualized, recharts, react-google-maps)"
+        ]
       }
     ];
 
@@ -142,19 +83,7 @@ class GeneratorReact extends Generator {
           this[key] = answers[key];
         }
 
-        this.includeRadium = answers.radium;
-        this.includeMobileDetect = answers.mobileDetect;
-        this.includeMoment = answers.moment;
-        this.includeNukaCarousel = answers.nukaCarousel;
-        this.includeNumeral = answers.numeral;
-        this.includeReactAlert = answers.reactAlert;
-        this.includeReactModal = answers.reactModal;
-        this.includeReactGoogleMaps = answers.reactGoogleMaps;
-        this.includeReactResponsive = answers.reactResponsive;
-        this.includeReactScroll = answers.reactScroll;
-        this.includeReactShare = answers.reactShare;
-        this.includeReactVirtualized = answers.reactVirtualized;
-        this.includeRecharts = answers.recharts;
+        this.includeAll = answers.typeOfBootstrap;
       }.bind(this)
     );
   }
@@ -168,20 +97,7 @@ class GeneratorReact extends Generator {
         projectNameSlugified: _.kebabCase(this.projectName),
         projectDescription: this.projectDescription,
         repoUrl: this.repoUrl,
-        includeRadium: this.includeRadium,
-        includeInext: this.includeInext,
-        includeMobileDetect: this.includeMobileDetect,
-        includeMoment: this.includeMoment,
-        includeNukaCarousel: this.includeNukaCarousel,
-        includeNumeral: this.includeNumeral,
-        includeReactAlert: this.includeReactAlert,
-        includeReactModal: this.includeReactModal,
-        includeReactGoogleMaps: this.includeReactGoogleMaps,
-        includeReactResponsive: this.includeReactResponsive,
-        includeReactScroll: this.includeReactScroll,
-        includeReactShare: this.includeReactShare,
-        includeReactVirtualized: this.includeReactVirtualized,
-        includeRecharts: this.includeRecharts
+        includeAll: this.includeAll
       }
     );
 
@@ -299,14 +215,14 @@ class GeneratorReact extends Generator {
       { projectName: this.projectName }
     );
 
-    if (this.includeNumeral) {
+    if (this.includeAll) {
       this.fs.copy(
         this.templatePath("src/config/numeral.js"),
         this.destinationPath("src/config/numeral.js"),
         {}
       );
     }
-    if (this.includeReduxBeacon) {
+    if (this.includeAll) {
       this.fs.copy(
         this.templatePath("src/services/AnalyticsService.js"),
         this.destinationPath("src/services/AnalyticsService.js"),
@@ -324,7 +240,7 @@ class GeneratorReact extends Generator {
       this.destinationPath("src/services/LocalStorageService.js"),
       {}
     );
-    if (this.includeRadium) {
+    if (this.includeAll) {
       this.fs.copy(
         this.templatePath("src/app/components/Button/index.js"),
         this.destinationPath("src/app/components/Button/index.js"),
