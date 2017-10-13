@@ -139,11 +139,6 @@ class GeneratorReact extends Generator {
       {}
     );
     this.fs.copy(
-      this.templatePath("src/app/styles.js"),
-      this.destinationPath("src/app/styles.js"),
-      {}
-    );
-    this.fs.copy(
       this.templatePath("src/config/api.js"),
       this.destinationPath("src/config/api.js"),
       {}
@@ -327,11 +322,6 @@ class GeneratorReact extends Generator {
         {}
       );
       this.fs.copy(
-        this.templatePath("src/app/screens/Dashboard/styles.js"),
-        this.destinationPath("src/app/screens/Dashboard/styles.js"),
-        {}
-      );
-      this.fs.copy(
         this.templatePath("src/constants/fonts.js"),
         this.destinationPath("src/constants/fonts.js"),
         {}
@@ -344,40 +334,6 @@ class GeneratorReact extends Generator {
       this.fs.copy(
         this.templatePath("src/app/screens/Dashboard/screens/Home/index.js"),
         this.destinationPath("src/app/screens/Dashboard/screens/Home/index.js"),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Dashboard/screens/Home/layout.js"),
-        this.destinationPath(
-          "src/app/screens/Dashboard/screens/Home/layout.js"
-        ),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Dashboard/screens/Home/styles.js"),
-        this.destinationPath(
-          "src/app/screens/Dashboard/screens/Home/styles.js"
-        ),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Login/index.js"),
-        this.destinationPath("src/app/screens/Login/index.js"),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Login/layout.js"),
-        this.destinationPath("src/app/screens/Login/layout.js"),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Login/strings.js"),
-        this.destinationPath("src/app/screens/Login/strings.js"),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath("src/app/screens/Login/styles.js"),
-        this.destinationPath("src/app/screens/Login/styles.js"),
         {}
       );
       this.fs.copy(

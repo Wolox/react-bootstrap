@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { StyleRoot } from "radium";
 
 import { apiSetup } from "../config/api";
 
@@ -13,9 +12,9 @@ class App extends Component {
 
   render() {
     return (
-      <StyleRoot>
+      <div>
         <Routes />
-      </StyleRoot>
+      </div>
     );
   }
 }
