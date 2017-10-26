@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { StyleRoot } from "radium";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { apiSetup } from "../config/api";
+import { apiSetup } from '../config/api';
 
-import Routes from "./components/Routes";
+import Routes from './components/Routes';
 
 class App extends Component {
   componentDidMount() {
@@ -12,11 +11,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <StyleRoot>
-        <Routes />
-      </StyleRoot>
-    );
+    return <Routes />;
   }
 }
 

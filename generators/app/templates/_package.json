@@ -8,55 +8,19 @@
     "url": "<%= repoUrl %>"
   },
   "dependencies": {
-    <% if (includeRadium) {%>
-    "radium": "^0.19.4",<%
-    }
-
-    if (includeMobileDetect) {%>
-    "mobile-detect": "^1.3.7",<%
-    }
-
-    if (includeMoment) {%>
-    "moment": "^2.18.1",<%
-    }
-
-    if (includeNukaCarousel) {%>
-    "nuka-carousel": "^2.3.0",<%
-    }
-
-    if (includeNumeral) {%>
-    "numeral": "^2.0.6",<%
-    }
-
-    if (includeReactAlert) {%>
-    "react-alert": "^2.3.0",<%
-    }
-
-    if (includeReactModal) {%>
-    "react-modal": "^2.3.2",<%
-    }
-
-    if (includeReactResponsive) {%>
-    "react-responsive": "^1.3.4",<%
-    }
-
-    if (includeReactScroll) {%>
-    "react-scroll": "^1.5.4",<%
-    }
-
-    if (includeReactShare) {%>
-    "react-share": "^1.16.0",<%
-    }
-
-    if (includeReactVirtualized) {%>
-    "react-virtualized": "^9.9.0",<%
-    }
-
-    if (includeRecharts) {%>
-    "recharts": "^1.0.0-alpha.4",<%
-    }
-
-    if (includeReactGoogleMaps) {%>
+    <% if (includeAll) {%>
+    "radium": "^0.19.4",
+    "mobile-detect": "^1.3.7",
+    "moment": "^2.18.1",
+    "nuka-carousel": "^2.3.0",
+    "numeral": "^2.0.6",
+    "react-alert": "^2.3.0",
+    "react-modal": "^2.3.2",
+    "react-responsive": "^1.3.4",
+    "react-scroll": "^1.5.4",
+    "react-share": "^1.16.0",
+    "react-virtualized": "^9.9.0",
+    "recharts": "^1.0.0-alpha.4",
     "react-google-maps": "^7.3.0",<%
     }%>
     "reselect": "^3.0.1",
@@ -67,7 +31,6 @@
     "postcss": "^6.0.11",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-addons-perf": "^15.4.2",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",

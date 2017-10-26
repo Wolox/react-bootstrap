@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import Immutable from "seamless-immutable";
 
+import { actions } from "./actions";
+
 /* ------------- Auth reducer ------------- */
 const defaultState = {
   currentUser: null,
