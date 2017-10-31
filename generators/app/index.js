@@ -149,11 +149,6 @@ class GeneratorReact extends Generator {
       {}
     );
     this.fs.copy(
-      this.templatePath('src/config/perf.js'),
-      this.destinationPath('src/config/perf.js'),
-      {}
-    );
-    this.fs.copy(
       this.templatePath('src/redux'),
       this.destinationPath('src/redux'),
       {}
