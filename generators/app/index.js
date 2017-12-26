@@ -54,7 +54,7 @@ class GeneratorReact extends Generator {
         store: true,
         required: true,
         validate: val =>
-          String(val).match(/^[$A-Z_][0-9A-Z_$]*$/i)
+        String(val).match(/^[$A-Z _][0-9A-Z _$]*$/i)
             ? true
             : `${val} is not a valid description for a project. Please use a valid description (alphanumeric).`
       },

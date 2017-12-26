@@ -24,6 +24,7 @@ elif ! system_has yarn; then
   exit 1
 fi
 
+# git clone $1 > /dev/null 2>&1 #
 yarn global add create-react-app --prefix /usr/local
 create-react-app $1 --scripts-version wolox-react-scripts
 cd $1/
