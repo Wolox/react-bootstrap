@@ -2,18 +2,24 @@
   "name": "generator-react-bootstrap",
   "version": "0.1.1",
   "description": "wolox-react-bootstrap",
-  "files": ["index.js", "generators"],
+  "files": [
+    "index.js",
+    "generators"
+  ],
   "main": "app/index.js",
   "scripts": {
     "start": "./node_modules/react-scripts/bin/react-scripts.js start",
     "build": "./node_modules/react-scripts/bin/react-scripts.js build",
-    "test":
-      "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+    "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
     "deploy": "npm run build"
   },
   "repository": "git+https://github.com/Wolox/react-bootstrap.git",
-  "keywords": ["yeoman-generator", "react", "react-bootstrap"],
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "react-bootstrap"
+  ],
   "author": "Wolox (https://github.com/Wolox)",
   "license": "ISC",
   "bugs": {
@@ -47,6 +53,7 @@
     "eslint-plugin-prettier": "^2.2.0",
     "eslint-plugin-react": "^7.3.0",
     "husky": "^0.14.3",
+    "package-merge": "^0.1.2",
     "prettier": "^1.6.1",
     "prettier-eslint": "^8.0.0",
     "react-scripts": "^1.0.13"

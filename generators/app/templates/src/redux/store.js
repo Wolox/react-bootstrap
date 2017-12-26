@@ -3,7 +3,6 @@ import thunk from "redux-thunk";
 import { routerReducer as router, routerMiddleware } from "react-router-redux";
 import createHistory from "history/createBrowserHistory";
 import { reducer as form } from "redux-form";
-import Immutable from "seamless-immutable";
 
 // TODO Add this if you need it
 // import AnalyticsMiddleware from "../services/AnalyticsService";

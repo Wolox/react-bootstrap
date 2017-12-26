@@ -3,6 +3,7 @@ var pkg = require('../../package.json');
 var _ = require('lodash');
 var proptypes = require('prop-types');
 var mkdirp = require('mkdirp');
+var merge = require('package-merge');
 
 var Generator = require('yeoman-generator');
 
@@ -91,7 +92,7 @@ class GeneratorReact extends Generator {
   addFiles() {
     this.fs.copyTpl(
       this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
+      this.destinationPath('_package.json'),
       {
         projectName: this.projectName,
         projectNameSlugified: _.kebabCase(this.projectName),
@@ -100,6 +101,10 @@ class GeneratorReact extends Generator {
         includeAll: this.includeAll
       }
     );
+
+    var dst = this.fs.readFileSync('package.json');
+    var src = this.fs.readFileSync('_package.json');
+    this.fs.writeFile('package.json', merge(dst,src));
 
     this.fs.copy(
       this.templatePath('src/index.js'),
@@ -186,11 +191,6 @@ class GeneratorReact extends Generator {
     this.fs.copy(
       this.templatePath('src/utils/array.js'),
       this.destinationPath('src/utils/array.js'),
-      {}
-    );
-    this.fs.copy(
-      this.templatePath('gitignore'),
-      this.destinationPath('.gitignore'),
       {}
     );
     this.fs.copy(
