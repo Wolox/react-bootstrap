@@ -3,7 +3,6 @@ var pkg = require('../../package.json');
 var _ = require('lodash');
 var proptypes = require('prop-types');
 var mkdirp = require('mkdirp');
-var merge = require('package-merge');
 
 var Generator = require('yeoman-generator');
 
@@ -72,8 +71,8 @@ class GeneratorReact extends Generator {
         message: 'What type of bootstrap do you want?',
         default: 'empty',
         choices: [
-          'empty (react, redux, react-dom, redux-form, redux-beacon, redux-thunk, seamless-immutable, react-redux, react-router, react-router-dom, react-router-redux, apisauce, postcss, history, prop-types, lodash, i18next, reselect,)',
-          'complete (radium, mobile-detect, moment, nuka-carousel, numeral, react-alert, react-modal, react-responsive, react-scroll, react-share, react-virtualized, recharts, react-google-maps)'
+          {name: 'empty (react, redux, react-dom, redux-form, redux-beacon, redux-thunk, seamless-immutable, react-redux, react-router, react-router-dom, react-router-redux, apisauce, postcss, history, prop-types, lodash, i18next, reselect,)', value: 0},
+          {name: 'complete (radium, mobile-detect, moment, nuka-carousel, numeral, react-alert, react-modal, react-responsive, react-scroll, react-share, react-virtualized, recharts, react-google-maps)', value: 1}
         ]
       }
     ];
@@ -90,9 +89,10 @@ class GeneratorReact extends Generator {
   }
 
   addFiles() {
-    const a = this.fs.copyTpl(
+
+    this.fs.copyTpl(
       this.templatePath('_package.json'),
-      this.destinationPath('_package.json'),
+      this.destinationPath('packageB.json'),
       {
         projectName: this.projectName,
         projectNameSlugified: _.kebabCase(this.projectName),
@@ -102,19 +102,7 @@ class GeneratorReact extends Generator {
       }
     );
 
-    this.log(a);
-
-    const dst = this.fs.readFileSync('package.json');
-    const src = this.fs.readFileSync('_package.json');
-
-    this.log(dst);
-
-    this.log(src);
-
-    const b = this.fs.writeFile('package.json', merge(dst,src));
-
-    this.log(src);
-
+    // TODO remove this, and add only index from CRA (with Webpack configuration)
     this.fs.copy(
       this.templatePath('src/index.js'),
       this.destinationPath('src/index.js'),
@@ -207,28 +195,21 @@ class GeneratorReact extends Generator {
       this.destinationPath('.eslintrc.js'),
       {}
     );
-
     this.fs.copyTpl(
       this.templatePath('public/_index.html'),
       this.destinationPath('public/index.html'),
       { projectName: this.projectName }
     );
-
-    if (this.includeAll) {
-      this.fs.copy(
-        this.templatePath('src/config/numeral.js'),
-        this.destinationPath('src/config/numeral.js'),
-        {}
-      );
-    }
-    if (this.includeAll) {
-      this.fs.copy(
-        this.templatePath('src/services/AnalyticsService.js'),
-        this.destinationPath('src/services/AnalyticsService.js'),
-        {}
-      );
-    }
-
+    this.fs.copy(
+      this.templatePath('src/app/screens/Dashboard/index.js'),
+      this.destinationPath('src/app/screens/Dashboard/index.js'),
+      {}
+    );
+    this.fs.copy(
+      this.templatePath('src/app/screens/Dashboard/screens/Home/index.js'),
+      this.destinationPath('src/app/screens/Dashboard/screens/Home/index.js'),
+      {}
+    );
     this.fs.copy(
       this.templatePath('src/services/AuthServices.js'),
       this.destinationPath('src/services/AuthServices.js'),
@@ -239,7 +220,18 @@ class GeneratorReact extends Generator {
       this.destinationPath('src/services/LocalStorageService.js'),
       {}
     );
+
     if (this.includeAll) {
+      this.fs.copy(
+        this.templatePath('src/config/numeral.js'),
+        this.destinationPath('src/config/numeral.js'),
+        {}
+      );
+      this.fs.copy(
+        this.templatePath('src/services/AnalyticsService.js'),
+        this.destinationPath('src/services/AnalyticsService.js'),
+        {}
+      );
       this.fs.copy(
         this.templatePath('src/app/components/Button/index.js'),
         this.destinationPath('src/app/components/Button/index.js'),
@@ -318,11 +310,6 @@ class GeneratorReact extends Generator {
       this.fs.copy(
         this.templatePath('src/app/components/Spinner/styles.js'),
         this.destinationPath('src/app/components/Spinner/styles.js'),
-        {}
-      );
-      this.fs.copy(
-        this.templatePath('src/app/screens/Dashboard/index.js'),
-        this.destinationPath('src/app/screens/Dashboard/index.js'),
         {}
       );
       this.fs.copy(

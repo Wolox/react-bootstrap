@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
 
 import { apiSetup } from '../config/api';
+import store from '../redux/store';
 
 import Routes from './components/Routes';
 
 class App extends Component {
   componentDidMount() {
-    apiSetup(this.props.dispatch);
+    apiSetup(store.dispatch);
   }
 
   render() {
-    return <Routes />;
+    return (
+      <Provider store={store}>
+        <Routes />
+      </Provider>
+    );
   }
 }
 
@@ -19,4 +24,4 @@ App.defaultProps = {
   loading: false
 };
 
-export default connect()(App);
+export default App;
