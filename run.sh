@@ -29,7 +29,7 @@ create-react-app $1 --scripts-version wolox-react-scripts
 cd $1/
 yarn global add yo generator-react-bootstrap > /dev/null 2>&1
 yo react-bootstrap --force
-yarn global add package-json-merge
+yarn global add package-json-merge > /dev/null 2>&1
 package-json-merge package.json packageB.json > packageA.json
 mv packageA.json package.json
 rm packageB.json
