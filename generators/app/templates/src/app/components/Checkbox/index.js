@@ -1,11 +1,11 @@
-import React from "react";
-import Radium from "radium";
-import PropTypes from "prop-types";
+import React from 'react';
+import Radium from 'radium';
+import PropTypes from 'prop-types';
 
-import Touchable from "../Touchable";
-import Label from "../Label";
+import Touchable from '../Touchable';
+import Label from '../Label';
 
-import styles from "./styles";
+import styles from './styles';
 
 const Checkbox = ({ onChange, label, value }) => (
   <div style={styles.container}>

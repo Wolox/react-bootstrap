@@ -1,10 +1,10 @@
-import React from "react";
-import Radium from "radium";
-import PropTypes from "prop-types";
+import React from 'react';
+import Radium from 'radium';
+import PropTypes from 'prop-types';
 
-import Label from "../Label";
+import Label from '../Label';
 
-import styles from "./styles";
+import styles from './styles';
 
 function TextInput({
   icon,
@@ -72,7 +72,7 @@ function TextInput({
 }
 
 TextInput.defaultProps = {
-  type: "text",
+  type: 'text',
   shouldDisplayErrors: true,
   onChangeText: val => val
 };

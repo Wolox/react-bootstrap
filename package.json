@@ -31,7 +31,6 @@
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
-    "package-merge": "^0.1.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

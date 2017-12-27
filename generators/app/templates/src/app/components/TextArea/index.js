@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from "./styles";
+import styles from './styles';
 
 function TextArea({ onChange, onBlur, onFocus, value }) {
   return (

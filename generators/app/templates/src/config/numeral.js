@@ -1,20 +1,20 @@
-import numeral from "numeral";
+import numeral from 'numeral';
 
-numeral.register("locale", "es-ar", {
+numeral.register('locale', 'es-ar', {
   delimiters: {
-    thousands: ".",
-    decimal: ","
+    thousands: '.',
+    decimal: ','
   },
   ordinal: function ordinal(number) {
     return number === 1
-      ? "ro"
-      : number === 2 ? "do" : number === 3 ? "ro" : "to";
+      ? 'ro'
+      : number === 2 ? 'do' : number === 3 ? 'ro' : 'to';
   },
   currency: {
-    symbol: "$"
+    symbol: '$'
   }
 });
 
-numeral.locale("es-ar");
+numeral.locale('es-ar');
 
 export default numeral;
