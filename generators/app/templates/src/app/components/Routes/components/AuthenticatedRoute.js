@@ -1,10 +1,10 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
-import * as Routes from "../constants";
+import * as Routes from '../constants';
 
 const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;

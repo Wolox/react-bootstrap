@@ -1,11 +1,11 @@
-import { white, gray } from "../../../utils/colors";
+import { white, gray } from '../../../utils/colors';
 
 const BUTTON_SIZE = 15;
 
 const buttonStyle = {
   borderWidth: 2,
   borderRadius: 5,
-  borderStyle: "solid",
+  borderStyle: 'solid',
   margin: 10,
   width: BUTTON_SIZE,
   height: BUTTON_SIZE
@@ -13,8 +13,8 @@ const buttonStyle = {
 
 export default {
   container: {
-    display: "flex",
-    alignItems: "center"
+    display: 'flex',
+    alignItems: 'center'
   },
   inactiveButton: {
     ...buttonStyle,

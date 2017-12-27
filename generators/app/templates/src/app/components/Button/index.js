@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import Radium from "radium";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Radium from 'radium';
 
-import styles from "./styles";
+import styles from './styles';
 
-const variants = ["small", "big", "disabled"];
+const variants = ['small', 'big', 'disabled'];
 
 function Button({
   onPress,
@@ -24,7 +24,7 @@ function Button({
     .map(variant => styles[`text${variant}`]);
 
   const content =
-    typeof children === "string" ? (
+    typeof children === 'string' ? (
       <span
         style={[styles.textbase, textStyle, props.textstyle]}
         ref={containerSetter}
@@ -54,7 +54,7 @@ function Button({
 }
 
 Button.defaultProps = {
-  type: "button",
+  type: 'button',
   disabled: false
 };
 

@@ -1,21 +1,21 @@
-import React from "react";
-import Radium from "radium";
-import PropTypes from "prop-types";
+import React from 'react';
+import Radium from 'radium';
+import PropTypes from 'prop-types';
 
-import styles from "./styles";
+import styles from './styles';
 
 const variants = [
-  "small",
-  "big",
-  "white",
-  "gray",
-  "black",
-  "title",
-  "semibold",
-  "bold",
-  "onHover",
-  "left",
-  "right"
+  'small',
+  'big',
+  'white',
+  'gray',
+  'black',
+  'title',
+  'semibold',
+  'bold',
+  'onHover',
+  'left',
+  'right'
 ];
 
 function Label({ children, ...props }) {

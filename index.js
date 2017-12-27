@@ -1,3 +1,3 @@
 module.exports = {
-  app: require.resolve("./generators/app")
+  app: require.resolve('./generators/app')
 };

@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Radium from "radium";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Radium from 'radium';
 
-import styles from "./styles";
+import styles from './styles';
 
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 function Touchable({ children, style, onClick, containerSetter, ...props }) {
   return (
     <div
       {...props}
-      role="button"
+      role='button'
       onClick={onClick}
       style={[styles.container, style]}
       ref={containerSetter}
