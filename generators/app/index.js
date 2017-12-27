@@ -90,7 +90,7 @@ class GeneratorReact extends Generator {
   }
 
   addFiles() {
-    this.fs.copyTpl(
+    const a = this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('_package.json'),
       {
@@ -102,9 +102,18 @@ class GeneratorReact extends Generator {
       }
     );
 
-    var dst = this.fs.readFileSync('package.json');
-    var src = this.fs.readFileSync('_package.json');
-    this.fs.writeFile('package.json', merge(dst,src));
+    this.log(a);
+
+    const dst = this.fs.readFileSync('package.json');
+    const src = this.fs.readFileSync('_package.json');
+
+    this.log(dst);
+
+    this.log(src);
+
+    const b = this.fs.writeFile('package.json', merge(dst,src));
+
+    this.log(src);
 
     this.fs.copy(
       this.templatePath('src/index.js'),
