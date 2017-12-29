@@ -26,8 +26,11 @@ fi
 
 
 yarn global add create-react-app --prefix /usr/local > /dev/null 2>&1
-create-react-app "${PWD##*/}" --scripts-version wolox-react-scripts
+PROJECT_NAME=`echo "${PWD##*/}"`
+cd ..
+create-react-app "${PROJECT_NAME}" --scripts-version wolox-react-scripts
 yarn global add yo generator-react-bootstrap > /dev/null 2>&1
+cd $PROJECT_NAME
 yo react-bootstrap --force
 yarn global add package-json-merge > /dev/null 2>&1
 package-json-merge package.json packageB.json > packageA.json
