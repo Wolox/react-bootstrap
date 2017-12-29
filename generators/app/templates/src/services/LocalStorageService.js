@@ -32,7 +32,7 @@ const removeValue = key => {
   }
 };
 
-const defineProperty = (prop, defaultKey = ', tag = ') => {
+const defineProperty = (prop, defaultKey = '', tag = '') => {
   const capitalizedKey = `${prop[0].toUpperCase()}${prop.substring(1)}`;
   module.exports[`set${capitalizedKey}`] = (val, key = defaultKey) =>
     setValue(`@@UTILITY:${prop}${tag}${key}`, val);
