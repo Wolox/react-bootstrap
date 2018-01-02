@@ -1,5 +1,5 @@
-import { white, gray, black } from "../../../utils/colors";
-import { small, medium, big } from "../../../constants/fonts";
+import { white, gray, black } from '../../../utils/colors';
+import { small, medium, big } from '../../../constants/fonts';
 
 export default {
   base: {
@@ -28,18 +28,18 @@ export default {
     fontWeight: 700
   },
   title: {
-    margin: "20px 0",
+    margin: '20px 0',
     fontWeight: 500
   },
   onHover: {
-    ":hover": {
+    ':hover': {
       fontWeight: 700
     }
   },
   left: {
-    textAlign: "left"
+    textAlign: 'left'
   },
   right: {
-    textAlign: "right"
+    textAlign: 'right'
   }
 };

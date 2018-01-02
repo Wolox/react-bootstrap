@@ -24,12 +24,19 @@ elif ! system_has yarn; then
   exit 1
 fi
 
-yarn global add create-react-app --prefix /usr/local
-create-react-app $1 --scripts-version wolox-react-scripts
-cd $1/
+
+yarn global add create-react-app --prefix /usr/local > /dev/null 2>&1
+PROJECT_NAME=`echo "${PWD##*/}"`
+cd ..
+create-react-app "${PROJECT_NAME}" --scripts-version wolox-react-scripts
 yarn global add yo generator-react-bootstrap > /dev/null 2>&1
+cd $PROJECT_NAME
 yo react-bootstrap --force
-yarn start
+yarn global add package-json-merge > /dev/null 2>&1
+package-json-merge package.json packageB.json > packageA.json
+mv packageA.json package.json
+rm packageB.json
+yarn && yarn start
 
 wait $!
 

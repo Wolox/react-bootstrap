@@ -1,12 +1,13 @@
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import thunk from "redux-thunk";
-import { routerReducer as router, routerMiddleware } from "react-router-redux";
-import createHistory from "history/createBrowserHistory";
-import { reducer as form } from "redux-form";
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import { routerReducer as router, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
+import { reducer as form } from 'redux-form';
 
 // TODO Add this if you need it
-// import AnalyticsMiddleware from "../services/AnalyticsService";
-import { reducer as auth } from "./Auth/reducer";
+// import AnalyticsMiddleware from '../services/AnalyticsService';
+import { reducer as auth } from './Auth/reducer';
+
 export const history = createHistory();
 
 // Add reducers here

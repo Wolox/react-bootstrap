@@ -1,9 +1,9 @@
-import { create } from "apisauce";
+import { create } from 'apisauce';
 
-const baseURL = "http://wolox.com";
+const baseURL = 'http://wolox.com';
 
-if (baseURL === "http://wolox.com") {
-  console.warn("API baseURL has not been properly initialized");
+if (baseURL === 'http://wolox.com') {
+  console.warn('API baseURL has not been properly initialized');
 }
 
 const api = create({
@@ -23,7 +23,7 @@ export const apiSetup = dispatch => {
   });
 
   api.addMonitor(response => {
-    if (response.problem === "NETWORK_ERROR") {
+    if (response.problem === 'NETWORK_ERROR') {
       // TODO: These callbacks should only be called if no other callback was asigned for the response.
     }
   });

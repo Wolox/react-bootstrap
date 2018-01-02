@@ -1,13 +1,13 @@
-import React from "react";
-import { ConnectedRouter } from "react-router-redux";
-import { Switch } from "react-router-dom";
+import React from 'react';
+import { ConnectedRouter } from 'react-router-redux';
+import { Switch } from 'react-router-dom';
 
-import { history } from "../../../redux/store";
-import Home from "../../screens/Dashboard";
+import { history } from '../../../redux/store';
+import Home from '../../screens/Dashboard';
 
-import AuthenticatedRoute from "./components/AuthenticatedRoute";
-import * as Routes from "./constants";
-import styles from "./styles";
+import AuthenticatedRoute from './components/AuthenticatedRoute';
+import * as Routes from './constants';
+import styles from './styles';
 
 function AppRoutes() {
   return (

@@ -1,13 +1,13 @@
-import { push } from "react-router-redux";
+import { push } from 'react-router-redux';
 
-import * as AuthService from "../../services/AuthServices";
-import * as RouteConstants from "../../app/components/Routes/constants";
-import { stringArrayToObject } from "../../utils/array";
+import * as AuthService from '../../services/AuthServices';
+import * as RouteConstants from '../../app/components/Routes/constants';
+import { stringArrayToObject } from '../../utils/array';
 
 /* ------------- Auth actions ------------- */
 export const actions = stringArrayToObject(
-  ["LOGIN", "LOGIN_SUCCESS", "LOGIN_FAILURE", "LOGOUT", "AUTH_INIT"],
-  "@@AUTH"
+  ['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE', 'LOGOUT', 'AUTH_INIT'],
+  '@@AUTH'
 );
 
 const privateActionCreators = {
@@ -42,7 +42,7 @@ export const actionCreators = {
           dispatch(privateActionCreators.loginSuccess(response.data));
           dispatch(push(RouteConstants.HOME));
         } else {
-          throw new Error("Invalid credentials");
+          throw new Error('Invalid credentials');
         }
       } catch (e) {
         dispatch(privateActionCreators.loginFailure(e));
