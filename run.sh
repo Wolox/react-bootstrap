@@ -36,6 +36,7 @@ yarn global add package-json-merge > /dev/null 2>&1
 package-json-merge package.json packageB.json > packageA.json
 mv packageA.json package.json
 rm packageB.json
+yarn add eslint-config-react-app babel-eslint@^7.2.3 eslint@^4.1.1 eslint-plugin-flowtype@^2.34.1 eslint-plugin-import@^2.6.0 eslint-plugin-jsx-a11y@^5.1.1 eslint-plugin-react@^7.1.0 --dev
 yarn && yarn start
 
 wait $!
