@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 8
+  # environment:
+    # // TODO
+dependencies:
+  override:
+    - yarn
+test:
+  override:
+    - yarn run lint
+    - yarn test

@@ -195,6 +195,12 @@ class GeneratorReact extends Generator {
       this.destinationPath('.eslintrc.js'),
       {}
     );
+    this.fs.copy(
+      this.templatePath('_circle.yml'),
+      this.destinationPath('circle.yml'),
+      {}
+    );
+
     this.fs.copyTpl(
       this.templatePath('public/_index.html'),
       this.destinationPath('public/index.html'),
