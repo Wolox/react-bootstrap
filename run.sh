@@ -5,7 +5,7 @@
 echo "Getting initial dependencies..."
 
 system_has() {
-  type "${PWD##*/}" > /dev/null 2>&1
+  type "$1" > /dev/null 2>&1
 }
 
 if ! system_has git; then
