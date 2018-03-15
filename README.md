@@ -16,7 +16,7 @@ wolox-react-bootstrap
 
 You don't need to clone this repository. Just run the following in your terminal:
 
-1- bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) folderName
+1- bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) githubRepo
 
 2- Track and add or delete comment lines: with: // TODO Add this if you need it with: // TODO import your {..}
 

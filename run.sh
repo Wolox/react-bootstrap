@@ -45,6 +45,10 @@ package-json-merge package.json packageB.json > packageA.json
 mv packageA.json package.json
 rm packageB.json
 git init
+
+if ! [[-z "$1" ]]; then
+git remote add origin $1
+fi
 yarn && yarn start
 
 wait $!
