@@ -101,6 +101,11 @@ class GeneratorReact extends Generator {
         includeAll: this.includeAll
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('config-overrides.js'),
+      this.destinationPath('config-overrides.js'),
+      {}
+    );
 
     // TODO remove this, and add only index from CRA (with Webpack configuration)
     this.fs.copy(
