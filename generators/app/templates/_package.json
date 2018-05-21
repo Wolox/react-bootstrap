@@ -43,6 +43,7 @@
     "seamless-immutable": "^7.1.2"
   },
   "devDependencies": {
+    "react-app-rewired": "^1.5.2",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
@@ -55,18 +56,19 @@
     "husky": "^0.14.3",
     "prettier": "^1.6.1",
     "prettier-eslint": "^8.0.0",
-    "react-scripts": "^1.0.13"
+    "react-scripts": "^1.0.13",
+    "wolox-react-scripts": "^1.2.0"
   },
   "scripts": {
-    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
+    "start": "react-app-rewired start --scripts-version wolox-react-scripts",
+    "build": "react-app-rewired build --scripts-version wolox-react-scripts",
     "test":
-      "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+      "react-app-rewired test --scripts-version wolox-react-scripts --env=jsdom",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
-    "deploy": "npm run build",
+    "deploy": "react-app-rewired build --scripts-version wolox-react-scripts",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "lint-fix": "./node_modules/eslint/bin/eslint.js src --fix",
     "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs eslint",
     "precommit": "npm run lint-diff"
-  },
+  }
 }

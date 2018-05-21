@@ -1,6 +1,6 @@
 {
   "name": "generator-react-bootstrap",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "wolox-react-bootstrap",
   "files": [
     "index.js",
@@ -58,6 +58,7 @@
     "husky": "^0.14.3",
     "prettier": "^1.6.1",
     "prettier-eslint": "^8.0.0",
-    "react-scripts": "^1.0.13"
+    "react-scripts": "^1.0.13",
+    "react-app-rewired": "^1.5.2"
   }
 }

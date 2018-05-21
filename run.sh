@@ -27,16 +27,13 @@ elif ! system_has yarn; then
   echo "Yarn is mandatory to continue"
   echo "Check this guide to complete the installation: https://yarnpkg.com/lang/en/docs/install/#alternatives-tab"
   exit 1
-elif  [[ $PATH != *"$HOME/.yarn/bin"* ]]; then
-  echo "Yarn global bin path must be cointained inside PATH varible"
-  exit 1
 fi
 
 
 yarn global add create-react-app --prefix /usr/local > /dev/null 2>&1
 PROJECT_NAME=`echo "${PWD##*/}"`
 cd ..
-create-react-app "${PROJECT_NAME}" --scripts-version wolox-react-scripts
+create-react-app "${PROJECT_NAME}"
 yarn global add yo generator-react-bootstrap > /dev/null 2>&1
 cd $PROJECT_NAME
 yo react-bootstrap --force
