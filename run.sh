@@ -21,23 +21,19 @@ elif ! system_has node; then
   echo "- https://github.com/creationix/nvm#usage"
   exit 1
 elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V | head -n1)" != "$requirednodeversion" ]; then 
-     echo "The node version must be >= v6.2.0"
-     exit 1
-elif ! system_has yarn; then
-  echo "Yarn is mandatory to continue"
-  echo "Check this guide to complete the installation: https://yarnpkg.com/lang/en/docs/install/#alternatives-tab"
+  echo "The node version must be >= v6.2.0"  
   exit 1
 fi
 
-
-yarn global add create-react-app --prefix /usr/local > /dev/null 2>&1
+npm i -g create-react-app  > /dev/null 2>&1
 PROJECT_NAME=`echo "${PWD##*/}"`
 cd ..
-create-react-app "${PROJECT_NAME}"
-yarn global add yo generator-react-bootstrap > /dev/null 2>&1
+create-react-app "${PROJECT_NAME}" --use-npm
+npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 cd $PROJECT_NAME
+echo "Project created"
 yo react-bootstrap --force
-yarn global add package-json-merge > /dev/null 2>&1
+npm i -g package-json-merge > /dev/null 2>&1
 package-json-merge package.json packageB.json > packageA.json
 mv packageA.json package.json
 rm packageB.json
@@ -46,7 +42,8 @@ git init
 if ! [[-z "$1" ]]; then
 git remote add origin $1
 fi
-yarn && yarn start
+
+npm i && npm start
 
 wait $!
 
