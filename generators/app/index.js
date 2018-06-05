@@ -107,6 +107,12 @@ class GeneratorReact extends Generator {
       {}
     );
 
+    this.fs.copyTpl(
+      this.templatePath('circle.yml'),
+      this.destinationPath('circle.yml'),
+      {}
+    );
+
     // TODO remove this, and add only index from CRA (with Webpack configuration)
     this.fs.copy(
       this.templatePath('src/index.js'),
@@ -344,7 +350,7 @@ class GeneratorReact extends Generator {
     this.installDependencies({
       npm: true,
       bower: false,
-      yarn: true
+      yarn: false
     });
   }
 }
