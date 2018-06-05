@@ -8,6 +8,14 @@ system_has() {
   type "$1" > /dev/null 2>&1
 }
 
+DEPENDENCIES=(
+  create-react-app
+  yo
+  generator-react-bootstrap
+  package-json-merge
+)
+      
+
 currentnodeversion="$(node --version)"
 requirednodeversion="v6.2.0"
 if ! system_has git; then
@@ -25,15 +33,13 @@ elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V |
   exit 1
 fi
 
-npm i -g create-react-app  > /dev/null 2>&1
+npm i -g ${DEPENDENCIES[*]} > /dev/null 2>&1
 PROJECT_NAME=`echo "${PWD##*/}"`
 cd ..
 create-react-app "${PROJECT_NAME}" --use-npm
-npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 cd $PROJECT_NAME
-echo "Project created"
+echo "Project $PROJECT_NAME created"
 yo react-bootstrap --force
-npm i -g package-json-merge > /dev/null 2>&1
 package-json-merge package.json packageB.json > packageA.json
 mv packageA.json package.json
 rm packageB.json
