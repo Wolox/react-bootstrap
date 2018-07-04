@@ -1,6 +1,6 @@
 {
   "name": "generator-react-bootstrap",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "wolox-react-bootstrap",
   "files": [
     "index.js",
