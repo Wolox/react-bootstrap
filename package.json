@@ -1,0 +1,40 @@
+{
+  "name": "generator-react-bootstrap",
+  "version": "0.1.8",
+  "description": "wolox-react-bootstrap",
+  "files": [
+    "index.js",
+    "generators"
+  ],
+  "main": "app/index.js",
+  "scripts": {
+    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+    "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
+    "deploy": "npm run build",
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js src --fix",
+    "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js"
+  },
+  "repository": "git+https://github.com/Wolox/react-bootstrap.git",
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "react-bootstrap"
+  ],
+  "author": "Wolox (https://github.com/Wolox)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wolox/react-bootstrap/issues"
+  },
+  "homepage": "https://github.com/Wolox/react-bootstrap",
+  "dependencies": {
+    "latest-semver": "^1.0.0",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "ora": "^2.1.0",
+    "semver-regex": "^2.0.0",
+    "yeoman-generator": "^1.1.1"
+  }
+}
