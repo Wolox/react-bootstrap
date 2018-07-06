@@ -13,7 +13,7 @@ const api = create({
   timeout: 15000
 });
 
-export const apiSetup = dispatch => {
+export const apiSetup = () => {
   // eslint-disable-line no-unused-vars, prettier/prettier
   api.addMonitor(response => {
     if (response.status === 401) {

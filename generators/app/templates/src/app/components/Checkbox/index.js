@@ -9,10 +9,7 @@ import styles from './styles';
 
 const Checkbox = ({ onChange, label, value }) => (
   <div style={styles.container}>
-    <Touchable
-      style={value ? styles.activeButton : styles.inactiveButton}
-      onClick={onChange}
-    />
+    <Touchable style={value ? styles.activeButton : styles.inactiveButton} onClick={onChange} />
     <Touchable onClick={onChange}>
       <Label black>{label}</Label>
     </Touchable>

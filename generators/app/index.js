@@ -1,13 +1,11 @@
-var _ = require("lodash");
-var Generator = require("yeoman-generator");
+const Generator = require('yeoman-generator');
 
-const installDependencies = require("./tasks/installDependencies");
-const configPackageJson = require("./tasks/configPackageJson");
-const copyTemplateFiles = require("./tasks/copyTemplateFiles");
-const { installCRA, runCRA } = require("./tasks/createReactApp");
-
-const PROMPTS = require("./prompts");
-const { KICKOFF_MESSAGE } = require("./constants");
+const installDependencies = require('./tasks/installDependencies');
+const configPackageJson = require('./tasks/configPackageJson');
+const copyTemplateFiles = require('./tasks/copyTemplateFiles');
+const { installCRA, runCRA } = require('./tasks/createReactApp');
+const PROMPTS = require('./prompts');
+const { KICKOFF_MESSAGE } = require('./constants');
 
 class GeneratorReact extends Generator {
   initializing() {
@@ -15,13 +13,9 @@ class GeneratorReact extends Generator {
   }
 
   prompting() {
-    return this.prompt(PROMPTS).then(
-      function(answers) {
-        for (var key in answers) {
-          this[key] = answers[key];
-        }
-      }.bind(this)
-    );
+    return this.prompt(PROMPTS).then(answers => {
+      Object.keys(answers).forEach(answerKey => (this[answerKey] = answers[answerKey]));
+    });
   }
 
   configuring() {
@@ -35,7 +29,7 @@ class GeneratorReact extends Generator {
     return Promise.resolve().then(() => {
       this.log('Copying base project files...');
       configPackageJson.bind(this)();
-      copyTemplateFiles.bind(this)();
+      copyTemplateFiles.bind(this)(this.projectName);
     });
   }
 

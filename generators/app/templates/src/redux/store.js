@@ -29,13 +29,12 @@ enhancers.push(applyMiddleware(...middlewares));
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const rootReducer = (state, action) => {
+const rootReducer = (state, action) =>
   // TODO Add this if you need it
   // if (action.type === authActions.SIGN_OUT) {
   //   return reducers(getGlobalState(state), action);
   // }
-  return reducers(state, action);
-};
+  reducers(state, action);
 
 const store = createStore(rootReducer, composeEnhancers(...enhancers));
 

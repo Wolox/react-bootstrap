@@ -1,10 +1,10 @@
 /* THIS FILE CONTAINS THE PROMPTS THAT WILL BE SHOWN TO THE USER EACH TIME THE GENERATOR IS EXECUTED */
 module.exports = [
   {
-    type: "input",
-    name: "projectName",
-    message: "Your Project name",
-    default: "my-project",
+    type: 'input',
+    name: 'projectName',
+    message: 'Your Project name',
+    default: 'my-project',
     required: true,
     validate: val =>
       String(val).match(/^[a-z][-_0-9a-z]*$/)
@@ -12,9 +12,9 @@ module.exports = [
         : `${val} is not a valid name for a project. Please use a valid identifier name (alphanumeric).`
   },
   {
-    type: "input",
-    name: "repoUrl",
-    message: "What is the git repo url for this project?",
+    type: 'input',
+    name: 'repoUrl',
+    message: 'What is the git repo url for this project?',
     required: true
   }
 ];
