@@ -1,27 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SearchBar from './layout';
-
-function SearchBarContainer({ textButtonSearch, className, initialValues, getElements }) {
-  const handleSubmit = formValues => getElements(formValues);
+function SearchBarContainer({ textButtonSearch, className }) {
   return (
-    <SearchBar
-      onSubmit={handleSubmit}
-      textButtonSearch={textButtonSearch}
-      className={className}
-      initialValues={initialValues}
-    >
-      {this.props.children}
-    </SearchBar>
+    <div className={className}>
+    {children}
+    <button type="submit">
+      {textButtonSearch}
+    </button>
+  </div>
   );
 }
 
 SearchBarContainer.propTypes = {
-  initialValues: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  getElements: PropTypes.func.isRequired,
   textButtonSearch: PropTypes.string,
   className: PropTypes.string
+};
+
+SearchBarContainer.defaultProps = {
+  className: '',
+  textButtonSearch: 'Buscar'
 };
 
 export default SearchBarContainer;
