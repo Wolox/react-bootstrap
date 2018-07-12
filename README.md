@@ -14,14 +14,12 @@ wolox-react-bootstrap
 
 You don't need to clone this repository. Just follow this steps:
 
-1- Create a folder for your project
-
-2- Go inside that folder and run the following command:
+1- Run the following command:
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) githubRepo
+bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) [--verbose]
 ```
 
-3- Track and add or delete comment lines: with: // TODO Add this if you need it with: // TODO import your {..}
+2- Search for TODO commented lines and follow the instructions. (Search "// TODO")
 
-3- Add .env with your API_BASE_URL
+3- Add .env file with your API_BASE_URL
