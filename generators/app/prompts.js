@@ -1,3 +1,5 @@
+const OPTIONAL_DEPENDENCIES = require('./constants').OPTIONAL_DEPENDENCIES;
+
 /* THIS FILE CONTAINS THE PROMPTS THAT WILL BE SHOWN TO THE USER EACH TIME THE GENERATOR IS EXECUTED */
 module.exports = [
   {
@@ -16,5 +18,16 @@ module.exports = [
     name: 'repoUrl',
     message: 'What is the git repo url for this project?',
     required: true
+  },
+  {
+    type: 'checkbox',
+    name: 'features',
+    message: 'Choose the features you want to add to your project',
+    choices: Object.keys(OPTIONAL_DEPENDENCIES),
+    filter: values =>
+      values.reduce((answer, val) => {
+        answer[val] = true;
+        return answer;
+      }, {})
   }
 ];

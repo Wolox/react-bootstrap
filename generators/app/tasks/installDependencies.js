@@ -1,27 +1,19 @@
 const latestSemver = require('latest-semver');
 const semverRegex = require('semver-regex');
 
+const OPTIONAL_DEPENDENCIES = require('../constants').OPTIONAL_DEPENDENCIES;
+
 const runCommand = require('./runCommand');
 
 const DEPENDENCIES = [
-  'reselect',
-  'apisauce',
   'history',
   'i18next',
   'lodash',
   'postcss',
-  'prop-types',
   'react',
   'react-dom',
-  'react-redux',
   'react-router',
-  'react-router-dom',
-  'react-router-redux',
-  'redux',
-  'redux-beacon',
-  'redux-form',
-  'redux-thunk',
-  'seamless-immutable'
+  'react-router-dom'
 ];
 
 const DEV_DEPENDENCIES = [
@@ -86,16 +78,35 @@ function npmInstall(projectName, deps, options, dev) {
 }
 
 module.exports = function installDependencies() {
-  return getLinterPluginVersions(this.projectName, this.options).then(plugins => {
-    const pluginNames = Object.keys(plugins);
-    const fixedDevDeps = DEV_DEPENDENCIES.map(
-      // Use a specific version of a dependency to avoid conflicts with other dependencies.
-      dependency => (pluginNames.includes(dependency) ? `${dependency}@${plugins[dependency]}` : dependency)
-    );
-    return npmInstall(this.projectName, DEPENDENCIES, this.options)
-      .then(() => npmInstall(this.projectName, fixedDevDeps, this.options, true))
-      .catch(() => {
-        process.exit(1);
-      });
-  });
+  return getLinterPluginVersions(this.projectName, this.options)
+    .then(plugins => {
+      const pluginNames = Object.keys(plugins);
+      const fixedDevDeps = DEV_DEPENDENCIES.map(
+        // Use a specific version of a dependency to avoid conflicts with other dependencies.
+        dependency => (pluginNames.includes(dependency) ? `${dependency}@${plugins[dependency]}` : dependency)
+      );
+      return npmInstall(this.projectName, DEPENDENCIES, this.options)
+        .then(() => npmInstall(this.projectName, fixedDevDeps, this.options, true))
+        .catch(() => {
+          process.exit(1);
+        });
+    })
+    .then(() => {
+      const optionalDependencies = Object.keys(this.features).reduce(
+        (dependenciesObject, option) => {
+          const dependencies = OPTIONAL_DEPENDENCIES[option].dependencies || [];
+          const devDependencies = OPTIONAL_DEPENDENCIES[option].devDependencies || [];
+
+          return {
+            dependencies: [...dependenciesObject.dependencies, ...dependencies],
+            devDependencies: [...dependenciesObject.devDependencies, ...devDependencies]
+          };
+        },
+        { dependencies: [], devDependencies: [] }
+      );
+
+      return npmInstall(this.projectName, optionalDependencies.dependencies, this.options).then(() =>
+        npmInstall(this.projectName, optionalDependencies.devDependencies, this.options, true)
+      );
+    });
 };
