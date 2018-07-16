@@ -29,7 +29,7 @@ class GeneratorReact extends Generator {
     return Promise.resolve().then(() => {
       this.log('Copying base project files...');
       configPackageJson.bind(this)();
-      copyTemplateFiles.bind(this)(this.projectName);
+      copyTemplateFiles.bind(this)();
     });
   }
 

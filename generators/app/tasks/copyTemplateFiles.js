@@ -9,11 +9,13 @@ module.exports = function copyTemplateFiles() {
 
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
 
-  copyTpl.bind(this)('public/_index.html', 'public/index.html', {
+  const copyTemplate = copyTpl.bind(this);
+
+  copyTemplate('public/_index.html', 'public/index.html', {
     title: this.projectName
   });
 
-  copyTpl.bind(this)(LOCAL_STORAGE_FILE, LOCAL_STORAGE_FILE, {
+  copyTemplate(LOCAL_STORAGE_FILE, LOCAL_STORAGE_FILE, {
     projectName: this.projectName
   });
 
