@@ -7,13 +7,7 @@ import styles from './styles';
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 function Touchable({ children, style, onClick, containerSetter, ...props }) {
   return (
-    <div
-      {...props}
-      role='button'
-      onClick={onClick}
-      style={[styles.container, style]}
-      ref={containerSetter}
-    >
+    <div {...props} role="button" onClick={onClick} style={[styles.container, style]} ref={containerSetter}>
       {children}
     </div>
   );

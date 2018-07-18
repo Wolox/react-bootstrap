@@ -13,8 +13,8 @@
     "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
     "deploy": "npm run build",
-    "lint": "./node_modules/eslint/bin/eslint.js src",
-    "lint-fix": "./node_modules/eslint/bin/eslint.js src --fix",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js"
   },
   "repository": "git+https://github.com/Wolox/react-bootstrap.git",
@@ -30,11 +30,24 @@
   },
   "homepage": "https://github.com/Wolox/react-bootstrap",
   "dependencies": {
+    "eslint-config-wolox": "^1.0.0",
     "latest-semver": "^1.0.0",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "ora": "^2.1.0",
     "semver-regex": "^2.0.0",
     "yeoman-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "prettier": "^1.1.0",
+    "prettier-eslint": "^6.4.2",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^7.1.0"
   }
 }

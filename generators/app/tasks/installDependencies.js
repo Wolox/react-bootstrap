@@ -4,42 +4,42 @@ const semverRegex = require('semver-regex');
 const runCommand = require('./runCommand');
 
 const DEPENDENCIES = [
-  "reselect",
-  "apisauce",
-  "history",
-  "i18next",
-  "lodash",
-  "postcss",
-  "prop-types",
-  "react",
-  "react-dom",
-  "react-redux",
-  "react-router",
-  "react-router-dom",
-  "react-router-redux",
-  "redux",
-  "redux-beacon",
-  "redux-form",
-  "redux-thunk",
-  "seamless-immutable"
+  'reselect',
+  'apisauce',
+  'history',
+  'i18next',
+  'lodash',
+  'postcss',
+  'prop-types',
+  'react',
+  'react-dom',
+  'react-redux',
+  'react-router',
+  'react-router-dom',
+  'react-router-redux',
+  'redux',
+  'redux-beacon',
+  'redux-form',
+  'redux-thunk',
+  'seamless-immutable'
 ];
 
 const DEV_DEPENDENCIES = [
-  "react-app-rewired",
-  "babel-eslint",
-  "eslint",
-  "eslint-config-airbnb",
-  "eslint-config-prettier",
-  "eslint-plugin-flowtype",
-  "eslint-plugin-import",
-  "eslint-plugin-jsx-a11y",
-  "eslint-plugin-prettier",
-  "eslint-plugin-react",
-  "husky",
-  "prettier",
-  "prettier-eslint",
-  "react-scripts",
-  "wolox-react-scripts"
+  'react-app-rewired',
+  'babel-eslint',
+  'eslint',
+  'eslint-config-airbnb',
+  'eslint-config-prettier',
+  'eslint-plugin-flowtype',
+  'eslint-plugin-import',
+  'eslint-plugin-jsx-a11y',
+  'eslint-plugin-prettier',
+  'eslint-plugin-react',
+  'husky',
+  'prettier',
+  'prettier-eslint',
+  'react-scripts',
+  'wolox-react-scripts'
 ];
 
 /**
@@ -57,7 +57,7 @@ function getLinterPluginVersions(projectName, options) {
       ['info', 'eslint-config-airbnb@latest', 'peerDependencies', '--json'],
       { cwd: `${process.cwd()}/${projectName}` }
     ],
-    loadingMessage: 'Getting eslint plugins\' versions',
+    loadingMessage: "Getting eslint plugins' versions",
     successMessage: 'Successfuly downloaded plugins version info',
     failureMessage: 'Error getting info of eslint plugins. Turn verbose mode on for detailed logging',
     context: options

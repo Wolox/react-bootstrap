@@ -19,9 +19,7 @@ const variants = [
 ];
 
 function Label({ children, ...props }) {
-  const style = variants
-    .filter(variant => props[variant])
-    .map(variant => styles[variant]);
+  const style = variants.filter(variant => props[variant]).map(variant => styles[variant]);
 
   return <span style={[styles.base, style, props.style]}>{children}</span>;
 }

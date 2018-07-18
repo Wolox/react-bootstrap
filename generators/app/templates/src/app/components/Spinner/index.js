@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 
-import { darkestblue } from '../../../utils/colors';
-
 import styles from './styles';
 
 function withSpinner(WrappedComponent) {

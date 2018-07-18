@@ -7,28 +7,13 @@ import styles from './styles';
 
 const variants = ['small', 'big', 'disabled'];
 
-function Button({
-  onPress,
-  children,
-  link,
-  type,
-  disabled,
-  containerSetter,
-  ...props
-}) {
-  const style = variants
-    .filter(variant => props[variant])
-    .map(variant => styles[variant]);
-  const textStyle = variants
-    .filter(variant => props[variant])
-    .map(variant => styles[`text${variant}`]);
+function Button({ onPress, children, link, type, disabled, containerSetter, ...props }) {
+  const style = variants.filter(variant => props[variant]).map(variant => styles[variant]);
+  const textStyle = variants.filter(variant => props[variant]).map(variant => styles[`text${variant}`]);
 
   const content =
     typeof children === 'string' ? (
-      <span
-        style={[styles.textbase, textStyle, props.textstyle]}
-        ref={containerSetter}
-      >
+      <span style={[styles.textbase, textStyle, props.textstyle]} ref={containerSetter}>
         {children}
       </span>
     ) : (
@@ -42,12 +27,7 @@ function Button({
       </Link>
     </div>
   ) : (
-    <button
-      type={type}
-      style={[styles.base, style, props.style]}
-      disabled={disabled}
-      onClick={onPress}
-    >
+    <button type={type} style={[styles.base, style, props.style]} disabled={disabled} onClick={onPress}>
       {content}
     </button>
   );

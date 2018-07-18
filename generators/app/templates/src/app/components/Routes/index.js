@@ -14,12 +14,7 @@ function AppRoutes() {
     <ConnectedRouter history={history}>
       <div style={styles.container}>
         <Switch>
-          <AuthenticatedRoute
-            isPrivateRoute
-            exact
-            path={Routes.HOME}
-            component={Home}
-          />
+          <AuthenticatedRoute isPrivateRoute exact path={Routes.HOME} component={Home} />
         </Switch>
       </div>
     </ConnectedRouter>

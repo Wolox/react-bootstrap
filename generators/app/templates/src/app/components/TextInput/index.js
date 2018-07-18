@@ -27,31 +27,22 @@ function TextInput({
   const wrapOnChange = val => input.onChange(onChangeText(val));
   return (
     <div style={styles.container}>
-      <div
-        style={[styles.inputContainer, expanded ? styles.expandedInput : null]}
-      >
+      <div style={[styles.inputContainer, expanded ? styles.expandedInput : null]}>
         {icon ? <img src={icon} alt={placeholder} style={styles.icon} /> : null}
         <div
-          style={[
-            styles.textInputWrapper,
-            shouldDisplayDescription ? styles.textInputWrapperWithDesc : null
-          ]}
+          style={[styles.textInputWrapper, shouldDisplayDescription ? styles.textInputWrapperWithDesc : null]}
         >
           {shouldDisplayDescription &&
-          input.value && (
-            <Label light small black>
-              {placeholder}
-            </Label>
-          )}
+            input.value && (
+              <Label light small black>
+                {placeholder}
+              </Label>
+            )}
           <input
             type={type}
             name={input.name}
             placeholder={placeholder}
-            style={[
-              styles.input,
-              shouldDisplayDescription ? styles.inputWithDesc : null,
-              style
-            ]}
+            style={[styles.input, shouldDisplayDescription ? styles.inputWithDesc : null, style]}
             onChange={wrapOnChange}
             onBlur={input.onBlur}
             onFocus={input.onFocus}
@@ -60,13 +51,13 @@ function TextInput({
         </div>
       </div>
       {displayErrors &&
-      meta.error && (
-        <div style={styles.errorsContainer}>
-          <Label small error>
-            {meta.error}
-          </Label>
-        </div>
-      )}
+        meta.error && (
+          <div style={styles.errorsContainer}>
+            <Label small error>
+              {meta.error}
+            </Label>
+          </div>
+        )}
     </div>
   );
 }

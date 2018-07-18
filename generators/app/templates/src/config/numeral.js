@@ -6,9 +6,7 @@ numeral.register('locale', 'es-ar', {
     decimal: ','
   },
   ordinal: function ordinal(number) {
-    return number === 1
-      ? 'ro'
-      : number === 2 ? 'do' : number === 3 ? 'ro' : 'to';
+    return number === 1 ? 'ro' : number === 2 ? 'do' : number === 3 ? 'ro' : 'to';
   },
   currency: {
     symbol: '$'

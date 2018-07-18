@@ -28,7 +28,13 @@ else
   npm i -g yo react-bootstrap > /dev/null 2>&1
 fi
 
-yo react-bootstrap
+if [[ $1 == '--local' || $1 == '-l' ]]
+then
+  yo ./react-bootstrap/generators/app
+else
+  yo react-bootstrap
+fi
+
 
 wait $!
 
