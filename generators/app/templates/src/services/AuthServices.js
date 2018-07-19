@@ -1,8 +1,7 @@
 import api from '../config/api';
+import { actionCreators as authActions } from '../redux/Auth/actions';
 
 import * as LocalStorageService from './LocalStorageService';
-
-import { actionCreators as authActions } from '../redux/Auth/actions';
 
 export const setCurrentUser = async currentUser => {
   api.setHeader('Authorization', currentUser.sessionToken);
@@ -16,8 +15,7 @@ export const getCurrentUser = async () => {
   }
   return false;
 };
-export const removeCurrentUser = async () =>
-  LocalStorageService.removeSessionToken();
+export const removeCurrentUser = async () => LocalStorageService.removeSessionToken();
 
 export const authSetup = async dispatch => {
   const currentUser = await getCurrentUser();

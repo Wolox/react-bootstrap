@@ -3,8 +3,7 @@ import { GoogleAnalytics } from 'redux-beacon/targets/google-analytics';
 
 const pageView = action => ({
   hitType: 'pageview',
-  page:
-    action.payload.pathname === '/' ? 'accountstatus' : action.payload.pathname
+  page: action.payload.pathname === '/' ? 'accountstatus' : action.payload.pathname
 });
 
 const eventsMap = {

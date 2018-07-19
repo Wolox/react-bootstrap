@@ -33,13 +33,14 @@ const removeValue = key => {
 };
 
 const defineProperty = (prop, defaultKey = '', tag = '') => {
+  const projectName = '<%= projectName %>'.replace(/-/g, '_').toUpperCase();
   const capitalizedKey = `${prop[0].toUpperCase()}${prop.substring(1)}`;
   module.exports[`set${capitalizedKey}`] = (val, key = defaultKey) =>
-    setValue(`@@UTILITY:${prop}${tag}${key}`, val);
+    setValue(`@@${projectName}:${prop}${tag}${key}`, val);
   module.exports[`get${capitalizedKey}`] = (key = defaultKey) =>
-    getValue(`@@UTILITY:${prop}${tag}${key}`);
+    getValue(`@@${projectName}:${prop}${tag}${key}`);
   module.exports[`remove${capitalizedKey}`] = (key = defaultKey) =>
-    removeValue(`@@UTILITY:${prop}${tag}${key}`);
+    removeValue(`@@${projectName}:${prop}${tag}${key}`);
 };
 
 // ------------------------------ LOCAL STORAGE PROPERTIES ------------------------------

@@ -13,8 +13,8 @@ const api = create({
   timeout: 15000
 });
 
+// eslint-disable-next-line no-unused-vars, prettier/prettier
 export const apiSetup = dispatch => {
-  // eslint-disable-line no-unused-vars, prettier/prettier
   api.addMonitor(response => {
     if (response.status === 401) {
       // TODO: These callbacks should only be called if no other callback was asigned for the response.

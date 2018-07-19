@@ -1,8 +1,8 @@
-require("colors");
+require('colors');
 
-const spawn = require("child_process").spawn;
+const spawn = require('child_process').spawn;
 
-const ora = require("ora");
+const ora = require('ora');
 
 /**
  * Receives only one argument which is an object of options:
@@ -17,8 +17,7 @@ const ora = require("ora");
  */
 module.exports = function runCommand(options) {
   const spinner =
-    options.loadingMessage &&
-    ora({ spinner: "bouncingBall", text: options.loadingMessage }).start();
+    options.loadingMessage && ora({ spinner: 'bouncingBall', text: options.loadingMessage }).start();
 
   return new Promise((resolve, reject) => {
     const command = spawn(...options.command);
@@ -40,7 +39,7 @@ module.exports = function runCommand(options) {
       refreshKillTimeout();
     }
 
-    command.stdout.on("data", data => {
+    command.stdout.on('data', data => {
       if (options.timeout) {
         refreshKillTimeout();
       }
@@ -52,7 +51,7 @@ module.exports = function runCommand(options) {
       }
     });
 
-    command.stderr.on("data", data => {
+    command.stderr.on('data', data => {
       if (options.timeout) {
         refreshKillTimeout();
       }
@@ -62,7 +61,7 @@ module.exports = function runCommand(options) {
       }
     });
 
-    command.on("close", code => {
+    command.on('close', code => {
       if (options.timeout) {
         clearTimeout(killTimeout);
       }
@@ -70,7 +69,7 @@ module.exports = function runCommand(options) {
         if (spinner && options.successMessage) {
           spinner.succeed(options.successMessage);
         }
-        resolve({ spinner, result: result.join("\n") });
+        resolve({ spinner, result: result.join('\n') });
       } else {
         if (spinner && options.failureMessage) {
           spinner.fail(options.failureMessage);

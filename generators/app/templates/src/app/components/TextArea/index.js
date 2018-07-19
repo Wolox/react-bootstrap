@@ -5,13 +5,7 @@ import styles from './styles';
 
 function TextArea({ onChange, onBlur, onFocus, value }) {
   return (
-    <textarea
-      style={styles.textarea}
-      onChange={onChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      value={value}
-    />
+    <textarea style={styles.textarea} onChange={onChange} onBlur={onBlur} onFocus={onFocus} value={value} />
   );
 }
 
