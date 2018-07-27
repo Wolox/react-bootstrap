@@ -43,6 +43,10 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 
+module.exports.COMPONENTS_REDUX = [
+  `${COMPONENTS_PATH}/Field/index.js`,
+]
+
 module.exports.TEMPLATE_FILES = [
   'config-overrides.js',
   'eslintrc.js',
@@ -74,7 +78,8 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.js`,
   `${CONSTANTS_PATH}/fonts.js`,
-  `${CONSTANTS_PATH}/sizes.js`
+  `${CONSTANTS_PATH}/sizes.js`,
+  ...COMPONENTS_REDUX
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
