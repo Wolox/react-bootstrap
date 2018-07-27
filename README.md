@@ -24,24 +24,22 @@ bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/developme
 
 3- Add .env file with your API_BASE_URL
 
-
 ## Components
 
 This are the components you can to choose for your app.
-- SearchBar
-- TextArea
-- Field
+* SearchBar
+* TextArea
+* Field
 
-```
-SearchBar
-```
+###SearchBar
+
 The component contain this props:
-- className
-- formClassName
-- buttonClassName
-- textButtonSearch
-- children
-- handleSubmit
+* className
+* formClassName
+* buttonClassName
+* textButtonSearch
+* children
+* handleSubmit
 
 Should be called this way.
 
@@ -89,13 +87,12 @@ If you decided to use redux-form you must add it to the component and use it in 
 </SearchBar
 ```
 
-```
-Field
-```
-The component only use with redux-form, contain this props
-- input
+###Field
 
-Use it in this way.
+The component only use with redux-form, contain this props.
+* input
+
+Use it in this way:
 
 ```
 numberInput = wrapField(NumberInput);
@@ -109,5 +106,4 @@ numberInput = wrapField(NumberInput);
   validate={defaultPriceValidation}
   normalize={normalizePrice}
 />
-
 ```

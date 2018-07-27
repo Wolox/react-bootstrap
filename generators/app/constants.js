@@ -35,6 +35,11 @@ module.exports.LINTER_PATH = {
   destination: '.eslintrc.js'
 };
 
+module.exports.FLOWCONFIG_PATH = {
+  src: 'flowconfig',
+  destination: '.flowconfig'
+};
+
 const COMPONENTS_PATH = 'src/app/components';
 const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
@@ -43,13 +48,12 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 
-module.exports.COMPONENTS_REDUX = [
+module.exports.REDUX_COMPONENTS = [
   `${COMPONENTS_PATH}/Field/index.js`,
 ]
 
 module.exports.TEMPLATE_FILES = [
   'config-overrides.js',
-  'eslintrc.js',
   'pull_request_template.md',
   'circle.yml',
   'src/index.js',
@@ -78,8 +82,35 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.js`,
   `${CONSTANTS_PATH}/fonts.js`,
-  `${CONSTANTS_PATH}/sizes.js`,
-  ...COMPONENTS_REDUX
+  `${CONSTANTS_PATH}/sizes.js`
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
+
+module.exports.OPTIONAL_DEPENDENCIES = {
+  redux: {
+    dependencies: [
+      'redux',
+      'redux-recompose',
+      'redux-form',
+      'redux-thunk',
+      'react-router',
+      'react-router-redux',
+      'redux-beacon'
+    ]
+  },
+  apisauce: { dependencies: ['apisauce'] },
+  'babel-module-resolver': {
+    dependencies: ['babel-plugin-module-resolver'],
+    devDependencies: ['eslint-import-resolver-babel-module']
+  },
+  jest: { dependencies: ['jest'] },
+  moment: { dependencies: ['moment'] },
+  'prop-types': { dependencies: ['prop-types'] },
+  'seamless-immutable': { dependencies: ['seamless-immutable'] },
+  flow: {
+    dependencies: ['babel-cli'],
+    devDependencies: ['flow-bin', 'babel-preset-flow']
+  },
+  reselect: { dependencies: ['reselect'] }
+};
