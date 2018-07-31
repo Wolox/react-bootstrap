@@ -1,5 +1,3 @@
-const { COMPONENTS_REDUX } = require('../constants');
-
 module.exports.copy = function copy(src, des) {
   this.fs.copy(this.templatePath(src), this.destinationPath(`${this.projectName}/${des}`));
 };
