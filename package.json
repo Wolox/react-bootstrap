@@ -33,7 +33,7 @@
   "dependencies": {
     "eslint-config-wolox": "^1.0.0",
     "latest-semver": "^1.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "ora": "^2.1.0",
     "semver-regex": "^2.0.0",

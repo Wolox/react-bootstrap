@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SearchBarContainer({ textButtonSearch, className, formClassName, buttonClassName, handleSubmit, children }) {
+function SearchBarContainer({
+  textButtonSearch,
+  className,
+  formClassName,
+  buttonClassName,
+  handleSubmit,
+  children
+}) {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className={formClassName}>

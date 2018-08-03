@@ -1,6 +1,12 @@
 const mkdirp = require('mkdirp');
 
-const { TEMPLATE_FILES, LINTER_PATH, LOCAL_STORAGE_FILE, FLOWCONFIG_PATH, REDUX_COMPONENTS } = require('../constants');
+const {
+  TEMPLATE_FILES,
+  LINTER_PATH,
+  LOCAL_STORAGE_FILE,
+  FLOWCONFIG_PATH,
+  REDUX_COMPONENTS
+} = require('../constants');
 
 const { copyTpl, copy } = require('./utils');
 
