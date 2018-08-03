@@ -15,7 +15,7 @@
     "deploy": "npm run build",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
-    "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js",
+    "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js",
     "precommit": "npm run lint"
   },
   "repository": "git+https://github.com/Wolox/react-bootstrap.git",
