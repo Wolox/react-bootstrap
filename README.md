@@ -31,7 +31,7 @@ This are the components you can to choose for your app.
 * TextArea
 * Field
 
-###SearchBar
+### SearchBar
 
 The component contain this props:
 * className
@@ -87,7 +87,7 @@ If you decided to use redux-form you must add it to the component and use it in 
 </SearchBar
 ```
 
-###Field
+### Field
 
 The component only use with redux-form, contain this props.
 * input
@@ -95,15 +95,12 @@ The component only use with redux-form, contain this props.
 Use it in this way:
 
 ```
-numberInput = wrapField(NumberInput);
+input = wrapField(Input);
 
 <Field
-  name={fieldName}
-  component={this.numberInput}
-  displayType="input"
-  prefix={PRICE_PREFIX}
-  className={styles.numberInput}
-  validate={defaultPriceValidation}
-  normalize={normalizePrice}
+  name={fieldName}  
+  type="text"
+  component={this.input}
+  className={styles.input}
 />
 ```
