@@ -1,6 +1,6 @@
 const mkdirp = require('mkdirp');
 
-const { TEMPLATE_FILES, LINTER_PATH, LOCAL_STORAGE_FILE, FLOWCONFIG_PATH } = require('../constants');
+const { TEMPLATE_FILES, LINTER_PATH, LOCAL_STORAGE_FILE, FLOWCONFIG_PATH, REDUX_COMPONENTS } = require('../constants');
 
 const { copyTpl, copy } = require('./utils');
 
@@ -14,6 +14,10 @@ module.exports = function copyTemplateFiles() {
 
   if (this.features.flow) {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
+  }
+
+  if (this.features.redux) {
+    REDUX_COMPONENTS.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
   }
 
   bindedCopy(LINTER_PATH.src, LINTER_PATH.destination);

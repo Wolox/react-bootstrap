@@ -29,10 +29,11 @@ bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/developme
 This are the components you can to choose for your app.
 * SearchBar
 * TextArea
+* Field
 
-###SearchBar
+### SearchBar
 
-The component SearchBar contain this props:
+The component contain this props:
 * className
 * formClassName
 * buttonClassName
@@ -84,4 +85,22 @@ If you decided to use redux-form you must add it to the component and use it in 
     />
   <div>
 </SearchBar
+```
+
+### Field
+
+The component only use with redux-form, contain this props.
+* input
+
+Use it in this way:
+
+```
+input = wrapField(Input);
+
+<Field
+  name={fieldName}  
+  type="text"
+  component={this.input}
+  className={styles.input}
+/>
 ```

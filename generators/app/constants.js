@@ -48,6 +48,10 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 
+module.exports.REDUX_COMPONENTS = [
+  `${COMPONENTS_PATH}/Field/index.js`,
+]
+
 module.exports.TEMPLATE_FILES = [
   'config-overrides.js',
   'pull_request_template.md',
