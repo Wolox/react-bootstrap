@@ -30,6 +30,7 @@ This are the components you can to choose for your app.
 * SearchBar
 * TextArea
 * Field
+* Spinner
 
 ### SearchBar
 
@@ -104,3 +105,42 @@ input = wrapField(Input);
   className={styles.input}
 />
 ```
+
+### Spinner
+
+The component contain this props:
+* WrappedComponent
+* classNameContainer
+* classNameLoading
+* idLoading
+* colorSpinner
+
+Contain this component:
+* Loading 
+  * className
+  * id
+  * colorSpinner
+
+
+In the example we will use it with the SearchBar component.
+
+```
+src/components/SearchBar
+
+//Import into the component to be used.
+import { withSpinner } from '../Spinner';
+
+//Include in the definition of the component to be used. In this case is SearchBar.
+export default withSpinner({
+  WrappedComponent: SearchBarContainer,
+  idLoading: 1,
+  classNameContainer: styles.spinner
+});
+
+```
+
+Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/ 
+
+
+
+

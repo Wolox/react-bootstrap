@@ -13,7 +13,8 @@ const DEPENDENCIES = [
   'react',
   'react-dom',
   'react-router',
-  'react-router-dom'
+  'react-router-dom',
+  'react-spinkit'
 ];
 
 const DEV_DEPENDENCIES = [
