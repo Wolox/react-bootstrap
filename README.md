@@ -139,8 +139,4 @@ export default withSpinner({
 
 ```
 
-Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/ 
-
-
-
-
+Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/
