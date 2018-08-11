@@ -46,11 +46,11 @@ Should be called this way.
 
 ````
 <SearchBar handleSubmit={this.onSubmit}> 
-  <label className="Label-search">
+  <label className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
   </label>
-  <label className="Label-search">
+  <label className={styles.labelSearch}>
     Last Name:
     <input name="lastName" id="lastName" type="input" onChange={this.onChange}/>
   </label>
@@ -132,7 +132,6 @@ import { withSpinner } from '../Spinner';
 
 //Include in the definition of the component to be used. In this case is SearchBar.
 export default withSpinner({
-  WrappedComponent: SearchBarContainer,
   idLoading: 1,
   classNameContainer: styles.spinner
 });
