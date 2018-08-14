@@ -5,6 +5,7 @@ import { apiSetup } from '../config/api';
 import store from '../redux/store';
 
 import Routes from './components/Routes';
+import '../scss/application.scss';
 
 class App extends Component {
   componentDidMount() {

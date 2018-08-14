@@ -104,3 +104,53 @@ input = wrapField(Input);
   className={styles.input}
 />
 ```
+
+## Base Styles
+
+This boostrap is using https://github.com/Wolox/equalizer reset the default styles of the browser and contains these sources to generalize classes of flex-box, margins and width.
+* components.scss
+  * full-width
+  * half-width
+  * quarter-width
+* margins.scss
+  * m-top-*
+  * m-right-*
+  * m-bottom-*
+  * m-left-*
+* layout.scss
+  * row / column
+    * top
+    * middle
+    * bottom
+    * start
+    * center
+    * end 
+    * space-between
+    * space-around 
+    * wrap 
+    * reverse
+    * self-to/middle/bottom/stretch
+  
+
+Use it in this way:
+
+```js
+<div className="row center middle full-width">
+  <Input
+    name={fieldName}  
+    type="text"
+    className={`row center m-top-2 ${styles.input}`}
+  />
+</div>
+```
+
+"row center middle full-width" is equals a this:
+```css
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+```
