@@ -16,7 +16,7 @@ You don't need to clone this repository. Just follow this steps:
 
 1- Run the following command:
 
-```
+```bash
 bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) [--verbose]
 ```
 
@@ -44,7 +44,7 @@ The component contain this props:
 
 Should be called this way.
 
-````
+```js
 <SearchBar handleSubmit={this.onSubmit}> 
   <label className={styles.labelSearch}>
     Name:
@@ -55,11 +55,11 @@ Should be called this way.
     <input name="lastName" id="lastName" type="input" onChange={this.onChange}/>
   </label>
 </SearchBar>
-````
+```
 
 If you decided to use redux-form you must add it to the component and use it in this way.
 
-```
+```js
 <SearchBar
   onSubmit={handleSubmit}
   className={styles.userFormContainer}
@@ -95,7 +95,7 @@ The component only use with redux-form, contain this props.
 
 Use it in this way:
 
-```
+```js
 input = wrapField(Input);
 
 <Field
@@ -124,7 +124,7 @@ Contain this component:
 
 In the example we will use it with the SearchBar component.
 
-```
+```js
 src/components/SearchBar
 
 //Import into the component to be used.
@@ -133,9 +133,9 @@ import { withSpinner } from '../Spinner';
 //Include in the definition of the component to be used. In this case is SearchBar.
 export default withSpinner({
   idLoading: 1,
-  classNameContainer: styles.spinner
+  classNameContainer: styles.spinnerContainer,
+  classNameLoading: styles.spinner
 });
-
 ```
 
 Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/
