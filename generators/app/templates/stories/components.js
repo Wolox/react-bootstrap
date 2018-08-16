@@ -12,8 +12,10 @@ const styleContainer = {
   marginTop: '40px'
 };
 
+import styles from './styles.scss';
+
 storiesOf('SearchBar', module).add('Default', () => (
-  <SearchBar textButtonSearch="Search" handleSubmit={action('clicked')}>
+  <SearchBar textButtonSearch="Search" className={styles.searchBarContainer} handleSubmit={action('clicked')}>
     <input name="input1" />
     <input name="input2" />
   </SearchBar>

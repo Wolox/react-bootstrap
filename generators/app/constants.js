@@ -87,7 +87,9 @@ module.exports.TEMPLATE_FILES = [
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
-  `${STORIES_PATH}/components.js`
+  `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
+  `${STORIES_PATH}/components.js`,
+  `${STORIES_PATH}/styles.scss`
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
