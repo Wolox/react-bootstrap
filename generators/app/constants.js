@@ -48,6 +48,8 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
+const STORYBOOK_CONFIG_PATH = '.storybook/';
+const STORIES_PATH = 'stories/';
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
@@ -86,7 +88,11 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.js`,
   `${CONSTANTS_PATH}/fonts.js`,
-  `${CONSTANTS_PATH}/sizes.js`
+  `${CONSTANTS_PATH}/sizes.js`,
+  `${STORYBOOK_CONFIG_PATH}/config.js`,
+  `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
+  `${STORIES_PATH}/components.js`,
+  `${STORIES_PATH}/styles.scss`
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
