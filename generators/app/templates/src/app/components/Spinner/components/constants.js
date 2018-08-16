@@ -8,5 +8,8 @@ export const TYPE_SPINNER = {
   5: 'wandering-cubes',
   6: 'chasing-dots',
   7: 'cube-grid',
-  8: 'wordpress'
+  8: 'wordpress',
+  9: 'folding-cube',
+  10: 'ball-triangle-path',
+  11: 'ball-pulse-sync'
 };

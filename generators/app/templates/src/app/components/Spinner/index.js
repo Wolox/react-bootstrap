@@ -14,7 +14,7 @@ export function withSpinner({
     const { loading } = props;
     return loading ? (
       <div className={classNameContainer}>
-        <Loading className={classNameLoading} id={idLoading} colorSpinner={colorSpinner} />
+        <Loading className={classNameLoading} id={idLoading} color={colorSpinner} />
       </div>
     ) : (
       <WrappedComponent {...props} />
