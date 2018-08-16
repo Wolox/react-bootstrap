@@ -11,8 +11,8 @@ function TextArea({ onChange, onBlur, onFocus, value }) {
 
 TextArea.propTypes = {
   onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
-  onFocus: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   value: PropTypes.string.isRequired
 };
 
