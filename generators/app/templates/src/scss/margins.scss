@@ -1,4 +1,13 @@
-$scale: 10;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@media (max-width: $breakpoint-tablet) {
+  $scale: 5;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  $scale: 10;
+}
 
 $min-top: 10;
 $max-top: 100;
