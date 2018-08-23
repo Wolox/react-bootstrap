@@ -47,6 +47,7 @@ const REDUX_PATH = 'src/redux';
 const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
+const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 
@@ -69,6 +70,11 @@ module.exports.TEMPLATE_FILES = [
   `${SERVICES_PATH}/AuthServices.js`,
   `${SERVICES_PATH}/LocalStorageService.js`,
   `${SERVICES_PATH}/AnalyticsService.js`,
+  SCSS_PATH,
+  `${SCSS_PATH}/application.scss`,
+  `${SCSS_PATH}/components.scss`,
+  `${SCSS_PATH}/layout.scss`,
+  `${SCSS_PATH}/margins.scss`,
   UTILS_PATH,
   `${UTILS_PATH}/colors.js`,
   `${UTILS_PATH}/array.js`,
