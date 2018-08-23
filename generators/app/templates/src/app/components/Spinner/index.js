@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Loading from './components/loading';
+import { TYPE_SPINNER } from './components/constants';
 
 export function withSpinner({
   WrappedComponent,
   classNameContainer,
   classNameLoading,
-  idLoading,
+  typeLoading,
   colorSpinner
 }) {
-  function Spinner(props) {
-    const { loading } = props;
+  function Spinner({ loading }) {
     return loading ? (
       <div className={classNameContainer}>
-        <Loading className={classNameLoading} id={idLoading} color={colorSpinner} />
+        <Loading className={classNameLoading} type={typeLoading} color={colorSpinner} />
       </div>
     ) : (
       <WrappedComponent {...props} />
@@ -32,7 +32,7 @@ withSpinner.propTypes = {
   WrappedComponent: PropTypes.node,
   classNameContainer: PropTypes.string,
   classNameLoading: PropTypes.string,
-  idLoading: PropTypes.number,
+  typeLoading: PropTypes.oneOf(TYPE_SPINNER),
   colorSpinner: PropTypes.string
 };
 

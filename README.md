@@ -46,11 +46,11 @@ Should be called this way.
 
 ```js
 <SearchBar handleSubmit={this.onSubmit}> 
-  <label className={styles.labelSearch}>
+  <label for="name" className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
   </label>
-  <label className={styles.labelSearch}>
+  <label for="lastName" className={styles.labelSearch}>
     Last Name:
     <input name="lastName" id="lastName" type="input" onChange={this.onChange}/>
   </label>
@@ -90,7 +90,7 @@ If you decided to use redux-form you must add it to the component and use it in 
 
 ### Field
 
-The component only use with redux-form, contain this props.
+The component only use with redux-form, contains these props.
 * input
 
 Use it in this way:
@@ -108,14 +108,14 @@ input = wrapField(Input);
 
 ### Spinner
 
-The component contain this props:
+The component contains these props:
 * WrappedComponent
 * classNameContainer
 * classNameLoading
 * idLoading
 * colorSpinner
 
-Contain this component:
+Contains this component:
 * Loading 
   * className
   * id

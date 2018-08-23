@@ -4,19 +4,19 @@ import Spinner from 'react-spinkit';
 
 import { COLOR_SPINNER, TYPE_SPINNER, SPINNER_DEFAULT } from './constants';
 
-function Loading({ className, id, color }) {
-  return <Spinner name={TYPE_SPINNER[id]} fadeIn="half" color={color} className={className} />;
+function Loading({ className, type, color }) {
+  return <Spinner name={type} fadeIn="half" color={color} className={className} />;
 }
 
 Loading.defaultProps = {
   className: '',
   color: COLOR_SPINNER,
-  id: SPINNER_DEFAULT
+  type: SPINNER_DEFAULT
 };
 
 Loading.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  type: PropTypes.oneOf(TYPE_SPINNER),
   color: PropTypes.string
 };
 

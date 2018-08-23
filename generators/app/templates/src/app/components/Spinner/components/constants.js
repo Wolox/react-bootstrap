@@ -1,15 +1,15 @@
 export const COLOR_SPINNER = '#000';
-export const SPINNER_DEFAULT = 1;
-export const TYPE_SPINNER = {
-  1: 'three-bounce',
-  2: 'circle',
-  3: 'double-bounce',
-  4: 'ball-clip-rotate',
-  5: 'wandering-cubes',
-  6: 'chasing-dots',
-  7: 'cube-grid',
-  8: 'wordpress',
-  9: 'folding-cube',
-  10: 'ball-triangle-path',
-  11: 'ball-pulse-sync'
-};
+export const SPINNER_DEFAULT = 'three-bounce';
+export const TYPE_SPINNER = [
+  'three-bounce',
+  'circle',
+  'double-bounce',
+  'ball-clip-rotate',
+  'wandering-cubes',
+  'chasing-dots',
+  'cube-grid',
+  'wordpress',
+  'folding-cube',
+  'ball-triangle-path',
+  'ball-pulse-sync'
+];
