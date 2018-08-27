@@ -132,7 +132,7 @@ import { withSpinner } from '../Spinner';
 
 //Include in the definition of the component to be used. In this case is SearchBar.
 export default withSpinner({
-  idLoading: 1,
+  type: 'double-bounce',
   classNameContainer: styles.spinnerContainer,
   classNameLoading: styles.spinner
 });
