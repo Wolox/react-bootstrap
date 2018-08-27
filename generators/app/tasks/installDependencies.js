@@ -14,6 +14,7 @@ const DEPENDENCIES = [
   'react-dom',
   'react-router',
   'react-router-dom',
+  'react-spinkit',
   'wolox-equalizer'
 ];
 
