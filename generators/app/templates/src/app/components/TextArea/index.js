@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './styles';
-
-function TextArea({ onChange, onBlur, onFocus, value }) {
+function TextArea({ className, onChange, onBlur, onFocus, value }) {
   return (
-    <textarea style={styles.textarea} onChange={onChange} onBlur={onBlur} onFocus={onFocus} value={value} />
+    <textarea className={className} onChange={onChange} onBlur={onBlur} onFocus={onFocus} value={value} />
   );
 }
 
 TextArea.propTypes = {
+  className: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,

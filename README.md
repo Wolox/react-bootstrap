@@ -27,20 +27,20 @@ bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/developme
 ## Components
 
 This are the components you can to choose for your app.
-* SearchBar
-* TextArea
-* Field
-* Spinner
+  * SearchBar
+  * TextArea
+  * Field
+  * Spinner
 
 ### SearchBar
 
-The component contain this props:
-* className
-* formClassName
-* buttonClassName
-* textButtonSearch
-* children
-* handleSubmit
+The component contains these propss:
+  * textButtonSearch: PropTypes.string
+  * className: PropTypes.string
+  * formClassName: PropTypes.string
+  * buttonClassName: PropTypes.string
+  * children: PropTypes.node
+  * handleSubmit: PropTypes.func.isRequired
 
 Should be called this way.
 
@@ -88,10 +88,50 @@ If you decided to use redux-form you must add it to the component and use it in 
 </SearchBar
 ```
 
+### TextArea
+
+The component contains these props.
+  * className: PropTypes.string,
+  * onChange: PropTypes.func.isRequired,
+  * onBlur: PropTypes.func,
+  * onFocus: PropTypes.func,
+  * value: PropTypes.string.isRequired
+
+Should be called this way.
+
+```js
+<TextArea 
+  className={styles.textArea}
+  value={this.textArea}
+  onChange={this.handleChange}
+  onFocus={this.handleFocus}
+/>
+```
+
+If you decided to use redux-form you must add it to the component and use it in this way.
+
+```js
+textArea = wrapField(TextArea);
+
+<Field
+  name={fieldName}  
+  component={this.textArea}
+  className={styles.textArea}
+/>
+```
+
 ### Field
 
 The component only use with redux-form, contains these props.
-* input
+  * input: PropTypes.shape({
+      name: PropTypes.string
+      onBlur: PropTypes.func
+      onChange: PropTypes.func
+      onDragStart: PropTypes.func
+      onDrop: PropTypes.func
+      onFocus: PropTypes.func
+      value: PropTypes.string
+    }).isRequired
 
 Use it in this way:
 
@@ -109,18 +149,17 @@ input = wrapField(Input);
 ### Spinner
 
 The component contains these props:
-* WrappedComponent
-* classNameContainer
-* classNameLoading
-* idLoading
-* colorSpinner
+  * WrappedComponent: PropTypes.node
+  * classNameContainer: PropTypes.string
+  * classNameLoading: PropTypes.string
+  * typeLoading: PropTypes.oneOf(TYPE_SPINNER)
+  * colorSpinner: PropTypes.string
 
 Contains this component:
-* Loading 
-  * className
-  * id
-  * colorSpinner
-
+* Loading
+  * className: PropTypes.string,
+  * type: PropTypes.oneOf(TYPE_SPINNER),
+  * color: PropTypes.string
 
 In the example we will use it with the SearchBar component.
 
@@ -179,7 +218,10 @@ Use it in this way:
 </div>
 ```
 
-"row center middle full-width" is equals a this:
+```js 
+className="row center middle full-width"
+// Is equals a this:
+``` 
 ```css
 {
   display: flex;
