@@ -33,7 +33,7 @@ const DEV_DEPENDENCIES = [
   'prettier',
   'prettier-eslint',
   'react-scripts',
-  'wolox-react-scripts',
+  'react-app-rewire-wolox',
   '@storybook/react'
 ];
 

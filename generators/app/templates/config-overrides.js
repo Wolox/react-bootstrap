@@ -1,4 +1,5 @@
-module.exports = function override(config) {
-  // do stuff with the webpack config...
-  return config;
+const rewireWolox = require('react-app-rewire-wolox');
+
+module.exports = function override(config, env) {
+  return rewireWolox(config, env);
 };
