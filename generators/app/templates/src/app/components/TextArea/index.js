@@ -15,4 +15,8 @@ TextArea.propTypes = {
   value: PropTypes.string.isRequired
 };
 
+TextArea.defaultProps = {
+  className: ''
+};
+
 export default TextArea;
