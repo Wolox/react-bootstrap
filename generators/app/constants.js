@@ -57,6 +57,7 @@ module.exports.FILES = [
   'config-overrides.js',
   'pull_request_template.md',
   'circle.yml',
+  'src/index.js',
   'src/app/index.js',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
@@ -77,7 +78,10 @@ module.exports.FILES = [
   UTILS_PATH,
   `${UTILS_PATH}/colors.js`,
   `${UTILS_PATH}/array.js`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/assets`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/assets/logo.svg`,
   `${SCREENS_PATH}/Dashboard/screens/Home/index.js`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/styles.scss`,
   `${SCREENS_PATH}/Dashboard/index.js`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/constants.js`,
@@ -97,7 +101,7 @@ module.exports.FILES = [
   `${STORIES_PATH}/styles.scss`
 ];
 
-module.exports.TEMPLATE_FILES = ['src/index.js'];
+module.exports.TEMPLATE_FILES = [];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
 

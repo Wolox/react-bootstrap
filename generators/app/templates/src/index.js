@@ -1,24 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
 
 import App from './app';
+
 import './config/i18n';
-<%_ if(features.redux) { _%>
-import store from './redux/store';
-<%_ } _%>
+import './scss/application.scss';
 
 const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <%_ if (features.redux) { _%>
-      <Provider store={store}>
-        <App />
-      </Provider>
-      <%_ } else { _%>
-      <App />      
-      <%_ } _%>
+      <App />
     </AppContainer>,
     document.getElementById('root')
   );

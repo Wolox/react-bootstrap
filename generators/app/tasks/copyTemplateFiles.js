@@ -12,8 +12,8 @@ const {
 const { copyTpl, copy, copyEjsTpl } = require('./utils');
 
 module.exports = function copyTemplateFiles() {
-  const bindedCopyTpl = copyTpl.bind(this);
   const bindedCopy = copy.bind(this);
+  const bindedCopyTpl = copyTpl.bind(this);
   const bindedCopyEjsTpl = copyEjsTpl.bind(this);
 
   FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
