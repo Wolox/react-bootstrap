@@ -53,11 +53,10 @@ const STORIES_PATH = 'stories/';
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
-module.exports.TEMPLATE_FILES = [
+module.exports.FILES = [
   'config-overrides.js',
   'pull_request_template.md',
   'circle.yml',
-  'src/index.js',
   'src/app/index.js',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
@@ -97,6 +96,8 @@ module.exports.TEMPLATE_FILES = [
   `${STORIES_PATH}/components.js`,
   `${STORIES_PATH}/styles.scss`
 ];
+
+module.exports.TEMPLATE_FILES = ['src/index.js'];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
 

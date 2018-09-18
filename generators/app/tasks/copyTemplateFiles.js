@@ -1,6 +1,7 @@
 const mkdirp = require('mkdirp');
 
 const {
+  FILES,
   TEMPLATE_FILES,
   LINTER_PATH,
   LOCAL_STORAGE_FILE,
@@ -8,13 +9,16 @@ const {
   REDUX_COMPONENTS
 } = require('../constants');
 
-const { copyTpl, copy } = require('./utils');
+const { copyTpl, copy, copyEjsTpl } = require('./utils');
 
 module.exports = function copyTemplateFiles() {
   const bindedCopyTpl = copyTpl.bind(this);
   const bindedCopy = copy.bind(this);
+  const bindedCopyEjsTpl = copyEjsTpl.bind(this);
 
-  TEMPLATE_FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+  FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+
+  TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
 
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
 
