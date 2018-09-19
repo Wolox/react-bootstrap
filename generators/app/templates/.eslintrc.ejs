@@ -1,0 +1,7 @@
+module.exports = {
+  extends: ['wolox'<% if (features.flow) { %>, 'plugin:flowtype/recommended'<% } %>],  <% if (features.flow) { %>
+  plugins: ['flowtype'],<% } %>
+  rules: {
+    'jsx-a11y/href-no-hash': 'off'
+  }
+};

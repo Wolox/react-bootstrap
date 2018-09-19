@@ -30,16 +30,6 @@ module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            �
   'Welcome to the React kickoff'
 )}\n\n  `;
 
-module.exports.LINTER_PATH = {
-  src: 'eslintrc.js',
-  destination: '.eslintrc.js'
-};
-
-module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
-};
-
 const COMPONENTS_PATH = 'src/app/components';
 const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
@@ -51,6 +41,11 @@ const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 
+module.exports.FLOWCONFIG_PATH = {
+  src: 'flowconfig',
+  destination: '.flowconfig'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.FILES = [
@@ -58,7 +53,6 @@ module.exports.FILES = [
   'pull_request_template.md',
   'circle.yml',
   'src/index.js',
-  'src/app/index.js',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
   `${CONFIG_PATH}/numeral.js`,
@@ -68,7 +62,6 @@ module.exports.FILES = [
   `${REDUX_PATH}/Auth/reducer.js`,
   SERVICES_PATH,
   `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/LocalStorageService.js`,
   `${SERVICES_PATH}/AnalyticsService.js`,
   SCSS_PATH,
   `${SCSS_PATH}/application.scss`,
@@ -85,11 +78,10 @@ module.exports.FILES = [
   `${SCREENS_PATH}/Dashboard/index.js`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/constants.js`,
-  `${COMPONENTS_PATH}/Routes/index.js`,
+  `${COMPONENTS_PATH}/Routes/styles.js`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
-  `${COMPONENTS_PATH}/Routes/styles.js`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.js`,
@@ -103,6 +95,10 @@ module.exports.FILES = [
 
 module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
+  '.eslintrc.js',
+  'src/app/index.js',
+  `${COMPONENTS_PATH}/Routes/index.js`,
+  `${SERVICES_PATH}/LocalStorageService.js`
 ];
 
 module.exports.FILES_TO_DELETE = [
@@ -113,18 +109,17 @@ module.exports.FILES_TO_DELETE = [
   'src/logo.svg'
 ];
 
-module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
-
 module.exports.OPTIONAL_DEPENDENCIES = {
   redux: {
     dependencies: [
+      'connected-react-router',
+      'react-redux',
       'redux',
-      'redux-recompose',
+      'redux-beacon',
       'redux-form',
-      'redux-thunk',
+      'redux-recompose',
       'react-router',
-      'react-router-redux',
-      'redux-beacon'
+      'redux-thunk'
     ]
   },
   apisauce: { dependencies: ['apisauce'] },

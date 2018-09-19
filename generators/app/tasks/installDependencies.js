@@ -15,10 +15,7 @@ const DEPENDENCIES = [
   'react-router',
   'react-router-dom',
   'react-spinkit',
-  'wolox-equalizer',
-  // TODO: Handle this both dependencies according redux feature
-  'react-redux',
-  'connected-react-router'
+  'wolox-equalizer'
 ];
 
 const DEV_DEPENDENCIES = [
