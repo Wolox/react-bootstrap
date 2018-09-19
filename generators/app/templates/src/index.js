@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import App from './app';
-
+import registerServiceWorker from './registerServiceWorker';
 import './config/i18n';
 import './scss/application.scss';
 
@@ -18,6 +18,8 @@ const render = () => {
 
 // Render once
 render(App);
+
+registerServiceWorker();
 
 // Webpack Hot Module Replacement API
 if (module.hot) {

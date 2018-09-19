@@ -9,6 +9,7 @@
 
 .app-header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #222;
@@ -18,10 +19,13 @@
 }
 
 .app-title {
+  color: white;
+  margin-top: 20px;
   font-size: 1.5em;
 }
 
 .app-intro {
+  color: black;
   margin-top: 20px;
   font-size: large;
 }
