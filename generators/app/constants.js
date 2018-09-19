@@ -101,7 +101,17 @@ module.exports.FILES = [
   `${STORIES_PATH}/styles.scss`
 ];
 
-module.exports.TEMPLATE_FILES = [];
+module.exports.TEMPLATE_FILES = [
+  // TODO: Insert here all template ejs files
+];
+
+module.exports.FILES_TO_DELETE = [
+  'src/App.css',
+  'src/App.js',
+  'src/App.test.js',
+  'src/index.css',
+  'src/logo.svg'
+];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
 

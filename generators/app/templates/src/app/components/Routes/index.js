@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import { Switch } from 'react-router-dom';
 
 import { history } from '../../../redux/store';
@@ -10,6 +10,7 @@ import * as Routes from './constants';
 import styles from './styles';
 
 function AppRoutes() {
+  // TODO: Handle ConnectedRouter connection according redux feature
   return (
     <ConnectedRouter history={history}>
       <div style={styles.container}>

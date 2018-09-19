@@ -28,3 +28,11 @@ module.exports.copyEjsTpl = function copyEjsTpl(filepath) {
     { projectName: this.projectName, features: this.features }
   );
 };
+
+module.exports.deleteFiles = function deleteFiles(src) {
+  if (!this.fs) {
+    throw new Error('File utils functions needs to be binded to the generator context');
+  }
+
+  this.fs.delete(this.destinationPath(`${this.projectName}/${src}`));
+};

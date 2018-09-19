@@ -1,17 +1,17 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import { routerReducer as router, routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { reducer as form } from 'redux-form';
+import thunk from 'redux-thunk';
 
 // TODO Add this if you need it
 // import AnalyticsMiddleware from '../services/AnalyticsService';
 import { reducer as auth } from './Auth/reducer';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 // Add reducers here
-const reducers = combineReducers({ auth, form, router });
+const reducers = combineReducers({ auth, form });
 
 const middlewares = [routerMiddleware(history)];
 const enhancers = [];
@@ -19,7 +19,10 @@ const enhancers = [];
 /* ------------- Thunk Middleware ------------- */
 middlewares.push(thunk);
 
-// TODO Add this if you need it
+/* ------------- Connected React Router Middleware ------------- */
+middlewares.push(routerMiddleware(history));
+
+// TODO Add this if you need it.
 /* ------------- Analytics Middleware ------------- */
 // middlewares.push(AnalyticsMiddleware);
 
@@ -36,6 +39,6 @@ const rootReducer = (state, action) =>
   // }
   reducers(state, action);
 
-const store = createStore(rootReducer, composeEnhancers(...enhancers));
+const store = createStore(connectRouter(history)(rootReducer), composeEnhancers(...enhancers));
 
 export default store;

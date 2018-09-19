@@ -12,6 +12,7 @@ class App extends Component {
     apiSetup(store.dispatch);
   }
 
+  // TODO: Handle redux connection according redux feature
   render() {
     return (
       <Provider store={store}>

@@ -3,18 +3,22 @@ const mkdirp = require('mkdirp');
 const {
   FILES,
   TEMPLATE_FILES,
+  FILES_TO_DELETE,
   LINTER_PATH,
   LOCAL_STORAGE_FILE,
   FLOWCONFIG_PATH,
   REDUX_COMPONENTS
 } = require('../constants');
 
-const { copyTpl, copy, copyEjsTpl } = require('./utils');
+const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
 
 module.exports = function copyTemplateFiles() {
   const bindedCopy = copy.bind(this);
   const bindedCopyTpl = copyTpl.bind(this);
   const bindedCopyEjsTpl = copyEjsTpl.bind(this);
+  const bindedDeleteFiles = deleteFiles.bind(this);
+
+  FILES_TO_DELETE.forEach(src => bindedDeleteFiles(src));
 
   FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
 
