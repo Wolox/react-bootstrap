@@ -8,8 +8,8 @@ const PROMPTS = require('./prompts');
 const { KICKOFF_MESSAGE } = require('./constants');
 
 class GeneratorReact extends Generator {
-  constructor(args, opts) {
-    super(args, opts);
+  constructor(...args) {
+    super(...args);
 
     this.option('verbose', {
       desc: 'Turns on verbose logging',

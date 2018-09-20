@@ -13,14 +13,8 @@ export const history = createBrowserHistory();
 // Add reducers here
 const reducers = combineReducers({ auth, form });
 
-const middlewares = [routerMiddleware(history)];
+const middlewares = [thunk, routerMiddleware(history)];
 const enhancers = [];
-
-/* ------------- Thunk Middleware ------------- */
-middlewares.push(thunk);
-
-/* ------------- Connected React Router Middleware ------------- */
-middlewares.push(routerMiddleware(history));
 
 // TODO Add this if you need it.
 /* ------------- Analytics Middleware ------------- */
