@@ -1,6 +1,6 @@
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-$scale: 1;
+$scale: 4;
 
 @media (max-width: $breakpoint-tablet) {
   $scale: 5;
