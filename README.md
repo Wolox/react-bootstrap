@@ -192,28 +192,33 @@ Check every spinner variant here http://kyleamathews.github.io/react-spinkit/
 ## Base Styles
 
 This boostrap is using https://github.com/Wolox/equalizer reset the default styles of the browser and contains these sources to generalize classes of flex-box, margins and width.
-* components.scss
-  * full-width
-  * half-width
-  * quarter-width
-* margins.scss
-  * m-top-*
-  * m-right-*
-  * m-bottom-*
-  * m-left-*
-* layout.scss
-  * row / column
-    * top
-    * middle
-    * bottom
-    * start
-    * center
-    * end
-    * space-between
-    * space-around
-    * wrap
-    * reverse
-    * self-to/middle/bottom/stretch
+
+| Source | Class | Equals 
+|:---|:---|:---:|
+| components.scss | full-width | ``` width: 100% ``` |
+| | half-width | ``` width: 50% ``` |
+| | quarter-width | ``` width: 25% ```|
+| | | |
+| margins.scss | | sacale: 10px |
+| | m-top-x | ``` margin-top: {x * scale}px ```|
+| | m-right-x | ``` margin-right: {x * scale}px ```|
+| | m-bottom-x | ``` margin-bottom: {x * scale}px ```|
+| | m-left-x | ``` margin-left: {x * scale}px ```|
+| | | |
+| layout.scss| row | ``` display: flex flex-direction: row ```|
+| | column | ``` display: flex and flex-direction: column ```|
+| | top | ``` justify-content: flex-start ```|
+| | middle | ``` justify-content: center ```|
+| | bottom | ``` justify-content: flex-end ```|
+| | space-between | ``` justify-content: space-between ```|
+| | space-around | ``` justify-content: space-around ```|
+| | wrap | ``` flex-wrap: wrap ```|
+| | reverse | ``` flex-direction: row-reverse ```|
+| | self-top | ``` align-self: flex-start ```|
+| | self-middle | ``` align-self: center ```|
+| | self-bottom | ``` align-self: flex-end ```|
+| | self-stretch | ``` alingn-self: self-stretch ```|
+
 
 
 Use it in this way:
