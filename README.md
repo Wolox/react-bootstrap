@@ -34,18 +34,21 @@ This are the components you can to choose for your app.
 
 ### SearchBar
 
-The component contains these propss:
-  * textButtonSearch: PropTypes.string
-  * className: PropTypes.string
-  * formClassName: PropTypes.string
-  * buttonClassName: PropTypes.string
-  * children: PropTypes.node
-  * handleSubmit: PropTypes.func.isRequired
+**Props**
 
-Should be called this way.
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| textButtonSearch | String | | |
+| className | String | | |
+| formClassName | String | | |
+| buttonClassName | String | | |
+| children | Node | | |
+| handleSubmit | Func | ✓ | |
 
-```js
-<SearchBar handleSubmit={this.onSubmit}> 
+**Usage**
+
+```jsx
+<SearchBar handleSubmit={this.onSubmit}>
   <label for="name" className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
@@ -59,7 +62,7 @@ Should be called this way.
 
 If you decided to use redux-form you must add it to the component and use it in this way.
 
-```js
+```jsx
 <SearchBar
   onSubmit={handleSubmit}
   className={styles.userFormContainer}
@@ -90,17 +93,20 @@ If you decided to use redux-form you must add it to the component and use it in 
 
 ### TextArea
 
-The component contains these props.
-  * className: PropTypes.string,
-  * onChange: PropTypes.func.isRequired,
-  * onBlur: PropTypes.func,
-  * onFocus: PropTypes.func,
-  * value: PropTypes.string.isRequired
+**Props**
 
-Should be called this way.
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| className | String | | |
+| value | String | ✓ | |
+| onChange | Func | ✓ | |
+| onBlur | Func | | |
+| onFocus | Func | | |
 
-```js
-<TextArea 
+**Usage**
+
+```jsx
+<TextArea
   className={styles.textArea}
   value={this.textArea}
   onChange={this.handleChange}
@@ -110,17 +116,19 @@ Should be called this way.
 
 If you decided to use redux-form you must add it to the component and use it in this way.
 
-```js
+```jsx
 textArea = wrapField(TextArea);
 
 <Field
-  name={fieldName}  
+  name={fieldName}
   component={this.textArea}
   className={styles.textArea}
 />
 ```
 
 ### Field
+
+**Props**
 
 The component only use with redux-form, contains these props.
   * input: PropTypes.shape({
@@ -133,13 +141,13 @@ The component only use with redux-form, contains these props.
       value: PropTypes.string
     }).isRequired
 
-Use it in this way:
+**Usage**
 
-```js
+```jsx
 input = wrapField(Input);
 
 <Field
-  name={fieldName}  
+  name={fieldName}
   type="text"
   component={this.input}
   className={styles.input}
@@ -148,12 +156,15 @@ input = wrapField(Input);
 
 ### Spinner
 
-The component contains these props:
-  * WrappedComponent: PropTypes.node
-  * classNameContainer: PropTypes.string
-  * classNameLoading: PropTypes.string
-  * typeLoading: PropTypes.oneOf(TYPE_SPINNER)
-  * colorSpinner: PropTypes.string
+**Props**
+
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| WrappedComponent | Node | | |
+| classNameContainer | String | | |
+| classNameLoading | String | | |
+| typeLoading | one of `TYPE_SPINNER` | | `TYPE_SPINNER = ['three-bounce','circle','double-bounce','ball-clip-rotate','wandering-cubes','chasing-dots','cube-grid','wordpress','folding-cube','ball-triangle-path','ball-pulse-sync']` |
+| colorSpinner | String | | |
 
 Contains this component:
 * Loading
@@ -161,11 +172,9 @@ Contains this component:
   * type: PropTypes.oneOf(TYPE_SPINNER),
   * color: PropTypes.string
 
-In the example we will use it with the SearchBar component.
+**Usage**
 
-```js
-src/components/SearchBar
-
+```jsx
 //Import into the component to be used.
 import { withSpinner } from '../Spinner';
 
@@ -177,7 +186,7 @@ export default withSpinner({
 });
 ```
 
-Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/
+Check every spinner variant here http://kyleamathews.github.io/react-spinkit/
 
 ## Base Styles
 
@@ -198,30 +207,30 @@ This boostrap is using https://github.com/Wolox/equalizer reset the default styl
     * bottom
     * start
     * center
-    * end 
+    * end
     * space-between
-    * space-around 
-    * wrap 
+    * space-around
+    * wrap
     * reverse
     * self-to/middle/bottom/stretch
-  
+
 
 Use it in this way:
 
 ```js
 <div className="row center middle full-width">
   <Input
-    name={fieldName}  
+    name={fieldName}
     type="text"
     className={`row center m-top-2 ${styles.input}`}
   />
 </div>
 ```
 
-```js 
+```js
 className="row center middle full-width"
 // Is equals a this:
-``` 
+```
 ```css
 {
   display: flex;
