@@ -39,11 +39,11 @@ This are the components you can to choose for your app.
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
 | textButtonSearch | String | | |
-| className | String | | |
-| formClassName | String | | |
-| buttonClassName | String | | |
-| children | Node | | |
-| handleSubmit | Func | ✓ | |
+| className | String | | Custom styles to apply to the search bar container |
+| formClassName | String | | Custom styles to apply to the form fields |
+| buttonClassName | String | | Custom styles to apply to the submit button |
+| children | Node | | Elements to be rendered inside the search bar |
+| handleSubmit | Func | ✓ | Function to be called on submit |
 
 **Usage**
 
@@ -97,11 +97,11 @@ If you decided to use redux-form you must add it to the component and use it in 
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
-| className | String | | |
-| value | String | ✓ | |
-| onChange | Func | ✓ | |
-| onBlur | Func | | |
-| onFocus | Func | | |
+| className | String | | Custom styles to apply to the text area container |
+| value | String | ✓ | As this is a controlled component, the input value must be passed to update the component's value |
+| onChange | Func | ✓ | Function to be called on text area input change |
+| onBlur | Func | | Function to be called on text area input blur |
+| onFocus | Func | | Function to be called on text area input focus |
 
 **Usage**
 
@@ -160,11 +160,11 @@ input = wrapField(Input);
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
-| WrappedComponent | Node | | |
-| classNameContainer | String | | |
-| classNameLoading | String | | |
-| typeLoading | one of `TYPE_SPINNER` | | `TYPE_SPINNER = ['three-bounce','circle','double-bounce','ball-clip-rotate','wandering-cubes','chasing-dots','cube-grid','wordpress','folding-cube','ball-triangle-path','ball-pulse-sync']` |
-| colorSpinner | String | | |
+| WrappedComponent | Node | | Component to be wrapped by the spinner |
+| classNameContainer | String | | Custom style to apply to the spinner container |
+| classNameLoading | String | | Custom styles to apply to the spinner when loading |
+| typeLoading | one of `TYPE_SPINNER` | | Spinner variants, `TYPE_SPINNER = ['three-bounce','circle','double-bounce','ball-clip-rotate','wandering-cubes','chasing-dots','cube-grid','wordpress','folding-cube','ball-triangle-path','ball-pulse-sync']` |
+| colorSpinner | String | | The spinner color. It can be either a hex value or a color word |
 
 Contains this component:
 * Loading
@@ -217,7 +217,7 @@ This boostrap is using https://github.com/Wolox/equalizer reset the default styl
 
 Use it in this way:
 
-```js
+```jsx
 <div className="row center middle full-width">
   <Input
     name={fieldName}
@@ -227,7 +227,7 @@ Use it in this way:
 </div>
 ```
 
-```js
+```jsx
 className="row center middle full-width"
 // Is equals a this:
 ```
