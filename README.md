@@ -38,7 +38,7 @@ This are the components you can to choose for your app.
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
-| textButtonSearch | String | | |
+| textButtonSearch | String | | Text to display inside the submit button |
 | className | String | | Custom styles to apply to the search bar container |
 | formClassName | String | | Custom styles to apply to the form fields |
 | buttonClassName | String | | Custom styles to apply to the submit button |
@@ -133,6 +133,7 @@ textArea = wrapField(TextArea);
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
 | input | Object | ✓ | |
+
 The component passes every other prop to the wrapped component.
 
 **input shape**
