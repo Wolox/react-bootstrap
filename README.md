@@ -45,7 +45,7 @@ The component contain this props:
 Should be called this way.
 
 ```js
-<SearchBar handleSubmit={this.onSubmit}> 
+<SearchBar handleSubmit={this.onSubmit}>
   <label for="name" className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
@@ -99,7 +99,7 @@ Use it in this way:
 input = wrapField(Input);
 
 <Field
-  name={fieldName}  
+  name={fieldName}
   type="text"
   component={this.input}
   className={styles.input}
@@ -116,7 +116,7 @@ The component contains these props:
 * colorSpinner
 
 Contains this component:
-* Loading 
+* Loading
   * className
   * id
   * colorSpinner
@@ -140,6 +140,31 @@ export default withSpinner({
 
 Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/
 
+### Checkbox
+
+**Props**
+
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| className | String | | Custom styles to apply to the checkbox container |
+| inputClassName | String | | Custom styles to apply to the checkbox input |
+| labelClassName | String | | Custom styles to apply to the checkbox associated label |
+| label | String | | Checkbox associated label |
+| name | String | | If associated to a form, the control name is submitted with the control's value as part of the form data |
+| disabled | Boolean | | Prevents the user from interacting with the input |
+| required | Boolean | | If associated to a form, it specifies if the user must fill in a value before submitting |
+
+**Usage**
+
+```jsx
+<Checkbox
+  className={styles.checkbox}
+  labelClassName={styles.checkboxLabel}
+  label="Acepto términos y condiciones"
+  onChange={handleChange}
+/>
+```
+
 ## Base Styles
 
 This boostrap is using https://github.com/Wolox/equalizer reset the default styles of the browser and contains these sources to generalize classes of flex-box, margins and width.
@@ -159,20 +184,20 @@ This boostrap is using https://github.com/Wolox/equalizer reset the default styl
     * bottom
     * start
     * center
-    * end 
+    * end
     * space-between
-    * space-around 
-    * wrap 
+    * space-around
+    * wrap
     * reverse
     * self-to/middle/bottom/stretch
-  
+
 
 Use it in this way:
 
 ```js
 <div className="row center middle full-width">
   <Input
-    name={fieldName}  
+    name={fieldName}
     type="text"
     className={`row center m-top-2 ${styles.input}`}
   />
