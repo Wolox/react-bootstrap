@@ -199,14 +199,14 @@ This boostrap is using https://github.com/Wolox/equalizer reset the default styl
 | | half-width | ``` width: 50% ``` |
 | | quarter-width | ``` width: 25% ```|
 | | | |
-| margins.scss | | sacale: 10px |
+| margins.scss | | scale: 10px |
 | | m-top-x | ``` margin-top: {x * scale}px ```|
 | | m-right-x | ``` margin-right: {x * scale}px ```|
 | | m-bottom-x | ``` margin-bottom: {x * scale}px ```|
 | | m-left-x | ``` margin-left: {x * scale}px ```|
 | | | |
 | layout.scss| row | ``` display: flex flex-direction: row ```|
-| | column | ``` display: flex and flex-direction: column ```|
+| | column | ``` display: flex flex-direction: column ```|
 | | top | ``` justify-content: flex-start ```|
 | | middle | ``` justify-content: center ```|
 | | bottom | ``` justify-content: flex-end ```|
