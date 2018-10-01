@@ -130,16 +130,22 @@ textArea = wrapField(TextArea);
 
 **Props**
 
-The component only use with redux-form, contains these props.
-  * input: PropTypes.shape({
-      name: PropTypes.string
-      onBlur: PropTypes.func
-      onChange: PropTypes.func
-      onDragStart: PropTypes.func
-      onDrop: PropTypes.func
-      onFocus: PropTypes.func
-      value: PropTypes.string
-    }).isRequired
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| input | Object | ✓ | |
+The component passes every other prop to the wrapped component.
+
+**input shape**
+
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| name | String | | |
+| value | String | | |
+| onBlur | Func | | |
+| onChange | Func | | |
+| onDragStart | Func | | |
+| onDrop | Func | | |
+| onFocus | Func | | |
 
 **Usage**
 
