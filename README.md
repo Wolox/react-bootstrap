@@ -173,12 +173,6 @@ input = wrapField(Input);
 | typeLoading | one of `TYPE_SPINNER` | | Spinner variants, `TYPE_SPINNER = ['three-bounce','circle','double-bounce','ball-clip-rotate','wandering-cubes','chasing-dots','cube-grid','wordpress','folding-cube','ball-triangle-path','ball-pulse-sync']` |
 | colorSpinner | String | | The spinner color. It can be either a hex value or a color word |
 
-Contains this component:
-* Loading
-  * className: PropTypes.string,
-  * type: PropTypes.oneOf(TYPE_SPINNER),
-  * color: PropTypes.string
-
 **Usage**
 
 ```jsx
