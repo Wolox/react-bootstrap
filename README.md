@@ -130,23 +130,23 @@ textArea = wrapField(TextArea);
 
 **Props**
 
-| Property | Type | Required? | Description |
-|:---|:---|:---:|:---|
-| input | Object | ✓ | |
+| Property | Type | Required? |
+|:---|:---|:---:|
+| input | Object | ✓ |
 
 The component passes every other prop to the wrapped component.
 
 **input shape**
 
-| Property | Type | Required? | Description |
-|:---|:---|:---:|:---|
-| name | String | | |
-| value | String | | |
-| onBlur | Func | | |
-| onChange | Func | | |
-| onDragStart | Func | | |
-| onDrop | Func | | |
-| onFocus | Func | | |
+| Property | Type | Required? |
+|:---|:---|:---:|
+| name | String | |
+| value | String | |
+| onBlur | Func | |
+| onChange | Func | |
+| onDragStart | Func | |
+| onDrop | Func | |
+| onFocus | Func | |
 
 **Usage**
 
