@@ -11,7 +11,7 @@ export function withSpinner({
   typeLoading,
   colorSpinner
 }) {
-  function Spinner({ loading, props }) {
+  function Spinner({ loading, ...props }) {
     return loading ? (
       <div className={classNameContainer}>
         <Loading className={classNameLoading} type={typeLoading} color={colorSpinner} />

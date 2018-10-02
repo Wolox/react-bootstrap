@@ -205,19 +205,33 @@ This boostrap is using https://github.com/Wolox/equalizer reset the default styl
 | | m-bottom-x | ``` margin-bottom: {x * scale}px ```|
 | | m-left-x | ``` margin-left: {x * scale}px ```|
 | | | |
-| layout.scss| row | ``` display: flex flex-direction: row ```|
+| layout.scss| | |
 | | column | ``` display: flex flex-direction: column ```|
-| | top | ``` justify-content: flex-start ```|
-| | middle | ``` justify-content: center ```|
-| | bottom | ``` justify-content: flex-end ```|
+| | column top | ``` justify-content: flex-start ```|
+| | column middle | ``` justify-content: center ```|
+| | column bottom | ``` justify-content: flex-end ```|
+| | colum start | ``` align-items: flex-start ```|
+| | colum center | ``` align-items: center ```|
+| | colum end | ``` align-items: end ```|
+| | colum stretch | ``` align-items: stretch ```|
+| | column self-start | ``` align-self: flex-start ```|
+| | column self-center | ``` align-self: center ```|
+| | column self-end | ``` align-self: flex-end ```|
+| | row | ``` display: flex flex-direction: row ```|
+| | row top | ``` align-items: flex-start ```|
+| | row middle | ``` align-items: center ```|
+| | row bottom | ``` align-items: flex-end ```|
+| | row start | ``` justify-content: flex-start ```|
+| | row center | ``` justify-content: center ```|
+| | row end | ``` justify-content: flex-end ```|
+| | row wrap | ``` flex-wrap: wrap ```|
+| | row reverse | ``` flex-direction: row-reverse ```|
+| | row self-top | ``` align-self: flex-start ```|
+| | row self-middle | ``` align-self: center ```|
+| | row self-bottom | ``` align-self: flex-end ```|
+| | row self-stretch | ``` align-self: self-stretch ```|
 | | space-between | ``` justify-content: space-between ```|
 | | space-around | ``` justify-content: space-around ```|
-| | wrap | ``` flex-wrap: wrap ```|
-| | reverse | ``` flex-direction: row-reverse ```|
-| | self-top | ``` align-self: flex-start ```|
-| | self-middle | ``` align-self: center ```|
-| | self-bottom | ``` align-self: flex-end ```|
-| | self-stretch | ``` alingn-self: self-stretch ```|
 
 
 
@@ -235,7 +249,7 @@ Use it in this way:
 
 ```jsx
 className="row center middle full-width"
-// Is equals a this:
+// Is equal to this:
 ```
 ```css
 {
