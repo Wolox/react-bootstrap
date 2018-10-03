@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import Login from './layout';
 
 class LoginContainer extends Component {
-  handleSubmit = values => {
-    console.log(values); // eslint-disable-line no-console
+  handleSubmit = () => {
+    // TODO implement function
   };
 
-  handleChange = value => {
-    console.log(value); // eslint-disable-line no-console
+  handleChange = () => {
+    // TODO implement function
   };
 
   render() {
