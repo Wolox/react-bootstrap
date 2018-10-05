@@ -2,7 +2,7 @@ const runCommand = require('./runCommand');
 
 module.exports.installCRA = function installCRA() {
   return runCommand({
-    command: ['npm', ['install', '--global', 'create-react-app']],
+    command: ['npm', ['install', '--global', 'create-react-app@^1.0.0']],
     loadingMessage: 'Installing create-react-app',
     successMessage: 'create-react-app installed successfully',
     failureMessage: 'create-react-app installation failed',
