@@ -1,13 +1,13 @@
 import numeral from 'numeral';
 
+const ORDINALS = ['ro', 'do', 'ro', 'to'];
+
 numeral.register('locale', 'es-ar', {
   delimiters: {
     thousands: '.',
     decimal: ','
   },
-  ordinal: function ordinal(number) {
-    return number === 1 ? 'ro' : number === 2 ? 'do' : number === 3 ? 'ro' : 'to';
-  },
+  ordinal: number => (ORDINALS.length - 1 === number ? ORDINALS[number] : 'to'),
   currency: {
     symbol: '$'
   }

@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/Wolox/react-bootstrap",
   "dependencies": {
-    "eslint-config-wolox": "^1.0.0",
     "latest-semver": "^1.0.0",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
@@ -40,18 +39,18 @@
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
+    "eslint": "5.6.0",
+    "eslint-config-wolox-react": "1.0.1",
+    "eslint-config-wolox": "2.0.6",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.3.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "babel-eslint": "^8.2.6",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.30.3",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-prettier": "^2.0.1",
-    "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
-    "prettier": "^1.1.0",
-    "prettier-eslint": "^6.4.2"
+    "prettier": "^1.14.3",
+    "prettier-eslint": "^8.8.2"
   }
 }

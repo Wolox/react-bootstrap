@@ -1,3 +1,7 @@
 module.exports = {
-  extends: ['wolox']
+  extends: ['wolox-react'],
+  rules: {
+    'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off'
+  }
 };

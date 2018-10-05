@@ -1,66 +1,68 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 
-module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            ║║║       ') +
-  chalk.cyan('\n       ║    ║║║    ║║║    ║      ') +
-  chalk.cyan('\n       ║       ║║║║       ║       ') +
-  chalk.cyan('\n        ║    ║║ ║║ ║║    ║           ') +
-  chalk.cyan('\n        ║║║ ║║║║  ║║║║ ║║║        ') +
-  chalk.cyan('\n     ║║║ ║ ║          ║ ║ ║║║          ') +
-  chalk.blue('██╗  ██╗██╗ ██████╗██╗  ██╗ ') +
-  chalk.white('██████╗ ███████╗███████╗') +
-  chalk.cyan('\n   ║║    ║║║   ║║║║   ║║║    ║║        ') +
-  chalk.blue('██║ ██╔╝██║██╔════╝██║ ██╔╝') +
-  chalk.white('██╔═══██╗██╔════╝██╔════╝') +
-  chalk.cyan('\n  ║       ║   ║║║║║║   ║       ║       ') +
-  chalk.blue('█████╔╝ ██║██║     █████╔╝ ') +
-  chalk.white('██║   ██║█████╗  █████╗') +
-  chalk.cyan('\n   ║║    ║║║   ║║║║   ║║║    ║║        ') +
-  chalk.blue('██╔═██╗ ██║██║     ██╔═██╗ ') +
-  chalk.white('██║   ██║██╔══╝  ██╔══╝') +
-  chalk.cyan('\n     ║║║ ║ ║          ║ ║ ║║║          ') +
-  chalk.blue('██║  ██╗██║╚██████╗██║  ██╗') +
-  chalk.white('╚██████╔╝██║     ██║') +
-  chalk.cyan('\n        ║║║ ║║║║  ║║║║ ║║║             ') +
-  chalk.blue('╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝ ') +
-  chalk.white('╚═════╝ ╚═╝     ╚═╝') +
-  chalk.cyan('\n        ║    ║║ ║║ ║║    ║         ') +
-  chalk.cyan('\n       ║       ║║║║       ║          ') +
-  chalk.cyan('\n       ║    ║║║    ║║║    ║        ') +
-  chalk.cyan('\n        ║║║            ║║║      ')}\n\n  ${chalk.blue.bold(
-  'Welcome to the React kickoff'
+module.exports.KICKOFF_MESSAGE = `${chalk.cyan(
+  "\n        ║║║            ║║║       "
+) +
+  chalk.cyan("\n       ║    ║║║    ║║║    ║      ") +
+  chalk.cyan("\n       ║       ║║║║       ║       ") +
+  chalk.cyan("\n        ║    ║║ ║║ ║║    ║           ") +
+  chalk.cyan("\n        ║║║ ║║║║  ║║║║ ║║║        ") +
+  chalk.cyan("\n     ║║║ ║ ║          ║ ║ ║║║          ") +
+  chalk.blue("██╗  ██╗██╗ ██████╗██╗  ██╗ ") +
+  chalk.white("██████╗ ███████╗███████╗") +
+  chalk.cyan("\n   ║║    ║║║   ║║║║   ║║║    ║║        ") +
+  chalk.blue("██║ ██╔╝██║██╔════╝██║ ██╔╝") +
+  chalk.white("██╔═══██╗██╔════╝██╔════╝") +
+  chalk.cyan("\n  ║       ║   ║║║║║║   ║       ║       ") +
+  chalk.blue("█████╔╝ ██║██║     █████╔╝ ") +
+  chalk.white("██║   ██║█████╗  █████╗") +
+  chalk.cyan("\n   ║║    ║║║   ║║║║   ║║║    ║║        ") +
+  chalk.blue("██╔═██╗ ██║██║     ██╔═██╗ ") +
+  chalk.white("██║   ██║██╔══╝  ██╔══╝") +
+  chalk.cyan("\n     ║║║ ║ ║          ║ ║ ║║║          ") +
+  chalk.blue("██║  ██╗██║╚██████╗██║  ██╗") +
+  chalk.white("╚██████╔╝██║     ██║") +
+  chalk.cyan("\n        ║║║ ║║║║  ║║║║ ║║║             ") +
+  chalk.blue("╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝ ") +
+  chalk.white("╚═════╝ ╚═╝     ╚═╝") +
+  chalk.cyan("\n        ║    ║║ ║║ ║║    ║         ") +
+  chalk.cyan("\n       ║       ║║║║       ║          ") +
+  chalk.cyan("\n       ║    ║║║    ║║║    ║        ") +
+  chalk.cyan("\n        ║║║            ║║║      ")}\n\n  ${chalk.blue.bold(
+  "Welcome to the React kickoff"
 )}\n\n  `;
 
 module.exports.LINTER_PATH = {
-  src: 'eslintrc.js',
-  destination: '.eslintrc.js'
+  src: "eslintrc.js",
+  destination: ".eslintrc.js"
 };
 
 module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
+  src: "flowconfig",
+  destination: ".flowconfig"
 };
 
-const COMPONENTS_PATH = 'src/app/components';
-const SCREENS_PATH = 'src/app/screens';
-const CONFIG_PATH = 'src/config';
-const REDUX_PATH = 'src/redux';
-const UTILS_PATH = 'src/utils';
-const SERVICES_PATH = 'src/services';
-const CONSTANTS_PATH = 'src/constants';
-const SCSS_PATH = 'src/scss';
-const STORYBOOK_CONFIG_PATH = '.storybook/';
-const STORIES_PATH = 'stories/';
-const CI_PATH = '.woloxci/';
+const COMPONENTS_PATH = "src/app/components";
+const SCREENS_PATH = "src/app/screens";
+const CONFIG_PATH = "src/config";
+const REDUX_PATH = "src/redux";
+const UTILS_PATH = "src/utils";
+const SERVICES_PATH = "src/services";
+const CONSTANTS_PATH = "src/constants";
+const SCSS_PATH = "src/scss";
+const STORYBOOK_CONFIG_PATH = ".storybook/";
+const STORIES_PATH = "stories/";
+const CI_PATH = ".woloxci/";
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.TEMPLATE_FILES = [
-  'config-overrides.js',
-  'pull_request_template.md',
-  'circle.yml',
-  'src/index.js',
-  'src/app/index.js',
-  'Jenkinsfile',
+  "config-overrides.js",
+  "pull_request_template.md",
+  "circle.yml",
+  "src/index.js",
+  "src/app/index.js",
+  "Jenkinsfile",
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
   `${CONFIG_PATH}/numeral.js`,
@@ -88,8 +90,10 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
+  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
+  `${COMPONENTS_PATH}/TextArea/styles.scss`,
   `${COMPONENTS_PATH}/Checkbox/index.js`,
   `${COMPONENTS_PATH}/Checkbox/layout.js`,
   `${CONSTANTS_PATH}/fonts.js`,
@@ -108,27 +112,27 @@ module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 module.exports.OPTIONAL_DEPENDENCIES = {
   redux: {
     dependencies: [
-      'redux',
-      'redux-recompose',
-      'redux-form',
-      'redux-thunk',
-      'react-router',
-      'react-router-redux',
-      'redux-beacon'
+      "redux",
+      "redux-recompose",
+      "redux-form",
+      "redux-thunk",
+      "react-router",
+      "react-router-redux",
+      "redux-beacon"
     ]
   },
-  apisauce: { dependencies: ['apisauce'] },
-  'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver'],
-    devDependencies: ['eslint-import-resolver-babel-module']
+  apisauce: { dependencies: ["apisauce"] },
+  "babel-module-resolver": {
+    dependencies: ["babel-plugin-module-resolver"],
+    devDependencies: ["eslint-import-resolver-babel-module"]
   },
-  jest: { dependencies: ['jest'] },
-  moment: { dependencies: ['moment'] },
-  'prop-types': { dependencies: ['prop-types'] },
-  'seamless-immutable': { dependencies: ['seamless-immutable'] },
+  jest: { dependencies: ["jest"] },
+  moment: { dependencies: ["moment"] },
+  "prop-types": { dependencies: ["prop-types"] },
+  "seamless-immutable": { dependencies: ["seamless-immutable"] },
   flow: {
-    dependencies: ['@babel/cli'],
-    devDependencies: ['flow-bin', '@babel/preset-flow']
+    dependencies: ["@babel/cli"],
+    devDependencies: ["flow-bin", "@babel/preset-flow"]
   },
-  reselect: { dependencies: ['reselect'] }
+  reselect: { dependencies: ["reselect"] }
 };

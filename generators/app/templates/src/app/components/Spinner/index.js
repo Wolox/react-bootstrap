@@ -30,11 +30,11 @@ export function withSpinner({
 }
 
 withSpinner.propTypes = {
-  WrappedComponent: PropTypes.node,
   classNameContainer: PropTypes.string,
   classNameLoading: PropTypes.string,
+  colorSpinner: PropTypes.string,
   typeLoading: PropTypes.oneOf(TYPE_SPINNER),
-  colorSpinner: PropTypes.string
+  WrappedComponent: PropTypes.node
 };
 
 withSpinner.defaultProps = {
