@@ -100,4 +100,6 @@ storiesOf('Checkbox', module).add('Default', () => <Checkbox />);
 
 storiesOf('Checkbox', module).add('With label', () => <Checkbox label="Acepto términos y condiciones" />);
 
+storiesOf('Checkbox', module).add('With custom style', () => <Checkbox inputClassName={styles.checkmark} />);
+
 storiesOf('Checkbox', module).add('With callback', () => <Checkbox onChange={action('clicked')} />);
