@@ -1,3 +1,5 @@
+@import './scss/variables/colors';
+
 .container {
   display: flex;
   justify-content: center;
@@ -20,15 +22,15 @@
 
 .checkmark {
   appearance: none;
-  background-color: #fafafa;
-  border: 1px solid #cacece;
+  background-color: $white;
+  border: 1px solid $iron;
   padding: 11px;
   border-radius: 12px;
   display: inline-block;
   position: relative;
 
   &:hover {
-    box-shadow: 0 0 5px 1px #979797;
+    box-shadow: 0 0 5px 1px $dusty-grey;
   }
 
   &:checked:after {
@@ -37,6 +39,6 @@
     position: absolute;
     top: 2px;
     left: 5px;
-    color: #5aceeb;
+    color: $turquoise-blue;
   }
 }
