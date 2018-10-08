@@ -1,13 +1,15 @@
 import numeral from 'numeral';
 
-const ORDINALS = ['ro', 'do', 'ro', 'to'];
+const DEFAULT_ORDINAL = 'to';
+
+const ORDINALS = ['ro', 'do', 'ro', DEFAULT_ORDINAL];
 
 numeral.register('locale', 'es-ar', {
   delimiters: {
     thousands: '.',
     decimal: ','
   },
-  ordinal: number => (ORDINALS.length - 1 === number ? ORDINALS[number] : 'to'),
+  ordinal: number => (ORDINALS.length - 1 === number ? ORDINALS[number] : DEFAULT_ORDINAL),
   currency: {
     symbol: '$'
   }

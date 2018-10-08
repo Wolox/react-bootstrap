@@ -7,7 +7,7 @@ import Home from '../../screens/Dashboard';
 
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import * as Routes from './constants';
-import styles from './styles';
+import styles from './styles.scss';
 
 function AppRoutes() {
   return (
