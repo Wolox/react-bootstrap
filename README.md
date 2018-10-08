@@ -27,25 +27,28 @@ bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/developme
 ## Components
 
 This are the components you can to choose for your app.
-* SearchBar
-* TextArea
-* Field
-* Spinner
+  * SearchBar
+  * TextArea
+  * Field
+  * Spinner
 
 ### SearchBar
 
-The component contain this props:
-* className
-* formClassName
-* buttonClassName
-* textButtonSearch
-* children
-* handleSubmit
+**Props**
 
-Should be called this way.
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| textButtonSearch | String | | Text to display inside the submit button |
+| className | String | | Custom styles to apply to the search bar container |
+| formClassName | String | | Custom styles to apply to the form fields |
+| buttonClassName | String | | Custom styles to apply to the submit button |
+| children | Node | | Elements to be rendered inside the search bar |
+| handleSubmit | Func | ✓ | Function to be called on submit |
 
-```js
-<SearchBar handleSubmit={this.onSubmit}> 
+**Usage**
+
+```jsx
+<SearchBar handleSubmit={this.onSubmit}>
   <label for="name" className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
@@ -59,7 +62,7 @@ Should be called this way.
 
 If you decided to use redux-form you must add it to the component and use it in this way.
 
-```js
+```jsx
 <SearchBar
   onSubmit={handleSubmit}
   className={styles.userFormContainer}
@@ -88,18 +91,70 @@ If you decided to use redux-form you must add it to the component and use it in 
 </SearchBar
 ```
 
+### TextArea
+
+**Props**
+
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| className | String | | Custom styles to apply to the text area container |
+| value | String | ✓ | As this is a controlled component, the input value must be passed to update the component's value |
+| onChange | Func | ✓ | Function to be called on text area input change |
+| onBlur | Func | | Function to be called on text area input blur |
+| onFocus | Func | | Function to be called on text area input focus |
+
+**Usage**
+
+```jsx
+<TextArea
+  className={styles.textArea}
+  value={this.textArea}
+  onChange={this.handleChange}
+  onFocus={this.handleFocus}
+/>
+```
+
+If you decided to use redux-form you must add it to the component and use it in this way.
+
+```jsx
+textArea = wrapField(TextArea);
+
+<Field
+  name={fieldName}
+  component={this.textArea}
+  className={styles.textArea}
+/>
+```
+
 ### Field
 
-The component only use with redux-form, contains these props.
-* input
+**Props**
 
-Use it in this way:
+| Property | Type | Required? |
+|:---|:---|:---:|
+| input | Object | ✓ |
 
-```js
+The component passes every other prop to the wrapped component.
+
+**input shape**
+
+| Property | Type | Required? |
+|:---|:---|:---:|
+| name | String | |
+| value | String | |
+| onBlur | Func | |
+| onChange | Func | |
+| onDragStart | Func | |
+| onDrop | Func | |
+| onFocus | Func | |
+
+**Usage**
+
+```jsx
 input = wrapField(Input);
 
 <Field
-  name={fieldName}  
+  name={fieldName}
   type="text"
   component={this.input}
   className={styles.input}
@@ -108,25 +163,19 @@ input = wrapField(Input);
 
 ### Spinner
 
-The component contains these props:
-* WrappedComponent
-* classNameContainer
-* classNameLoading
-* idLoading
-* colorSpinner
+**Props**
 
-Contains this component:
-* Loading 
-  * className
-  * id
-  * colorSpinner
+| Property | Type | Required? | Description |
+|:---|:---|:---:|:---|
+| WrappedComponent | Node | | Component to be wrapped by the spinner |
+| classNameContainer | String | | Custom style to apply to the spinner container |
+| classNameLoading | String | | Custom styles to apply to the spinner when loading |
+| typeLoading | one of `TYPE_SPINNER` | | Spinner variants, `TYPE_SPINNER = ['three-bounce','circle','double-bounce','ball-clip-rotate','wandering-cubes','chasing-dots','cube-grid','wordpress','folding-cube','ball-triangle-path','ball-pulse-sync']` |
+| colorSpinner | String | | The spinner color. It can be either a hex value or a color word |
 
+**Usage**
 
-In the example we will use it with the SearchBar component.
-
-```js
-src/components/SearchBar
-
+```jsx
 //Import into the component to be used.
 import { withSpinner } from '../Spinner';
 
@@ -138,48 +187,70 @@ export default withSpinner({
 });
 ```
 
-Here you can see all the spinner models that this library has http://kyleamathews.github.io/react-spinkit/
+Check every spinner variant here http://kyleamathews.github.io/react-spinkit/
 
 ## Base Styles
 
 This boostrap is using https://github.com/Wolox/equalizer reset the default styles of the browser and contains these sources to generalize classes of flex-box, margins and width.
-* components.scss
-  * full-width
-  * half-width
-  * quarter-width
-* margins.scss
-  * m-top-*
-  * m-right-*
-  * m-bottom-*
-  * m-left-*
-* layout.scss
-  * row / column
-    * top
-    * middle
-    * bottom
-    * start
-    * center
-    * end 
-    * space-between
-    * space-around 
-    * wrap 
-    * reverse
-    * self-to/middle/bottom/stretch
-  
+
+| Source | Class | Equals 
+|:---|:---|:---:|
+| components.scss | full-width | ``` width: 100% ``` |
+| | half-width | ``` width: 50% ``` |
+| | quarter-width | ``` width: 25% ```|
+| | | |
+| margins.scss | | scale: 10px |
+| | m-top-x | ``` margin-top: {x * scale}px ```|
+| | m-right-x | ``` margin-right: {x * scale}px ```|
+| | m-bottom-x | ``` margin-bottom: {x * scale}px ```|
+| | m-left-x | ``` margin-left: {x * scale}px ```|
+| | | |
+| layout.scss| | |
+| | column | ``` display: flex flex-direction: column ```|
+| | column top | ``` justify-content: flex-start ```|
+| | column middle | ``` justify-content: center ```|
+| | column bottom | ``` justify-content: flex-end ```|
+| | colum start | ``` align-items: flex-start ```|
+| | colum center | ``` align-items: center ```|
+| | colum end | ``` align-items: end ```|
+| | colum stretch | ``` align-items: stretch ```|
+| | column self-start | ``` align-self: flex-start ```|
+| | column self-center | ``` align-self: center ```|
+| | column self-end | ``` align-self: flex-end ```|
+| | row | ``` display: flex flex-direction: row ```|
+| | row top | ``` align-items: flex-start ```|
+| | row middle | ``` align-items: center ```|
+| | row bottom | ``` align-items: flex-end ```|
+| | row start | ``` justify-content: flex-start ```|
+| | row center | ``` justify-content: center ```|
+| | row end | ``` justify-content: flex-end ```|
+| | row wrap | ``` flex-wrap: wrap ```|
+| | row reverse | ``` flex-direction: row-reverse ```|
+| | row self-top | ``` align-self: flex-start ```|
+| | row self-middle | ``` align-self: center ```|
+| | row self-bottom | ``` align-self: flex-end ```|
+| | row self-stretch | ``` align-self: self-stretch ```|
+| | space-between | ``` justify-content: space-between ```|
+| | space-around | ``` justify-content: space-around ```|
+
+
 
 Use it in this way:
 
-```js
+```jsx
 <div className="row center middle full-width">
   <Input
-    name={fieldName}  
+    name={fieldName}
     type="text"
     className={`row center m-top-2 ${styles.input}`}
   />
 </div>
 ```
 
-"row center middle full-width" is equals a this:
+```jsx
+className="row center middle full-width"
+// Is equal to this:
+```
 ```css
 {
   display: flex;

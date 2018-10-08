@@ -25,72 +25,72 @@ storiesOf('TextArea', module).add('Default', () => (
 
 storiesOf('Spinner', module).add('Default', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='three-bounce' color={colorSpinner} />
+    <Loading className={styles.loading} type="three-bounce" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading three-bounce', () => (
   <div className={styles.container}>
-    <Loading className={styles.loadingCircle} type='three-bounce' color={colorSpinner} />
+    <Loading className={styles.loadingCircle} type="three-bounce" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading circle', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='circle' color={colorSpinner} />
+    <Loading className={styles.loading} type="circle" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading double-bounce', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='double-bounce' color={colorSpinner} />
+    <Loading className={styles.loading} type="double-bounce" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading ball-clip-rotate', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='ball-clip-rotate' color={colorSpinner} />
+    <Loading className={styles.loading} type="ball-clip-rotate" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading wandering-cubes', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='wandering-cubes' color={colorSpinner} />
+    <Loading className={styles.loading} type="wandering-cubes" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading chasing-dots', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='chasing-dots' color={colorSpinner} />
+    <Loading className={styles.loading} type="chasing-dots" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading cube-grid', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='cube-grid' color={colorSpinner} />
+    <Loading className={styles.loading} type="cube-grid" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading wordpress', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='wordpress' color={colorSpinner} />
+    <Loading className={styles.loading} type="wordpress" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading folding-cube', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='folding-cube' color={colorSpinner} />
+    <Loading className={styles.loading} type="folding-cube" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading ball-triangle-path', () => (
   <div className={styles.container}>
-    <Loading className={styles.loading} type='ball-triangle-path' color={colorSpinner} />
+    <Loading className={styles.loading} type="ball-triangle-path" color={colorSpinner} />
   </div>
 ));
 
 storiesOf('Spinner', module).add('Type Loading ball-pulse-sync', () => (
   <div className={styles.container}>
-    <Loading className={styles.loadingCircle} type='ball-pulse-sync' color={colorSpinner} />
+    <Loading className={styles.loadingCircle} type="ball-pulse-sync" color={colorSpinner} />
   </div>
 ));
