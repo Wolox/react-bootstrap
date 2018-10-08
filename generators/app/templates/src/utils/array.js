@@ -21,6 +21,8 @@ export function stringArrayToObject(actionsArray, namespace = '') {
  * E. G:
  * arrayOfIndices(3) // [0, 1, 2]
  * This is for a reason: avoiding the use of for loops.
+ * @param {number} length length of the array
+ * @returns {array} [0, ..., length]
  *
  * @see https://github.com/airbnb/javascript#iterators--nope
  */
