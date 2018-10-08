@@ -47,7 +47,7 @@ Checkbox.propTypes = {
   isChecked: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string,
-  onToggle: PropTypes.func,
+  onToggle: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool
 };
