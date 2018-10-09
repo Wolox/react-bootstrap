@@ -86,16 +86,15 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
-  `${COMPONENTS_PATH}/Routes/styles.js`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
-  `${COMPONENTS_PATH}/TextArea/styles.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
   `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
   `${STORIES_PATH}/components.js`,
-  `${STORIES_PATH}/styles.scss`
+  `${STORIES_PATH}/styles.scss`,
+  '.circleci'
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;

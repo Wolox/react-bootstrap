@@ -22,5 +22,7 @@ export function stringArrayToObject(actionsArray, namespace = '') {
  */
 export function arrayOfIndices(length) {
   // .fill(<something not undefined>) is required for map, map ignore undefined indexes
-  return Array(length).fill(null).map((_, index) => index);
+  return Array(length)
+    .fill(null)
+    .map((_, index) => index);
 }
