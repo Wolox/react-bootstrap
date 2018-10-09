@@ -15,10 +15,10 @@ function InputLabel({
   disabled
 }) {
   return (
-    <div className={containerClassName}>
-      <span className={`${textClassName} m-bottom-1`} data-for={dataFor}>
+    <div className={`column start ${containerClassName}`}>
+      <label className={`${textClassName} m-bottom-1`} htmlFor={dataFor}>
         {label}
-      </span>
+      </label>
       <input
         className={inputClassName}
         name={inputName}
@@ -47,7 +47,7 @@ InputLabel.propTypes = {
 };
 
 InputLabel.defaultProps = {
-  containerClassName: 'column start',
+  containerClassName: '',
   textClassName: '',
   inputClassName: '',
   placeholder: ''

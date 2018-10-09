@@ -1,47 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import { t } from 'i18next';
 
 import InputLabel from '../../components/InputLabel';
+import * as Routes from '../../components/Routesconstants';
 
 import { FIELDS } from './constants';
 import styles from './styles.scss';
 
-function Login({ handleChange, handleSubmit }) {
+function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
   return (
     <div className={`column center middle full-width ${styles.loginContainer}`}>
-      <form className={`column center space-between ${styles.formContainer}`} onSubmit={handleSubmit}>
+      <form className={`column center space-between ${styles.formContainer}`} onSubmit={handleLogin}>
         <div className="column center full-width">
-          <h2 className="m-bottom-1">{i18next.t('Login:login')}</h2>
-          <h2>{i18next.t('Login:loginExplanation')}</h2>
+          <h2 className="m-bottom-1">{t('Login:login')}</h2>
+          <h3>{t('Login:loginExplanation')}</h3>
         </div>
         <div className="column full-width">
           <InputLabel
-            label={i18next.t('Login:email')}
+            label={t('Login:email')}
             inputName={FIELDS.email}
             inputId={FIELDS.email}
             dataFor={FIELDS.email}
             inputType="text"
             inputClassName={`m-bottom-2 full-width ${styles.input}`}
-            placeholder={i18next.t('Login:emailPlaceholder')}
-            onChange={handleChange}
+            placeholder={t('Login:emailPlaceholder')}
+            onChange={handleEmailChange}
           />
           <InputLabel
-            label={i18next.t('Login:password')}
+            label={t('Login:password')}
             inputName={FIELDS.password}
             inputId={FIELDS.password}
             dataFor={FIELDS.password}
             inputType="password"
             inputClassName={`m-bottom-2 full-width ${styles.input}`}
-            placeholder={i18next.t('Login:passwordPlaceholder')}
-            onChange={handleChange}
+            placeholder={t('Login:passwordPlaceholder')}
+            onChange={handlePasswordChange}
           />
         </div>
         <div className="column center full-width">
           <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
-            {i18next.t('Login:enter')}
+            {t('Login:enter')}
           </button>
-          <a href="/forgotPassword">{i18next.t('Login:forgotPassword')}</a>
+          <a href={Routes.forgotPassword}>{t('Login:forgotPassword')}</a>
         </div>
       </form>
     </div>
@@ -49,8 +50,9 @@ function Login({ handleChange, handleSubmit }) {
 }
 
 Login.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleEmailChange: PropTypes.func.isRequired,
+  handlePasswordChange: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired
 };
 
 export default Login;

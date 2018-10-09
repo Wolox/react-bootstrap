@@ -3,16 +3,26 @@ import React, { Component } from 'react';
 import Login from './layout';
 
 class LoginContainer extends Component {
-  handleSubmit = () => {
+  handleLogin = () => {
     // TODO implement function
   };
 
-  handleChange = () => {
+  handleEmailChange = () => {
+    // TODO implement function
+  };
+
+  handlePasswordChange = () => {
     // TODO implement function
   };
 
   render() {
-    return <Login handleChange={this.handleChange} handleSubmit={this.handleSubmit} />;
+    return (
+      <Login
+        handleEmailChange={this.handleEmailChange}
+        handlePasswordChange={this.handlePasswordChange}
+        handleLogin={this.handleLogin}
+      />
+    );
   }
 }
 
