@@ -50,6 +50,7 @@ const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
+const CI_PATH = '.woloxci/';
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
@@ -59,6 +60,7 @@ module.exports.TEMPLATE_FILES = [
   'circle.yml',
   'src/index.js',
   'src/app/index.js',
+  'Jenkinsfile',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
   `${CONFIG_PATH}/numeral.js`,
@@ -94,10 +96,12 @@ module.exports.TEMPLATE_FILES = [
   `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
   `${STORIES_PATH}/components.js`,
   `${STORIES_PATH}/styles.scss`,
-  '.circleci'
+  `${CI_PATH}/Dockerfile`
 ];
 
 module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
+
+module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
   redux: {

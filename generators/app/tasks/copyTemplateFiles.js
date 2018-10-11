@@ -5,7 +5,8 @@ const {
   LINTER_PATH,
   LOCAL_STORAGE_FILE,
   FLOWCONFIG_PATH,
-  REDUX_COMPONENTS
+  REDUX_COMPONENTS,
+  CI_CONFIG_FILE
 } = require('../constants');
 
 const { copyTpl, copy } = require('./utils');
@@ -33,6 +34,10 @@ module.exports = function copyTemplateFiles() {
   });
 
   bindedCopyTpl(LOCAL_STORAGE_FILE, LOCAL_STORAGE_FILE, {
+    projectName: this.projectName
+  });
+
+  bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
     projectName: this.projectName
   });
 
