@@ -86,7 +86,6 @@ module.exports.TEMPLATE_FILES = [
   `${SCREENS_PATH}/Login/i18n.js`,
   `${SCREENS_PATH}/Login/styles.scss`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
-  `${COMPONENTS_PATH}/Routes/constants.js`,
   `${COMPONENTS_PATH}/Routes/index.js`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
