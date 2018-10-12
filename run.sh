@@ -23,9 +23,9 @@ fi
 
 if [[ $1 == '--verbose' || $1 == '-v' ]]
 then
-  npm i -g yo react-bootstrap
+  npm i -g yo generator-react-bootstrap
 else
-  npm i -g yo react-bootstrap > /dev/null 2>&1
+  npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 fi
 
 if [[ $1 == '--local' || $1 == '-l' ]]
