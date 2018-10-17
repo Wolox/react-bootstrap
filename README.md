@@ -31,6 +31,7 @@ This are the components you can to choose for your app.
   * TextArea
   * Field
   * Spinner
+  * [RadioGroup](docs/RadioGroup.md)
 
 ### SearchBar
 
@@ -193,7 +194,7 @@ Check every spinner variant here http://kyleamathews.github.io/react-spinkit/
 
 This boostrap is using https://github.com/Wolox/equalizer reset the default styles of the browser and contains these sources to generalize classes of flex-box, margins and width.
 
-| Source | Class | Equals 
+| Source | Class | Equals
 |:---|:---|:---:|
 | components.scss | full-width | ``` width: 100% ``` |
 | | half-width | ``` width: 50% ``` |
