@@ -36,7 +36,10 @@ class CheckboxContainer extends Component {
 }
 
 CheckboxContainer.defaultProps = {
-  isChecked: false
+  isChecked: false,
+  className: '',
+  inputClassName: '',
+  labelClassName: ''
 };
 
 CheckboxContainer.propTypes = {
