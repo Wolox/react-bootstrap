@@ -97,6 +97,7 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
+  `${CONSTANTS_PATH}/routes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
   `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
   `${STORIES_PATH}/components.js`,
