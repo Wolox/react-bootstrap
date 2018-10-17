@@ -33,7 +33,7 @@
     box-shadow: 0 0 5px 1px $dusty-grey;
   }
 
-  &:checked:after {
+  &:checked::after {
     content: '\2714';
     font-size: 16px;
     position: absolute;
