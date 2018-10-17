@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SearchBar from '../src/app/components/SearchBar';
 import TextArea from '../src/app/components/TextArea';
 import Loading from '../src/app/components/Spinner/components/loading';
+import RadioGroup from '../src/app/components/RadioGroup';
 
 import styles from './styles.scss';
 
@@ -93,4 +94,55 @@ storiesOf('Spinner', module).add('Type Loading ball-pulse-sync', () => (
   <div className={styles.container}>
     <Loading className={styles.loadingCircle} type="ball-pulse-sync" color={colorSpinner} />
   </div>
+));
+
+storiesOf('RadioGroup', module).add('Default', () => (
+  <RadioGroup>
+    <RadioGroup.option label="option 1" value="1" />
+    <RadioGroup.option label="option 2" value="2" />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With custom styles', () => (
+  <RadioGroup className={styles.radioGroup}>
+    <RadioGroup.option
+      label="option 1"
+      value="1"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+      labelClassName={styles.option1}
+    />
+    <RadioGroup.option
+      label="option 2"
+      value="2"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+      labelClassName={styles.option2}
+    />
+    <RadioGroup.option
+      label="option 3"
+      value="3"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+    />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With different type children', () => (
+  <RadioGroup>
+    <RadioGroup.option label="option 1" value="1" />
+    <hr />
+    <RadioGroup.option label="option 2" value="2" />
+    <hr />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With callback', () => (
+  <RadioGroup onChange={action('clicked')}>
+    <RadioGroup.option label="option 1" value="1" />
+    <RadioGroup.option label="option 2" value="2" />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
 ));
