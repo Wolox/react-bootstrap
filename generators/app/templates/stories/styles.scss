@@ -62,8 +62,7 @@
     content: '';
     width: 12px;
     height: 12px;
-    // TODO change this
-    background: rgb(180, 185, 190);
+    background: $iron;
     position: absolute;
     top: 3px;
     left: 70px;
@@ -71,8 +70,7 @@
   }
 
   &:checked:after {
-    // TODO change this
-    background: #44a150;
+    background: $sea-green;
   }
 }
 
