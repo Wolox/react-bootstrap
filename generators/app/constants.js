@@ -58,6 +58,7 @@ module.exports.TEMPLATE_FILES = [
   'config-overrides.js',
   'pull_request_template.md',
   'circle.yml',
+  '.babelrc',
   'src/index.js',
   'src/app/index.js',
   'Jenkinsfile',
@@ -122,10 +123,6 @@ module.exports.OPTIONAL_DEPENDENCIES = {
     ]
   },
   apisauce: { dependencies: ['apisauce'] },
-  'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver'],
-    devDependencies: ['eslint-import-resolver-babel-module']
-  },
   jest: { dependencies: ['jest'] },
   moment: { dependencies: ['moment'] },
   'prop-types': { dependencies: ['prop-types'] },

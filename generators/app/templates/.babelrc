@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "~components": "./src/app/components",
+          "~assets": "./src/assets",
+          "~screens": "./src/app/screens",
+          "~redux": "./src/redux",
+          "~constants": "./src/constants",
+          "~utils": "./src/utils",
+          "~services": "./src/services",
+          "~scss": "./src/scss",
+          "~config": "./src/config"
+        }
+      }
+    ],
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
+  ],
+  "presets": ["react", "es2015", "stage-0"]
+}

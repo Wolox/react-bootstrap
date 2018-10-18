@@ -2,10 +2,13 @@ import React from 'react';
 import { ConnectedRouter } from 'react-router-redux';
 import { Switch } from 'react-router-dom';
 
-import { history } from '../../../redux/store';
-import Home from '../../screens/Dashboard';
-import Login from '../../screens/Login';
-import * as Routes from '../../../../constants/routes';
+import { history } from '~redux/store';
+
+import Home from '~screens/Dashboard';
+
+import Login from '~screens/Login';
+
+import * as Routes from '~constants/routes';
 
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import styles from './styles';

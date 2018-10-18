@@ -1,8 +1,10 @@
 import { push } from 'react-router-redux';
 
-import * as AuthService from '../../services/AuthServices';
-import * as RouteConstants from '../../constants/routes';
-import { stringArrayToObject } from '../../utils/array';
+import * as AuthService from '~services/AuthServices';
+
+import * as RouteConstants from '~constants/routes';
+
+import { stringArrayToObject } from '~utils/array';
 
 /* ------------- Auth actions ------------- */
 export const actions = stringArrayToObject(

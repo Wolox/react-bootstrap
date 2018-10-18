@@ -15,7 +15,14 @@ const DEPENDENCIES = [
   'react-router',
   'react-router-dom',
   'react-spinkit',
-  'wolox-equalizer'
+  'wolox-equalizer',
+  'babel-core',
+  'babel-runtime',
+  'eslint-import-resolver-babel-module',
+  'babel-plugin-module-resolver',
+  'babel-preset-es2015',
+  'babel-polyfill',
+  'babel-preset-react-app'
 ];
 
 const DEV_DEPENDENCIES = [
@@ -34,6 +41,10 @@ const DEV_DEPENDENCIES = [
   'prettier-eslint',
   'react-scripts',
   'wolox-react-scripts',
+  'eslint-import-resolver-babel-module',
+  'babel-plugin-transform-runtime',
+  'babel-plugin-module-resolver',
+  'babel-preset-stage-0',
   '@storybook/react'
 ];
 
