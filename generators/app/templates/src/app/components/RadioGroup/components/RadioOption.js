@@ -39,6 +39,7 @@ RadioOption.defaultProps = {
   className: '',
   inputClassName: '',
   labelClassName: '',
+  label: '',
   checked: false,
   disabled: false
 };
@@ -51,7 +52,7 @@ RadioOption.propTypes = {
   disabled: PropTypes.bool,
   name: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   children: PropTypes.node
 };
