@@ -8,6 +8,8 @@ import TextArea from '~components/TextArea';
 
 import Loading from '~components/Spinner/components/loading';
 
+import Checkbox from '~components/Checkbox';
+
 import styles from './styles.scss';
 
 const colorSpinner = 'steelblue';
@@ -96,3 +98,11 @@ storiesOf('Spinner', module).add('Type Loading ball-pulse-sync', () => (
     <Loading className={styles.loadingCircle} type="ball-pulse-sync" color={colorSpinner} />
   </div>
 ));
+
+storiesOf('Checkbox', module).add('Default', () => <Checkbox />);
+
+storiesOf('Checkbox', module).add('With label', () => <Checkbox label="Acepto términos y condiciones" />);
+
+storiesOf('Checkbox', module).add('With custom style', () => <Checkbox inputClassName={styles.checkmark} />);
+
+storiesOf('Checkbox', module).add('With callback', () => <Checkbox onChange={action('clicked')} />);

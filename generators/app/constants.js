@@ -96,6 +96,8 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/InputLabel/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
+  `${COMPONENTS_PATH}/Checkbox/index.js`,
+  `${COMPONENTS_PATH}/Checkbox/layout.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${CONSTANTS_PATH}/routes.js`,
