@@ -1,3 +1,5 @@
+@import './scss/variables/colors';
+
 .container {
   display: flex;
   justify-content: center;
@@ -16,6 +18,29 @@
 
 .input {
   margin-right: 10px;
+}
+
+.checkmark {
+  appearance: none;
+  background-color: $white;
+  border: 1px solid $iron;
+  padding: 11px;
+  border-radius: 12px;
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0 5px 1px $dusty-grey;
+  }
+
+  &:checked::after {
+    content: '\2714';
+    font-size: 16px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    color: $turquoise-blue;
+  }
 }
 
 .radio-group {

@@ -90,6 +90,8 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
+  `${COMPONENTS_PATH}/Checkbox/index.js`,
+  `${COMPONENTS_PATH}/Checkbox/layout.js`,
   `${COMPONENTS_PATH}/RadioGroup/index.js`,
   `${COMPONENTS_PATH}/RadioGroup/components/RadioOption.js`,
   `${CONSTANTS_PATH}/fonts.js`,

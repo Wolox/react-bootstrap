@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SearchBar from '../src/app/components/SearchBar';
 import TextArea from '../src/app/components/TextArea';
 import Loading from '../src/app/components/Spinner/components/loading';
+import Checkbox from '../src/app/components/Checkbox';
 import RadioGroup from '../src/app/components/RadioGroup';
 
 import styles from './styles.scss';
@@ -95,6 +96,14 @@ storiesOf('Spinner', module).add('Type Loading ball-pulse-sync', () => (
     <Loading className={styles.loadingCircle} type="ball-pulse-sync" color={colorSpinner} />
   </div>
 ));
+
+storiesOf('Checkbox', module).add('Default', () => <Checkbox />);
+
+storiesOf('Checkbox', module).add('With label', () => <Checkbox label="Acepto términos y condiciones" />);
+
+storiesOf('Checkbox', module).add('With custom style', () => <Checkbox inputClassName={styles.checkmark} />);
+
+storiesOf('Checkbox', module).add('With callback', () => <Checkbox onChange={action('clicked')} />);
 
 storiesOf('RadioGroup', module).add('Default', () => (
   <RadioGroup>
