@@ -1,30 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RadioOption({
-  className,
-  inputClassName,
-  labelClassName,
-  value,
-  label,
-  name,
-  checked,
-  disabled,
-  onChange,
-  children
-}) {
+function RadioOption({ className, inputClassName, labelClassName, label, children, ...rest }) {
   return (
     <div className={className}>
-      <input
-        type="radio"
-        id={label}
-        className={inputClassName}
-        value={value}
-        name={name}
-        checked={checked}
-        disabled={disabled}
-        onChange={onChange}
-      />
+      <input type="radio" id={label} className={inputClassName} {...rest} />
       {label && (
         <label htmlFor={label} className={labelClassName}>
           {label}
@@ -34,15 +14,6 @@ function RadioOption({
     </div>
   );
 }
-
-RadioOption.defaultProps = {
-  className: '',
-  inputClassName: '',
-  labelClassName: '',
-  label: '',
-  checked: false,
-  disabled: false
-};
 
 RadioOption.propTypes = {
   className: PropTypes.string,
