@@ -93,7 +93,7 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/Checkbox/index.js`,
   `${COMPONENTS_PATH}/Checkbox/layout.js`,
   `${COMPONENTS_PATH}/RadioGroup/index.js`,
-  `${COMPONENTS_PATH}/RadioGroup/components/RadioOption.js`,
+  `${COMPONENTS_PATH}/RadioGroup/components/RadioOption/index.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
