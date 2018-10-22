@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-
-import { apiSetup } from '~config/api';
-
-import store from '~redux/store';
+import { apiSetup } from '@config/api';
+import store from '@redux/store';
 
 import Routes from './components/Routes';
 import '../scss/application.scss';

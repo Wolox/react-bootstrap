@@ -1,14 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
-import SearchBar from '~components/SearchBar';
-
-import TextArea from '~components/TextArea';
-
-import Loading from '~components/Spinner/components/loading';
-
-import Checkbox from '~components/Checkbox';
+import SearchBar from '@components/SearchBar';
+import TextArea from '@components/TextArea';
+import Loading from '@components/Spinner/components/loading';
+import Checkbox from '@components/Checkbox';
 
 import styles from './styles.scss';
 

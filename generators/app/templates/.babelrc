@@ -5,15 +5,15 @@
       {
         "root": ["./src"],
         "alias": {
-          "~components": "./src/app/components",
-          "~assets": "./src/assets",
-          "~screens": "./src/app/screens",
-          "~redux": "./src/redux",
-          "~constants": "./src/constants",
-          "~utils": "./src/utils",
-          "~services": "./src/services",
-          "~scss": "./src/scss",
-          "~config": "./src/config"
+          "@components": "./src/app/components",
+          "@assets": "./src/assets",
+          "@screens": "./src/app/screens",
+          "@redux": "./src/redux",
+          "@constants": "./src/constants",
+          "@utils": "./src/utils",
+          "@services": "./src/services",
+          "@scss": "./src/scss",
+          "@config": "./src/config"
         }
       }
     ],
