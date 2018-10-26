@@ -40,7 +40,7 @@ function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
         <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
           {t('Login:enter')}
         </button>
-        <a href={Routes.forgotPassword}>{t('Login:forgotPassword')}</a>
+        <a href={Routes.RECOVER_PASSWORD}>{t('Login:forgotPassword')}</a>
       </div>
     </form>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function InputLabel({
-  containerClassName,
+  className,
   textClassName,
   dataFor,
   label,
@@ -15,7 +15,7 @@ function InputLabel({
   disabled
 }) {
   return (
-    <div className={`column start ${containerClassName}`}>
+    <div className={`column start ${className}`}>
       <label className={`${textClassName} m-bottom-1`} htmlFor={dataFor}>
         {label}
       </label>
@@ -33,7 +33,7 @@ function InputLabel({
 }
 
 InputLabel.propTypes = {
-  containerClassName: PropTypes.string,
+  className: PropTypes.string,
   textClassName: PropTypes.string,
   dataFor: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
@@ -47,7 +47,7 @@ InputLabel.propTypes = {
 };
 
 InputLabel.defaultProps = {
-  containerClassName: '',
+  className: '',
   textClassName: '',
   inputClassName: '',
   placeholder: ''

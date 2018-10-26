@@ -51,6 +51,7 @@ const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
+const DOCS_README_PATH = '../../docs';
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
@@ -58,10 +59,20 @@ module.exports.TEMPLATE_FILES = [
   'config-overrides.js',
   'pull_request_template.md',
   'circle.yml',
+  'README.md',
   '.babelrc',
   'src/index.js',
   'src/app/index.js',
   'Jenkinsfile',
+  `${DOCS_README_PATH}/Checkbox.md`,
+  `${DOCS_README_PATH}/Field.md`,
+  `${DOCS_README_PATH}/InputLabel.md`,
+  `${DOCS_README_PATH}/SearchBar.md`,
+  `${DOCS_README_PATH}/Spinner.md`,
+  `${DOCS_README_PATH}/TextArea.md`,
+  `${DOCS_README_PATH}/BaseStyles.md`,
+  `${DOCS_README_PATH}/RadioGroup.md`,
+  `${DOCS_README_PATH}/Login.md`,
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
   `${CONFIG_PATH}/numeral.js`,
