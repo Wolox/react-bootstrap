@@ -15,13 +15,12 @@ const DEPENDENCIES = [
   'react-router',
   'react-router-dom',
   'react-spinkit',
-  'wolox-equalizer'
+  'wolox-equalizer',
+  'node-sass'
 ];
 
 const DEV_DEPENDENCIES = [
   'react-app-rewired',
-  'babel-eslint',
-  'eslint',
   'eslint-config-airbnb',
   'eslint-config-prettier',
   'eslint-plugin-flowtype',
@@ -32,8 +31,6 @@ const DEV_DEPENDENCIES = [
   'husky',
   'prettier',
   'prettier-eslint',
-  'react-scripts',
-  'wolox-react-scripts',
   '@storybook/react'
 ];
 

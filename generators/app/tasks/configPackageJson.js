@@ -1,5 +1,5 @@
 const generateRARScript = (command, options) =>
-  `react-app-rewired ${command} --scripts-version wolox-react-scripts${options ? ` ${options}` : ''}`;
+  `react-app-rewired ${command} ${options ? ` ${options}` : ''}`;
 
 const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features) => {
   const attributes = {

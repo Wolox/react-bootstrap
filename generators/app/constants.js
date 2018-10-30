@@ -129,8 +129,8 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   'prop-types': { dependencies: ['prop-types'] },
   'seamless-immutable': { dependencies: ['seamless-immutable'] },
   flow: {
-    dependencies: ['babel-cli'],
-    devDependencies: ['flow-bin', 'babel-preset-flow']
+    dependencies: ['@babel/cli'],
+    devDependencies: ['flow-bin', '@babel/preset-flow']
   },
   reselect: { dependencies: ['reselect'] }
 };
