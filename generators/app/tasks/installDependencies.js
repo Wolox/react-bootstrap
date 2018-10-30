@@ -1,40 +1,50 @@
-const latestSemver = require("latest-semver");
-const semverRegex = require("semver-regex");
+const latestSemver = require('latest-semver');
+const semverRegex = require('semver-regex');
 
-const { OPTIONAL_DEPENDENCIES } = require("../constants");
+const { OPTIONAL_DEPENDENCIES } = require('../constants');
 
-const runCommand = require("./runCommand");
+const runCommand = require('./runCommand');
 
 const DEPENDENCIES = [
-  "history",
-  "i18next",
-  "lodash",
-  "postcss",
-  "react",
-  "react-dom",
-  "react-router",
-  "react-router-dom",
-  "react-spinkit",
-  "wolox-equalizer",
-  "node-sass"
+  'history',
+  'i18next',
+  'lodash',
+  'postcss',
+  'react',
+  'react-dom',
+  'react-router',
+  'react-router-dom',
+  'react-spinkit',
+  'wolox-equalizer',
+  'node-sass',
+  'redux',
+  'react-redux',
+  'redux-recompose',
+  'redux-form',
+  'redux-thunk',
+  'react-router',
+  'react-router-redux',
+  'redux-beacon',
+  '@redux-beacon/google-analytics'
 ];
 
 const DEV_DEPENDENCIES = [
-  "react-app-rewired",
-  "eslint-config-airbnb",
-  "eslint-config-prettier",
-  "eslint-plugin-flowtype",
-  "eslint-plugin-import",
-  "eslint-plugin-jsx-a11y",
-  "eslint-plugin-prettier",
-  "eslint-plugin-react",
-  "eslint-plugin-react-native",
-  "eslint-config-wolox-react",
-  "eslint-config-wolox",
-  "husky",
-  "prettier",
-  "prettier-eslint",
-  "@storybook/react"
+  'react-app-rewired',
+  'eslint-config-airbnb',
+  'eslint-config-prettier',
+  'eslint-plugin-flowtype',
+  'eslint-plugin-import',
+  'eslint-plugin-jsx-a11y',
+  'eslint-plugin-prettier',
+  'eslint-plugin-react',
+  'eslint-plugin-react-native',
+  'eslint-config-wolox-react',
+  'eslint-config-wolox',
+  'husky',
+  'prettier',
+  'prettier-eslint',
+  '@storybook/react',
+  'prop-types'
 ];
 
 /**
@@ -53,23 +63,20 @@ function getLinterPluginVersions(projectName, options) {
    */
   return runCommand({
     command: [
-      "npm",
-      ["info", "eslint-config-airbnb@latest", "peerDependencies", "--json"],
+      'npm',
+      ['info', 'eslint-config-airbnb@latest', 'peerDependencies', '--json'],
       { cwd: `${process.cwd()}/${projectName}` }
     ],
     loadingMessage: "Getting eslint plugins' versions",
-    successMessage: "Successfuly downloaded plugins version info",
-    failureMessage:
-      "Error getting info of eslint plugins. Turn verbose mode on for detailed logging",
+    successMessage: 'Successfuly downloaded plugins version info',
+    failureMessage: 'Error getting info of eslint plugins. Turn verbose mode on for detailed logging',
     context: options
   }).then(({ result }) => {
     // Keep latest if the dependency has different versions. e.g: eslint: '^3.19.0 || ^4.3.0'
     const dependencies = JSON.parse(result);
 
     Object.keys(dependencies).forEach(eachDependency => {
-      const latestDependencyVersion = latestSemver(
-        dependencies[eachDependency].match(semverRegex())
-      );
+      const latestDependencyVersion = latestSemver(dependencies[eachDependency].match(semverRegex()));
 
       dependencies[eachDependency] = `^${latestDependencyVersion}`;
     });
@@ -79,16 +86,14 @@ function getLinterPluginVersions(projectName, options) {
 }
 
 function npmInstall(projectName, deps, options, dev) {
-  const npmArgs = dev
-    ? ["install", "-D"].concat(deps)
-    : ["install"].concat(deps);
+  const npmArgs = dev ? ['install', '-D'].concat(deps) : ['install'].concat(deps);
 
   return runCommand({
-    command: ["npm", npmArgs, { cwd: `${process.cwd()}/${projectName}` }],
-    loadingMessage: `Fetching ${dev ? "dev dependencies" : "dependencies"}`,
-    successMessage: `${dev ? "Dev dependencies" : "Dependencies"} ready!`,
+    command: ['npm', npmArgs, { cwd: `${process.cwd()}/${projectName}` }],
+    loadingMessage: `Fetching ${dev ? 'dev dependencies' : 'dependencies'}`,
+    successMessage: `${dev ? 'Dev dependencies' : 'Dependencies'} ready!`,
     failureMessage: `${
-      dev ? "Dev dependencies" : "Dependencies"
+      dev ? 'Dev dependencies' : 'Dependencies'
     } installation failed. Turn verbose mode on for detailed logging`,
     context: options
   });
@@ -100,16 +105,11 @@ module.exports = function installDependencies() {
       const pluginNames = Object.keys(plugins);
       const fixedDevDeps = DEV_DEPENDENCIES.map(
         // Use a specific version of a dependency to avoid conflicts with other dependencies.
-        dependency =>
-          pluginNames.includes(dependency)
-            ? `${dependency}@${plugins[dependency]}`
-            : dependency
+        dependency => (pluginNames.includes(dependency) ? `${dependency}@${plugins[dependency]}` : dependency)
       );
 
       return npmInstall(this.projectName, DEPENDENCIES, this.options)
-        .then(() =>
-          npmInstall(this.projectName, fixedDevDeps, this.options, true)
-        )
+        .then(() => npmInstall(this.projectName, fixedDevDeps, this.options, true))
         .catch(() => {
           process.exit(1);
         });
@@ -118,31 +118,18 @@ module.exports = function installDependencies() {
       const optionalDependencies = Object.keys(this.features).reduce(
         (dependenciesObject, option) => {
           const dependencies = OPTIONAL_DEPENDENCIES[option].dependencies || [];
-          const devDependencies =
-            OPTIONAL_DEPENDENCIES[option].devDependencies || [];
+          const devDependencies = OPTIONAL_DEPENDENCIES[option].devDependencies || [];
 
           return {
             dependencies: [...dependenciesObject.dependencies, ...dependencies],
-            devDependencies: [
-              ...dependenciesObject.devDependencies,
-              ...devDependencies
-            ]
+            devDependencies: [...dependenciesObject.devDependencies, ...devDependencies]
           };
         },
         { dependencies: [], devDependencies: [] }
       );
 
-      return npmInstall(
-        this.projectName,
-        optionalDependencies.dependencies,
-        this.options
-      ).then(() =>
-        npmInstall(
-          this.projectName,
-          optionalDependencies.devDependencies,
-          this.options,
-          true
-        )
+      return npmInstall(this.projectName, optionalDependencies.dependencies, this.options).then(() =>
+        npmInstall(this.projectName, optionalDependencies.devDependencies, this.options, true)
       );
     });
 };

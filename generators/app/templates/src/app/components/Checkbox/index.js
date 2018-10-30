@@ -8,6 +8,7 @@ class CheckboxContainer extends Component {
 
   handleToggle = event => {
     const { onChange } = this.props;
+
     this.setState(({ isChecked }) => ({
       isChecked: !isChecked
     }));
@@ -19,6 +20,7 @@ class CheckboxContainer extends Component {
   render() {
     const { className, inputClassName, labelClassName, label, name, disabled, required } = this.props;
     const { isChecked } = this.state;
+
     return (
       <Checkbox
         className={className}
@@ -36,22 +38,22 @@ class CheckboxContainer extends Component {
 }
 
 CheckboxContainer.defaultProps = {
-  isChecked: false,
   className: '',
   inputClassName: '',
+  isChecked: false,
   labelClassName: ''
 };
 
 CheckboxContainer.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   inputClassName: PropTypes.string,
-  labelClassName: PropTypes.string,
   isChecked: PropTypes.bool,
   label: PropTypes.string,
+  labelClassName: PropTypes.string,
   name: PropTypes.string,
-  onChange: PropTypes.func,
-  disabled: PropTypes.bool,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  onChange: PropTypes.func
 };
 
 export default CheckboxContainer;

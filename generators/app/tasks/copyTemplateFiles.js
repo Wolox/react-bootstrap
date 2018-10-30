@@ -6,7 +6,8 @@ const {
   LOCAL_STORAGE_FILE,
   FLOWCONFIG_PATH,
   REDUX_COMPONENTS,
-  CI_CONFIG_FILE
+  CI_CONFIG_FILE,
+  LINTER_IGNORE_PATH
 } = require('../constants');
 
 const { copyTpl, copy } = require('./utils');
@@ -28,6 +29,7 @@ module.exports = function copyTemplateFiles() {
   }
 
   bindedCopy(LINTER_PATH.src, LINTER_PATH.destination);
+  bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
 
   bindedCopyTpl('public/_index.html', 'public/index.html', {
     title: this.projectName
@@ -42,6 +44,7 @@ module.exports = function copyTemplateFiles() {
   });
 
   bindedCopyTpl(LINTER_PATH.src, LINTER_PATH.destination, {
-    flow: this.features.flow
+    flow: this.features.flow,
+    jest: this.features.jest
   });
 };
