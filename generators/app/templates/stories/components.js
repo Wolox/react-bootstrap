@@ -8,7 +8,7 @@ import Loading from '../src/app/components/Spinner/components/loading';
 import Checkbox from '../src/app/components/Checkbox';
 import RadioGroup from '../src/app/components/RadioGroup';
 
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 const colorSpinner = 'steelblue';
 
