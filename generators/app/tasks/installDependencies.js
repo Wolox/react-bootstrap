@@ -22,13 +22,12 @@ const DEPENDENCIES = [
   'babel-plugin-module-resolver',
   'babel-preset-es2015',
   'babel-polyfill',
-  'babel-preset-react-app'
+  'babel-preset-react-app',
+  'node-sass'
 ];
 
 const DEV_DEPENDENCIES = [
   'react-app-rewired',
-  'babel-eslint',
-  'eslint',
   'eslint-config-airbnb',
   'eslint-config-prettier',
   'eslint-plugin-flowtype',
