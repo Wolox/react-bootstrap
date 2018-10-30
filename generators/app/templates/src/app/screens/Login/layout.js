@@ -5,7 +5,7 @@ import InputLabel from '@components/InputLabel';
 import * as Routes from '@constants/routes';
 
 import { FIELDS } from './constants';
-import styles from './styles.scss';
+import styles from './styles.modules.scss';
 
 function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
   return (
