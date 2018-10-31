@@ -18,7 +18,6 @@ const DEPENDENCIES = [
   'wolox-equalizer',
   'babel-core',
   'babel-runtime',
-  'eslint-import-resolver-babel-module',
   'babel-plugin-module-resolver',
   'babel-preset-es2015',
   'babel-polyfill',
@@ -42,7 +41,6 @@ const DEV_DEPENDENCIES = [
   'wolox-react-scripts',
   'eslint-import-resolver-babel-module',
   'babel-plugin-transform-runtime',
-  'babel-plugin-module-resolver',
   'babel-preset-stage-0',
   '@storybook/react'
 ];
