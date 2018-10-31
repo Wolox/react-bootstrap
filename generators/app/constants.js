@@ -35,6 +35,11 @@ module.exports.LINTER_PATH = {
   destination: '.eslintrc.js'
 };
 
+module.exports.LINTER_IGNORE_PATH = {
+  src: 'eslintignore',
+  destination: '.eslintignore'
+};
+
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
   destination: '.flowconfig'
@@ -63,7 +68,6 @@ module.exports.TEMPLATE_FILES = [
   'Jenkinsfile',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
-  `${CONFIG_PATH}/numeral.js`,
   REDUX_PATH,
   `${REDUX_PATH}/store.js`,
   `${REDUX_PATH}/Auth/actions.js`,
@@ -88,8 +92,10 @@ module.exports.TEMPLATE_FILES = [
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
+  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
+  `${COMPONENTS_PATH}/TextArea/styles.scss`,
   `${COMPONENTS_PATH}/Checkbox/index.js`,
   `${COMPONENTS_PATH}/Checkbox/layout.js`,
   `${CONSTANTS_PATH}/fonts.js`,
@@ -106,17 +112,6 @@ module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
-  redux: {
-    dependencies: [
-      'redux',
-      'redux-recompose',
-      'redux-form',
-      'redux-thunk',
-      'react-router',
-      'react-router-redux',
-      'redux-beacon'
-    ]
-  },
   apisauce: { dependencies: ['apisauce'] },
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver'],
@@ -124,7 +119,6 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   },
   jest: { dependencies: ['jest'] },
   moment: { dependencies: ['moment'] },
-  'prop-types': { dependencies: ['prop-types'] },
   'seamless-immutable': { dependencies: ['seamless-immutable'] },
   flow: {
     dependencies: ['@babel/cli'],

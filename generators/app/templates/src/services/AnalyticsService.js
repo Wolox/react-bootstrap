@@ -1,5 +1,5 @@
 import { createMiddleware as createAnalyticsMiddleware } from 'redux-beacon';
-import { GoogleAnalytics } from 'redux-beacon/targets/google-analytics';
+import { GoogleAnalytics } from '@redux-beacon/google-analytics';
 
 const pageView = action => ({
   hitType: 'pageview',

@@ -6,9 +6,15 @@ if (baseURL === 'http://wolox.com') {
   console.warn('API baseURL has not been properly initialized');
 }
 
+const STATUS_CODES = {
+  unauthorized: 401
+};
+
 const api = create({
-  // TODO Add this if you need it
-  // baseURL: process.env.API_BASE_URL,
+  /*
+   * TODO Add this if you need it
+   * baseURL: process.env.API_BASE_URL,
+   */
   baseURL,
   timeout: 15000
 });
@@ -16,9 +22,11 @@ const api = create({
 // eslint-disable-next-line no-unused-vars, prettier/prettier
 export const apiSetup = dispatch => {
   api.addMonitor(response => {
-    if (response.status === 401) {
-      // TODO: These callbacks should only be called if no other callback was asigned for the response.
-      // - dispatch(alertActions.error(i18next.t('apiErrors:expired')));
+    if (response.status === STATUS_CODES.unauthorized) {
+      /*
+       * TODO: These callbacks should only be called if no other callback was asigned for the response.
+       * - dispatch(alertActions.error(i18next.t('apiErrors:expired')));
+       */
     }
   });
 

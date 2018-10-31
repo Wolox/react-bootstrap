@@ -11,6 +11,7 @@ const defaultState = {
 };
 
 /* eslint-disable complexity */
+// eslint-disable-next-line new-cap
 export function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
     case actions.AUTH_INIT: {
@@ -50,8 +51,8 @@ export const propTypes = {
   loading: PropTypes.bool.isRequired,
   initialLoading: PropTypes.bool.isRequired,
   currentUser: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    email: PropTypes.string.isRequired
+    email: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
     // TODO: Extend user model definition
   })
 };

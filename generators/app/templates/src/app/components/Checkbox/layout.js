@@ -17,7 +17,7 @@ function Checkbox({
       <input
         className={inputClassName}
         type="checkbox"
-        id={label}
+        id={label} // eslint-disable-line react/forbid-dom-props
         name={name}
         value={label}
         checked={isChecked}
@@ -41,14 +41,14 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+  onToggle: PropTypes.func.isRequired,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   inputClassName: PropTypes.string,
-  labelClassName: PropTypes.string,
   isChecked: PropTypes.bool,
   label: PropTypes.string,
+  labelClassName: PropTypes.string,
   name: PropTypes.string,
-  onToggle: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
   required: PropTypes.bool
 };
 

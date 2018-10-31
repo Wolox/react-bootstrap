@@ -8,11 +8,11 @@ function TextArea({ className, onChange, onBlur, onFocus, value }) {
 }
 
 TextArea.propTypes = {
-  className: PropTypes.string,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  className: PropTypes.string,
   onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  value: PropTypes.string.isRequired
+  onFocus: PropTypes.func
 };
 
 TextArea.defaultProps = {

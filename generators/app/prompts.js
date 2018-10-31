@@ -1,4 +1,4 @@
-const OPTIONAL_DEPENDENCIES = require('./constants').OPTIONAL_DEPENDENCIES;
+const { OPTIONAL_DEPENDENCIES } = require('./constants');
 
 /* THIS FILE CONTAINS THE PROMPTS THAT WILL BE SHOWN TO THE USER EACH TIME THE GENERATOR IS EXECUTED */
 module.exports = [
@@ -27,6 +27,7 @@ module.exports = [
     filter: values =>
       values.reduce((answer, val) => {
         answer[val] = true;
+
         return answer;
       }, {})
   }
