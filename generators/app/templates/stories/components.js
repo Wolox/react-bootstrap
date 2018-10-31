@@ -6,6 +6,7 @@ import SearchBar from '../src/app/components/SearchBar';
 import TextArea from '../src/app/components/TextArea';
 import Loading from '../src/app/components/Spinner/components/loading';
 import Checkbox from '../src/app/components/Checkbox';
+import RadioGroup from '../src/app/components/RadioGroup';
 
 import styles from './styles.scss';
 
@@ -103,3 +104,54 @@ storiesOf('Checkbox', module).add('With label', () => <Checkbox label="Acepto tÃ
 storiesOf('Checkbox', module).add('With custom style', () => <Checkbox inputClassName={styles.checkmark} />);
 
 storiesOf('Checkbox', module).add('With callback', () => <Checkbox onChange={action('clicked')} />);
+
+storiesOf('RadioGroup', module).add('Default', () => (
+  <RadioGroup>
+    <RadioGroup.option label="option 1" value="1" />
+    <RadioGroup.option label="option 2" value="2" />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With custom styles', () => (
+  <RadioGroup className={styles.radioGroup}>
+    <RadioGroup.option
+      label="option 1"
+      value="1"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+      labelClassName={styles.option1}
+    />
+    <RadioGroup.option
+      label="option 2"
+      value="2"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+      labelClassName={styles.option2}
+    />
+    <RadioGroup.option
+      label="option 3"
+      value="3"
+      className={styles.radioOption}
+      inputClassName={styles.radio}
+    />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With different type children', () => (
+  <RadioGroup>
+    <RadioGroup.option label="option 1" value="1" />
+    <hr />
+    <RadioGroup.option label="option 2" value="2" />
+    <hr />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
+));
+
+storiesOf('RadioGroup', module).add('With callback', () => (
+  <RadioGroup onChange={action('clicked')}>
+    <RadioGroup.option label="option 1" value="1" />
+    <RadioGroup.option label="option 2" value="2" />
+    <RadioGroup.option label="option 3" value="3" />
+  </RadioGroup>
+));

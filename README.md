@@ -31,6 +31,7 @@ This are the components you can to choose for your app.
   * TextArea
   * Field
   * Spinner
+  * [RadioGroup](docs/RadioGroup.md)
 
 ### SearchBar
 
