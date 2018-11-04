@@ -9,12 +9,12 @@ export function wrapField(WrappedComponent) {
   Field.propTypes = {
     input: PropTypes.shape({
       name: PropTypes.string,
+      value: PropTypes.string,
       onBlur: PropTypes.func,
       onChange: PropTypes.func,
       onDragStart: PropTypes.func,
       onDrop: PropTypes.func,
-      onFocus: PropTypes.func,
-      value: PropTypes.string
+      onFocus: PropTypes.func
     }).isRequired
   };
 

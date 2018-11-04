@@ -35,6 +35,11 @@ module.exports.LINTER_PATH = {
   destination: '.eslintrc.js'
 };
 
+module.exports.LINTER_IGNORE_PATH = {
+  src: 'eslintignore',
+  destination: '.eslintignore'
+};
+
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
   destination: '.flowconfig'
@@ -51,7 +56,7 @@ const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
-const DOCS_README_PATH = '../../docs';
+const DOCS_README_PATH = 'docs';
 
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
@@ -75,7 +80,6 @@ module.exports.TEMPLATE_FILES = [
   `${DOCS_README_PATH}/Login.md`,
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
-  `${CONFIG_PATH}/numeral.js`,
   REDUX_PATH,
   `${REDUX_PATH}/store.js`,
   `${REDUX_PATH}/Auth/actions.js`,
@@ -98,17 +102,21 @@ module.exports.TEMPLATE_FILES = [
   `${SCREENS_PATH}/Login/layout.js`,
   `${SCREENS_PATH}/Login/constants.js`,
   `${SCREENS_PATH}/Login/i18n.js`,
-  `${SCREENS_PATH}/Login/styles.modules.scss`,
+  `${SCREENS_PATH}/Login/styles.scss`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/index.js`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
+  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/InputLabel/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
+  `${COMPONENTS_PATH}/TextArea/styles.scss`,
   `${COMPONENTS_PATH}/Checkbox/index.js`,
   `${COMPONENTS_PATH}/Checkbox/layout.js`,
+  `${COMPONENTS_PATH}/RadioGroup/index.js`,
+  `${COMPONENTS_PATH}/RadioGroup/components/RadioOption/index.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${CONSTANTS_PATH}/routes.js`,
@@ -124,21 +132,9 @@ module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
-  redux: {
-    dependencies: [
-      'redux',
-      'redux-recompose',
-      'redux-form',
-      'redux-thunk',
-      'react-router',
-      'react-router-redux',
-      'redux-beacon'
-    ]
-  },
   apisauce: { dependencies: ['apisauce'] },
   jest: { dependencies: ['jest'] },
   moment: { dependencies: ['moment'] },
-  'prop-types': { dependencies: ['prop-types'] },
   'seamless-immutable': { dependencies: ['seamless-immutable'] },
   flow: {
     dependencies: ['@babel/cli'],

@@ -1,7 +1,7 @@
 module.exports = {
-  extends: ['wolox'<% if (flow) { %>, 'plugin:flowtype/recommended'<% } %>],  <% if (flow) { %>
-  plugins: ['flowtype'],<% } %>
-  rules: {
-    'jsx-a11y/href-no-hash': 'off'
-  }
+  extends: ['wolox-react'<% if (flow) { %>, 'plugin:flowtype/recommended'<% } %>]<% if (flow) { %>,  
+  plugins: ['flowtype']<% } %><% if (jest) { %>,
+  env: {
+    jest: true
+  }<% } %>
 };

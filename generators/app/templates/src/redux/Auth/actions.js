@@ -36,6 +36,7 @@ export const actionCreators = {
       dispatch({ type: actions.LOGIN });
       try {
         const response = await AuthService.login(authData);
+
         if (response.ok) {
           await AuthService.setCurrentUser(response.data);
           dispatch(privateActionCreators.loginSuccess(response.data));

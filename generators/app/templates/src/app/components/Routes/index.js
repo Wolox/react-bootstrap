@@ -7,12 +7,13 @@ import Login from '@screens/Login';
 import * as Routes from '@constants/routes';
 
 import AuthenticatedRoute from './components/AuthenticatedRoute';
+import * as Routes from './constants';
 import styles from './styles';
 
 function AppRoutes() {
   return (
     <ConnectedRouter history={history}>
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Switch>
           <AuthenticatedRoute isPrivateRoute exact path={Routes.HOME} component={Home} />
           <AuthenticatedRoute isPublicRoute exact path={Routes.LOGIN} component={Login} />

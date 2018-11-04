@@ -9,7 +9,7 @@ function Dashboard() {
   return (
     <Switch>
       <Route exact path={Routes.HOME} component={Home} />
-      <Route render={() => <Redirect to={Routes.HOME} />} />
+      <Route component={<Redirect to={Routes.HOME} />} />
     </Switch>
   );
 }
