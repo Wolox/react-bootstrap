@@ -24,6 +24,7 @@ class RadioGroup extends Component {
 
   handleChange = event => {
     const { onChange } = this.props;
+
     this.setState({ selectedValue: event.target.value });
     if (onChange) {
       onChange(event);
@@ -34,6 +35,7 @@ class RadioGroup extends Component {
     const { className, name, disabled, children } = this.props;
     const { selectedValue } = this.state;
     const context = { selectedValue, name, disabled, onChange: this.handleChange };
+
     return (
       <div className={className}>
         <Provider value={context}>{children}</Provider>
@@ -49,9 +51,9 @@ RadioGroup.defaultProps = {
 
 RadioGroup.propTypes = {
   className: PropTypes.string,
-  selectedValue: PropTypes.string,
-  name: PropTypes.string,
   disabled: PropTypes.bool,
+  name: PropTypes.string,
+  selectedValue: PropTypes.string,
   onChange: PropTypes.func
 };
 
