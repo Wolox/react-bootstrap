@@ -30,11 +30,6 @@ module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            �
   'Welcome to the React kickoff'
 )}\n\n  `;
 
-module.exports.LINTER_PATH = {
-  src: 'eslintrc.js',
-  destination: '.eslintrc.js'
-};
-
 module.exports.LINTER_IGNORE_PATH = {
   src: 'eslintignore',
   destination: '.eslintignore'
@@ -57,14 +52,17 @@ const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
 
+module.exports.FLOWCONFIG_PATH = {
+  src: 'flowconfig',
+  destination: '.flowconfig'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
-module.exports.TEMPLATE_FILES = [
+module.exports.FILES = [
   'config-overrides.js',
   'pull_request_template.md',
-  'circle.yml',
   'src/index.js',
-  'src/app/index.js',
   'Jenkinsfile',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
@@ -74,7 +72,6 @@ module.exports.TEMPLATE_FILES = [
   `${REDUX_PATH}/Auth/reducer.js`,
   SERVICES_PATH,
   `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/LocalStorageService.js`,
   `${SERVICES_PATH}/AnalyticsService.js`,
   SCSS_PATH,
   `${SCSS_PATH}/application.scss`,
@@ -84,15 +81,17 @@ module.exports.TEMPLATE_FILES = [
   UTILS_PATH,
   `${UTILS_PATH}/colors.js`,
   `${UTILS_PATH}/array.js`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/assets`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/assets/logo.svg`,
   `${SCREENS_PATH}/Dashboard/screens/Home/index.js`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/styles.module.scss`,
   `${SCREENS_PATH}/Dashboard/index.js`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/constants.js`,
-  `${COMPONENTS_PATH}/Routes/index.js`,
+  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
-  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.scss`,
@@ -109,7 +108,21 @@ module.exports.TEMPLATE_FILES = [
   `${CI_PATH}/Dockerfile`
 ];
 
-module.exports.LOCAL_STORAGE_FILE = `${SERVICES_PATH}/LocalStorageService.js`;
+module.exports.TEMPLATE_FILES = [
+  // TODO: Insert here all template ejs files
+  '.eslintrc.js',
+  'src/app/index.js',
+  `${COMPONENTS_PATH}/Routes/index.js`,
+  `${SERVICES_PATH}/LocalStorageService.js`
+];
+
+module.exports.FILES_TO_DELETE = [
+  'src/App.css',
+  'src/App.js',
+  'src/App.test.js',
+  'src/index.css',
+  'src/logo.svg'
+];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 

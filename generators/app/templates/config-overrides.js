@@ -1,3 +1,5 @@
+// const rewireWolox = require('react-app-rewire-wolox');
+
 const path = require('path');
 
 const createLoaderMatcher = loader => rule =>
@@ -21,6 +23,7 @@ const addCamelCaseToCSSModules = config => {
 
 module.exports = function override(config) {
   addCamelCaseToCSSModules(config);
-
+  // TODO: Soon..
+  // return rewireWolox(config, env);
   return config;
 };

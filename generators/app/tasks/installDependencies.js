@@ -23,8 +23,8 @@ const DEPENDENCIES = [
   'redux-form',
   'redux-thunk',
   'react-router',
-  'react-router-redux',
   'redux-beacon',
+  'connected-react-router',
   '@redux-beacon/google-analytics'
 ];
 
@@ -43,6 +43,8 @@ const DEV_DEPENDENCIES = [
   'husky',
   'prettier',
   'prettier-eslint',
+  'react-hot-loader',
+  'react-app-rewire-wolox',
   '@storybook/react',
   'prop-types'
 ];
