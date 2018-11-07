@@ -29,7 +29,6 @@ module.exports = function copyTemplateFiles() {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
   }
 
-  // Try to delete this
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
 
   bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {

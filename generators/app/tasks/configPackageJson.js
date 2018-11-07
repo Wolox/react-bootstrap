@@ -1,4 +1,4 @@
-const generateRARScript = (command, options) => `react-app-rewired ${command} ${options || ''}`;
+const generateRARScript = (command, options = '') => `react-app-rewired ${command} ${options}`;
 
 const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features) => {
   const attributes = {
