@@ -1,18 +1,20 @@
 import React from 'react';
 
 import logo from './assets/logo.svg';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 function Home() {
   return (
     <div className={styles.app}>
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
-        <h1 className={styles.appTitle}>Welcome to Wolox React Bootstrap</h1>
+        <p className={styles.text}>
+          Edit <code>src/app/index.js</code> and save to reload. 
+        </p>
+        <a className={styles.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+          Learn React
+        </a>
       </header>
-      <p className={styles.appIntro}>
-        To get started, edit the Dashboard component in <code>src/app/screens/Dashboard</code> folder.
-      </p>
     </div>
   );
 }

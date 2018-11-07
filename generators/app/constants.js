@@ -30,6 +30,16 @@ module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            �
   'Welcome to the React kickoff'
 )}\n\n  `;
 
+module.exports.LINTER_IGNORE_PATH = {
+  src: 'eslintignore',
+  destination: '.eslintignore'
+};
+
+module.exports.FLOWCONFIG_PATH = {
+  src: 'flowconfig',
+  destination: '.flowconfig'
+};
+
 const COMPONENTS_PATH = 'src/app/components';
 const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
@@ -40,6 +50,7 @@ const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
+const CI_PATH = '.woloxci/';
 
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
@@ -51,11 +62,10 @@ module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 module.exports.FILES = [
   'config-overrides.js',
   'pull_request_template.md',
-  'circle.yml',
   'src/index.js',
+  'Jenkinsfile',
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
-  `${CONFIG_PATH}/numeral.js`,
   REDUX_PATH,
   `${REDUX_PATH}/store.js`,
   `${REDUX_PATH}/Auth/actions.js`,
@@ -74,23 +84,28 @@ module.exports.FILES = [
   `${SCREENS_PATH}/Dashboard/screens/Home/assets`,
   `${SCREENS_PATH}/Dashboard/screens/Home/assets/logo.svg`,
   `${SCREENS_PATH}/Dashboard/screens/Home/index.js`,
-  `${SCREENS_PATH}/Dashboard/screens/Home/styles.scss`,
+  `${SCREENS_PATH}/Dashboard/screens/Home/styles.module.scss`,
   `${SCREENS_PATH}/Dashboard/index.js`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/constants.js`,
-  `${COMPONENTS_PATH}/Routes/styles.js`,
+  `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
-  `${COMPONENTS_PATH}/TextArea/styles.js`,
+  `${COMPONENTS_PATH}/TextArea/styles.scss`,
+  `${COMPONENTS_PATH}/Checkbox/index.js`,
+  `${COMPONENTS_PATH}/Checkbox/layout.js`,
+  `${COMPONENTS_PATH}/RadioGroup/index.js`,
+  `${COMPONENTS_PATH}/RadioGroup/components/RadioOption/index.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
   `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
   `${STORIES_PATH}/components.js`,
-  `${STORIES_PATH}/styles.scss`
+  `${STORIES_PATH}/styles.scss`,
+  `${CI_PATH}/Dockerfile`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -109,19 +124,9 @@ module.exports.FILES_TO_DELETE = [
   'src/logo.svg'
 ];
 
+module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
+
 module.exports.OPTIONAL_DEPENDENCIES = {
-  redux: {
-    dependencies: [
-      'connected-react-router',
-      'react-redux',
-      'redux',
-      'redux-beacon',
-      'redux-form',
-      'redux-recompose',
-      'react-router',
-      'redux-thunk'
-    ]
-  },
   apisauce: { dependencies: ['apisauce'] },
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver'],
@@ -129,11 +134,10 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   },
   jest: { dependencies: ['jest'] },
   moment: { dependencies: ['moment'] },
-  'prop-types': { dependencies: ['prop-types'] },
   'seamless-immutable': { dependencies: ['seamless-immutable'] },
   flow: {
-    dependencies: ['babel-cli'],
-    devDependencies: ['flow-bin', 'babel-preset-flow']
+    dependencies: ['@babel/cli'],
+    devDependencies: ['flow-bin', '@babel/preset-flow']
   },
   reselect: { dependencies: ['reselect'] }
 };

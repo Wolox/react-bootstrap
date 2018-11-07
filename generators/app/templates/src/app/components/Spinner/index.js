@@ -11,7 +11,7 @@ export function withSpinner({
   typeLoading,
   colorSpinner
 }) {
-  function Spinner({ loading }) {
+  function Spinner({ loading, ...props }) {
     return loading ? (
       <div className={classNameContainer}>
         <Loading className={classNameLoading} type={typeLoading} color={colorSpinner} />
@@ -22,18 +22,19 @@ export function withSpinner({
   }
 
   Spinner.propTypes = {
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
+    props: PropTypes.object // eslint-disable-line react/forbid-prop-types
   };
 
   return Spinner;
 }
 
 withSpinner.propTypes = {
-  WrappedComponent: PropTypes.node,
   classNameContainer: PropTypes.string,
   classNameLoading: PropTypes.string,
+  colorSpinner: PropTypes.string,
   typeLoading: PropTypes.oneOf(TYPE_SPINNER),
-  colorSpinner: PropTypes.string
+  WrappedComponent: PropTypes.node
 };
 
 withSpinner.defaultProps = {

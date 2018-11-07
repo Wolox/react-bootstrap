@@ -10,28 +10,35 @@ const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
 
 function AuthenticatedRoute({
-  // TODO Add this if you need it
-  // device,
+  /*
+   * TODO Add this if you need it
+   * device,
+   */
   isPublicRoute,
   isPrivateRoute,
   initialized,
-  currentUser,
+  // CurrentUser,
   component: Comp,
   ...props
 }) {
   return (
     <Route
       {...props}
+      // eslint-disable-next-line react/jsx-no-bind
       render={routeProps => {
-        // TODO Add this if you need it
-        // if (device.isMobile && !device.adviceSubmitted) {
-        //   return <AppDownloader />;
-        // }
+        /*
+         * TODO Add this if you need it
+         * if (device.isMobile && !device.adviceSubmitted) {
+         *   return <AppDownloader />;
+         * }
+         */
         if (initialized) {
           if (isPublicRoute) {
-            // TODO Add this if you need it
-            // if (currentUser && isPublicRoute) {
-            // do not allow logged users to access public routes. redirect to app
+            /*
+             * TODO Add this if you need it
+             * if (currentUser && isPublicRoute) {
+             * do not allow logged users to access public routes. redirect to app
+             */
             return (
               <Redirect
                 to={{
@@ -41,7 +48,7 @@ function AuthenticatedRoute({
               />
             );
           } else if (isPrivateRoute) {
-            // do not allow unlogged users to access app. redirect to signin
+            // Do not allow unlogged users to access app. redirect to signin
             return (
               <Redirect
                 to={{
@@ -52,6 +59,7 @@ function AuthenticatedRoute({
             );
           }
         }
+
         return <Comp {...routeProps} />;
       }}
     />
@@ -59,19 +67,23 @@ function AuthenticatedRoute({
 }
 
 AuthenticatedRoute.defaultProps = {
-  // TODO Add this if you need it
-  // currentUser: false,
-  // isPublicRoute: true,
+  /*
+   * TODO Add this if you need it
+   * currentUser: false,
+   * isPublicRoute: true,
+   */
   initialized: false
 };
 
 AuthenticatedRoute.propTypes = {
-  ...Route.propTypes,
-  // TODO Add this if you need it
-  // currentUser: PropTypes.bool,
+  ...Route.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
+  /*
+   * TODO Add this if you need it
+   * currentUser: PropTypes.bool,
+   */
+  initialized: PropTypes.bool,
   isPrivateRoute: PropTypes.bool,
-  isPublicRoute: PropTypes.bool,
-  initialized: PropTypes.bool
+  isPublicRoute: PropTypes.bool
 };
 
 export default withRouter(connect()(AuthenticatedRoute));

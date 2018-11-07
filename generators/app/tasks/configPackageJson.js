@@ -26,6 +26,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
   if (features.flow) {
     attributes.scripts.flow = 'flow';
   }
+
   return attributes;
 };
 
@@ -35,5 +36,6 @@ module.exports = function configPackageJson() {
     pjson,
     getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl, this.features)
   );
+
   this.fs.writeJSON(`./${this.projectName}/package.json`, newpjson);
 };

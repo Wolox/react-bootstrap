@@ -4,30 +4,29 @@
 
 .app-logo {
   animation: app-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 40vmin;
+  margin-bottom: 40px;
 }
 
 .app-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  justify-content: center;
+}
+
+.text {
+  font-size: calc(10px + 2vmin);
+  margin-bottom: calc(30px + 2vmin);
   color: white;
 }
 
-.app-title {
-  color: white;
-  margin-top: 20px;
-  font-size: 1.5em;
-}
-
-.app-intro {
-  color: black;
-  margin-top: 20px;
-  font-size: large;
+.app-link {
+  font-size: calc(10px + 2vmin);
+  color: #61dafb;
+  text-decoration: underline;
 }
 
 @keyframes app-logo-spin {

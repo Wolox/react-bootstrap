@@ -1,6 +1,13 @@
 const mkdirp = require('mkdirp');
 
-const { FILES, TEMPLATE_FILES, FILES_TO_DELETE, FLOWCONFIG_PATH, REDUX_COMPONENTS } = require('../constants');
+const {
+  FILES,
+  FILES_TO_DELETE,
+  TEMPLATE_FILES,
+  FLOWCONFIG_PATH,
+  CI_CONFIG_FILE,
+  LINTER_IGNORE_PATH
+} = require('../constants');
 
 const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
 
@@ -22,9 +29,12 @@ module.exports = function copyTemplateFiles() {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
   }
 
-  if (this.features.redux) {
-    REDUX_COMPONENTS.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
-  }
+  // Try to delete this
+  bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
+
+  bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
+    projectName: this.projectName
+  });
 
   bindedCopyTpl('public/_index.html', 'public/index.html', {
     title: this.projectName

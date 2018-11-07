@@ -7,13 +7,12 @@ import Home from '../../screens/Dashboard';
 
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import * as Routes from './constants';
-import styles from './styles';
-
+import styles from './styles.scss';
+<%# TODO: Handle ConnectedRouter connection according redux feature %>
 function AppRoutes() {
-  <%# TODO: Handle ConnectedRouter connection according redux feature %>
   return (
     <ConnectedRouter history={history}>
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Switch>
           <AuthenticatedRoute isPrivateRoute exact path={Routes.HOME} component={Home} />
         </Switch>

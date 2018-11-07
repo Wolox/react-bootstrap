@@ -22,17 +22,17 @@ function SearchBarContainer({
 }
 
 SearchBarContainer.propTypes = {
-  textButtonSearch: PropTypes.string,
-  className: PropTypes.string,
-  formClassName: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
   buttonClassName: PropTypes.string,
   children: PropTypes.node,
-  handleSubmit: PropTypes.func.isRequired
+  className: PropTypes.string,
+  formClassName: PropTypes.string,
+  textButtonSearch: PropTypes.string
 };
 
 SearchBarContainer.defaultProps = {
-  className: '',
   buttonClassName: '',
+  className: '',
   textButtonSearch: 'Buscar'
 };
 
