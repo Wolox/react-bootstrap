@@ -46,7 +46,8 @@ const DEV_DEPENDENCIES = [
   'react-hot-loader',
   'react-app-rewire-wolox',
   '@storybook/react',
-  'prop-types'
+  'prop-types',
+  '@babel/plugin-proposal-optional-chaining'
 ];
 
 /**

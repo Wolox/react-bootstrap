@@ -40,6 +40,11 @@ module.exports.FLOWCONFIG_PATH = {
   destination: '.flowconfig'
 };
 
+module.exports.BABELRC_PATH = {
+  src: 'babelrc',
+  destination: '.babelrc'
+};
+
 const COMPONENTS_PATH = 'src/app/components';
 const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
