@@ -9,7 +9,7 @@ function Home() {
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>
-          Edit <code>src/app/index.js</code> and save to reload. 
+          Edit <code>src/app/index.js</code> and save to reload.
         </p>
         <a className={styles.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
