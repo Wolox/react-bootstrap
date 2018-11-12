@@ -7,7 +7,7 @@ function InputLabel({
   dataFor,
   label,
   inputClassName,
-  inputName,
+  name,
   placeholder,
   inputId,
   inputType,
@@ -21,7 +21,7 @@ function InputLabel({
       </label>
       <input
         className={inputClassName}
-        name={inputName}
+        name={name}
         placeholder={placeholder}
         id={inputId}
         type={inputType}
@@ -38,7 +38,7 @@ InputLabel.propTypes = {
   dataFor: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   inputClassName: PropTypes.string,
-  inputName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   inputId: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
