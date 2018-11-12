@@ -17,7 +17,7 @@ function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
       <div className={`column m-top-2 ${styles.sectionContainer}`}>
         <InputLabel
           label={t('Login:email')}
-          inputName={FIELDS.email}
+          name={FIELDS.email}
           inputId={FIELDS.email}
           dataFor={FIELDS.email}
           inputType="text"
@@ -27,7 +27,7 @@ function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
         />
         <InputLabel
           label={t('Login:password')}
-          inputName={FIELDS.password}
+          name={FIELDS.password}
           inputId={FIELDS.password}
           dataFor={FIELDS.password}
           inputType="password"

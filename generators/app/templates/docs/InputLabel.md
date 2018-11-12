@@ -9,7 +9,7 @@
 | dataFor | String | ✓ | `''` | Specifies which form element a label is bound to |
 | label | String | ✓ | | Specifies Input associated label |
 | inputClassName | String | | `''`| Custom styles to apply to the input |
-| inputName | String | ✓ | | Specifies the name |
+| name | String | ✓ | | Specifies the name |
 | placeholder | String | | `''` | Specifies a hint of the expected value |
 | inputId | String | ✓ | | Specifies the id |
 | inputType | String | ✓ | | Specifies the type |
@@ -25,7 +25,7 @@
   textClassName={styles.inputLabel}
   label="Contraseña"
   dataFor={PASSWORD}
-  inputName={PASSWORD}
+  name={PASSWORD}
   inputId={PASSWORD}
   inputType="text"
   handleChange={handleChange}
