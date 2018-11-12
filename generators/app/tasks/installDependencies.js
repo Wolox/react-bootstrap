@@ -26,7 +26,6 @@ const DEPENDENCIES = [
   'redux-thunk',
   'react-router',
   'redux-beacon',
-  '@redux-beacon/google-analytics',
   'connected-react-router',
   '@redux-beacon/google-analytics'
 ];
@@ -46,9 +45,6 @@ const DEV_DEPENDENCIES = [
   'husky',
   'prettier',
   'prettier-eslint',
-  'react-scripts',
-  'wolox-react-scripts',
-  'eslint-import-resolver-babel-module',
   'react-hot-loader',
   'react-app-rewire-wolox',
   '@storybook/react',
