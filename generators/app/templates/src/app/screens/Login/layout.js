@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'i18next';
-import InputLabel from '@components/InputLabel';
-import * as Routes from '@constants/routes';
 
+import InputLabel from '../../components/InputLabel';
+import * as Routes from '../../../constants/routes';
 import { FIELDS } from './constants';
-import styles from './styles.modules';
+import styles from './styles.module.scss';
 
 function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
   return (

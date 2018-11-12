@@ -1,19 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-<<<<<<< HEAD
-import SearchBar from '@components/SearchBar';
-import TextArea from '@components/TextArea';
-import Loading from '@components/Spinner/components/loading';
-import Checkbox from '@components/Checkbox';
-=======
 
 import SearchBar from '../src/app/components/SearchBar';
 import TextArea from '../src/app/components/TextArea';
 import Loading from '../src/app/components/Spinner/components/loading';
 import Checkbox from '../src/app/components/Checkbox';
 import RadioGroup from '../src/app/components/RadioGroup';
->>>>>>> origin/development
 
 import styles from './styles.scss';
 

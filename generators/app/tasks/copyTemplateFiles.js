@@ -1,22 +1,28 @@
 const mkdirp = require('mkdirp');
 
 const {
+  FILES,
+  FILES_TO_DELETE,
   TEMPLATE_FILES,
-  LINTER_PATH,
-  LOCAL_STORAGE_FILE,
   FLOWCONFIG_PATH,
-  REDUX_COMPONENTS,
   CI_CONFIG_FILE,
-  LINTER_IGNORE_PATH
+  LINTER_IGNORE_PATH,
+  BABELRC_PATH
 } = require('../constants');
 
-const { copyTpl, copy } = require('./utils');
+const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
 
 module.exports = function copyTemplateFiles() {
-  const bindedCopyTpl = copyTpl.bind(this);
   const bindedCopy = copy.bind(this);
+  const bindedCopyTpl = copyTpl.bind(this);
+  const bindedCopyEjsTpl = copyEjsTpl.bind(this);
+  const bindedDeleteFiles = deleteFiles.bind(this);
 
-  TEMPLATE_FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+  FILES_TO_DELETE.forEach(src => bindedDeleteFiles(src));
+
+  FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+
+  TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
 
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
 
@@ -24,27 +30,15 @@ module.exports = function copyTemplateFiles() {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
   }
 
-  if (this.features.redux) {
-    REDUX_COMPONENTS.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
-  }
-
-  bindedCopy(LINTER_PATH.src, LINTER_PATH.destination);
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
 
-  bindedCopyTpl('public/_index.html', 'public/index.html', {
-    title: this.projectName
-  });
-
-  bindedCopyTpl(LOCAL_STORAGE_FILE, LOCAL_STORAGE_FILE, {
-    projectName: this.projectName
-  });
+  bindedCopy(BABELRC_PATH.src, BABELRC_PATH.destination);
 
   bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
     projectName: this.projectName
   });
 
-  bindedCopyTpl(LINTER_PATH.src, LINTER_PATH.destination, {
-    flow: this.features.flow,
-    jest: this.features.jest
+  bindedCopyTpl('public/_index.html', 'public/index.html', {
+    title: this.projectName
   });
 };

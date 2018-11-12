@@ -6,6 +6,7 @@ const { OPTIONAL_DEPENDENCIES } = require('../constants');
 const runCommand = require('./runCommand');
 
 const DEPENDENCIES = [
+  'apisauce',
   'history',
   'i18next',
   'lodash',
@@ -19,19 +20,15 @@ const DEPENDENCIES = [
   'node-sass',
   'redux',
   'react-redux',
+  'react-router-redux',
   'redux-recompose',
   'redux-form',
   'redux-thunk',
   'react-router',
-  'react-router-redux',
   'redux-beacon',
   '@redux-beacon/google-analytics',
-  'babel-core',
-  'babel-runtime',
-  'babel-plugin-module-resolver',
-  'babel-preset-es2015',
-  'babel-polyfill',
-  'babel-preset-react-app'
+  'connected-react-router',
+  '@redux-beacon/google-analytics'
 ];
 
 const DEV_DEPENDENCIES = [
@@ -52,9 +49,11 @@ const DEV_DEPENDENCIES = [
   'react-scripts',
   'wolox-react-scripts',
   'eslint-import-resolver-babel-module',
-  'babel-plugin-transform-runtime',
-  'babel-preset-stage-0',
-  '@storybook/react'
+  'react-hot-loader',
+  'react-app-rewire-wolox',
+  '@storybook/react',
+  'prop-types',
+  '@babel/plugin-proposal-optional-chaining'
 ];
 
 /**

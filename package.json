@@ -1,6 +1,6 @@
 {
   "name": "generator-react-bootstrap",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "wolox-react-bootstrap",
   "files": [
     "index.js",
@@ -8,11 +8,6 @@
   ],
   "main": "app/index.js",
   "scripts": {
-    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
-    "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
-    "deploy": "npm run build",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js",
