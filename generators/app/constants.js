@@ -112,6 +112,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
+  `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
   `${COMPONENTS_PATH}/InputLabel/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
