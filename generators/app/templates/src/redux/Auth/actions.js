@@ -1,7 +1,6 @@
-import { push } from 'connected-react-router';
-
+import { push } from 'react-router-redux';
 import * as AuthService from '../../services/AuthServices';
-import * as RouteConstants from '../../app/components/Routes/constants';
+import Routes from '../../constants/routes';
 import { stringArrayToObject } from '../../utils/array';
 
 /* ------------- Auth actions ------------- */
@@ -41,7 +40,7 @@ export const actionCreators = {
         if (response.ok) {
           await AuthService.setCurrentUser(response.data);
           dispatch(privateActionCreators.loginSuccess(response.data));
-          dispatch(push(RouteConstants.HOME));
+          dispatch(push(Routes.HOME));
         } else {
           throw new Error('Invalid credentials');
         }
@@ -54,7 +53,7 @@ export const actionCreators = {
     return async dispatch => {
       await AuthService.removeCurrentUser();
       dispatch({ type: actions.LOGOUT });
-      dispatch(push(RouteConstants.LOGIN));
+      dispatch(push(Routes.LOGIN));
     };
   }
 };

@@ -6,6 +6,7 @@ const { OPTIONAL_DEPENDENCIES } = require('../constants');
 const runCommand = require('./runCommand');
 
 const DEPENDENCIES = [
+  'apisauce',
   'history',
   'i18next',
   'lodash',
@@ -19,6 +20,7 @@ const DEPENDENCIES = [
   'node-sass',
   'redux',
   'react-redux',
+  'react-router-redux',
   'redux-recompose',
   'redux-form',
   'redux-thunk',

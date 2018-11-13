@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import * as Routes from '../../components/Routes/constants';
-
+import Routes from '../../../constants/routes';
 import Home from './screens/Home';
 
 function Dashboard() {

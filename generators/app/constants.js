@@ -56,6 +56,7 @@ const SCSS_PATH = 'src/scss';
 const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
+const DOCS_README_PATH = 'docs';
 
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
@@ -67,8 +68,18 @@ module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 module.exports.FILES = [
   'config-overrides.js',
   'pull_request_template.md',
+  'README.md',
   'src/index.js',
   'Jenkinsfile',
+  `${DOCS_README_PATH}/Checkbox.md`,
+  `${DOCS_README_PATH}/Field.md`,
+  `${DOCS_README_PATH}/InputLabel.md`,
+  `${DOCS_README_PATH}/SearchBar.md`,
+  `${DOCS_README_PATH}/Spinner.md`,
+  `${DOCS_README_PATH}/TextArea.md`,
+  `${DOCS_README_PATH}/BaseStyles.md`,
+  `${DOCS_README_PATH}/RadioGroup.md`,
+  `${DOCS_README_PATH}/Login.md`,
   `${CONFIG_PATH}/api.js`,
   `${CONFIG_PATH}/i18n.js`,
   REDUX_PATH,
@@ -91,13 +102,18 @@ module.exports.FILES = [
   `${SCREENS_PATH}/Dashboard/screens/Home/index.js`,
   `${SCREENS_PATH}/Dashboard/screens/Home/styles.module.scss`,
   `${SCREENS_PATH}/Dashboard/index.js`,
+  `${SCREENS_PATH}/Login/index.js`,
+  `${SCREENS_PATH}/Login/layout.js`,
+  `${SCREENS_PATH}/Login/constants.js`,
+  `${SCREENS_PATH}/Login/i18n.js`,
+  `${SCREENS_PATH}/Login/styles.module.scss`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
-  `${COMPONENTS_PATH}/Routes/constants.js`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner/index.js`,
   `${COMPONENTS_PATH}/Spinner/components/loading.js`,
   `${COMPONENTS_PATH}/Spinner/components/constants.js`,
   `${COMPONENTS_PATH}/SearchBar/index.js`,
+  `${COMPONENTS_PATH}/InputLabel/index.js`,
   `${COMPONENTS_PATH}/TextArea/index.js`,
   `${COMPONENTS_PATH}/TextArea/styles.scss`,
   `${COMPONENTS_PATH}/Checkbox/index.js`,
@@ -106,6 +122,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/RadioGroup/components/RadioOption/index.js`,
   `${CONSTANTS_PATH}/fonts.js`,
   `${CONSTANTS_PATH}/sizes.js`,
+  `${CONSTANTS_PATH}/routes.js`,
   `${STORYBOOK_CONFIG_PATH}/config.js`,
   `${STORYBOOK_CONFIG_PATH}/webpack.config.js`,
   `${STORIES_PATH}/components.js`,
@@ -132,11 +149,6 @@ module.exports.FILES_TO_DELETE = [
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
-  apisauce: { dependencies: ['apisauce'] },
-  'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver'],
-    devDependencies: ['eslint-import-resolver-babel-module']
-  },
   jest: { dependencies: ['jest'] },
   moment: { dependencies: ['moment'] },
   'seamless-immutable': { dependencies: ['seamless-immutable'] },
