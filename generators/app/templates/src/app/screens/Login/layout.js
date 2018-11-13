@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import { t } from 'i18next';
 
 import InputLabel from '../../components/InputLabel';
-import * as Routes from '../../../constants/routes';
+import Routes from '../../../constants/routes';
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 function Login({ handleEmailChange, handlePasswordChange, handleLogin }) {
   return (
     <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={handleLogin}>
-      <div className="column center">
+      <div className="column center m-bottom-3">
         <h2 className="m-bottom-1">{t('Login:login')}</h2>
         <h3>{t('Login:loginExplanation')}</h3>
       </div>
-      <div className={`column m-top-2 ${styles.sectionContainer}`}>
+      <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
         <InputLabel
           label={t('Login:email')}
           name={FIELDS.email}

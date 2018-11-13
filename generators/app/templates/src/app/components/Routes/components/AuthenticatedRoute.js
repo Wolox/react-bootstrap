@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 
-import * as Routes from '../../../../constants/routes';
+import Routes from '../../../../constants/routes';
 
 const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
