@@ -5,7 +5,6 @@
 /build
 /.chrome
 /.vscode
-jsconfig.json
 
 # misc
 .DS_Store

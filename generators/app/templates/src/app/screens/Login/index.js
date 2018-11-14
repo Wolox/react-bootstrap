@@ -18,9 +18,9 @@ class LoginContainer extends Component {
   render() {
     return (
       <Login
-        handleEmailChange={this.handleEmailChange}
-        handlePasswordChange={this.handlePasswordChange}
-        handleLogin={this.handleLogin}
+        onEmailChange={this.handleEmailChange}
+        onPasswordChange={this.handlePasswordChange}
+        onLogin={this.handleLogin}
       />
     );
   }
