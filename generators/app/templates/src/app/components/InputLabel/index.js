@@ -33,24 +33,24 @@ function InputLabel({
 }
 
 InputLabel.propTypes = {
-  className: PropTypes.string,
-  textClassName: PropTypes.string,
   dataFor: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  inputClassName: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
   inputId: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  disabled: PropTypes.bool
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  inputClassName: PropTypes.string,
+  placeholder: PropTypes.string,
+  textClassName: PropTypes.string
 };
 
 InputLabel.defaultProps = {
   className: '',
-  textClassName: '',
   inputClassName: '',
-  placeholder: ''
+  placeholder: '',
+  textClassName: ''
 };
 
 export default InputLabel;

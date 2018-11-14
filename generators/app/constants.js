@@ -71,6 +71,7 @@ module.exports.FILES = [
   'README.md',
   'src/index.js',
   'Jenkinsfile',
+  'jsconfig.json',
   CI_PATH,
   CONFIG_PATH,
   CONSTANTS_PATH,
@@ -119,5 +120,9 @@ module.exports.OPTIONAL_DEPENDENCIES = {
     dependencies: ['@babel/cli'],
     devDependencies: ['flow-bin', '@babel/preset-flow']
   },
-  reselect: { dependencies: ['reselect'] }
+  reselect: { dependencies: ['reselect'] },
+  'babel-module-resolver': {
+    dependencies: ['babel-plugin-module-resolver'],
+    devDependencies: ['eslint-import-resolver-babel-module']
+  }
 };

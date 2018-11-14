@@ -1,4 +1,5 @@
 import { push } from 'react-router-redux';
+
 import * as AuthService from '../../services/AuthServices';
 import Routes from '../../constants/routes';
 import { stringArrayToObject } from '../../utils/array';
