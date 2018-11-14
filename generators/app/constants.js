@@ -79,7 +79,6 @@ module.exports.FILES = [
   REDUX_PATH,
   SCREENS_PATH,
   SCSS_PATH,
-  SERVICES_PATH,
   STORYBOOK_CONFIG_PATH,
   STORIES_PATH,
   UTILS_PATH,
@@ -91,7 +90,9 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/InputLabel`,
   `${COMPONENTS_PATH}/TextArea`,
   `${COMPONENTS_PATH}/Checkbox`,
-  `${COMPONENTS_PATH}/RadioGroup`
+  `${COMPONENTS_PATH}/RadioGroup`,
+  `${SERVICES_PATH}/AuthServices.js`,
+  `${SERVICES_PATH}/AnalyticsService.js`
 ];
 
 module.exports.TEMPLATE_FILES = [
