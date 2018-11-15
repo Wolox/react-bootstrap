@@ -3,6 +3,7 @@ const Generator = require('yeoman-generator');
 const installDependencies = require('./tasks/installDependencies');
 const configPackageJson = require('./tasks/configPackageJson');
 const copyTemplateFiles = require('./tasks/copyTemplateFiles');
+const gitConfig = require('./tasks/gitConfig');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
 const PROMPTS = require('./prompts');
 const { KICKOFF_MESSAGE } = require('./constants');
@@ -52,6 +53,10 @@ class GeneratorReact extends Generator {
       bower: false,
       yarn: false
     });
+  }
+
+  end() {
+    gitConfig.bind(this)();
   }
 }
 
