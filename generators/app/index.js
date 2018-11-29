@@ -56,7 +56,9 @@ class GeneratorReact extends Generator {
   }
 
   end() {
-    gitConfig.bind(this)();
+    if (this.configureGit) {
+      gitConfig.bind(this)();
+    }
   }
 }
 
