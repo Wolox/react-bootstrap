@@ -127,3 +127,8 @@ module.exports.OPTIONAL_DEPENDENCIES = {
     devDependencies: ['eslint-import-resolver-babel-module']
   }
 };
+
+module.exports.WITHOUT_SEAMLESS_FILES = [
+  { src: './dependency_specific/seamless-immutable/array.js', destination: UTILS_PATH },
+  { src: './dependency_specific/seamless-immutable/reducer.js', destination: REDUX_PATH }
+];
