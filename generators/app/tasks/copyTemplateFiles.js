@@ -21,7 +21,7 @@ module.exports = function copyTemplateFiles() {
 
   FILES_TO_DELETE.forEach(src => bindedDeleteFiles(src));
 
-  FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+  FILES.forEach(path => bindedCopy(path, path));
 
   TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
 
@@ -30,6 +30,7 @@ module.exports = function copyTemplateFiles() {
   if (this.features.flow) {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
   }
+
   if (!this.features['seamless-immutable']) {
     WITHOUT_SEAMLESS_FILES.forEach(paths => bindedCopy(paths.src, paths.destination));
   }

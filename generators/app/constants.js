@@ -57,6 +57,7 @@ const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
+const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
 
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
@@ -129,6 +130,9 @@ module.exports.OPTIONAL_DEPENDENCIES = {
 };
 
 module.exports.WITHOUT_SEAMLESS_FILES = [
-  { src: './dependency_specific/seamless-immutable/array.js', destination: UTILS_PATH },
-  { src: './dependency_specific/seamless-immutable/reducer.js', destination: REDUX_PATH }
+  { src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable/array.js`, destination: `${UTILS_PATH}/array.js` },
+  {
+    src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable/reducer.js`,
+    destination: `${REDUX_PATH}/Auth/reducer.js`
+  }
 ];
