@@ -32,7 +32,7 @@ module.exports = function copyTemplateFiles() {
   }
 
   if (!this.features['seamless-immutable']) {
-    WITHOUT_SEAMLESS_FILES.forEach(paths => bindedCopy(paths.src, paths.destination));
+    bindedCopy(WITHOUT_SEAMLESS_FILES.src, WITHOUT_SEAMLESS_FILES.destination);
   }
 
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);

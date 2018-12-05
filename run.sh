@@ -30,7 +30,7 @@ fi
 
 if [[ $1 == '--local' || $1 == '-l' ]]
 then
-  yo ./react-bootstrap/generators/app
+  yo ./generators/app
 else
   yo react-bootstrap
 fi

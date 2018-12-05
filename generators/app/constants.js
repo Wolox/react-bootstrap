@@ -129,10 +129,7 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   }
 };
 
-module.exports.WITHOUT_SEAMLESS_FILES = [
-  { src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable/array.js`, destination: `${UTILS_PATH}/array.js` },
-  {
-    src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable/reducer.js`,
-    destination: `${REDUX_PATH}/Auth/reducer.js`
-  }
-];
+module.exports.WITHOUT_SEAMLESS_FILES = {
+  src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable`,
+  destination: 'src'
+};
