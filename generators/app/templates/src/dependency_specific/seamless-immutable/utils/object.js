@@ -1,14 +1,16 @@
-export const deepFreeze = object => {
-  // Retrieve the property names defined on object
-  const propNames = Object.getOwnPropertyNames(object);
+export const deepFreeze = o => {
+  Object.freeze(o);
 
-  // Freeze properties before freezing self
+  Object.getOwnPropertyNames(o).forEach(prop => {
+    if (
+      Object.prototype.hasOwnProperty.call(o, prop) &&
+      o[prop] !== null &&
+      (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
+      !Object.isFrozen(o[prop])
+    ) {
+      deepFreeze(o[prop]);
+    }
+  });
 
-  for (const name of propNames) {
-    const value = object[name];
-
-    object[name] = value && typeof value === 'object' ? deepFreeze(value) : value;
-  }
-
-  return Object.freeze(object);
+  return o;
 };
