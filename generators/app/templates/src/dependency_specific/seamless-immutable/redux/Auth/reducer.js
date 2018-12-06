@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import { deepFreeze } from '../../utils/object';
+
 import { actions } from './actions';
 
 /* ------------- Auth reducer ------------- */
@@ -11,27 +13,27 @@ const defaultState = {
 
 /* eslint-disable complexity */
 // eslint-disable-next-line new-cap
-export function reducer(state = Object.freeze(defaultState), action) {
+export function reducer(state = deepFreeze(defaultState), action) {
   switch (action.type) {
     case actions.AUTH_INIT: {
-      return Object.freeze({
+      return deepFreeze({
         ...state,
         initialLoading: false,
         currentUser: action.payload.user
       });
     }
     case actions.LOGIN: {
-      return Object.freeze({ ...state, loading: true });
+      return deepFreeze({ ...state, loading: true });
     }
     case actions.LOGIN_SUCCESS: {
-      return Object.freeze({
+      return deepFreeze({
         ...state,
         loading: false,
         currentUser: action.payload.authData
       });
     }
     case actions.LOGIN_FAILURE: {
-      return Object.freeze({
+      return deepFreeze({
         ...state,
         loading: false,
         currentUser: null,
@@ -39,7 +41,7 @@ export function reducer(state = Object.freeze(defaultState), action) {
       });
     }
     case actions.LOGOUT: {
-      return Object.freeze({ ...state, loading: false, currentUser: null });
+      return deepFreeze({ ...state, loading: false, currentUser: null });
     }
     default: {
       return state;

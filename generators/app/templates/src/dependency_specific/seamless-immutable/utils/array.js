@@ -1,3 +1,5 @@
+import { deepFreeze } from './utils/object';
+
 /**
  * Receives an array of strings, and returns an obj with that strings as properties with that string as value.
  * E.G:
@@ -11,7 +13,7 @@ export function stringArrayToObject(actionsArray, namespace = '') {
     throw new Error('Action names must be strings and must not be empty');
   }
 
-  return Object.freeze(
+  return deepFreeze(
     actionsArray.reduce(
       (acc, name) => ({ ...acc, [name]: `${namespace ? `${namespace}:${name}` : name}` }),
       {}
