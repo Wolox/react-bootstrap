@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Wolox/react-bootstrap",
   "dependencies": {
+    "eslint-config-react-app": "^3.0.5",
     "latest-semver": "^1.0.0",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",

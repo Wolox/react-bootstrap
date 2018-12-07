@@ -1,0 +1,71 @@
+@import 'variables/colors';
+
+.fade-component {
+  animation: fadeIn 0.5s;
+  white-space: nowrap;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.item-text {
+  color: $grey-1;
+
+  .selected & {
+    color: $white;
+  }
+}
+
+.item {
+  height: 58px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  border-bottom: 1px solid $grey-3;
+  border-radius: 0;
+  position: relative;
+
+  &.dropdown::after {
+    background: url(../../../../../assets/ic_arrow_dropdown.svg);
+    background-size: 22px;
+    content: '';
+    width: 22px;
+    height: 22px;
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.selected {
+    background-color: $green-1;
+    transition: background-color 0.5s ease-in-out;
+    border-bottom: 1px solid $green-1;
+
+    &.dropdown::after {
+      background: url(../../../../../assets/ic_arrow_dropdown_active.svg);
+    }
+  }
+}
+
+.sub-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+  background: $grey-0-1;
+
+  &.collapsed {
+    overflow-y: auto;
+    padding: 10px 0;
+    max-height: 150px;
+  }
+}

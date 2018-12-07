@@ -1,0 +1,13 @@
+@import 'variables/colors';
+
+.sub-item {
+  padding: 0;
+  min-height: 8px;
+  height: auto;
+  padding-left: 30px;
+
+  &.selected {
+    border-left: 5px solid $green-1;
+    color: $green-1;
+  }
+}
