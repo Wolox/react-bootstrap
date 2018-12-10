@@ -3,9 +3,29 @@ import { Provider } from 'react-redux';
 
 import { apiSetup } from '../config/api';
 import store from '../redux/store';
+import { Routes as ROUTES } from '../constants/routes';
 
 import Routes from './components/Routes';
+import Navbar from './components/Navbar';
 import '../scss/application.scss';
+
+const NAVBAR_ROUTES = [
+  {
+    text: 'Item 1',
+    route: ROUTES.HOME,
+    hidden: false
+  },
+  {
+    text: 'Item 2',
+    route: ROUTES.LOGIN,
+    hidden: false
+  },
+  {
+    text: 'Item 3',
+    route: ROUTES.RECOVER_PASSWORD,
+    hidden: false
+  }
+];
 
 class App extends Component {
   componentDidMount() {
@@ -15,6 +35,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+          <Navbar
+          title={{ image: '', desc: 'gosmo icon' }}
+          routesList={NAVBAR_ROUTES}
+        />
         <Routes />
       </Provider>
     );

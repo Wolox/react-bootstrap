@@ -1,0 +1,45 @@
+@import 'colors';
+
+.container {
+  align-items: center;
+  background-color: $emerald;
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
+}
+
+.title {
+  height: 50px;
+}
+
+.log-buttons {
+  display: flex;
+}
+
+.button,
+.route {
+  color: $black;
+  font-size: 16px;
+  padding: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.with-border {
+  border-right: 1px solid $gray;
+}
+
+.routes-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.route {
+  padding: 10px 30px;
+}

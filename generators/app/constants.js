@@ -88,6 +88,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar`,
   `${COMPONENTS_PATH}/InputLabel`,
+  `${COMPONENTS_PATH}/Navbar`,
   `${COMPONENTS_PATH}/TextArea`,
   `${COMPONENTS_PATH}/Checkbox`,
   `${COMPONENTS_PATH}/RadioGroup`,
