@@ -83,7 +83,7 @@ module.exports.FILES = [
   STORIES_PATH,
   UTILS_PATH,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
-  `${COMPONENTS_PATH}/Routes/styles.scss`,
+  `${COMPONENTS_PATH}/Routes/styles.module.scss`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar`,
