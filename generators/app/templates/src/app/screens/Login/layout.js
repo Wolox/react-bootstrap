@@ -10,7 +10,7 @@ import styles from './styles.module.scss';
 
 function Login({ onEmailChange, onPasswordChange, onLogin }) {
   return (
-    <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
+    <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
         <h2 className="m-bottom-1">{t('Login:login')}</h2>
         <h3>{t('Login:loginExplanation')}</h3>

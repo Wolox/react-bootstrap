@@ -8,7 +8,6 @@ import APP_ROUTES from '../../../constants/routes';
 import AuthButtons from './components/AuthButtons';
 import LinkList from './components/LinkList';
 import ROUTES_LIST from './templateRoutes';
-import { registerAction, loginAction, logoutAction } from './templateActions';
 import styles from './styles.module.scss';
 
 class Navbar extends Component {
@@ -20,21 +19,33 @@ class Navbar extends Component {
     // TODO implement
   };
 
+  registerAction = () => {
+    // TODO implement
+  };
+
+  loginAction = () => {
+    this.props.dispatch(push(APP_ROUTES.LOGIN));
+  };
+
+  logoutAction = () => {
+    // TODO implement
+  };
+
   render() {
     const { title } = this.props;
     const isLoggedIn = this.loggedIn();
 
     return (
-      <div className={styles.container}>
+      <div className={styles.navbarContainer}>
         <button onClick={this.handleRouteClick(APP_ROUTES.HOME)} type="button">
           <img className={styles.title} src={title.image} alt={title.desc} />
         </button>
         <LinkList onChangeRoute={this.handleRouteClick} routesList={ROUTES_LIST} />
         <AuthButtons
           isLoggedIn={isLoggedIn}
-          registerAction={registerAction}
-          loginAction={loginAction}
-          logoutAction={logoutAction}
+          registerAction={this.registerAction}
+          loginAction={this.loginAction}
+          logoutAction={this.logoutAction}
         />
       </div>
     );

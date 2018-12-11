@@ -1,5 +1,7 @@
 import ROUTES from '../../../constants/routes';
 
+// TODO customize your routes
+
 const NAVBAR_ROUTES = [
   {
     text: 'Item 1',

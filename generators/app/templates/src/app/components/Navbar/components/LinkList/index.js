@@ -6,20 +6,19 @@ import styles from '../../styles.module.scss';
 function LinkList({ routesList, onChangeRoute }) {
   return (
     <div className={styles.routesList}>
-      {routesList &&
-        routesList.map(
-          route =>
-            !route.hidden && (
-              <button
-                type="button"
-                key={route.text}
-                className={styles.route}
-                onClick={onChangeRoute(route.route)}
-              >
-                {route.text}
-              </button>
-            )
-        )}
+      {routesList.map(
+        route =>
+          !route.hidden && (
+            <button
+              type="button"
+              key={route.text}
+              className={styles.route}
+              onClick={onChangeRoute(route.route)}
+            >
+              {route.text}
+            </button>
+          )
+      )}
     </div>
   );
 }
