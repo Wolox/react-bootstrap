@@ -83,7 +83,6 @@ module.exports.FILES = [
   STORYBOOK_CONFIG_PATH,
   STORIES_PATH,
   UTILS_PATH,
-  `${ASSETS_PATH}/ic_arrow_dropdown_active_grey.svg`,
   `${ASSETS_PATH}/ic_arrow_dropdown_active.svg`,
   `${ASSETS_PATH}/ic_arrow_dropdown.svg`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
