@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 class Navbar extends Component {
   goToRoute = route => () => {

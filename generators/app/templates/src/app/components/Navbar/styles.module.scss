@@ -1,6 +1,6 @@
 .container {
   align-items: center;
-  background-color: $emerald;
+  background-color: green;
   display: flex;
   height: 150px;
   justify-content: space-between;
@@ -20,7 +20,7 @@
 
 .button,
 .route {
-  color: $black;
+  color: black;
   font-size: 16px;
   padding: 10px;
 
@@ -30,7 +30,7 @@
 }
 
 .with-border {
-  border-right: 1px solid $gray;
+  border-right: 1px solid gray;
 }
 
 .routes-list {
