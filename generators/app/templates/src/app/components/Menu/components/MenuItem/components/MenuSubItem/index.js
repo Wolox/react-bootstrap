@@ -10,12 +10,12 @@ class MenuSubItemContainer extends Component {
   };
 
   render() {
-    const { subItem, handleSubItemSelected, currentSelectedSubItemId, className } = this.props;
+    const { subItem, currentSelectedSubItemId, className } = this.props;
 
     return (
       <MenuSubItem
         subItem={subItem}
-        onSubItemSelected={handleSubItemSelected}
+        onSubItemSelected={this.handleSubItemSelected}
         isActive={currentSelectedSubItemId === subItem.id}
         className={className}
       />
@@ -24,11 +24,10 @@ class MenuSubItemContainer extends Component {
 }
 
 MenuSubItemContainer.propTypes = {
-  handleSubItemSelected: PropTypes.func.isRequired,
+  onSubItemSelected: PropTypes.func.isRequired,
   className: PropTypes.string,
   currentSelectedSubItemId: PropTypes.number,
-  subItem: subItemPropTypes,
-  onSubItemSelected: PropTypes.func
+  subItem: subItemPropTypes
 };
 
 export default MenuSubItemContainer;

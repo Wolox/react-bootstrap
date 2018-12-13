@@ -1,7 +1,7 @@
-@import 'variables/colors';
+@import '../../../scss/variables/_colors';
 
 .menu {
-  width: 80px;
+  width: 250px;
   padding-top: 30px;
   box-shadow: 2px 0 4px 0 rgba($black, 0.25);
   height: 100vh;
@@ -19,7 +19,7 @@
   text-transform: none;
   text-align: left;
   &.selected {
-    border-left: 5px solid $green-1;
-    color: $green-1;
+    border-left: 5px solid $grey-1;
+    color: $grey-1;
   }
 }
