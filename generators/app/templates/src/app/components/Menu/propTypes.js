@@ -7,8 +7,3 @@ export const menuItemPropTypes = PropTypes.shape({
   name: PropTypes.string,
   path: PropTypes.string
 });
-
-export const selectedItemPropTypes = PropTypes.shape({
-  menuId: PropTypes.number,
-  subMenuId: PropTypes.number
-});

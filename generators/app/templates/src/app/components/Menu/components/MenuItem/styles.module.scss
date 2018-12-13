@@ -1,4 +1,4 @@
-@import 'variables/colors';
+@import '../../../../../scss/variables/_colors';
 
 .fade-component {
   animation: fadeIn 0.5s;
@@ -47,9 +47,9 @@
   }
 
   &.selected {
-    background-color: $green-1;
+    background-color: $grey-1;
     transition: background-color 0.5s ease-in-out;
-    border-bottom: 1px solid $green-1;
+    border-bottom: 1px solid $grey-1;
 
     &.dropdown::after {
       background: url(../../../../../assets/ic_arrow_dropdown_active.svg);

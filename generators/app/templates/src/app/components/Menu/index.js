@@ -3,29 +3,39 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import { menuItemPropTypes, selectedItemPropTypes } from './propTypes';
+import { menuItemPropTypes } from './propTypes';
 import Menu from './layout';
 
 class MenuContainer extends Component {
+  state = { currentItemId: 1, selectedItem: 1 };
+
   getHighlightedSubMenu = (highlighted, selected) =>
     highlighted === selected.menuId ? selected.subMenuId : null;
 
+  handleonItemSelected = selectedItem => {
+    this.props.handleItemSelected(selectedItem);
+    this.setState({
+      currentItemId: selectedItem.id,
+      selectedItem: selectedItem.subItems ? selectedItem : { menuId: selectedItem.id, subMenuId: null }
+    });
+  };
+
+  handlonSubItemSelected = selectedSubItem => {
+    this.props.handleSubItemSelected(selectedSubItem);
+    this.setState(prevState => ({
+      selectedItem: { menuId: prevState.selectedItem.menuId, subMenuId: selectedSubItem.id }
+    }));
+  };
+
   render() {
-    const {
-      currentItemId,
-      className,
-      menuItems,
-      selectedItem,
-      handleItemSelected,
-      handleSubItemSelected
-    } = this.props;
+    const { className, menuItems } = this.props;
 
     return (
       <Menu
-        currentItemId={currentItemId}
-        currentSubItemId={this.getHighlightedSubMenu(currentItemId, selectedItem)}
-        handleItemSelected={handleItemSelected}
-        handleSubItemSelected={handleSubItemSelected}
+        currentItemId={this.state.currentItemId}
+        currentSubItemId={this.getHighlightedSubMenu(this.state.currentItemId, this.state.selectedItem)}
+        handleItemSelected={this.handleonItemSelected}
+        handleSubItemSelected={this.handlonSubItemSelected}
         className={className}
         menuItems={menuItems}
       />
@@ -34,12 +44,10 @@ class MenuContainer extends Component {
 }
 
 MenuContainer.propTypes = {
-  currentItemId: PropTypes.number.isRequired,
   handleItemSelected: PropTypes.func.isRequired,
   handleSubItemSelected: PropTypes.func.isRequired,
   menuItems: PropTypes.arrayOf(menuItemPropTypes).isRequired,
-  className: PropTypes.string,
-  selectedItem: selectedItemPropTypes
+  className: PropTypes.string
 };
 
 const mapDispatchToProps = dispatch => ({
