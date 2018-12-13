@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from '../../styles.module.scss';
 
+import { routesListPropTypes } from './propTypes';
+
 function LinkList({ routesList, onChangeRoute }) {
   return (
-    <div className={styles.routesList}>
+    <div className="row space-around">
       {routesList.map(
         route =>
           !route.hidden && (
@@ -24,11 +26,7 @@ function LinkList({ routesList, onChangeRoute }) {
 }
 
 LinkList.propTypes = {
-  routesList: PropTypes.shape({
-    hidden: PropTypes.bool,
-    route: PropTypes.string,
-    text: PropTypes.string
-  }),
+  routesList: routesListPropTypes,
   onChangeRoute: PropTypes.func
 };
 

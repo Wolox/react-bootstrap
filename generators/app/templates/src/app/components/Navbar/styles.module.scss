@@ -1,21 +1,13 @@
-.container {
-  align-items: center;
+.navbar-container {
   background-color: white;
-  display: flex;
   height: 150px;
-  justify-content: space-between;
   padding: 20px 50px;
   position: fixed;
-  width: 100%;
   z-index: 999999;
 }
 
 .title {
   height: 50px;
-}
-
-.log-buttons {
-  display: flex;
 }
 
 .button,
@@ -31,11 +23,6 @@
 
 .with-border {
   border-right: 1px solid gray;
-}
-
-.routes-list {
-  display: flex;
-  justify-content: space-around;
 }
 
 .route {

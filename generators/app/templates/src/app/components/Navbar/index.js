@@ -11,8 +11,9 @@ import ROUTES_LIST from './templateRoutes';
 import styles from './styles.module.scss';
 
 class Navbar extends Component {
+  // Fix this when hooks are added or a button component
   handleRouteClick = route => () => {
-    this.props.dispatch(push(route));
+    this.props.changeRoute(route);
   };
 
   loggedIn = () => {
@@ -23,11 +24,11 @@ class Navbar extends Component {
     // TODO implement
   };
 
-  loginAction = () => {
-    this.props.dispatch(push(APP_ROUTES.LOGIN));
+  handleLogin = () => {
+    this.props.changeRoute(APP_ROUTES.LOGIN);
   };
 
-  logoutAction = () => {
+  handleLogout = () => {
     // TODO implement
   };
 
@@ -36,7 +37,7 @@ class Navbar extends Component {
     const isLoggedIn = this.loggedIn();
 
     return (
-      <div className={styles.navbarContainer}>
+      <div className={`row middle space-between full-width ${styles.navbarContainer}`}>
         <button onClick={this.handleRouteClick(APP_ROUTES.HOME)} type="button">
           <img className={styles.title} src={title.image} alt={title.desc} />
         </button>
@@ -44,8 +45,8 @@ class Navbar extends Component {
         <AuthButtons
           isLoggedIn={isLoggedIn}
           registerAction={this.registerAction}
-          loginAction={this.loginAction}
-          logoutAction={this.logoutAction}
+          onLogin={this.handleLogin}
+          onLogout={this.handleLogout}
         />
       </div>
     );
@@ -53,7 +54,15 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
+  changeRoute: PropTypes.func.isRequired,
   title: PropTypes.shape({ desc: PropTypes.string, image: PropTypes.string }).isRequired
 };
 
-export default connect()(Navbar);
+const mapDispatchToProps = dispatch => ({
+  changeRoute: route => dispatch(push(route))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Navbar);
