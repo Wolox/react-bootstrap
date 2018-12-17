@@ -146,11 +146,15 @@ echo_env() {
 
 printf "\n\n"
 read -p "Do you wish to update your .bashrc/.zshrc file(s) with the paths and manpaths? [yn] " yn
-case $yn in
-    [Yy]* ) fix_env;;
-    [Nn]* ) echo_env;;
-    * ) printf "\nInvalid choice\n"; echo_env;;
-esac
+if [ -z $yn  ]; then
+  printf "\nInvalid choice\n"; echo_env
+elif [ $yn = "Y" || $yn = "y"]; then
+  fix_env
+elif [ $yn = "N" || $yn = "n"]; then
+  echo_env
+else
+  printf "\nInvalid choice\n"; echo_env
+fi
 
 rm $to_reinstall
 
