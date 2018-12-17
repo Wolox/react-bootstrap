@@ -4,7 +4,7 @@
 
 printf "\n\nThis script requires an npm configuration that allows global\n"
 printf "installs without sudo. We'll be checking whether you have globally\n"
-printf "installed packages and we'll be moving them to a new folder.\n\n"
+printf "installed packages and if so, we'll be moving them to a new folder.\n\n"
 printf "You may have to type in your password once to allow moving all\n"
 printf "your currently installed packages.\n\n"
 
