@@ -118,16 +118,16 @@ module.exports.FILES_TO_DELETE = [
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
-  jest: { dependencies: ['jest'] },
-  moment: { dependencies: ['moment'] },
-  'seamless-immutable': { dependencies: ['seamless-immutable'] },
+  jest: { dependencies: ['jest@^23.6.0'] },
+  moment: { dependencies: ['moment@^2.23.0'] },
+  'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
   flow: {
-    dependencies: ['@babel/cli'],
-    devDependencies: ['flow-bin', '@babel/preset-flow']
+    dependencies: ['@babel/cli@^7.2.0'],
+    devDependencies: ['flow-bin@^0.89.0', '@babel/preset-flow@^7.0.0']
   },
-  reselect: { dependencies: ['reselect'] },
+  reselect: { dependencies: ['reselect@^4.0.0'] },
   'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver'],
-    devDependencies: ['eslint-import-resolver-babel-module']
+    dependencies: ['babel-plugin-module-resolver@^3.1.1'],
+    devDependencies: ['eslint-import-resolver-babel-module@^4.0.0']
   }
 };
