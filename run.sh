@@ -30,7 +30,7 @@ printf "your currently installed packages.\n\n"
 
 if [[ $1 == '--verbose' || $1 == '-v' ]]
 then
-  bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh) [--verbose]
+  curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh | bash -s -- -v
   npm i -g yo generator-react-bootstrap
 else
   bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh)
