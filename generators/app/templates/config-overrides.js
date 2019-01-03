@@ -21,12 +21,13 @@ const enableBabelRc = config => {
   });
 };
 
-const addCamelCaseToCSSModules = config => {
+const addCamelCaseToCSSModules = (config, env) => {
   const fileLoaders = oneOfFileLoaders(config);
+  const loaderProperty = env === 'development' ? 'use' : 'loader';
 
   fileLoaders.forEach(loader => {
-    if (loader.test && loader.use) {
-      loader.use.forEach(use => {
+    if (loader.test && loader[loaderProperty] && loader[loaderProperty].constructor === Array) {
+      loader[loaderProperty].forEach(use => {
         if (cssLoaderMatcher(use) && use.options.modules) {
           use.options.camelCase = true;
         }
@@ -35,13 +36,9 @@ const addCamelCaseToCSSModules = config => {
   });
 };
 
-module.exports = function override(config) {
-  addCamelCaseToCSSModules(config);
+module.exports = function override(config, env) {
+  addCamelCaseToCSSModules(config, env);
   enableBabelRc(config);
-  /*
-   * TODO: Soon..
-   * return rewireWolox(config, env);
-   */
 
   return config;
 };
