@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator');
 const installDependencies = require('./tasks/installDependencies');
 const configPackageJson = require('./tasks/configPackageJson');
 const copyTemplateFiles = require('./tasks/copyTemplateFiles');
-const gitConfig = require('./tasks/gitConfig');
+const { gitInitiation, configGit } = require('./tasks/gitConfig');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
 const PROMPTS = require('./prompts');
 const { KICKOFF_MESSAGE } = require('./constants');
@@ -34,6 +34,7 @@ class GeneratorReact extends Generator {
 
   configuring() {
     return Promise.resolve()
+      .then(this.configureGit && gitInitiation.bind(this))
       .then(installCRA.bind(this))
       .then(runCRA.bind(this))
       .then(installDependencies.bind(this));
@@ -57,7 +58,7 @@ class GeneratorReact extends Generator {
 
   end() {
     if (this.configureGit) {
-      gitConfig.bind(this)();
+      configGit.bind(this);
     }
   }
 }

@@ -1,12 +1,20 @@
 const runCommand = require('./runCommand');
 
-module.exports = function configGit() {
+module.exports.gitInitiation = function gitInitiation() {
   return runCommand({
-    command: ['git', ['init', `./${this.projectName}`]],
-    loadingMessage: 'Initiatialization of Git configuration',
-    successMessage: 'Git configuration initiated successfully',
-    failureMessage: 'Git configuration initialization has failed'
+    command: ['mkdir', [this.projectName]],
+    loadingMessage: 'Creating project folder',
+    successMessage: 'Project folder creater successfully',
+    failureMessage: 'Project creation has failed'
   })
+    .then(() =>
+      runCommand({
+        command: ['git', ['init'], { cwd: `${process.cwd()}/${this.projectName}` }],
+        loadingMessage: 'Initiatialization of Git configuration',
+        successMessage: 'Git configuration initiated successfully',
+        failureMessage: 'Git configuration initialization has failed'
+      })
+    )
     .then(() =>
       runCommand({
         command: [
@@ -21,14 +29,6 @@ module.exports = function configGit() {
     )
     .then(() =>
       runCommand({
-        command: ['mv', ['README.md', 'README_TEMP.md'], { cwd: `${process.cwd()}/${this.projectName}` }],
-        loadingMessage: 'Renaming README.md',
-        successMessage: 'README.md renamed successfully',
-        failureMessage: 'Renaming of README.md has failed'
-      })
-    )
-    .then(() =>
-      runCommand({
         command: ['git', ['pull', 'origin', 'master'], { cwd: `${process.cwd()}/${this.projectName}` }],
         loadingMessage: 'Git pull master',
         successMessage: 'Git pull of master successfully',
@@ -38,27 +38,20 @@ module.exports = function configGit() {
     .then(() =>
       runCommand({
         command: ['rm', ['README.md'], { cwd: `${process.cwd()}/${this.projectName}` }],
-        loadingMessage: 'Removing default README.md',
-        successMessage: 'Default README.md removed successfully',
-        failureMessage: 'Removing of default README.md has failed'
+        loadingMessage: 'Removing CRA README.md',
+        successMessage: 'CRA README.md removed successfully',
+        failureMessage: 'CRA README.md removing failed'
       })
-    )
-    .then(() =>
-      runCommand({
-        command: ['mv', ['README_TEMP.md', 'README.md'], { cwd: `${process.cwd()}/${this.projectName}` }],
-        loadingMessage: 'Renaming README_TEMP.md',
-        successMessage: 'Template README_TEMP.md renamed successfully',
-        failureMessage: 'Renaming of template README_TEMP.md has failed'
-      })
-    )
-    .then(() =>
-      runCommand({
-        command: ['git', ['add', '--all'], { cwd: `${process.cwd()}/${this.projectName}` }],
-        loadingMessage: 'Adding all files to commit',
-        successMessage: 'All files added successfully',
-        failureMessage: 'Files additions has failed'
-      })
-    )
+    );
+};
+
+module.exports.configGit = function configGit() {
+  return runCommand({
+    command: ['git', ['add', '--all'], { cwd: `${process.cwd()}/${this.projectName}` }],
+    loadingMessage: 'Adding all files to commit',
+    successMessage: 'All files added successfully',
+    failureMessage: 'Files additions has failed'
+  })
     .then(() =>
       runCommand({
         command: [
