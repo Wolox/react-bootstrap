@@ -60,6 +60,10 @@ function AuthenticatedRoute({
     />
   );
 }
+const mapStateToProps = state => ({
+  initialized: state.auth.initialLoading,
+  currentUser: state.auth.currentUser
+});
 
 AuthenticatedRoute.defaultProps = {
   currentUser: false,
@@ -75,4 +79,9 @@ AuthenticatedRoute.propTypes = {
   isPublicRoute: PropTypes.bool
 };
 
-export default withRouter(connect()(AuthenticatedRoute));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    null
+  )(AuthenticatedRoute)
+);
