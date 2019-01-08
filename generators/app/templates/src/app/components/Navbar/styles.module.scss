@@ -3,7 +3,7 @@
 .navbar-container {
   background-color: $white;
   border-bottom: 1px solid $black;
-  height: 150px;
+  height: 100px;
   padding: 20px 50px;
   position: fixed;
   z-index: 999999;
@@ -15,7 +15,9 @@
 
 .button,
 .route {
+  align-items: center;
   color: $black;
+  display: flex;
   font-size: 16px;
   padding: 10px;
 
@@ -35,4 +37,17 @@
   &:nth-last-child(1) {
     border: none;
   }
+}
+
+.image {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.auth-buttons {
+  margin-left: auto;
+}
+
+.link-list {
+  margin-left: auto;
 }

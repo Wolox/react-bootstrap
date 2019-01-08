@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { apiSetup } from '../config/api';
 import store from '../redux/store';
 
+import reactImage from './components/Navbar/react.png';
 import Routes from './components/Routes';
 import Navbar from './components/Navbar';
 import '../scss/application.scss';
@@ -17,7 +18,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Fragment>
-          <Navbar title={{ image: '', desc: 'project logo' }} />
+          <Navbar title={{ image: reactImage, desc: 'project logo' }} />
           <Routes />
         </Fragment>
       </Provider>

@@ -33,20 +33,27 @@ class Navbar extends Component {
   };
 
   render() {
-    const { title } = this.props;
+    const { title, logoStyle, navbarStyle, routesStyle, routeStyle, authStyle, authButtonStyle } = this.props;
     const isLoggedIn = this.loggedIn();
 
     return (
-      <div className={`row middle space-between full-width ${styles.navbarContainer}`}>
+      <div className={`row middle full-width ${styles.navbarContainer} ${navbarStyle || ''}`}>
         <button onClick={this.handleRouteClick(APP_ROUTES.HOME)} type="button">
-          <img className={styles.title} src={title.image} alt={title.desc} />
+          <img className={`${styles.title} ${logoStyle || ''}`} src={title.image} alt={title.desc} />
         </button>
-        <LinkList onChangeRoute={this.handleRouteClick} routesList={ROUTES_LIST} />
+        <LinkList
+          onChangeRoute={this.handleRouteClick}
+          routesList={ROUTES_LIST}
+          routesStyle={routesStyle}
+          routeStyle={routeStyle}
+        />
         <AuthButtons
           isLoggedIn={isLoggedIn}
           registerAction={this.registerAction}
           onLogin={this.handleLogin}
           onLogout={this.handleLogout}
+          authStyle={authStyle}
+          authButtonStyle={authButtonStyle}
         />
       </div>
     );
@@ -55,7 +62,13 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   changeRoute: PropTypes.func.isRequired,
-  title: PropTypes.shape({ desc: PropTypes.string, image: PropTypes.string }).isRequired
+  title: PropTypes.shape({ desc: PropTypes.string, image: PropTypes.string }).isRequired,
+  authButtonStyle: PropTypes.string,
+  authStyle: PropTypes.string,
+  logoStyle: PropTypes.string,
+  navbarStyle: PropTypes.string,
+  routesStyle: PropTypes.string,
+  routeStyle: PropTypes.string
 };
 
 const mapDispatchToProps = dispatch => ({
