@@ -18,8 +18,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       lint: './node_modules/eslint/bin/eslint.js src',
       'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
       'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
-      precommit: 'npm run lint-diff',
-      storybook: 'start-storybook -p 9001 -c .storybook'
+      precommit: 'npm run lint-diff'
     }
   };
 

@@ -11,7 +11,8 @@
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs ./node_modules/eslint/bin/eslint.js",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "storybook": "start-storybook -p 9001 -c generators/app/.storybook"
   },
   "repository": "git+https://github.com/Wolox/react-bootstrap.git",
   "keywords": [
@@ -30,11 +31,18 @@
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "ora": "^2.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.0.3",
     "semver-regex": "^2.0.0",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/react": "^4.1.6",
     "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.5",
     "eslint": "5.6.0",
     "eslint-config-wolox": "^2.1.0",
     "eslint-config-wolox-react": "^1.0.2",
@@ -45,7 +53,10 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-native": "^3.3.0",
     "husky": "^0.14.3",
+    "node-sass": "^4.11.0",
     "prettier": "^1.14.3",
-    "prettier-eslint": "^8.8.2"
+    "prettier-eslint": "^8.8.2",
+    "react-spinkit": "^3.0.0",
+    "sass-loader": "^7.1.0"
   }
 }

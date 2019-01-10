@@ -47,7 +47,6 @@ const DEV_DEPENDENCIES = [
   'prettier-eslint',
   'react-hot-loader',
   'react-app-rewire-wolox',
-  '@storybook/react',
   'prop-types',
   '@babel/plugin-proposal-optional-chaining'
 ];
