@@ -7,7 +7,8 @@ const {
   FLOWCONFIG_PATH,
   CI_CONFIG_FILE,
   LINTER_IGNORE_PATH,
-  BABELRC_PATH
+  BABELRC_PATH,
+  RESCRIPTS_PATH
 } = require('../constants');
 
 const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
@@ -33,6 +34,8 @@ module.exports = function copyTemplateFiles() {
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
 
   bindedCopy(BABELRC_PATH.src, BABELRC_PATH.destination);
+
+  bindedCopy(RESCRIPTS_PATH.src, RESCRIPTS_PATH.destination);
 
   bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
     projectName: this.projectName

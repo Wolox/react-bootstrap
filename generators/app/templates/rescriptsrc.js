@@ -21,9 +21,9 @@ const enableBabelRc = config => {
   });
 };
 
-const addCamelCaseToCSSModules = (config, env) => {
+const addCamelCaseToCSSModules = config => {
   const fileLoaders = oneOfFileLoaders(config);
-  const loaderProperty = env === 'development' ? 'use' : 'loader';
+  const loaderProperty = config.mode === 'development' ? 'use' : 'loader';
 
   fileLoaders.forEach(loader => {
     if (loader.test && loader[loaderProperty] && loader[loaderProperty].constructor === Array) {
@@ -53,10 +53,12 @@ const useEslintConfig = config => {
   });
 };
 
-module.exports = function override(config, env) {
+const customConfig = config => {
   useEslintConfig(config);
-  addCamelCaseToCSSModules(config, env);
+  addCamelCaseToCSSModules(config);
   enableBabelRc(config);
 
   return config;
 };
+
+module.exports = [customConfig];
