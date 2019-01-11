@@ -37,9 +37,9 @@ class Navbar extends Component {
     const isLoggedIn = this.loggedIn();
 
     return (
-      <div className={`row middle full-width ${styles.navbarContainer} ${navbarStyle || ''}`}>
+      <div className={`row middle full-width ${styles.navbarContainer} ${navbarStyle}`}>
         <button onClick={this.handleRouteClick(APP_ROUTES.HOME)} type="button">
-          <img className={`${styles.title} ${logoStyle || ''}`} src={title.image} alt={title.desc} />
+          <img className={`${styles.title} ${logoStyle}`} src={title.image} alt={title.desc} />
         </button>
         <LinkList
           onChangeRoute={this.handleRouteClick}
@@ -59,6 +59,11 @@ class Navbar extends Component {
     );
   }
 }
+
+Navbar.defaultProps = {
+  logoStyle: '',
+  navbarStyle: ''
+};
 
 Navbar.propTypes = {
   changeRoute: PropTypes.func.isRequired,

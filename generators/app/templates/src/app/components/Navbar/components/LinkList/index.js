@@ -7,14 +7,14 @@ import { routesListPropTypes } from './propTypes';
 
 function LinkList({ routesList, onChangeRoute, routesStyle, routeStyle }) {
   return (
-    <div className={`row space-around ${styles.linkList} ${routesStyle || ''}`}>
+    <div className={`row space-around ${styles.linkList} ${routesStyle}`}>
       {routesList.map(
         route =>
           !route.hidden && (
             <button
               type="button"
               key={route.text}
-              className={`${styles.route} ${routeStyle || ''}`}
+              className={`${styles.route} ${routeStyle}`}
               onClick={onChangeRoute(route.route)}
             >
               {route.image && <img src={route.image.src} alt={route.image.alt} className={styles.image} />}
@@ -25,6 +25,11 @@ function LinkList({ routesList, onChangeRoute, routesStyle, routeStyle }) {
     </div>
   );
 }
+
+LinkList.defaultProps = {
+  routeStyle: '',
+  routesStyle: ''
+};
 
 LinkList.propTypes = {
   routesList: routesListPropTypes,
