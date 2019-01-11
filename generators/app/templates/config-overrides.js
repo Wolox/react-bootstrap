@@ -1,5 +1,3 @@
-// Const rewireWolox = require('react-app-rewire-wolox');
-
 const path = require('path');
 
 const createLoaderMatcher = loader => rule =>
@@ -10,6 +8,8 @@ const oneOfFileLoaders = config => config.module.rules.find(rule => rule.oneOf).
 const cssLoaderMatcher = createLoaderMatcher('css-loader');
 
 const babelLoaderMatcher = createLoaderMatcher('babel-loader');
+
+const eslintLoaderMatcher = createLoaderMatcher('eslint-loader');
 
 const enableBabelRc = config => {
   const fileLoaders = oneOfFileLoaders(config);
@@ -36,7 +36,25 @@ const addCamelCaseToCSSModules = (config, env) => {
   });
 };
 
+const useEslintConfig = config => {
+  config.module.rules.forEach(rule => {
+    if (rule.use) {
+      const eslintUse = rule.use.find(use => eslintLoaderMatcher(use));
+
+      if (eslintUse) {
+        eslintUse.options = {
+          ...eslintUse.options,
+          baseConfig: undefined,
+          useEslintrc: true,
+          emitWarning: true
+        };
+      }
+    }
+  });
+};
+
 module.exports = function override(config, env) {
+  useEslintConfig(config);
   addCamelCaseToCSSModules(config, env);
   enableBabelRc(config);
 
