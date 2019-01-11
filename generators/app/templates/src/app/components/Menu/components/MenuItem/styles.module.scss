@@ -1,8 +1,16 @@
 @import '../../../../../scss/variables/_colors';
+@import '../../styles.module';
 
 .fade-component {
-  animation: fadeIn 0.5s;
+  animation: fadeIn $transitionArrow;
   white-space: nowrap;
+}
+
+%arrow {
+  display: inline-block;
+  padding: 4px;
+  right: 10px;
+  position: absolute;
 }
 
 @keyframes fadeIn {
@@ -29,30 +37,32 @@
   height: 58px;
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color $transitionArrow ease-in-out;
   border-bottom: 1px solid $grey-3;
   border-radius: 0;
   position: relative;
 
   &.dropdown::after {
-    background: url(../../../../../assets/ic_arrow_dropdown.svg);
-    background-size: 22px;
+    border: solid $black;
+    border-width: 0 2px 2px 0;
     content: '';
-    width: 22px;
-    height: 22px;
-    right: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: rotate(45deg);
+    top: 35%;
+    @extend %arrow;
   }
 
   &.selected {
     background-color: $grey-1;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color $transitionArrow ease-in-out;
     border-bottom: 1px solid $grey-1;
 
     &.dropdown::after {
-      background: url(../../../../../assets/ic_arrow_dropdown_active.svg);
+      border: solid $white;
+      top: 50%;
+      border-width: 0 2px 2px 0;
+      content: '';
+      @extend %arrow;
+      transform: rotate(225deg);
     }
   }
 }
@@ -68,4 +78,8 @@
     padding: 10px 0;
     max-height: 150px;
   }
+}
+
+.complete {
+  padding-left: 21px;
 }

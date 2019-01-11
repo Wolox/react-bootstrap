@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { subItemPropTypes } from './propTypes';
 
 function MenuSubItem({ subItem, onSubItemSelected, isActive, className }) {
   return (
-    <button
+    <Link
       type="button"
       to={subItem.path}
-      target="_blank"
       onClick={onSubItemSelected}
       className={`${styles.subItem} ${isActive ? styles.selected : ''} ${className}`}
     >
       {subItem.name}
-    </button>
+    </Link>
   );
 }
 

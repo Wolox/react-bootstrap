@@ -50,7 +50,6 @@ const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
 const REDUX_PATH = 'src/redux';
 const UTILS_PATH = 'src/utils';
-const ASSETS_PATH = 'src/assets';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
@@ -83,8 +82,6 @@ module.exports.FILES = [
   STORYBOOK_CONFIG_PATH,
   STORIES_PATH,
   UTILS_PATH,
-  `${ASSETS_PATH}/ic_arrow_dropdown_active.svg`,
-  `${ASSETS_PATH}/ic_arrow_dropdown.svg`,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner`,

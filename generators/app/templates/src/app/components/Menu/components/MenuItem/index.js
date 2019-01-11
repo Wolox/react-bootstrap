@@ -5,13 +5,17 @@ import MenuItem from './layout';
 import { menuItemPropTypes } from './propTypes';
 
 class MenuItemContainer extends Component {
-  handleMenuItemSelected = () => {
-    this.props.handleItemSelected(this.props.menuItem);
-  };
+  handleMenuItemSelected = () => this.props.handleItemSelected(this.props.menuItem);
 
   render() {
-    const isActive = this.props.currentSelectedItemId === this.props.menuItem.id;
-    const { menuItem, currentSelectedSubItemId, handleSubItemSelected } = this.props;
+    const {
+      menuItem,
+      currentSelectedSubItemId,
+      currentSelectedItemId,
+      handleSubItemSelected,
+      showComplete
+    } = this.props;
+    const isActive = currentSelectedItemId === menuItem.id;
 
     return (
       <MenuItem
@@ -20,6 +24,7 @@ class MenuItemContainer extends Component {
         menuItem={menuItem}
         currentSelectedSubItemId={currentSelectedSubItemId}
         onSubItemSelected={handleSubItemSelected}
+        showComplete={showComplete}
       />
     );
   }
@@ -30,7 +35,8 @@ MenuItemContainer.propTypes = {
   handleSubItemSelected: PropTypes.func.isRequired,
   currentSelectedItemId: PropTypes.number,
   currentSelectedSubItemId: PropTypes.number,
-  menuItem: menuItemPropTypes
+  menuItem: menuItemPropTypes,
+  showComplete: PropTypes.bool
 };
 
 export default MenuItemContainer;
