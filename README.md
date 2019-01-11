@@ -1,6 +1,8 @@
 wolox-react-bootstrap
 ==================
 
+This script aims to automate the process of initializing a React App using the Wolox standards.
+
 ## Prerequisites
 
 - [React](https://facebook.github.io/react/docs/getting-started.html)
@@ -10,16 +12,20 @@ wolox-react-bootstrap
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 
-## TL;DR
+## How to use
 
-You don't need to clone this repository. Just follow this steps:
+You don't need to clone this repository. Just follow these steps:
 
-1- Run the following command:
+1- Run the installation script using the following command:
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh) [--verbose]
 ```
 
-2- Search for TODO commented lines and follow the instructions. (Search "// TODO")
+2- Search for `TODO` commented lines and follow the instructions. (Search "// TODO")
 
 3- Add .env file with your API_BASE_URL
+
+## Notes
+
+This script will configure your system to install global npm packages without having to use sudo.
