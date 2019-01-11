@@ -63,10 +63,14 @@ module.exports.FLOWCONFIG_PATH = {
   destination: '.flowconfig'
 };
 
+module.exports.RESCRIPTS_PATH = {
+  src: 'rescriptsrc.js',
+  destination: '.rescriptsrc.js'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.FILES = [
-  'config-overrides.js',
   'pull_request_template.md',
   'README.md',
   'src/index.js',

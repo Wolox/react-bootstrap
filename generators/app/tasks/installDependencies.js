@@ -31,7 +31,6 @@ const DEPENDENCIES = [
 ];
 
 const DEV_DEPENDENCIES = [
-  'react-app-rewired',
   'eslint-config-airbnb',
   'eslint-config-prettier',
   'eslint-plugin-flowtype',
@@ -46,10 +45,10 @@ const DEV_DEPENDENCIES = [
   'prettier',
   'prettier-eslint',
   'react-hot-loader',
-  'react-app-rewire-wolox',
   '@storybook/react',
   'prop-types',
-  '@babel/plugin-proposal-optional-chaining'
+  '@babel/plugin-proposal-optional-chaining',
+  '@rescripts/cli@^0.0.7'
 ];
 
 /**
