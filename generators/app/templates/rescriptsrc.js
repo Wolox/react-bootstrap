@@ -1,5 +1,3 @@
-// Const rewireWolox = require('react-app-rewire-wolox');
-
 const path = require('path');
 
 const createLoaderMatcher = loader => rule =>
@@ -11,6 +9,8 @@ const cssLoaderMatcher = createLoaderMatcher('css-loader');
 
 const babelLoaderMatcher = createLoaderMatcher('babel-loader');
 
+const eslintLoaderMatcher = createLoaderMatcher('eslint-loader');
+
 const enableBabelRc = config => {
   const fileLoaders = oneOfFileLoaders(config);
 
@@ -21,9 +21,9 @@ const enableBabelRc = config => {
   });
 };
 
-const addCamelCaseToCSSModules = (config, env) => {
+const addCamelCaseToCSSModules = config => {
   const fileLoaders = oneOfFileLoaders(config);
-  const loaderProperty = env === 'development' ? 'use' : 'loader';
+  const loaderProperty = config.mode === 'development' ? 'use' : 'loader';
 
   fileLoaders.forEach(loader => {
     if (loader.test && loader[loaderProperty] && loader[loaderProperty].constructor === Array) {
@@ -36,9 +36,29 @@ const addCamelCaseToCSSModules = (config, env) => {
   });
 };
 
-module.exports = function override(config, env) {
-  addCamelCaseToCSSModules(config, env);
+const useEslintConfig = config => {
+  config.module.rules.forEach(rule => {
+    if (rule.use) {
+      const eslintUse = rule.use.find(use => eslintLoaderMatcher(use));
+
+      if (eslintUse) {
+        eslintUse.options = {
+          ...eslintUse.options,
+          baseConfig: undefined,
+          useEslintrc: true,
+          emitWarning: true
+        };
+      }
+    }
+  });
+};
+
+const customConfig = config => {
+  useEslintConfig(config);
+  addCamelCaseToCSSModules(config);
   enableBabelRc(config);
 
   return config;
 };
+
+module.exports = [customConfig];
