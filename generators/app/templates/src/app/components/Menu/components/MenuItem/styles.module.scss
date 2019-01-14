@@ -2,7 +2,7 @@
 @import '../../styles.module';
 
 .fade-component {
-  animation: fadeIn $transitionArrow;
+  animation: fadeIn $transition;
   white-space: nowrap;
 }
 
@@ -11,18 +11,6 @@
   padding: 4px;
   right: 10px;
   position: absolute;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .item-text {
@@ -37,7 +25,7 @@
   height: 58px;
   width: 100%;
   cursor: pointer;
-  transition: background-color $transitionArrow ease-in-out;
+  transition: background-color $transition ease-in-out;
   border-bottom: 1px solid $grey-3;
   border-radius: 0;
   position: relative;
@@ -53,7 +41,7 @@
 
   &.selected {
     background-color: $grey-1;
-    transition: background-color $transitionArrow ease-in-out;
+    transition: background-color $transition ease-in-out;
     border-bottom: 1px solid $grey-1;
 
     &.dropdown::after {

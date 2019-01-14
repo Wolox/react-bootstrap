@@ -1,6 +1,5 @@
 @import '../../../scss/variables/_colors';
-$transitionMenu: .5s;
-$transitionArrow: 0.5s;
+$transition: .5s;
 
 @keyframes fadeIn {
   0% {
@@ -19,7 +18,7 @@ $transitionArrow: 0.5s;
   padding-top: 30px;
   box-shadow: 2px 0 4px 0 $black;
   height: 100vh;
-  transition: width $transitionMenu;
+  transition: width $transition;
   background-color: $grey-4;
   padding-top: 50px;
   z-index: 200;
@@ -27,7 +26,7 @@ $transitionArrow: 0.5s;
 
   &.complete {
     width: 250px;
-    transition: width $transitionMenu;
+    transition: width $transition;
   }
 }
 
@@ -57,13 +56,15 @@ $transitionArrow: 0.5s;
 
 .arrow-right {
   transform: rotate(-45deg);
-  animation: fadeIn $transitionArrow;
+  transition: $transition;
+  animation: fadeIn $transition;
   white-space: nowrap;
 }
 
 .arrow-left {
   transform: rotate(135deg);
-  animation: fadeIn $transitionArrow;
+  transition: $transition;
+  animation: fadeIn $transition;
   white-space: nowrap;
 }
 
