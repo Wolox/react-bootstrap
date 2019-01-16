@@ -15,6 +15,7 @@ This are the components you can to choose for your app.
   * [Checkbox](docs/Checkbox.md)
   * [InputLabel](docs/InputLabel.md)
   * [RadioGroup](docs/RadioGroup.md)
+  * [Menu](docs/Menu.md)
 
 ## Base Styles
 

@@ -14,7 +14,7 @@ function Menu({
   menuItems,
   showComplete,
   showCompleteActive,
-  onHandleClickMouse,
+  onHandleClickCompleteActive,
   onHandleMouseOver,
   onHandleMouseOut
 }) {
@@ -27,7 +27,7 @@ function Menu({
         className={`${styles.arrowButton} ${
           showCompleteActive ? styles.arrowLeft : styles.arrowRight
         } m-bottom-1`}
-        onClick={onHandleClickMouse}
+        onClick={onHandleClickCompleteActive}
       />
       <div
         onMouseOver={!showCompleteActive && onHandleMouseOver}
@@ -52,7 +52,7 @@ function Menu({
 Menu.propTypes = {
   currentItemId: PropTypes.number.isRequired,
   menuItems: PropTypes.arrayOf(menuItemPropTypes).isRequired,
-  onHandleClickMouse: PropTypes.func.isRequired,
+  onHandleClickCompleteActive: PropTypes.func.isRequired,
   onHandleItemSelected: PropTypes.func.isRequired,
   onHandleMouseOut: PropTypes.func.isRequired,
   onHandleMouseOver: PropTypes.func.isRequired,

@@ -38,7 +38,7 @@ class MenuContainer extends Component {
       showComplete: !prevState.showComplete
     }));
 
-  handleClickMouse = () => this.setShowCompleteActive();
+  handleClickCompleteActive = () => this.setShowCompleteActive();
 
   handleMouseOver = () => this.setShowComplete(true);
 
@@ -58,7 +58,7 @@ class MenuContainer extends Component {
         menuItems={menuItems}
         showComplete={showComplete}
         showCompleteActive={showCompleteActive}
-        onHandleClickMouse={this.handleClickMouse}
+        onHandleClickCompleteActive={this.handleClickCompleteActive}
         onHandleMouseOver={this.handleMouseOver}
         onHandleMouseOut={this.handleMouseOut}
       />
