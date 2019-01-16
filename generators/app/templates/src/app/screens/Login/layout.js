@@ -24,7 +24,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }) {
           inputType="text"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={t('Login:emailPlaceholder')}
-          onChange={onEmailChange}
+          handleChange={onEmailChange}
         />
         <InputLabel
           label={t('Login:password')}
@@ -34,7 +34,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }) {
           inputType="password"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={t('Login:passwordPlaceholder')}
-          onChange={onPasswordChange}
+          handleChange={onPasswordChange}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
