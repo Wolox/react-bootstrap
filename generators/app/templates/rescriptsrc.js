@@ -23,11 +23,10 @@ const enableBabelRc = config => {
 
 const addCamelCaseToCSSModules = config => {
   const fileLoaders = oneOfFileLoaders(config);
-  const loaderProperty = config.mode === 'development' ? 'use' : 'loader';
 
   fileLoaders.forEach(loader => {
-    if (loader.test && loader[loaderProperty] && loader[loaderProperty].constructor === Array) {
-      loader[loaderProperty].forEach(use => {
+    if (loader.test && loader.use && loader.use.constructor === Array) {
+      loader.use.forEach(use => {
         if (cssLoaderMatcher(use) && use.options.modules) {
           use.options.camelCase = true;
         }
@@ -55,6 +54,7 @@ const useEslintConfig = config => {
 
 const customConfig = config => {
   useEslintConfig(config);
+
   addCamelCaseToCSSModules(config);
   enableBabelRc(config);
 
