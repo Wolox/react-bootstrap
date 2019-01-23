@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 
 import Routes from '../../../../constants/routes';
 
-const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
-const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
+const DEFAULT_PUBLIC_ROUTE = Routes.HOME;
+const DEFAULT_PRIVATE_ROUTE = Routes.LOGIN;
 
 function AuthenticatedRoute({
   /*
@@ -17,7 +17,7 @@ function AuthenticatedRoute({
   isPublicRoute,
   isPrivateRoute,
   initialized,
-  // CurrentUser,
+  currentUser,
   component: Comp,
   ...props
 }) {
@@ -33,7 +33,7 @@ function AuthenticatedRoute({
          * }
          */
         if (initialized) {
-          if (isPublicRoute) {
+          if (currentUser && isPublicRoute) {
             /*
              * TODO Add this if you need it
              * if (currentUser && isPublicRoute) {
@@ -72,7 +72,7 @@ AuthenticatedRoute.defaultProps = {
    * currentUser: false,
    * isPublicRoute: true,
    */
-  initialized: false
+  initialized: true
 };
 
 AuthenticatedRoute.propTypes = {
