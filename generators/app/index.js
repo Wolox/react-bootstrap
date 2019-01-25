@@ -41,13 +41,11 @@ class GeneratorReact extends Generator {
   }
 
   writing() {
-    return Promise.resolve()
-      .then(() => {
-        this.log('Copying base project files...');
-        configPackageJson.bind(this)();
-        copyTemplateFiles.bind(this)();
-      })
-      .then(this.configureGit && configGit.bind(this));
+    return Promise.resolve().then(() => {
+      this.log('Copying base project files...');
+      configPackageJson.bind(this)();
+      copyTemplateFiles.bind(this)();
+    });
   }
 
   install() {
@@ -56,6 +54,10 @@ class GeneratorReact extends Generator {
       bower: false,
       yarn: false
     });
+  }
+
+  end() {
+    return Promise.resolve().then(this.configureGit && configGit.bind(this));
   }
 }
 

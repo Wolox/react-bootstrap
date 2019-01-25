@@ -27,7 +27,8 @@ const DEPENDENCIES = [
   'react-router',
   'redux-beacon',
   'connected-react-router',
-  '@redux-beacon/google-analytics'
+  '@redux-beacon/google-analytics',
+  'seamless-immutable'
 ];
 
 const DEV_DEPENDENCIES = [
@@ -49,7 +50,9 @@ const DEV_DEPENDENCIES = [
   'react-app-rewire-wolox',
   '@storybook/react',
   'prop-types',
-  '@babel/plugin-proposal-optional-chaining'
+  '@babel/plugin-proposal-optional-chaining',
+  'eslint-plugin-babel',
+  '@storybook/addon-actions'
 ];
 
 /**
