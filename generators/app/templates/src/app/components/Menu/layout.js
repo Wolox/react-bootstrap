@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { menuItemPropTypes } from './propTypes';
+import { menuItemPropTypes } from './components/MenuItem/propTypes';
 import MenuItemContainer from './components/MenuItem';
 import styles from './styles.module.scss';
 
