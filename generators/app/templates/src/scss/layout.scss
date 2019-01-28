@@ -120,6 +120,7 @@
   .item-#{$i} {
     flex: $i;
     min-width: 0;
+    min-height: 0;
   }
 }
 
@@ -127,6 +128,7 @@
   .item-#{$i}-no-basis {
     flex: $i 1 0px;
     min-width: 0;
+    min-height: 0;
   }
 }
 
