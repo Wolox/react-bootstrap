@@ -1,4 +1,4 @@
-import { deepFreeze } from './utils/object';
+import { deepFreeze } from './object';
 
 /**
  * Receives an array of strings, and returns an obj with that strings as properties with that string as value.
