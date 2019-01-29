@@ -23,7 +23,7 @@ module.exports = [
     when: values => values.configureGit,
     type: 'input',
     name: 'repoUrl',
-    message: 'Enter you repo SSH url in order to clone with SSH',
+    message: 'Enter your repo SSH url in order to clone with SSH',
     required: true,
     validate: val =>
       String(val).match(/(?:git|ssh|https?|git@[-\w.]+):(\/\/)?(.*?)(\.git)(\/?|#[-\d\w._]+?)$/)
