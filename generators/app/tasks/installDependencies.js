@@ -41,7 +41,6 @@ const DEV_DEPENDENCIES = [
   'prettier@^1.15.3',
   'prettier-eslint@^8.8.2',
   'react-hot-loader@^4.6.1',
-  '@storybook/react@^4.1.2',
   'prop-types@^15.6.2',
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
   '@rescripts/cli@^0.0.7'

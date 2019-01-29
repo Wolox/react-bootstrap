@@ -53,7 +53,6 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
-const STORYBOOK_CONFIG_PATH = '.storybook/';
 const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
@@ -83,7 +82,6 @@ module.exports.FILES = [
   REDUX_PATH,
   SCREENS_PATH,
   SCSS_PATH,
-  STORYBOOK_CONFIG_PATH,
   STORIES_PATH,
   UTILS_PATH,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,

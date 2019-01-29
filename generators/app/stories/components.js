@@ -2,13 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import SearchBar from '../src/app/components/SearchBar';
-import TextArea from '../src/app/components/TextArea';
-import Loading from '../src/app/components/Spinner/components/loading';
-import Checkbox from '../src/app/components/Checkbox';
-import RadioGroup from '../src/app/components/RadioGroup';
+import SearchBar from '../templates/src/app/components/SearchBar';
+import TextArea from '../templates/src/app/components/TextArea';
+import Loading from '../templates/src/app/components/Spinner/components/loading';
+import Checkbox from '../templates/src/app/components/Checkbox';
+import RadioGroup from '../templates/src/app/components/RadioGroup';
 
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 const colorSpinner = 'steelblue';
 
