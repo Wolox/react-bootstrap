@@ -1,4 +1,4 @@
-const generateRARScript = (command, options = '') => `react-app-rewired ${command} ${options}`;
+const generateRSScript = (command, options = '') => `rescripts ${command} ${options}`;
 
 const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features) => {
   const attributes = {
@@ -10,16 +10,15 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       url: repoUrl
     },
     scripts: {
-      start: generateRARScript('start'),
-      build: generateRARScript('build'),
-      test: generateRARScript('test', '--env=jsdom'),
+      start: generateRSScript('start'),
+      build: generateRSScript('build'),
+      test: generateRSScript('test', '--env=jsdom'),
       eject: './node_modules/react-scripts/bin/react-scripts.js eject',
-      deploy: generateRARScript('build'),
+      deploy: generateRSScript('build'),
       lint: './node_modules/eslint/bin/eslint.js src',
       'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
       'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
-      precommit: 'npm run lint-diff',
-      storybook: 'start-storybook -p 9001 -c .storybook'
+      precommit: 'npm run lint-diff'
     }
   };
 
