@@ -53,7 +53,6 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
-const STORIES_PATH = 'stories/';
 const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
 
@@ -82,7 +81,6 @@ module.exports.FILES = [
   REDUX_PATH,
   SCREENS_PATH,
   SCSS_PATH,
-  STORIES_PATH,
   UTILS_PATH,
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
@@ -126,6 +124,6 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   reselect: { dependencies: ['reselect@^4.0.0'] },
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver@^3.1.1'],
-    devDependencies: ['eslint-import-resolver-babel-module@^4.0.0']
+    devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
   }
 };
