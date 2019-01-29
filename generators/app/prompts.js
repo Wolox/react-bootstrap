@@ -14,10 +14,21 @@ module.exports = [
         : `${val} is not a valid name for a project. Please use a valid identifier name (alphanumeric).`
   },
   {
+    type: 'confirm',
+    name: 'configureGit',
+    message: 'Do you want to configure a Github repo?',
+    required: true
+  },
+  {
+    when: values => values.configureGit,
     type: 'input',
     name: 'repoUrl',
-    message: 'What is the git repo url for this project?',
-    required: true
+    message: 'Enter your repo SSH url in order to clone with SSH',
+    required: true,
+    validate: val =>
+      String(val).match(/(?:git|ssh|https?|git@[-\w.]+):(\/\/)?(.*?)(\.git)(\/?|#[-\d\w._]+?)$/)
+        ? true
+        : `${val} is not a valid url. Please enter a valid one.`
   },
   {
     type: 'checkbox',

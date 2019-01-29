@@ -24,7 +24,8 @@ const DEPENDENCIES = [
   'redux-thunk@^2.3.0',
   'react-router@^4.3.1',
   'redux-beacon@^2.0.3',
-  '@redux-beacon/google-analytics@^1.1.1'
+  '@redux-beacon/google-analytics@^1.1.1',
+  'seamless-immutable@^7.1.4'
 ];
 
 const DEV_DEPENDENCIES = [
@@ -43,7 +44,8 @@ const DEV_DEPENDENCIES = [
   'react-hot-loader@^4.6.1',
   'prop-types@^15.6.2',
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
-  '@rescripts/cli@^0.0.7'
+  '@rescripts/cli@^0.0.7',
+  'eslint-plugin-babel@^5.3.0'
 ];
 
 /**
