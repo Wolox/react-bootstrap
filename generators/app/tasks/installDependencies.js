@@ -43,7 +43,8 @@ const DEV_DEPENDENCIES = [
   'react-hot-loader@^4.6.1',
   'prop-types@^15.6.2',
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
-  '@rescripts/cli@^0.0.7'
+  '@rescripts/cli@^0.0.7',
+  'eslint-plugin-babel'
 ];
 
 /**
