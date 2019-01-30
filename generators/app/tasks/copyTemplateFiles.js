@@ -8,6 +8,7 @@ const {
   CI_CONFIG_FILE,
   LINTER_IGNORE_PATH,
   BABELRC_PATH,
+  WITHOUT_SEAMLESS_FILES,
   RESCRIPTS_PATH
 } = require('../constants');
 
@@ -21,7 +22,7 @@ module.exports = function copyTemplateFiles() {
 
   FILES_TO_DELETE.forEach(src => bindedDeleteFiles(src));
 
-  FILES.forEach(path => bindedCopy(path, path, null, { projectName: this.projectName }));
+  FILES.forEach(path => bindedCopy(path, path));
 
   TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
 
@@ -29,6 +30,10 @@ module.exports = function copyTemplateFiles() {
 
   if (this.features.flow) {
     bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
+  }
+
+  if (!this.features['seamless-immutable']) {
+    bindedCopy(WITHOUT_SEAMLESS_FILES.src, WITHOUT_SEAMLESS_FILES.destination);
   }
 
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);

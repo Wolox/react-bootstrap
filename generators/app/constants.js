@@ -55,6 +55,7 @@ const CONSTANTS_PATH = 'src/constants';
 const SCSS_PATH = 'src/scss';
 const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
+const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
 
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
@@ -126,4 +127,9 @@ module.exports.OPTIONAL_DEPENDENCIES = {
     dependencies: ['babel-plugin-module-resolver@^3.1.1'],
     devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
   }
+};
+
+module.exports.WITHOUT_SEAMLESS_FILES = {
+  src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable`,
+  destination: 'src'
 };
