@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Routes from '../../../../constants/routes';
 
 const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
-const DEFAULT_PRIVATE_ROUTE = Routes.LOGIN;
+const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
 
 function AuthenticatedRoute({
   /*
