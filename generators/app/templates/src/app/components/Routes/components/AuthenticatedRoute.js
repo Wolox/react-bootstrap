@@ -69,7 +69,6 @@ function AuthenticatedRoute({
 AuthenticatedRoute.defaultProps = {
   /*
    * TODO Add this if you need it
-   * currentUser: false,
    * isPublicRoute: true,
    */
   currentUser: false
@@ -78,7 +77,6 @@ AuthenticatedRoute.defaultProps = {
 AuthenticatedRoute.propTypes = {
   ...Route.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
   currentUser: PropTypes.bool,
-  initialized: PropTypes.bool,
   isPrivateRoute: PropTypes.bool,
   isPublicRoute: PropTypes.bool
 };
