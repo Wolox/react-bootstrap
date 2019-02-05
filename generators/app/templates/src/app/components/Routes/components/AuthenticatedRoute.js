@@ -16,8 +16,8 @@ function AuthenticatedRoute({
    */
   isPublicRoute,
   isPrivateRoute,
-  initialized,
-  // CurrentUser,
+  // initialized,
+  currentUser,
   component: Comp,
   ...props
 }) {
@@ -32,7 +32,7 @@ function AuthenticatedRoute({
          *   return <AppDownloader />;
          * }
          */
-        if (initialized) {
+        if (currentUser) {
           if (isPublicRoute) {
             /*
              * TODO Add this if you need it
@@ -42,22 +42,22 @@ function AuthenticatedRoute({
             return (
               <Redirect
                 to={{
-                  pathname: DEFAULT_PUBLIC_ROUTE,
-                  state: { from: props.location }
-                }}
-              />
-            );
-          } else if (isPrivateRoute) {
-            // Do not allow unlogged users to access app. redirect to signin
-            return (
-              <Redirect
-                to={{
                   pathname: DEFAULT_PRIVATE_ROUTE,
                   state: { from: props.location }
                 }}
               />
             );
           }
+        } else if (isPrivateRoute) {
+          // Do not allow unlogged users to access app. redirect to signin
+          return (
+            <Redirect
+              to={{
+                pathname: DEFAULT_PUBLIC_ROUTE,
+                state: { from: props.location }
+              }}
+            />
+          );
         }
 
         return <Comp {...routeProps} />;
@@ -69,19 +69,14 @@ function AuthenticatedRoute({
 AuthenticatedRoute.defaultProps = {
   /*
    * TODO Add this if you need it
-   * currentUser: false,
    * isPublicRoute: true,
    */
-  initialized: false
+  currentUser: false
 };
 
 AuthenticatedRoute.propTypes = {
   ...Route.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-  /*
-   * TODO Add this if you need it
-   * currentUser: PropTypes.bool,
-   */
-  initialized: PropTypes.bool,
+  currentUser: PropTypes.bool,
   isPrivateRoute: PropTypes.bool,
   isPublicRoute: PropTypes.bool
 };
