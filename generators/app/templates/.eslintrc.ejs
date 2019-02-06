@@ -1,12 +1,12 @@
 module.exports = {
-  extends: ['wolox-react'<% if (features.flow) { %>, 'plugin:flowtype/recommended'<% } %>],  <% if (features.flow) { %>
+  extends: ['wolox-react'<% if (features.flow) { %>, 'plugin:flowtype/recommended'<% } %>]<% if (features.flow) { %>,
   plugins: ['flowtype']<% } %><% if (features.jest) { %>,
   env: {
     jest: true
   }<% } %><% if (features['babel-module-resolver']) { %>,
-  settings: { 
-    'import/resolver': { 
-      'babel-module': {  
+  settings: {
+    'import/resolver': {
+      'babel-module': {
         alias: {
           '~components': './src/app/components',
           '~screens': './src/app/screens',
