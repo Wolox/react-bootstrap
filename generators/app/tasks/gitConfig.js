@@ -39,7 +39,7 @@ module.exports.configGit = function configGit() {
       runCommand({
         command: [
           'git',
-          ['push', '-f', 'origin', 'master:repository-initiation'],
+          ['push', '-f', 'origin', 'development:repository-initiation'],
           { cwd: `${process.cwd()}/${this.projectName}` }
         ],
         loadingMessage: 'Pushing all files to repository',
