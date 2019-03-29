@@ -45,7 +45,8 @@ const useEslintConfig = config => {
           ...eslintUse.options,
           baseConfig: undefined,
           useEslintrc: true,
-          emitWarning: true
+          emitWarning: true,
+          ignore: true
         };
       }
     }
