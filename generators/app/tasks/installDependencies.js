@@ -45,7 +45,13 @@ const DEV_DEPENDENCIES = [
   'prop-types@^15.6.2',
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
   '@rescripts/cli@^0.0.7',
-  'eslint-plugin-babel@^5.3.0'
+  'eslint-plugin-babel@^5.3.0',
+  'stylelint-config-wolox@^1.0.5',
+  'stylelint-no-indistinguishable-colors@^1.2.1',
+  'stylelint-scss@^3.5.4',
+  'stylelint@^8.4.0',
+  'prettier-stylelint@^0.4.2',
+  'prettier-eslint-cli@^4.7.1'
 ];
 
 /**

@@ -125,14 +125,16 @@
 }
 
 @for $i from 1 through 16 {
+
   .item-#{$i}-no-basis {
-    flex: $i 1 0px;
+    flex: $i 1 0;
     min-width: 0;
     min-height: 0;
   }
 }
 
 @for $i from 1 through 16 {
+
   .grow-#{$i} {
     flex-grow: $i;
   }

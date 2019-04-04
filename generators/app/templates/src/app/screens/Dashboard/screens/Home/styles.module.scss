@@ -9,7 +9,7 @@
 }
 
 .app-header {
-  background-color: #282c34;
+  background-color: #282C34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,19 +20,21 @@
 .text {
   font-size: calc(10px + 2vmin);
   margin-bottom: calc(30px + 2vmin);
-  color: white;
+  color: #FFF;
 }
 
 .app-link {
   font-size: calc(10px + 2vmin);
-  color: #61dafb;
+  color: #61DAFB;
   text-decoration: underline;
 }
 
 @keyframes app-logo-spin {
+
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
