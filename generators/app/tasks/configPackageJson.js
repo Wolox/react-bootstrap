@@ -9,6 +9,10 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       type: 'git',
       url: repoUrl
     },
+    engines: {
+      node: '>= 10.15.3',
+      npm: '>= 6.9.0'
+    },
     scripts: {
       start: generateRSScript('start'),
       build: generateRSScript('build'),

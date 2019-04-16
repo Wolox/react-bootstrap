@@ -67,6 +67,11 @@ module.exports.RESCRIPTS_PATH = {
   destination: '.rescriptsrc.js'
 };
 
+module.exports.NPMRC_PATH = {
+  src: 'npmrc',
+  destination: '.npmrc'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.FILES = [
