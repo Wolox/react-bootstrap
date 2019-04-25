@@ -19,7 +19,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
       'lint-scss': './node_modules/stylelint/bin/stylelint.js src --fix',
       'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
-      precommit: 'npm run lint-diff'
+      precommit: ['npm run lint-diff', 'npm run lint-scss']
     }
   };
 
