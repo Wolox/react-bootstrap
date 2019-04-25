@@ -25,12 +25,12 @@ $min-left: 10;
 $max-left: 50;
 
 // Top margins
+
 @if $min-top > 0 {
   $unscaled-min-top: $min-top / $scale;
   $unscaled-max-top: $max-top / $scale;
 
   @for $i from $unscaled-min-top through $unscaled-max-top {
-
     .m-top-#{$i} {
       margin-top: #{$i * $scale}px;
     }
@@ -44,7 +44,6 @@ $max-left: 50;
   $unscaled-max-right: $max-right / $scale;
 
   @for $i from $unscaled-min-right through $unscaled-max-right {
-
     .m-right-#{$i} {
       margin-right: #{$i * $scale}px;
     }
@@ -58,7 +57,6 @@ $max-left: 50;
   $unscaled-max-bottom: $max-bottom / $scale;
 
   @for $i from $unscaled-min-bottom through $unscaled-max-bottom {
-    
     .m-bottom-#{$i} {
       margin-bottom: #{$i * $scale}px;
     }
@@ -72,7 +70,6 @@ $max-left: 50;
   $unscaled-max-left: $max-left / $scale;
 
   @for $i from $unscaled-min-left through $unscaled-max-left {
-
     .m-left-#{$i} {
       margin-left: #{$i * $scale}px;
     }
