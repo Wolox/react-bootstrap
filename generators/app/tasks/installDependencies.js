@@ -49,9 +49,11 @@ const DEV_DEPENDENCIES = [
   'stylelint-config-wolox@^1.0.5',
   'stylelint-no-indistinguishable-colors@^1.2.1',
   'stylelint-scss@^3.5.4',
-  'stylelint@^8.4.0',
+  'stylelint@^9.10.1',
   'prettier-stylelint@^0.4.2',
-  'prettier-eslint-cli@^4.7.1'
+  'prettier-eslint-cli@^4.7.1',
+  'postcss-syntax@^0.36.2',
+  'postcss-html@^0.36.0'
 ];
 
 /**
