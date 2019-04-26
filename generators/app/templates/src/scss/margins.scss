@@ -7,21 +7,21 @@ $breakpoint-desktop: 1024px;
 }
 
 @media (min-width: $breakpoint-desktop) {
-  $bd-scale: 10;
+  $bd-scale: 5;
 }
 
-$scale: $bt-scale or $bd-scale or 10;
+$scale: $bt-scale or $bd-scale or 5;
 
-$min-top: 10;
+$min-top: 5;
 $max-top: 100;
 
-$min-right: 10;
+$min-right: 5;
 $max-right: 50;
 
-$min-bottom: 10;
+$min-bottom: 5;
 $max-bottom: 100;
 
-$min-left: 10;
+$min-left: 5;
 $max-left: 50;
 
 // Top margins
