@@ -45,7 +45,11 @@ const DEV_DEPENDENCIES = [
   'prop-types@^15.6.2',
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
   '@rescripts/cli@^0.0.7',
-  'eslint-plugin-babel@^5.3.0'
+  'eslint-plugin-babel@^5.3.0',
+  'env-cmd@8.0.2',
+  'aws-deploy-script-fe@0.0.4',
+  'chalk@2.4.2',
+  'minimist@1.2.0'
 ];
 
 /**
