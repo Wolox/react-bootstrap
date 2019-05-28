@@ -4,7 +4,7 @@
     "module": "commonjs",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "~app/*": ["./src/app/*"],
       "~components/*": ["./src/app/components/*"],
