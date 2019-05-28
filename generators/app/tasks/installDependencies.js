@@ -49,7 +49,15 @@ const DEV_DEPENDENCIES = [
   'env-cmd@8.0.2',
   'aws-deploy-script-fe@0.0.4',
   'chalk@2.4.2',
-  'minimist@1.2.0'
+  'minimist@1.2.0',
+  'stylelint-config-wolox@^1.0.5',
+  'stylelint-no-indistinguishable-colors@^1.2.1',
+  'stylelint-scss@^3.5.4',
+  'stylelint@^9.10.1',
+  'prettier-stylelint@^0.4.2',
+  'prettier-eslint-cli@^4.7.1',
+  'postcss-syntax@^0.36.2',
+  'postcss-html@^0.36.0'
 ];
 
 /**

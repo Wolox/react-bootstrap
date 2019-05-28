@@ -81,6 +81,7 @@ module.exports.FILES = [
   'src/index.js',
   'Jenkinsfile',
   'jsconfig.json',
+  '.stylelintrc.js',
   SCRIPTS_PATH,
   CI_PATH,
   CONFIG_PATH,
