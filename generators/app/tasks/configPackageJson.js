@@ -9,12 +9,17 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       type: 'git',
       url: repoUrl
     },
+    engines: {
+      node: '>= 10.15.3',
+      npm: '>= 6.9.0'
+    },
     scripts: {
-      start: generateRSScript('start'),
-      build: generateRSScript('build'),
+      start: `env-cmd ./.env.development ${generateRSScript('start')}`,
+      'start-env': 'node ./scripts/start.js',
+      build: 'node ./scripts/build.js',
+      deploy: 'node ./scripts/deploy.js',
       test: generateRSScript('test', '--env=jsdom'),
       eject: './node_modules/react-scripts/bin/react-scripts.js eject',
-      deploy: generateRSScript('build'),
       lint: './node_modules/eslint/bin/eslint.js src',
       'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
       'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
