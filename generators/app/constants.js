@@ -99,6 +99,7 @@ module.exports.FILES = [
 module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
   '.eslintrc.js',
+  '.babelrc.js',
   'src/app/index.js',
   `${COMPONENTS_PATH}/Routes/index.js`,
   `${SERVICES_PATH}/LocalStorageService.js`

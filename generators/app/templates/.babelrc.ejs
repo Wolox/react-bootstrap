@@ -1,6 +1,6 @@
-{
-  "plugins": [
-    "@babel/plugin-proposal-optional-chaining",
+module.exports = {
+  plugins: [
+    "@babel/plugin-proposal-optional-chaining"<% if (features['babel-module-resolver']) { %>,
     [
       "module-resolver",
       {
@@ -15,6 +15,6 @@
           "~utils": "./src/utils"
         }
       }
-    ]
+    ]<% } %>
   ]
 }
