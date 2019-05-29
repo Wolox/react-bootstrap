@@ -8,7 +8,8 @@ const {
   CI_CONFIG_FILE,
   LINTER_IGNORE_PATH,
   WITHOUT_SEAMLESS_FILES,
-  RESCRIPTS_PATH
+  RESCRIPTS_PATH,
+  NPMRC_PATH
 } = require('../constants');
 
 const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
@@ -36,8 +37,8 @@ module.exports = function copyTemplateFiles() {
   }
 
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
-
   bindedCopy(RESCRIPTS_PATH.src, RESCRIPTS_PATH.destination);
+  bindedCopy(NPMRC_PATH.src, NPMRC_PATH.destination);
 
   bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
     projectName: this.projectName

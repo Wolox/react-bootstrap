@@ -9,7 +9,10 @@ system_has() {
 }
 
 currentnodeversion="$(node --version)"
-requirednodeversion="v6.2.0"
+requirednodeversion="v10.15.3"
+
+currentnpmversion="$(npm --version)"
+requirednpmversion="6.9.0"
 
 if ! system_has git; then
   echo "git is mandatory to continue"
@@ -17,9 +20,14 @@ if ! system_has git; then
   exit 1
 
 elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V | head -n1)" != "$requirednodeversion" ]; then 
-  echo "The node version must be >= v6.2.0"
+  echo "The node version must be >= v10.15.3"
+  exit 1
+elif [ "$(printf '%s\n' "$requirednpmversion" "$currentnpmversion" | sort -V | head -n1)" != "$requirednpmversion" ]; then 
+  echo "The npm version must be >= v6.9.0"
   exit 1
 fi
+
+
 
 
 printf "\n\nThis script requires an npm configuration that allows global\n"

@@ -56,6 +56,7 @@ const SCSS_PATH = 'src/scss';
 const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
 const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
+const SCRIPTS_PATH = 'scripts';
 
 module.exports.FLOWCONFIG_PATH = {
   src: 'flowconfig',
@@ -67,6 +68,11 @@ module.exports.RESCRIPTS_PATH = {
   destination: '.rescriptsrc.js'
 };
 
+module.exports.NPMRC_PATH = {
+  src: 'npmrc',
+  destination: '.npmrc'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.FILES = [
@@ -75,6 +81,8 @@ module.exports.FILES = [
   'src/index.js',
   'Jenkinsfile',
   'jsconfig.json',
+  '.stylelintrc.js',
+  SCRIPTS_PATH,
   CI_PATH,
   CONFIG_PATH,
   CONSTANTS_PATH,
