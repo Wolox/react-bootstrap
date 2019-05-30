@@ -7,7 +7,6 @@ const {
   FLOWCONFIG_PATH,
   CI_CONFIG_FILE,
   LINTER_IGNORE_PATH,
-  BABELRC_PATH,
   WITHOUT_SEAMLESS_FILES,
   RESCRIPTS_PATH,
   NPMRC_PATH
@@ -38,7 +37,6 @@ module.exports = function copyTemplateFiles() {
   }
 
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
-  bindedCopy(BABELRC_PATH.src, BABELRC_PATH.destination);
   bindedCopy(RESCRIPTS_PATH.src, RESCRIPTS_PATH.destination);
   bindedCopy(NPMRC_PATH.src, NPMRC_PATH.destination);
 
