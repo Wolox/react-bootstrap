@@ -5,6 +5,7 @@ const configPackageJson = require('./tasks/configPackageJson');
 const copyTemplateFiles = require('./tasks/copyTemplateFiles');
 const { gitInitiation, configGit } = require('./tasks/gitConfig');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
+const linterAutofix = require('./tasks/linterAutofix');
 const PROMPTS = require('./prompts');
 const { KICKOFF_MESSAGE } = require('./constants');
 
@@ -57,7 +58,9 @@ class GeneratorReact extends Generator {
   }
 
   end() {
-    return Promise.resolve().then(this.configureGit && configGit.bind(this));
+    return Promise.resolve()
+      .then(this.configureGit && configGit.bind(this))
+      .then(linterAutofix.bind(this));
   }
 }
 
