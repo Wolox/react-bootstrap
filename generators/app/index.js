@@ -60,7 +60,7 @@ class GeneratorReact extends Generator {
   end() {
     return Promise.resolve()
       .then(this.configureGit && configGit.bind(this))
-      .then(linterAutofix.bind(this)());
+      .then(linterAutofix.bind(this));
   }
 }
 
