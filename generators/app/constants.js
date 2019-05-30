@@ -123,7 +123,6 @@ module.exports.FILES_TO_DELETE = [
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
 module.exports.OPTIONAL_DEPENDENCIES = {
-  jest: { dependencies: ['jest@^23.6.0'] },
   moment: { dependencies: ['moment@^2.23.0'] },
   'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
   flow: {
