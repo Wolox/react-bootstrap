@@ -38,7 +38,7 @@ const DEV_DEPENDENCIES = [
   'eslint-plugin-react-native@^3.5.0',
   'eslint-config-wolox-react@^1.1.0',
   'eslint-config-wolox@^2.3.0',
-  'husky@^1.2.1',
+  'husky@^2.3.0',
   'prettier@^1.15.3',
   'prettier-eslint@^8.8.2',
   'react-hot-loader@^4.6.1',
