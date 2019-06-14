@@ -11,7 +11,7 @@ validateArgs(env);
 success(`Starting '${env}'`);
 
 spawn(
-  `./node_modules/env-cmd/bin/env-cmd.js ./.env.${env} ./node_modules/@rescripts/cli/bin/rescripts.js start`,
+  `./node_modules/env-cmd/bin/env-cmd.js -f ./.env.${env} ./node_modules/@rescripts/cli/bin/rescripts.js start`,
   {
     stdio: 'inherit',
     shell: true

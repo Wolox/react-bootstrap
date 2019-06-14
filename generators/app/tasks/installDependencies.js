@@ -26,7 +26,6 @@ const DEPENDENCIES = [
 ];
 
 const DEV_DEPENDENCIES = [
-  'react-app-rewired@^1.6.2',
   'eslint-plugin-flowtype@3.9.1',
   'eslint-plugin-import@2.17.3',
   'eslint-plugin-jsx-a11y@6.2.1',
@@ -43,7 +42,7 @@ const DEV_DEPENDENCIES = [
   '@babel/plugin-proposal-optional-chaining@^7.2.0',
   '@rescripts/cli@^0.0.7',
   'eslint-plugin-babel@^5.3.0',
-  'env-cmd@8.0.2',
+  'env-cmd@^9.0.3',
   'aws-deploy-script-fe@0.0.4',
   'chalk@2.4.2',
   'minimist@1.2.0',
@@ -72,11 +71,8 @@ function npmInstall(projectName, deps, options, dev) {
 }
 
 module.exports = function installDependencies() {
-  return npmInstall(this.projectName, DEPENDENCIES, this.options)
-    .catch(() => {
-      process.exit(1);
-    })
-    .then(npmInstall(this.projectName, DEV_DEPENDENCIES, this.options, true))
+  return npmInstall(this.projectName, DEPENDENCIES, { verbose: true })
+    .then(() => npmInstall(this.projectName, DEV_DEPENDENCIES, { verbose: true }, true))
     .then(() => {
       const optionalDependencies = Object.keys(this.features).reduce(
         (dependenciesObject, option) => {
@@ -94,5 +90,8 @@ module.exports = function installDependencies() {
       return npmInstall(this.projectName, optionalDependencies.dependencies, this.options).then(() =>
         npmInstall(this.projectName, optionalDependencies.devDependencies, this.options, true)
       );
+    })
+    .catch(() => {
+      process.exit(1);
     });
 };

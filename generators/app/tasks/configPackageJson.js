@@ -14,7 +14,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       npm: '>= 6.9.0'
     },
     scripts: {
-      start: `env-cmd ./.env.development ${generateRSScript('start')}`,
+      start: 'node ./scripts/start.js development',
       'start-env': 'node ./scripts/start.js',
       build: 'node ./scripts/build.js',
       deploy: 'node ./scripts/deploy.js',
