@@ -141,7 +141,7 @@ module.exports.OPTIONAL_DEPENDENCIES = {
     devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
   },
   enzyme: {
-    devDependencies: ['enzyme@^3.0.0', 'enzyme-adapter-react-16@^1.0.0', 'react-test-renderer@^16.0.0']
+    dependencies: ['enzyme@^3.0.0', 'enzyme-adapter-react-16@^1.0.0', 'react-test-renderer@^16.0.0']
   }
 };
 
