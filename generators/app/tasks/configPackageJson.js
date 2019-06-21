@@ -18,7 +18,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       'start-env': 'node ./scripts/start.js',
       build: 'node ./scripts/build.js',
       deploy: 'node ./scripts/deploy.js',
-      test: generateRSScript('test', '--env=jsdom'),
+      test: generateRSScript('test', '--env=jsdom --watchAll=false'),
       eject: './node_modules/react-scripts/bin/react-scripts.js eject',
       lint: './node_modules/eslint/bin/eslint.js src',
       'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
