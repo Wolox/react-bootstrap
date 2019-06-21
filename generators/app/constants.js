@@ -73,6 +73,11 @@ module.exports.NPMRC_PATH = {
   destination: '.npmrc'
 };
 
+module.exports.TESTS_SETUP_PATH = {
+  src: 'setupTests.js',
+  destination: 'src/setupTests.js'
+};
+
 module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 
 module.exports.FILES = [
@@ -134,6 +139,9 @@ module.exports.OPTIONAL_DEPENDENCIES = {
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver@^3.1.1'],
     devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
+  },
+  enzyme: {
+    devDependencies: ['enzyme@^3.0.0', 'enzyme-adapter-react-16@^1.0.0', 'react-test-renderer@^16.0.0']
   }
 };
 

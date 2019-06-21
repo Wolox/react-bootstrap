@@ -38,7 +38,6 @@ module.exports = [
     filter: values =>
       values.reduce((answer, val) => {
         answer[val] = true;
-
         return answer;
       }, {})
   }

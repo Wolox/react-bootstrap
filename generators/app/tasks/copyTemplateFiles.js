@@ -9,7 +9,8 @@ const {
   LINTER_IGNORE_PATH,
   WITHOUT_SEAMLESS_FILES,
   RESCRIPTS_PATH,
-  NPMRC_PATH
+  NPMRC_PATH,
+  TESTS_SETUP_PATH
 } = require('../constants');
 
 const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
@@ -34,6 +35,10 @@ module.exports = function copyTemplateFiles() {
 
   if (!this.features['seamless-immutable']) {
     bindedCopy(WITHOUT_SEAMLESS_FILES.src, WITHOUT_SEAMLESS_FILES.destination);
+  }
+
+  if (this.features.enzyme) {
+    bindedCopy(TESTS_SETUP_PATH.src, TESTS_SETUP_PATH.destination);
   }
 
   bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
