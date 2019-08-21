@@ -11,7 +11,7 @@ validateArgs(env);
 success(`Building '${env}'`);
 
 spawn(
-  `node ./node_modules/env-cmd/bin/env-cmd.js ./.env.${env} ./node_modules/@rescripts/cli/bin/rescripts.js build`,
+  `node ./node_modules/env-cmd/bin/env-cmd.js -f ./.env.${env} ./node_modules/@rescripts/cli/bin/rescripts.js build`,
   {
     stdio: 'inherit',
     shell: true
