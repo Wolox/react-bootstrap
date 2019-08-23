@@ -38,7 +38,9 @@ exec('git rev-parse --abbrev-ref HEAD', (e, stdout, stderr) => {
       process.exit(1);
     }
     const deployParams = ['--env', env];
-    spawnSync('npm run gzip', { stdio: 'inherit', shell: true });
+    if (gzip) {
+      spawnSync('npm run gzip', { stdio: 'inherit', shell: true });
+    }
     success(`Build successful, deploying to environment '${env}'`);
     spawn('node ./scripts/aws.js', getDeployParams(deployParams), { stdio: 'inherit', shell: true });
   });
