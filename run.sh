@@ -45,6 +45,15 @@ else
   npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 fi
 
+yo --version
+
+if [ $? -eq 0 ]; then
+    echo YEOMAN installed
+else
+    echo YEOMAN not installed, installing now
+    npm install -g yo
+fi
+
 if [[ $1 == '--local' || $1 == '-l' ]]
 then
   yo ./react-bootstrap/generators/app
