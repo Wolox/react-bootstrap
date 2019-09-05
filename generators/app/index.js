@@ -1,4 +1,5 @@
 const Generator = require('yeoman-generator');
+require('colors');
 
 const installDependencies = require('./tasks/installDependencies');
 const configPackageJson = require('./tasks/configPackageJson');
@@ -21,6 +22,15 @@ class GeneratorReact extends Generator {
     });
 
     this.conflicter.force = true;
+  }
+
+  handleError(error) {
+    if (error) {
+      console.error('\nFound the following error:'.yellow);
+      console.error(error.red);
+    }
+    this.env.error();
+    console.error("If you're not sure what happened, you may run the script with the `-v` flag".yellow);
   }
 
   initializing() {

@@ -36,14 +36,14 @@ printf "installed packages and if so, we'll be moving them to a new folder.\n\n"
 printf "You may have to type in your password once to allow moving all\n"
 printf "your currently installed packages.\n\n"
 
-if [[ $1 == '--verbose' || $1 == '-v' ]]
-then
-  curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh | bash -s -- -v
-  npm i -g yo generator-react-bootstrap
-else
-  bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh)
-  npm i -g yo generator-react-bootstrap > /dev/null 2>&1
-fi
+# if [[ $1 == '--verbose' || $1 == '-v' ]]
+# then
+#   curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh | bash -s -- -v
+#   npm i -g yo generator-react-bootstrap
+# else
+#   bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh)
+#   npm i -g yo generator-react-bootstrap > /dev/null 2>&1
+# fi
 
 if [[ $1 == '--local' || $1 == '-l' ]]
 then
