@@ -48,9 +48,9 @@ fi
 yo --version
 
 if [ $? -eq 0 ]; then
-  echo YEOMAN installed
+  echo Yeoman installed
 else
-  echo YEOMAN not installed, installing now
+  echo Yeoman not installed, installing now...
   npm install -g yo
 fi
 
