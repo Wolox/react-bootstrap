@@ -27,7 +27,7 @@ class GeneratorReact extends Generator {
   handleError(error) {
     /* eslint-disable no-console */
     if (error) {
-      console.error('\nFound the following error:'.yellow);
+      console.error('\nFound the following error:'.red);
       console.error(error.red);
     }
     this.env.error();
