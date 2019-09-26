@@ -7,6 +7,8 @@ const oneOfFileLoaders = config => config.module.rules.find(rule => rule.oneOf).
 
 const cssLoaderMatcher = createLoaderMatcher('css-loader');
 
+const sassLoaderMatcher = createLoaderMatcher('sass-loader');
+
 const babelLoaderMatcher = createLoaderMatcher('babel-loader');
 
 const eslintLoaderMatcher = createLoaderMatcher('eslint-loader');
@@ -29,6 +31,9 @@ const addCamelCaseToCSSModules = config => {
       loader.use.forEach(use => {
         if (cssLoaderMatcher(use) && use.options.modules) {
           use.options.camelCase = true;
+        }
+        if (sassLoaderMatcher(use)) {
+          use.options.includePaths = [path.resolve(__dirname, 'src/scss')];
         }
       });
     }
