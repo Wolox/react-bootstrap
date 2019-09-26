@@ -39,8 +39,6 @@
     "ora": "^3.4.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "3.0.1",
-    "typescript": "^3.6.3",
     "yeoman-generator": "^4.0.1"
   },
   "devDependencies": {
