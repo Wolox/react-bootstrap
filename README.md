@@ -18,7 +18,7 @@ To run from server:
 
 You don't need to clone this repository. Just follow these steps:
 
-1- Run the installation script using the following command:
+Run the installation script using the following command:
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/run.sh)
@@ -27,10 +27,6 @@ Optional parameters:
 
 - `-v` or `--verbose`: Display more information as the bootstrap is running
 - `-l` or `--local`: Run a local version of the bootstrap
-
-2- Search for `TODO` commented lines and follow the instructions. (Search "// TODO")
-
-3- Add .env file with your API_BASE_URL
 
 ## Run locally
 
