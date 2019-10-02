@@ -78,7 +78,7 @@ module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
 module.exports.FILES = [
   'pull_request_template.md',
   'README.md',
-  'src/index.js',
+  'src/index.tsx',
   'src/react-app-env.d.ts',
   'Jenkinsfile',
   'tsconfig.json',
@@ -119,6 +119,7 @@ module.exports.FILES_TO_DELETE = [
   'src/App.js',
   'src/App.test.js',
   'src/index.css',
+  'src/index.js',
   'src/logo.svg'
 ];
 

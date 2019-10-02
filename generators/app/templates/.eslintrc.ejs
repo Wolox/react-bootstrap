@@ -1,13 +1,13 @@
 module.exports = {
   extends: ['wolox-react', 'plugin:import/typescript'<% if (features.flow) { %>, 'plugin:flowtype/recommended'<% } %>]<% if (features.flow) { %>,
-  plugins: ['flowtype']<% } %><% if (features.jest) { %>,
+  plugins: ['flowtype'],<% } %><% if (features.jest) { %>
   env: {
     jest: true
-  },
-  settings:{
+  },<% } %>
+  settings: {
     react: {
       version: 'detect'
-    }<% } %><% if (features['babel-module-resolver']) { %>,
+    }<% if (features['babel-module-resolver']) { %>,
     'import/resolver': {
       'babel-module': {
         alias: {
@@ -21,7 +21,7 @@ module.exports = {
         }
       }
     }
-    <%} %>
+    <% } %>
   },
   rules: {
     // TODO: add this to eslint-config-wolox-react?
