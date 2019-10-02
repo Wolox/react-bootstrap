@@ -8,6 +8,10 @@ import Routes from './components/Routes';
 import '../scss/application.scss';
 
 class App extends Component {
+  static defaultProps = {
+    loading: false
+  };
+
   componentDidMount() {
     apiSetup(store.dispatch);
   }
@@ -20,9 +24,5 @@ class App extends Component {
     );
   }
 }
-
-App.defaultProps = {
-  loading: false
-};
 
 export default App;

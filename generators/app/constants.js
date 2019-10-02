@@ -91,7 +91,7 @@ module.exports.FILES = [
   SCREENS_PATH,
   SCSS_PATH,
   UTILS_PATH,
-  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
+  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.tsx`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
@@ -108,8 +108,8 @@ module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
   '.eslintrc.js',
   '.babelrc.js',
-  'src/app/index.js',
-  `${COMPONENTS_PATH}/Routes/index.js`,
+  'src/app/index.tsx',
+  `${COMPONENTS_PATH}/Routes/index.tsx`,
   `${SERVICES_PATH}/LocalStorageService.js`
 ];
 

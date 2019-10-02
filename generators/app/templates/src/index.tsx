@@ -17,13 +17,13 @@ const render = () => {
 };
 
 // Render once
-render(App);
+render();
 
 register();
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('./app', () => {
-    render(App);
+    render();
   });
 }

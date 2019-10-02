@@ -22,7 +22,16 @@ const DEPENDENCIES = [
   'react-router@^4.3.1',
   'redux-beacon@^2.0.3',
   '@redux-beacon/google-analytics@^1.1.1',
-  'seamless-immutable@^7.1.4'
+  'seamless-immutable@^7.1.4',
+  'typescript@^3.6.3',
+  '@types/jest@^24.0.18',
+  '@types/node@^12.7.5',
+  '@types/react@^16.9.2',
+  '@types/react-dom@^16.9.0',
+  '@types/react-redux@^7.1.4',
+  '@types/react-router@^5.1.0',
+  '@types/react-router-dom@^5.1.0',
+  '@types/webpack-env@^1.14.0'
 ];
 
 const DEV_DEPENDENCIES = [
