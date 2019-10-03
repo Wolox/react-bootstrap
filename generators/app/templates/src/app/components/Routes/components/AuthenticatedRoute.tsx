@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter, RouteProps } from 'react-router';
+import { RouteProps } from 'react-router';
 
 import Routes from '../../../../constants/routes';
 
@@ -9,11 +9,10 @@ const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
 
 interface Props extends RouteProps {
-  exact?: boolean;
+  component: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
   isPublicRoute?: boolean;
   isPrivateRoute?: boolean;
   currentUser: boolean;
-  component: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
 }
 
 function AuthenticatedRoute({
@@ -27,7 +26,7 @@ function AuthenticatedRoute({
   currentUser,
   component: Comp,
   ...props
-}: Props & RouteComponentProps) {
+}: Props) {
   return (
     <Route
       {...props}
@@ -88,4 +87,4 @@ AuthenticatedRoute.defaultProps = {
 //   isPublicRoute: PropTypes.bool
 // };
 
-export default withRouter(connect()(AuthenticatedRoute));
+export default connect()(AuthenticatedRoute);
