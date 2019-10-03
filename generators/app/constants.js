@@ -35,11 +35,6 @@ module.exports.LINTER_IGNORE_PATH = {
   destination: '.eslintignore'
 };
 
-module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
-};
-
 module.exports.BABELRC_PATH = {
   src: 'babelrc',
   destination: '.babelrc'
@@ -57,11 +52,6 @@ const CI_PATH = '.woloxci/';
 const DOCS_README_PATH = 'docs';
 const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
 const SCRIPTS_PATH = 'scripts';
-
-module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
-};
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
@@ -128,10 +118,6 @@ module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 module.exports.OPTIONAL_DEPENDENCIES = {
   moment: { dependencies: ['moment@^2.23.0'] },
   'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
-  flow: {
-    dependencies: ['@babel/cli@^7.2.0'],
-    devDependencies: ['flow-bin@^0.89.0', '@babel/preset-flow@^7.0.0']
-  },
   reselect: { dependencies: ['reselect@^4.0.0'] },
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver@^3.1.1'],

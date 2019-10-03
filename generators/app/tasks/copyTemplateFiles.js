@@ -4,7 +4,6 @@ const {
   FILES,
   FILES_TO_DELETE,
   TEMPLATE_FILES,
-  FLOWCONFIG_PATH,
   CI_CONFIG_FILE,
   LINTER_IGNORE_PATH,
   WITHOUT_SEAMLESS_FILES,
@@ -27,10 +26,6 @@ module.exports = function copyTemplateFiles() {
   TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
 
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
-
-  if (this.features.flow) {
-    bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
-  }
 
   if (!this.features['seamless-immutable']) {
     bindedCopy(WITHOUT_SEAMLESS_FILES.src, WITHOUT_SEAMLESS_FILES.destination);

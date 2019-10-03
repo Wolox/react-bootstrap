@@ -35,7 +35,6 @@ const DEPENDENCIES = [
 ];
 
 const DEV_DEPENDENCIES = [
-  'eslint-plugin-flowtype@3.9.1',
   'eslint-plugin-import@2.17.3',
   'eslint-plugin-jsx-a11y@6.2.1',
   'eslint-plugin-prettier@3.1.0',

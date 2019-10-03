@@ -1,6 +1,6 @@
 const generateRSScript = (command, options = '') => `rescripts ${command} ${options}`;
 
-const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features) => {
+const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => {
   const attributes = {
     name: projectName,
     title: projectName,
@@ -32,19 +32,12 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
     }
   };
 
-  if (features.flow) {
-    attributes.scripts.flow = 'flow';
-  }
-
   return attributes;
 };
 
 module.exports = function configPackageJson() {
   const pjson = this.fs.readJSON(`./${this.projectName}/package.json`);
-  const newpjson = Object.assign(
-    pjson,
-    getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl, this.features)
-  );
+  const newpjson = Object.assign(pjson, getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl));
 
   this.fs.writeJSON(`./${this.projectName}/package.json`, newpjson);
 };
