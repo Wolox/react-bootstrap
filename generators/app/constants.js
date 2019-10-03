@@ -72,6 +72,7 @@ module.exports.FILES = [
   'src/react-app-env.d.ts',
   'Jenkinsfile',
   'tsconfig.json',
+  'tsconfig.paths.json',
   '.stylelintrc.js',
   SCRIPTS_PATH,
   CI_PATH,
