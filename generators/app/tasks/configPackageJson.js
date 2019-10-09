@@ -20,10 +20,11 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => {
       deploy: 'node ./scripts/deploy.js',
       test: generateRSScript('test', '--env=jsdom'),
       eject: './node_modules/react-scripts/bin/react-scripts.js eject',
-      lint: './node_modules/eslint/bin/eslint.js src',
-      'lint-fix': './node_modules/eslint/bin/eslint.js src --fix',
+      lint: './node_modules/eslint/bin/eslint.js --ext .js,.tsx,.ts src',
+      'lint-fix': './node_modules/eslint/bin/eslint.js --ext .js,.tsx,.ts src --fix',
       'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
-      'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint'
+      'lint-diff':
+        'git diff --name-only --cached --relative --diff-filter=ACM | grep -e \\.js$ -e \\.tsx$ -e \\.ts$ | xargs eslint'
     },
     husky: {
       hooks: {

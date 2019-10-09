@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.tsx'] }]
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.tsx'] }],
+    'spaced-comment': ['error', 'always', { 'markers': ['/'] }]
   }
 };
