@@ -1,14 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { t } from 'i18next';
 
-import InputLabel from '../../components/InputLabel';
-import Routes from '../../../constants/routes';
+import InputLabel from '~components/InputLabel';
+import Routes from '~constants/routes';
 
-import { FIELDS } from './constants';
+import { FIELDS } from '~screens/Login/constants';
 import styles from './styles.module.scss';
 
-function Login({ onEmailChange, onPasswordChange, onLogin }) {
+interface Props {
+  onEmailChange: () => void;
+  onLogin: () => void;
+  onPasswordChange: () => void
+}
+
+function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
   return (
     <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
@@ -46,11 +51,5 @@ function Login({ onEmailChange, onPasswordChange, onLogin }) {
     </form>
   );
 }
-
-Login.propTypes = {
-  onEmailChange: PropTypes.func.isRequired,
-  onLogin: PropTypes.func.isRequired,
-  onPasswordChange: PropTypes.func.isRequired
-};
 
 export default Login;

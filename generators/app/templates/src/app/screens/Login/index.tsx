@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Login from './layout';
+import Login from '~screens/Login/layout';
 
 class LoginContainer extends Component {
   handleLogin = () => {
