@@ -5,7 +5,7 @@ const runCommand = require('./runCommand');
 const DEPENDENCIES = [
   'apisauce@^1.0.1',
   'history@^4.7.2',
-  'i18next@^17.2.0',
+  'i18next@^13.0.0',
   'postcss@^7.0.7',
   'react@^16.6.3',
   'react-dom@^16.6.3',
