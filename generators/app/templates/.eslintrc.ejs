@@ -11,6 +11,8 @@ module.exports = {
     }<% if (features['babel-module-resolver']) { %>,
     'import/resolver': {
       'babel-module': {
+        root: ['./src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
           '~components': './src/app/components',
           '~screens': './src/app/screens',
@@ -60,6 +62,12 @@ module.exports = {
     // 'no-var': 'error',
     // 'prefer-const': 'error',
     // 'prefer-rest-params': 'error',
-    // 'prefer-spread': 'error'
+    // 'prefer-spread': 'error',
+    'import/order': [
+    'error', {
+      'newlines-between: 'always',
+      groups: ['builtin', 'external', 'unknown', 'parent', 'internal', 'sibling', 'index']
+    }
+  ]
   }
 };
