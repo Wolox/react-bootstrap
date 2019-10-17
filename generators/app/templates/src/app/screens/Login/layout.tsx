@@ -9,9 +9,9 @@ import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 interface Props {
-  onEmailChange: (value: string) => void;
+  onEmailChange: (event: React.FormEvent<Element>) => void;
   onLogin: (event: React.FormEvent<HTMLFormElement>) => void;
-  onPasswordChange: (value: string) => void;
+  onPasswordChange: (event: React.FormEvent<Element>) => void;
 }
 
 function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
