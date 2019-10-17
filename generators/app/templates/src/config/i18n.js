@@ -9,4 +9,4 @@ init({
   initImmediate: false
 });
 
-requireAll(require.context('..', true, /i18n\.js$/));
+requireAll(require.context('..', true, /i18n\.(js|ts)$/));
