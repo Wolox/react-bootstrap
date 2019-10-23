@@ -1,14 +1,16 @@
 const Generator = require('yeoman-generator');
 require('colors');
 
-const installDependencies = require('./tasks/installDependencies');
-const configPackageJson = require('./tasks/configPackageJson');
+const { createPackageJson, createJSConfig } = require('./tasks/fileCreators');
 const copyTemplateFiles = require('./tasks/copyTemplateFiles');
-const { gitInitiation, configGit } = require('./tasks/gitConfig');
-const { installCRA, runCRA } = require('./tasks/createReactApp');
+const installDependencies = require('./tasks/installDependencies');
 const linterAutofix = require('./tasks/linterAutofix');
-const PROMPTS = require('./prompts');
-const { KICKOFF_MESSAGE } = require('./constants');
+const { MAIN_PROMPTS } = require('./prompts');
+const { KICKOFF_MESSAGE, DEV_DEPENDENCIES, DEPENDENCIES } = require('./constants');
+const { installCRA, runCRA } = require('./tasks/createReactApp');
+const { gitInitiation, configGit } = require('./tasks/gitConfig');
+const CleanGenerator = require('./steps/CleanSteps');
+const CustomizableGenerator = require('./steps/CustomizableSteps');
 
 class GeneratorReact extends Generator {
   constructor(...args) {
@@ -39,10 +41,15 @@ class GeneratorReact extends Generator {
     this.log(KICKOFF_MESSAGE);
   }
 
-  prompting() {
-    return this.prompt(PROMPTS).then(answers => {
+  async prompting() {
+    const mainAnswers = await this.prompt(MAIN_PROMPTS);
+    this.steps = mainAnswers.customized ? CustomizableGenerator : CleanGenerator;
+    Object.keys(mainAnswers).forEach(answerKey => (this[answerKey] = mainAnswers[answerKey]));
+
+    const answers = await this.steps.prompting.bind(this)();
+    if (answers) {
       Object.keys(answers).forEach(answerKey => (this[answerKey] = answers[answerKey]));
-    });
+    }
   }
 
   configuring() {
@@ -50,18 +57,26 @@ class GeneratorReact extends Generator {
       .then(this.configureGit && gitInitiation.bind(this))
       .then(installCRA.bind(this))
       .then(runCRA.bind(this))
-      .then(installDependencies.bind(this));
+      .then(() =>
+        installDependencies.bind(this)({
+          dependencies: DEPENDENCIES,
+          devDependencies: DEV_DEPENDENCIES
+        })
+      )
+      .then(this.steps.configuring.bind(this));
   }
 
   writing() {
-    return Promise.resolve().then(() => {
-      this.log('Copying base project files...');
-      configPackageJson.bind(this)();
-      copyTemplateFiles.bind(this)();
-    });
+    this.log('Copying base project files...');
+    return Promise.resolve()
+      .then(createPackageJson.bind(this))
+      .then(createJSConfig.bind(this))
+      .then(copyTemplateFiles.bind(this))
+      .then(this.steps.writing.bind(this));
   }
 
   install() {
+    this.log('Installing...');
     this.installDependencies({
       npm: true,
       bower: false,
@@ -70,6 +85,7 @@ class GeneratorReact extends Generator {
   }
 
   end() {
+    this.log('Ending...');
     return Promise.resolve()
       .then(this.configureGit && configGit.bind(this))
       .then(linterAutofix.bind(this));

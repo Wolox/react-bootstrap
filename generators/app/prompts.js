@@ -1,7 +1,6 @@
-const { OPTIONAL_DEPENDENCIES } = require('./constants');
+const { BOOTSTRAP_TYPES } = require('./constants');
 
-/* THIS FILE CONTAINS THE PROMPTS THAT WILL BE SHOWN TO THE USER EACH TIME THE GENERATOR IS EXECUTED */
-module.exports = [
+module.exports.MAIN_PROMPTS = [
   {
     type: 'input',
     name: 'projectName',
@@ -31,15 +30,10 @@ module.exports = [
         : `${val} is not a valid url. Please enter a valid one.`
   },
   {
-    type: 'checkbox',
-    name: 'features',
-    message: 'Choose the features you want to add to your project',
-    choices: Object.keys(OPTIONAL_DEPENDENCIES),
-    filter: values =>
-      values.reduce((answer, val) => {
-        answer[val] = true;
-
-        return answer;
-      }, {})
+    type: 'list',
+    name: 'customized',
+    message: 'Which type of bootstrap do you want?',
+    required: true,
+    choices: BOOTSTRAP_TYPES
   }
 ];

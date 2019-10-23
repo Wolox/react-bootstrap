@@ -1,9 +1,8 @@
 module.exports = {
-  extends: ['wolox-react'<% if (features.flow) { %>, 'plugin:flowtype/recommended'<% } %>]<% if (features.flow) { %>,
-  plugins: ['flowtype']<% } %><% if (features.jest) { %>,
+  extends: ['wolox-react']<% if (features && features.jest) { %>,
   env: {
     jest: true
-  }<% } %><% if (features['babel-module-resolver']) { %>,
+  }<% } %><% if (features && features['babel-module-resolver']) { %>,
   settings: {
     'import/resolver': {
       'babel-module': {

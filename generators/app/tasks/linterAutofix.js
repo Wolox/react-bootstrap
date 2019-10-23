@@ -5,6 +5,7 @@ module.exports = function linterAutofix() {
     command: ['npm', ['run', 'lint-fix'], { cwd: `${process.cwd()}/${this.projectName}` }],
     loadingMessage: 'Running linter autofix',
     successMessage: 'Linter autofix ready!',
-    failureMessage: 'Linter autofix failed!'
+    failureMessage: 'Linter autofix failed!',
+    options: this.options
   });
 };

@@ -1,44 +1,12 @@
-const mkdirp = require('mkdirp');
+const { copyTpl, copyFiles, copyTemplateFiles, copyFilesToDestination } = require('../utils');
+const { FILES, TEMPLATE_FILES, CI_CONFIG_FILE, FILES_TO_DESTINATION } = require('../constants');
 
-const {
-  FILES,
-  FILES_TO_DELETE,
-  TEMPLATE_FILES,
-  FLOWCONFIG_PATH,
-  CI_CONFIG_FILE,
-  LINTER_IGNORE_PATH,
-  WITHOUT_SEAMLESS_FILES,
-  RESCRIPTS_PATH,
-  NPMRC_PATH
-} = require('../constants');
-
-const { copyTpl, copy, copyEjsTpl, deleteFiles } = require('./utils');
-
-module.exports = function copyTemplateFiles() {
-  const bindedCopy = copy.bind(this);
+module.exports = function copyAllFiles() {
   const bindedCopyTpl = copyTpl.bind(this);
-  const bindedCopyEjsTpl = copyEjsTpl.bind(this);
-  const bindedDeleteFiles = deleteFiles.bind(this);
 
-  FILES_TO_DELETE.forEach(src => bindedDeleteFiles(src));
-
-  FILES.forEach(path => bindedCopy(path, path));
-
-  TEMPLATE_FILES.forEach(path => bindedCopyEjsTpl(path));
-
-  mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
-
-  if (this.features.flow) {
-    bindedCopy(FLOWCONFIG_PATH.src, FLOWCONFIG_PATH.destination);
-  }
-
-  if (!this.features['seamless-immutable']) {
-    bindedCopy(WITHOUT_SEAMLESS_FILES.src, WITHOUT_SEAMLESS_FILES.destination);
-  }
-
-  bindedCopy(LINTER_IGNORE_PATH.src, LINTER_IGNORE_PATH.destination);
-  bindedCopy(RESCRIPTS_PATH.src, RESCRIPTS_PATH.destination);
-  bindedCopy(NPMRC_PATH.src, NPMRC_PATH.destination);
+  copyFiles.bind(this)(FILES);
+  copyTemplateFiles.bind(this)(TEMPLATE_FILES);
+  copyFilesToDestination.bind(this)(FILES_TO_DESTINATION);
 
   bindedCopyTpl(CI_CONFIG_FILE, CI_CONFIG_FILE, {
     projectName: this.projectName
