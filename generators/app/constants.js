@@ -79,12 +79,12 @@ module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 module.exports.BOOTSTRAP_TYPES = [{ name: 'Clean', value: false }, { name: 'Customized', value: true }];
 
 module.exports.DEV_DEPENDENCIES = [
-  'eslint-plugin-import@2.17.3',
+  'eslint-plugin-import@2.18.2',
   'eslint-plugin-jsx-a11y@6.2.1',
   'eslint-plugin-prettier@3.1.0',
   'eslint-plugin-react@7.13.0',
   'eslint-plugin-react-native@3.5.0',
-  'eslint-plugin-babel@^5.3.0',
+  'eslint-plugin-babel@5.3.0',
   'eslint-config-wolox-react@2.0.0',
   'eslint-config-wolox@3.0.2',
   'stylelint-config-wolox@1.0.5',
