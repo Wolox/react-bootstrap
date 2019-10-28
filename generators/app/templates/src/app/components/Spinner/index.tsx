@@ -22,7 +22,7 @@ interface WithLoadingOptions {
 }
 
 interface WithLoadingProps {
-  loading: Boolean;
+  loading: boolean;
 }
 
 export function withSpinner({
