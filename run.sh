@@ -19,10 +19,10 @@ if ! system_has git; then
   echo "Check this guide to complete the installation: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
   exit 1
 
-elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V | head -n1)" != "$requirednodeversion" ]; then 
+elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V | head -n1)" != "$requirednodeversion" ]; then
   echo "The node version must be >= v10.15.3"
   exit 1
-elif [ "$(printf '%s\n' "$requirednpmversion" "$currentnpmversion" | sort -V | head -n1)" != "$requirednpmversion" ]; then 
+elif [ "$(printf '%s\n' "$requirednpmversion" "$currentnpmversion" | sort -V | head -n1)" != "$requirednpmversion" ]; then
   echo "The npm version must be >= v6.9.0"
   exit 1
 fi
@@ -38,10 +38,10 @@ printf "your currently installed packages.\n\n"
 
 if [[ $1 == '--verbose' || $1 == '-v' ]]
 then
-  curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh | bash -s -- -v
+  curl -s https://raw.githubusercontent.com/glenpike/npm-g_nosudo/master/npm-g-nosudo.sh | bash -s -- -v
   npm i -g yo generator-react-bootstrap
 else
-  bash <(curl -s https://raw.githubusercontent.com/Wolox/react-bootstrap/development/scripts/npm-no-sudo.sh)
+  bash <(curl -s https://raw.githubusercontent.com/glenpike/npm-g_nosudo/master/npm-g-nosudo.sh)
   npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 fi
 
