@@ -13,10 +13,11 @@ function copyEjsTpl(filepath) {
   checkIfFsIsBinded(this.fs);
   const filepathWithoutExtension = filepath.substring(0, filepath.lastIndexOf('.'));
   const templatePath = `${filepathWithoutExtension}.ejs`;
+
   this.fs.copyTpl(
     this.templatePath(...templatePath.split('/')),
     this.destinationPath(this.projectName, ...filepath.split('/')),
-    { projectName: this.projectName, features: this }
+    { projectName: this.projectName, features: { ...this.features, customized: this.customized } }
   );
 }
 
