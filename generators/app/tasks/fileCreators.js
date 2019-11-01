@@ -16,7 +16,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     start: 'node ./scripts/start.js development',
     'start-env': 'node ./scripts/start.js',
     build: 'node ./scripts/build.js',
-    deploy: 'node ./scripts/deploy.js',
+    // eslint-disable-next-line no-extra-parens
+    ...(this.customized && { deploy: 'node ./scripts/deploy.js' }),
     test: generateRSScript('test', '--env=jsdom'),
     eject: './node_modules/react-scripts/bin/react-scripts.js eject',
     lint: './node_modules/eslint/bin/eslint.js src',

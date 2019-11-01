@@ -1,6 +1,6 @@
 const installDependencies = require('../../tasks/installDependencies');
 
-const copyAllFiles = require('./copyTemplateFiles');
+const copyAllFiles = require('./copyFiles');
 const { CUSTOMIZED_PROMPTS } = require('./prompts');
 const { DEPENDENCIES, OPTIONAL_DEPENDENCIES } = require('./constants');
 

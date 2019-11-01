@@ -60,7 +60,10 @@ module.exports.FILES = [
   'README.md',
   'Jenkinsfile',
   '.stylelintrc.js',
-  SCRIPTS_PATH,
+  '.env.development',
+  `${SCRIPTS_PATH}/build.js`,
+  `${SCRIPTS_PATH}/start.js`,
+  `${SCRIPTS_PATH}/utils.js`,
   CI_PATH,
   SCSS_PATH
 ];
@@ -109,7 +112,6 @@ module.exports.DEV_DEPENDENCIES = [
 ];
 
 module.exports.DEPENDENCIES = [
-  'apisauce@^1.0.1',
   'postcss@^7.0.7',
   'react@^16.6.3',
   'react-dom@^16.6.3',

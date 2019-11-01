@@ -15,3 +15,7 @@ yarn-error.log*
 *.log
 .yo-rc.json
 .history
+
+# Environments & Deploy
+.env.*
+aws.js

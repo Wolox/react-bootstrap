@@ -27,6 +27,8 @@ module.exports.FILES = [
   REDUX_PATH,
   SCREENS_PATH,
   UTILS_PATH,
+  'aws.js',
+  'scripts/deploy.js',
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner`,
@@ -73,6 +75,7 @@ module.exports.OPTIONAL_DEPENDENCIES = {
 };
 
 module.exports.DEPENDENCIES = [
+  'apisauce@^1.0.1',
   'redux@^4.0.1',
   'react-redux@^6.0.0',
   'connected-react-router@^6.0.0',
