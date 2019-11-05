@@ -24,17 +24,17 @@ class GeneratorReact extends Generator {
     });
 
     this.conflicter.force = true;
-  }
 
-  handleError(error) {
-    /* eslint-disable no-console */
-    if (error) {
-      console.error('\nFound the following error:'.red);
-      console.error(error.red);
-    }
-    this.env.error();
-    console.error("If you're not sure what happened, you may run the script with the `-v` flag".yellow);
-    /* eslint-disable no-console */
+    this.handleError = error => {
+      /* eslint-disable no-console */
+      if (error) {
+        console.error('\nFound the following error:'.red);
+        console.error(error.red);
+      }
+      console.error('Something happened'.red);
+      console.error("If you're not sure what happened, you may run the script with the `-v` flag".yellow);
+      this.env.error();
+    };
   }
 
   initializing() {
