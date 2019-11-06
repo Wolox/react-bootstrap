@@ -34,6 +34,7 @@ class GeneratorReact extends Generator {
       console.error('Something happened'.red);
       console.error("If you're not sure what happened, you may run the script with the `-v` flag".yellow);
       this.env.error();
+      /* eslint-enable no-console */
     };
   }
 
