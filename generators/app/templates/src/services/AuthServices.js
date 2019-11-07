@@ -1,5 +1,4 @@
 import api from '../config/api';
-import { actionCreators as authActions } from '../redux/Auth/actions';
 
 import * as LocalStorageService from './LocalStorageService';
 
@@ -19,12 +18,6 @@ export const getCurrentUser = () => {
   return false;
 };
 export const removeCurrentUser = () => LocalStorageService.removeSessionToken();
-
-export const authSetup = async dispatch => {
-  const currentUser = await getCurrentUser();
-
-  dispatch(authActions.init(currentUser));
-};
 
 export const login = () =>
   // TODO: Implement call to authentication API here

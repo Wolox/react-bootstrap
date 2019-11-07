@@ -3,13 +3,18 @@ const { spawn, spawnSync } = require('child_process');
 
 const argv = require('minimist')(process.argv.slice(2));
 
-const { error, success, validateArgs } = require('./utils');
+const { error, success, validateEnvs } = require('./utils');
 
 const env = argv._[0];
 
 const gzip = argv._[1];
 
-validateArgs(env);
+validateEnvs(env);
+
+if (!fs.existsSync('aws.js')) {
+  error("aws.js file doesn't exist in the root directory");
+  process.exit(1);
+}
 
 exec('git rev-parse --abbrev-ref HEAD', (e, stdout, stderr) => {
   if (stderr || e) {

@@ -30,14 +30,24 @@ module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            �
   'Welcome to the React kickoff'
 )}\n\n  `;
 
-module.exports.LINTER_IGNORE_PATH = {
+const LINTER_IGNORE_PATH = {
   src: 'eslintignore',
   destination: '.eslintignore'
 };
 
-module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
+const SCSS_PATH = 'src/scss';
+// TODO: check how to avoid using "wolox" keyword here
+const CI_PATH = '.woloxci/';
+const SCRIPTS_PATH = 'scripts';
+
+const RESCRIPTS_PATH = {
+  src: 'rescriptsrc.js',
+  destination: '.rescriptsrc.js'
+};
+
+const NPMRC_PATH = {
+  src: 'npmrc',
+  destination: '.npmrc'
 };
 
 module.exports.BABELRC_PATH = {
@@ -45,99 +55,66 @@ module.exports.BABELRC_PATH = {
   destination: '.babelrc'
 };
 
-const COMPONENTS_PATH = 'src/app/components';
-const SCREENS_PATH = 'src/app/screens';
-const CONFIG_PATH = 'src/config';
-const REDUX_PATH = 'src/redux';
-const UTILS_PATH = 'src/utils';
-const SERVICES_PATH = 'src/services';
-const CONSTANTS_PATH = 'src/constants';
-const SCSS_PATH = 'src/scss';
-const CI_PATH = '.woloxci/';
-const DOCS_README_PATH = 'docs';
-const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
-const SCRIPTS_PATH = 'scripts';
-
-module.exports.FLOWCONFIG_PATH = {
-  src: 'flowconfig',
-  destination: '.flowconfig'
-};
-
-module.exports.RESCRIPTS_PATH = {
-  src: 'rescriptsrc.js',
-  destination: '.rescriptsrc.js'
-};
-
-module.exports.NPMRC_PATH = {
-  src: 'npmrc',
-  destination: '.npmrc'
-};
-
-module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
-
 module.exports.FILES = [
   'pull_request_template.md',
   'README.md',
-  'src/index.js',
   'Jenkinsfile',
-  'jsconfig.json',
   '.stylelintrc.js',
-  SCRIPTS_PATH,
+  '.env.development',
+  `${SCRIPTS_PATH}/build.js`,
+  `${SCRIPTS_PATH}/start.js`,
+  `${SCRIPTS_PATH}/utils.js`,
   CI_PATH,
-  CONFIG_PATH,
-  CONSTANTS_PATH,
-  DOCS_README_PATH,
-  REDUX_PATH,
-  SCREENS_PATH,
-  SCSS_PATH,
-  UTILS_PATH,
-  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
-  `${COMPONENTS_PATH}/Routes/styles.scss`,
-  `${COMPONENTS_PATH}/Spinner`,
-  `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/SearchBar`,
-  `${COMPONENTS_PATH}/InputLabel`,
-  `${COMPONENTS_PATH}/TextArea`,
-  `${COMPONENTS_PATH}/Checkbox`,
-  `${COMPONENTS_PATH}/RadioGroup`,
-  `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/AnalyticsService.js`
+  SCSS_PATH
 ];
 
 module.exports.TEMPLATE_FILES = [
-  // TODO: Insert here all template ejs files
+  // Insert here all template ejs files
   '.eslintrc.js',
   '.babelrc.js',
-  'src/app/index.js',
-  `${COMPONENTS_PATH}/Routes/index.js`,
-  `${SERVICES_PATH}/LocalStorageService.js`
+  'src/index.js'
 ];
 
-module.exports.FILES_TO_DELETE = [
-  'src/App.css',
-  'src/App.js',
-  'src/App.test.js',
-  'src/index.css',
-  'src/logo.svg'
-];
+module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC_PATH];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
-module.exports.OPTIONAL_DEPENDENCIES = {
-  moment: { dependencies: ['moment@^2.23.0'] },
-  'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
-  flow: {
-    dependencies: ['@babel/cli@^7.2.0'],
-    devDependencies: ['flow-bin@^0.89.0', '@babel/preset-flow@^7.0.0']
-  },
-  reselect: { dependencies: ['reselect@^4.0.0'] },
-  'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver@^3.1.1'],
-    devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
-  }
-};
+module.exports.BOOTSTRAP_TYPES = [{ name: 'Clean', value: false }, { name: 'Customized', value: true }];
 
-module.exports.WITHOUT_SEAMLESS_FILES = {
-  src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable`,
-  destination: 'src'
-};
+module.exports.DEV_DEPENDENCIES = [
+  'eslint-plugin-import@2.18.2',
+  'eslint-plugin-jsx-a11y@6.2.1',
+  'eslint-plugin-prettier@3.1.0',
+  'eslint-plugin-react@7.13.0',
+  'eslint-plugin-react-native@3.5.0',
+  'eslint-plugin-babel@5.3.0',
+  'eslint-config-wolox-react@2.0.0',
+  'eslint-config-wolox@3.0.2',
+  'stylelint-config-wolox@1.0.5',
+  'stylelint-no-indistinguishable-colors@1.2.1',
+  'stylelint-scss@3.5.4',
+  'stylelint@9.10.1',
+  'husky@^2.3.0',
+  'prettier@1.17.1',
+  'prettier-eslint@8.8.2',
+  'prettier-stylelint@0.4.2',
+  'prettier-eslint-cli@4.7.1',
+  'react-hot-loader@^4.6.1',
+  '@rescripts/cli@^0.0.7',
+  'prop-types@^15.6.2',
+  '@babel/plugin-proposal-optional-chaining@^7.2.0',
+  'env-cmd@^9.0.3',
+  'aws-deploy-script-fe@0.0.4',
+  'chalk@2.4.2',
+  'minimist@1.2.0',
+  'postcss-syntax@^0.36.2',
+  'postcss-html@^0.36.0'
+];
+
+module.exports.DEPENDENCIES = [
+  'postcss@^7.0.7',
+  'react@^16.6.3',
+  'react-dom@^16.6.3',
+  'wolox-equalizer@^0.0.3',
+  'node-sass@^4.11.0'
+];

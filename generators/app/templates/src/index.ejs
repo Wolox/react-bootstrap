@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
+<% if (features && features.customized) { %>
 import App from './app';
-import './config/i18n';
+import './config/i18n';<% } else {%>
+import App from './App';<% }%>
 import './scss/application.scss';
 import { register } from './serviceWorker';
 
@@ -23,7 +25,11 @@ register();
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
+<% if (features && features.customized) { %>
   module.hot.accept('./app', () => {
+<% } else {%>
+  module.hot.accept('./App', () => {
+<% }%>
     render(App);
   });
 }

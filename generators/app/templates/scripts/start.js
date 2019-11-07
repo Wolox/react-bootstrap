@@ -2,11 +2,11 @@ const { spawn } = require('child_process');
 
 const argv = require('minimist')(process.argv.slice(2));
 
-const { success, validateArgs } = require('./utils');
+const { success, validateEnvs } = require('./utils');
 
 const env = argv._[0];
 
-validateArgs(env);
+validateEnvs(env);
 
 success(`Starting '${env}'`);
 
