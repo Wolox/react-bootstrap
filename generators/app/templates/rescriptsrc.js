@@ -30,7 +30,7 @@ const addCamelCaseToCSSModules = config => {
     if (loader.test && loader.use && loader.use.constructor === Array) {
       loader.use.forEach(use => {
         if (cssLoaderMatcher(use) && use.options.modules) {
-          use.options.camelCase = true;
+          use.options.localsConvention = 'camelCase';
         }
         if (sassLoaderMatcher(use)) {
           use.options.includePaths = [path.resolve(__dirname, 'src/scss')];
