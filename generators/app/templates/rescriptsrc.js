@@ -33,7 +33,10 @@ const addCamelCaseToCSSModules = config => {
           use.options.localsConvention = 'camelCase';
         }
         if (sassLoaderMatcher(use)) {
-          use.options.includePaths = [path.resolve(__dirname, 'src/scss')];
+          use.options.sassOptions = {
+            ...use.options.sassOptions,
+            includePaths: [path.resolve(__dirname, 'src/scss')]
+          }
         }
       });
     }
