@@ -32,7 +32,7 @@ module.exports.FILES = [
   'tsconfig.paths.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
+  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.tsx`,
   `${COMPONENTS_PATH}/Routes/styles.scss`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
@@ -51,7 +51,7 @@ module.exports.TEMPLATE_FILES = [
   '.babelrc.js',
   'src/index.tsx',
   'src/app/index.tsx',
-  `${COMPONENTS_PATH}/Routes/index.js`,
+  `${COMPONENTS_PATH}/Routes/index.tsx`,
   `${SERVICES_PATH}/LocalStorageService.js`
 ];
 
@@ -103,7 +103,7 @@ module.exports.DEPENDENCIES = [
   '@types/react-dom@^16.9.4',
   '@types/react-redux@^7.1.5',
   '@types/react-router@^5.1.2',
-  '@types/react-router-dom@^5.1.0',
+  '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1'
 ];
