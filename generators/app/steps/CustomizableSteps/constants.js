@@ -33,7 +33,7 @@ module.exports.FILES = [
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.tsx`,
-  `${COMPONENTS_PATH}/Routes/styles.scss`,
+  `${COMPONENTS_PATH}/Routes/styles.module.scss`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar`,
