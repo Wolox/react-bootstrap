@@ -29,6 +29,7 @@ module.exports.FILES = [
   UTILS_PATH,
   'aws.js',
   'tsconfig.json',
+  'tsconfig.paths.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
