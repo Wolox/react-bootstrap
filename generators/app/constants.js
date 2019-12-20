@@ -79,7 +79,10 @@ module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
-module.exports.BOOTSTRAP_TYPES = [{ name: 'Clean', value: false }, { name: 'Customized', value: true }];
+module.exports.BOOTSTRAP_TYPES = [
+  { name: 'Clean (CRA + eslint-config-wolox)', value: false },
+  { name: 'Customized (Clean + redux + redux-recompose + react-router + i18next) ', value: true }
+];
 
 module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-import@2.18.2',

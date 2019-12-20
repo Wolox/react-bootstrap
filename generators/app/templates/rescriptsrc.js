@@ -40,7 +40,7 @@ const addCamelCaseToCSSModules = config => {
   });
 };
 
-const useEslintConfig = config => {
+const customEslintConfig = config => {
   config.module.rules.forEach(rule => {
     if (rule.use) {
       const eslintUse = rule.use.find(use => eslintLoaderMatcher(use));
@@ -59,7 +59,7 @@ const useEslintConfig = config => {
 };
 
 const customConfig = config => {
-  useEslintConfig(config);
+  customEslintConfig(config);
 
   addCamelCaseToCSSModules(config);
   enableBabelRc(config);
