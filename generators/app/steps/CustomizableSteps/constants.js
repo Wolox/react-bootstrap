@@ -49,7 +49,7 @@ module.exports.TEMPLATE_FILES = [
   '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
-  'src/app/index.js',
+  'src/app/index.tsx',
   `${COMPONENTS_PATH}/Routes/index.js`,
   `${SERVICES_PATH}/LocalStorageService.js`
 ];
