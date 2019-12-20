@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-
 <% if (features && features.customized) { %>
 import App from './app';
 import './config/i18n';<% } else {%>
@@ -19,17 +18,14 @@ const render = () => {
 };
 
 // Render once
-render(App);
+render();
 
 register();
 
 // Webpack Hot Module Replacement API
-if (module.hot) {
-<% if (features && features.customized) { %>
-  module.hot.accept('./app', () => {
-<% } else {%>
-  module.hot.accept('./App', () => {
-<% }%>
-    render(App);
+if (module.hot) {<% if (features && features.customized) { %>
+  module.hot.accept('./app', () => {<% } else {%>
+  module.hot.accept('./App', () => {<% }%>
+    render();
   });
 }
