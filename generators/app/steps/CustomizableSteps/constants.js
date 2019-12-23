@@ -96,7 +96,10 @@ module.exports.DEPENDENCIES = [
   'history@^4.7.2',
   'i18next@^13.0.0',
   'react-spinkit@^3.0.0',
-  'typescript@^3.7.2',
+  'typescript@^3.7.2'
+];
+
+module.exports.DEV_DEPENDENCIES = [
   '@types/jest@^24.0.23',
   '@types/node@^12.12.14',
   '@types/react@^16.9.13',

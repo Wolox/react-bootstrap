@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { RouteProps } from 'react-router';
 
 import Routes from '~constants/routes';
@@ -80,4 +79,4 @@ AuthenticatedRoute.defaultProps = {
   currentUser: false
 };
 
-export default connect()(AuthenticatedRoute);
+export default AuthenticatedRoute;
