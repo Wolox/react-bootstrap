@@ -33,14 +33,17 @@ const addCamelCaseToCSSModules = config => {
           use.options.localsConvention = 'camelCase';
         }
         if (sassLoaderMatcher(use)) {
-          use.options.includePaths = [path.resolve(__dirname, 'src/scss')];
+          use.options.sassOptions = {
+            ...use.options.sassOptions,
+            includePaths: [path.resolve(__dirname, 'src/scss')]
+          };
         }
       });
     }
   });
 };
 
-const useEslintConfig = config => {
+const customEslintConfig = config => {
   config.module.rules.forEach(rule => {
     if (rule.use) {
       const eslintUse = rule.use.find(use => eslintLoaderMatcher(use));
@@ -59,7 +62,7 @@ const useEslintConfig = config => {
 };
 
 const customConfig = config => {
-  useEslintConfig(config);
+  customEslintConfig(config);
 
   addCamelCaseToCSSModules(config);
   enableBabelRc(config);

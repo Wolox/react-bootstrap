@@ -28,9 +28,12 @@ module.exports.FILES = [
   SCREENS_PATH,
   UTILS_PATH,
   'aws.js',
+  'tsconfig.json',
+  'tsconfig.paths.json',
   'scripts/deploy.js',
-  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.js`,
-  `${COMPONENTS_PATH}/Routes/styles.scss`,
+  'src/react-app-env.d.ts',
+  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.tsx`,
+  `${COMPONENTS_PATH}/Routes/styles.module.scss`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar`,
@@ -46,12 +49,15 @@ module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
   '.eslintrc.js',
   '.babelrc.js',
-  'src/app/index.js',
-  `${COMPONENTS_PATH}/Routes/index.js`,
+  'src/index.tsx',
+  'src/app/index.tsx',
+  `${COMPONENTS_PATH}/Routes/index.tsx`,
   `${SERVICES_PATH}/LocalStorageService.js`
 ];
 
 module.exports.FILES_TO_DELETE = [
+  'jsconfig.json',
+  'src/index.js',
   'src/App.css',
   'src/App.js',
   'src/App.test.js',
@@ -89,5 +95,18 @@ module.exports.DEPENDENCIES = [
   'seamless-immutable@^7.1.4',
   'history@^4.7.2',
   'i18next@^13.0.0',
-  'react-spinkit@^3.0.0'
+  'react-spinkit@^3.0.0',
+  'typescript@^3.7.2'
+];
+
+module.exports.DEV_DEPENDENCIES = [
+  '@types/jest@^24.0.23',
+  '@types/node@^12.12.14',
+  '@types/react@^16.9.13',
+  '@types/react-dom@^16.9.4',
+  '@types/react-redux@^7.1.5',
+  '@types/react-router@^5.1.2',
+  '@types/react-router-dom@^5.1.3',
+  '@types/seamless-immutable@^7.1.11',
+  '@types/webpack-env@^1.14.1'
 ];

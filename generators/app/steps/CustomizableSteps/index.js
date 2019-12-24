@@ -2,7 +2,7 @@ const installDependencies = require('../../tasks/installDependencies');
 
 const copyAllFiles = require('./copyFiles');
 const { CUSTOMIZED_PROMPTS } = require('./prompts');
-const { DEPENDENCIES, OPTIONAL_DEPENDENCIES } = require('./constants');
+const { DEPENDENCIES, DEV_DEPENDENCIES, OPTIONAL_DEPENDENCIES } = require('./constants');
 
 const CustomizableGenerator = {
   prompting() {
@@ -10,7 +10,7 @@ const CustomizableGenerator = {
   },
   configuring() {
     const dependencies = [...DEPENDENCIES];
-    const devDependencies = [];
+    const devDependencies = [...DEV_DEPENDENCIES];
     if (this.features) {
       Object.keys(this.features).forEach(option => {
         const optionalDeps = OPTIONAL_DEPENDENCIES[option].dependencies || [];
