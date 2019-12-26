@@ -5,6 +5,13 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
     name: projectName,
     title: projectName,
     version: projectVersion,
+    jest: {
+      moduleNameMapper: {
+        '~screens(.*)': '<rootDir>/src/app/screens/$1',
+        '~components(.*)': '<rootDir>/src/app/components/$1',
+        '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
+      }
+    },
     repository: {
       type: 'git',
       url: repoUrl
