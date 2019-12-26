@@ -1,7 +1,6 @@
 ## Testing
 
-During bootdtraping, Jest and Enzyme are configured as the default testing tools and the necessary command to run the tests.
-This libraries provides the necessary staff interact and test utils, react components and their props, state, etc.
+This bootstrap uses [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) to test Components.
 
 **Usage**
 

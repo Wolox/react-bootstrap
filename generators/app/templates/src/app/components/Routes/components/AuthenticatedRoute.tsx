@@ -1,13 +1,18 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import PropTypes from 'prop-types';
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
+import { RouteProps } from 'react-router';
 
-import Routes from '../../../../constants/routes';
+import Routes from '~constants/routes';
 
 const DEFAULT_PUBLIC_ROUTE = Routes.LOGIN;
 const DEFAULT_PRIVATE_ROUTE = Routes.HOME;
+
+interface Props extends RouteProps {
+  component: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
+  isPublicRoute?: boolean;
+  isPrivateRoute?: boolean;
+  currentUser: boolean;
+}
 
 function AuthenticatedRoute({
   /*
@@ -20,7 +25,7 @@ function AuthenticatedRoute({
   currentUser,
   component: Comp,
   ...props
-}) {
+}: Props) {
   return (
     <Route
       {...props}
@@ -74,11 +79,4 @@ AuthenticatedRoute.defaultProps = {
   currentUser: false
 };
 
-AuthenticatedRoute.propTypes = {
-  ...Route.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
-  currentUser: PropTypes.bool,
-  isPrivateRoute: PropTypes.bool,
-  isPublicRoute: PropTypes.bool
-};
-
-export default withRouter(connect()(AuthenticatedRoute));
+export default AuthenticatedRoute;

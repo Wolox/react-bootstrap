@@ -7,6 +7,8 @@ const oneOfFileLoaders = config => config.module.rules.find(rule => rule.oneOf).
 
 const cssLoaderMatcher = createLoaderMatcher('css-loader');
 
+const sassLoaderMatcher = createLoaderMatcher('sass-loader');
+
 const babelLoaderMatcher = createLoaderMatcher('babel-loader');
 
 const eslintLoaderMatcher = createLoaderMatcher('eslint-loader');
@@ -28,14 +30,20 @@ const addCamelCaseToCSSModules = config => {
     if (loader.test && loader.use && loader.use.constructor === Array) {
       loader.use.forEach(use => {
         if (cssLoaderMatcher(use) && use.options.modules) {
-          use.options.camelCase = true;
+          use.options.localsConvention = 'camelCase';
+        }
+        if (sassLoaderMatcher(use)) {
+          use.options.sassOptions = {
+            ...use.options.sassOptions,
+            includePaths: [path.resolve(__dirname, 'src/scss')]
+          };
         }
       });
     }
   });
 };
 
-const useEslintConfig = config => {
+const customEslintConfig = config => {
   config.module.rules.forEach(rule => {
     if (rule.use) {
       const eslintUse = rule.use.find(use => eslintLoaderMatcher(use));
@@ -54,7 +62,7 @@ const useEslintConfig = config => {
 };
 
 const customConfig = config => {
-  useEslintConfig(config);
+  customEslintConfig(config);
 
   addCamelCaseToCSSModules(config);
   enableBabelRc(config);

@@ -3,17 +3,23 @@ const runCommand = require('./runCommand');
 module.exports.gitInitiation = function gitInitiation() {
   return runCommand({
     command: ['git', ['clone', this.repoUrl, this.projectName]],
-    loadingMessage: `Clonning repository into ${this.projectName}`,
+    loadingMessage: `Cloning repository into ${this.projectName}`,
     successMessage: 'Repository cloned successfully',
-    failureMessage: 'Repository clonning has failed'
-  }).then(() =>
-    runCommand({
-      command: ['rm', ['README.md'], { cwd: `${process.cwd()}/${this.projectName}` }],
-      loadingMessage: 'Removing CRA README.md',
-      successMessage: 'CRA README.md removed successfully',
-      failureMessage: 'CRA README.md removing failed'
+    failureMessage: 'Repository cloning has failed, it may not exist'
+  })
+    .catch(error => {
+      this.handleError(error.failureMessage);
     })
-  );
+    .then(() =>
+      runCommand({
+        command: ['rm', ['README.md'], { cwd: `${process.cwd()}/${this.projectName}` }],
+        loadingMessage: 'Removing CRA README.md',
+        successMessage: 'CRA README.md removed successfully',
+        failureMessage: 'CRA README.md removing failed, no README.md found'
+        // catching with an empty function to ignore the error
+        // eslint-disable-next-line no-empty-function
+      }).catch(() => {})
+    );
 };
 
 module.exports.configGit = function configGit() {
