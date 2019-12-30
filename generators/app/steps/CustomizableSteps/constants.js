@@ -108,5 +108,6 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router@^5.1.2',
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
-  '@types/webpack-env@^1.14.1'
+  '@types/webpack-env@^1.14.1',
+  'eslint-config-wolox-typescript@1.0.1'
 ];
