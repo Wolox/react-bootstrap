@@ -50,6 +50,11 @@ const NPMRC_PATH = {
   destination: '.npmrc'
 };
 
+const TESTS_SETUP_PATH = {
+  src: 'setupTests.js',
+  destination: 'src/setupTests.js'
+};
+
 module.exports.BABELRC_PATH = {
   src: 'babelrc',
   destination: '.babelrc'
@@ -75,7 +80,7 @@ module.exports.TEMPLATE_FILES = [
   'src/index.js'
 ];
 
-module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC_PATH];
+module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC_PATH, TESTS_SETUP_PATH];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
@@ -108,7 +113,12 @@ module.exports.DEV_DEPENDENCIES = [
   'chalk@2.4.2',
   'minimist@1.2.0',
   'postcss-syntax@^0.36.2',
-  'postcss-html@^0.36.0'
+  'postcss-html@^0.36.0',
+  'enzyme@^3.11.0',
+  'enzyme-adapter-react-16@^1.15.2',
+  'react-test-renderer@^16.12.0',
+  '@types/react-test-renderer',
+  '@types/enzyme'
 ];
 
 module.exports.DEPENDENCIES = [

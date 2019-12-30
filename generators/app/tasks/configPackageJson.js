@@ -5,6 +5,13 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
     name: projectName,
     title: projectName,
     version: projectVersion,
+    jest: {
+      moduleNameMapper: {
+        '~screens(.*)': '<rootDir>/src/app/screens/$1',
+        '~components(.*)': '<rootDir>/src/app/components/$1',
+        '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
+      }
+    },
     repository: {
       type: 'git',
       url: repoUrl
@@ -18,7 +25,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
       'start-env': 'node ./scripts/start.js',
       build: 'node ./scripts/build.js',
       deploy: 'node ./scripts/deploy.js',
-      test: generateRSScript('test', '--env=jsdom'),
+      test: generateRSScript('test', '--env=jsdom --watchAll=false'),
       eject: './node_modules/react-scripts/bin/react-scripts.js eject',
       lint: './node_modules/eslint/bin/eslint.js src',
       'lint-fix':
@@ -28,7 +35,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl, features
     },
     husky: {
       hooks: {
-        'pre-commit': 'npm run lint-diff && npm run lint-scss'
+        'pre-commit': 'npm run lint-diff && npm run lint-scss && CI=true npm run test'
       }
     }
   };
