@@ -88,10 +88,10 @@ module.exports.BOOTSTRAP_TYPES = [{ name: 'Clean', value: false }, { name: 'Cust
 
 module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-import@2.18.2',
-  'eslint-plugin-jsx-a11y@6.2.1',
+  'eslint-plugin-jsx-a11y@6.2.3',
   'eslint-plugin-prettier@3.1.0',
-  'eslint-plugin-react@7.13.0',
-  'eslint-plugin-react-native@3.5.0',
+  'eslint-plugin-react@7.14.3',
+  'eslint-plugin-react-native@3.7.0',
   'eslint-plugin-babel@5.3.0',
   'eslint-config-wolox-react@2.0.0',
   'eslint-config-wolox@3.0.2',
@@ -100,7 +100,7 @@ module.exports.DEV_DEPENDENCIES = [
   'stylelint-scss@3.5.4',
   'stylelint@9.10.1',
   'husky@^2.3.0',
-  'prettier@1.17.1',
+  'prettier@1.18.2',
   'prettier-eslint@8.8.2',
   'prettier-stylelint@0.4.2',
   'prettier-eslint-cli@5.0.0',
