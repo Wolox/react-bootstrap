@@ -1,10 +1,10 @@
-import i18next from 'i18next';
+import { init } from 'i18next';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
-i18next.init({
+init({
   lng: 'es',
   initImmediate: false
 });
