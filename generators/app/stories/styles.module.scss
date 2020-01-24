@@ -1,0 +1,84 @@
+@import './scss/variables/colors';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.loading {
+  width: 55px;
+  height: 55px;
+}
+
+.loading-circle {
+  width: 65px;
+  height: 45px;
+}
+
+.input {
+  margin-right: 10px;
+}
+
+.checkmark {
+  appearance: none;
+  background-color: $white;
+  border: 1px solid $iron;
+  padding: 11px;
+  border-radius: 12px;
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0 5px 1px $dusty-grey;
+  }
+
+  &:checked::after {
+    content: '\2714';
+    font-size: 16px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    color: $turquoise-blue;
+  }
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.radio-option {
+  position: relative;
+}
+
+.radio {
+  appearance: none;
+
+  &:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: $iron;
+    position: absolute;
+    top: 3px;
+    left: 70px;
+    border-radius: 100%;
+  }
+
+  &:checked:after {
+    background: $sea-green;
+  }
+}
+
+.option1 {
+  font-size: 11px;
+}
+
+.option2 {
+  font-size: 16px;
+  font-weight: bold;
+}

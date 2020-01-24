@@ -1,0 +1,14 @@
+config:
+  dockerfile: .woloxci/Dockerfile
+  project_name: <%= projectName %>
+
+steps:
+  lint:
+    - ln -sfn /home/node/node_modules node_modules
+    - npm run lint
+    - npm run lint-scss
+
+environment:
+  GIT_COMMITTER_NAME: a
+  GIT_COMMITTER_EMAIL: b
+  LANG: C.UTF-8

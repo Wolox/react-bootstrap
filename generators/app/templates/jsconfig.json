@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "paths": {
+      "~app/*": ["./src/app/*"],
+      "~components/*": ["./src/app/components/*"],
+      "~screens/*": ["./src/app/screens/*"],
+      "~config/*": ["./src/config/*"],
+      "~constants/*": ["./src/constants/*"],
+      "~redux/*": ["./src/redux/*"],
+      "~services/*": ["./src/services/*"],
+      "~utils/*": ["./src/utils/*"],
+      "~assets/*": ["./src/assets/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", ".history"]
+}
