@@ -26,6 +26,18 @@ function deleteFile(src) {
   this.fs.delete(this.destinationPath(`${this.projectName}/${src}`));
 }
 
+module.exports.projectNameValidation = function projectNameValidation(val) {
+  checkIfFsIsBinded(this.fs);
+  switch(val){
+    case !String(val).match(/^[a-z][-_0-9a-z]*$/):
+      return `${val} is not a valid name for a project. Please use a valid identifier name (alphanumeric).`;
+    case this.fs.existsSync(val):
+      return `${val} already exists in this directory. Please use another name or delete the other directory.`;
+    default:
+      return true;
+  }
+};
+
 module.exports.copyTpl = function copyTpl(src, des, temp) {
   checkIfFsIsBinded(this.fs);
   this.fs.copyTpl(this.templatePath(src), this.destinationPath(`${this.projectName}/${des}`), temp);

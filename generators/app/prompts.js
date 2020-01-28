@@ -1,4 +1,5 @@
 const { BOOTSTRAP_TYPES } = require('./constants');
+const { projectNameValidation } = require('./utils');
 
 module.exports.MAIN_PROMPTS = [
   {
@@ -7,10 +8,7 @@ module.exports.MAIN_PROMPTS = [
     message: 'Your Project name',
     default: 'my-project',
     required: true,
-    validate: val =>
-      String(val).match(/^[a-z][-_0-9a-z]*$/)
-        ? true
-        : `${val} is not a valid name for a project. Please use a valid identifier name (alphanumeric).`
+    validate: projectNameValidation
   },
   {
     type: 'confirm',
