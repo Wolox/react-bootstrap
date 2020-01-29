@@ -58,4 +58,4 @@ One possible way to fix it is the following:
 - export the `NODE_PATH` variable: `export NODE_PATH=$NVM_DIR/versions/node/NODE VERSION/lib/node_modules`
 - Reinstall it: `npm install -g yo`
 
-WARNING: Be careful when setting these variables to set them to the correct node version or you may completely break npm. If you accidentaly do break it, you must uninstall node and npm, reinstall them and start over. 
+WARNING: Be careful when setting these variables to set them to the correct node version or you may completely break npm. If you accidentaly do break it, try to set the prefix again, if you can't you may need to uninstall node and npm, reinstall them and start over. 
