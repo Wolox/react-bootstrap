@@ -53,7 +53,7 @@ This script will configure your system to install global npm packages without ha
 
 Sometimes when running the generator, you will get an error indicating that `yeoman` is not installed and a prompt with a message like: `-bash: yo: command not found`. We've found that this is sometimes caused by not having the node modules binaries route correctly configured.
 
-The easiest way to fix it is by adding this line to your `~/.bashrc`, `~/.zshrc` or the configuration script for your shell:
+The easiest way to fix it is by adding this line to the end of your `~/.bashrc`, `~/.zshrc` or the configuration script for your shell:
 - `export PATH=/usr/local/share/npm/bin:$PATH`
 
 If the above does not work, another possible way to fix it is the following:
