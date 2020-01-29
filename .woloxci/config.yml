@@ -3,9 +3,12 @@ config:
   project_name: react-bootstrap
 
 steps:
-  copy_node_modules:
-    - cp -r $NODE_PATH/ ./
   lint:
-    - cd /install
-    - npm run precommit
-    - nṕm run lint
+    - ln -sfn /home/node/node_modules node_modules
+    - npm run lint
+    - npm run lint-scss
+
+environment:
+  GIT_COMMITTER_NAME: a
+  GIT_COMMITTER_EMAIL: b
+  LANG: C.UTF-8
