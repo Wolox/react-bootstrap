@@ -56,7 +56,7 @@ class GeneratorReact extends Generator {
   configuring() {
     return Promise.resolve()
       .then(this.configureGit && gitInitiation.bind(this))
-      .then(installCRA.bind(this))
+      //.then(installCRA.bind(this))
       .then(runCRA.bind(this))
       .then(() =>
         installDependencies.bind(this)({

@@ -45,21 +45,21 @@ else
   npm i -g yo generator-react-bootstrap > /dev/null 2>&1
 fi
 
-yo --version
+#yo --version
 
-if [ $? -eq 0 ]; then
-  echo Yeoman installed
-else
-  echo Yeoman not installed, installing now...
-  npm install -g yo
-fi
+#if [ $? -eq 0 ]; then
+#  echo Yeoman installed
+#else
+#  echo Yeoman not installed, installing now...
+#  npm install -g yo
+#fi
 
-if [[ $1 == '--local' || $1 == '-l' ]]
-then
-  yo ./react-bootstrap/generators/app
-else
-  yo react-bootstrap
-fi
+#if [[ $1 == '--local' || $1 == '-l' ]]
+#then
+#  yo ./react-bootstrap/generators/app
+#else
+#  yo react-bootstrap
+#fi
 
 
 wait $!
