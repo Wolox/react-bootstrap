@@ -1,0 +1,11 @@
+config:
+  dockerfile: .woloxci/Dockerfile
+  project_name: react-bootstrap
+
+steps:
+  copy_node_modules:
+    - cp -r $NODE_PATH/ ./
+  lint:
+    - cd /install
+    - npm run precommit
+    - nṕm run lint
