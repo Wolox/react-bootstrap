@@ -52,7 +52,7 @@ Create a clean proyect with the most used libraries of a react proyect
 
 - ### Customized
 
-Choose your preferred libraries of your proyect and create a new react proyect with standarts components, default screens, apis servicies and common utils functions.
+Choose your preferred libraries of your proyect and create a new react proyect with standarts components, default screens, api services and common utils functions.
 
 ###### Components
 - Checkbox
@@ -80,11 +80,11 @@ Choose your preferred libraries of your proyect and create a new react proyect w
 |Name|Description|
 |----|-----------|
 |[eslint-config-wolox](https://github.com/Wolox/eslint-config-wolox)| Wolox eslint standard rules.
-|[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint reactJs rules.
+|[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
-|[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without the loss of state
+|[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without loss of state
 |[postcss](https://www.npmjs.com/package/postcss)| Is a tool for transforming styles with JS plugins.
-|[enzyme](https://www.npmjs.com/package/enzyme)| Is a JavaScript Testing utility for React that makes it easier to test your React Components' output
+|[enzyme](https://www.npmjs.com/package/enzyme)| Is a JavaScript testing utility for React that makes it easier to test your React Components' output
 |[react-test-renderer](https://www.npmjs.com/package/react-test-renderer)|  Provides an experimental React renderer that can be used to render React components to pure JavaScript objects
 |[chalk](https://www.npmjs.com/package/chalk)| Terminal Styling
 |[env-cmd](https://www.npmjs.com/package/env-cmd)| Node program for executing commands using an environment from an env file.
@@ -142,6 +142,30 @@ WARNING: Be careful when setting these variables to set them to the correct node
 
 ## About
 
-This repository is maintained by everyone at  [Wolox](https://wolox.co).
+This repository is maintained by everyone at [Wolox](https://wolox.co).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
+
+## License
+
+**wolox-react-bootstrap** is available under the MIT [license](LICENSE).
+
+    Copyright (c) 2020 Wolox
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
