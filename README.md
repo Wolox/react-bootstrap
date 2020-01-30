@@ -48,11 +48,11 @@ You can choose between two creation types: Clean and Customized
 
 - ### Clean
 
-Create a clean proyect with the most used libraries of a react proyect
+Create a clean project with the most used libraries of React
 
 - ### Customized
 
-Choose your preferred libraries of your proyect and create a new react proyect with standarts components, default screens, api services and common utils functions.
+Choose your preferred libraries for your project and create a new React project with standards components, default screens, api services and common utils functions.
 
 ###### Components
 - Checkbox
@@ -82,15 +82,15 @@ Choose your preferred libraries of your proyect and create a new react proyect w
 |[eslint-config-wolox](https://github.com/Wolox/eslint-config-wolox)| Wolox eslint standard rules.
 |[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
-|[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without loss of state
+|[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without loss of state.
 |[postcss](https://www.npmjs.com/package/postcss)| Is a tool for transforming styles with JS plugins.
-|[enzyme](https://www.npmjs.com/package/enzyme)| Is a JavaScript testing utility for React that makes it easier to test your React Components' output
-|[react-test-renderer](https://www.npmjs.com/package/react-test-renderer)|  Provides an experimental React renderer that can be used to render React components to pure JavaScript objects
-|[chalk](https://www.npmjs.com/package/chalk)| Terminal Styling
+|[enzyme](https://www.npmjs.com/package/enzyme)| Is a JavaScript testing utility for React that makes it easier to test your React Components' output.
+|[react-test-renderer](https://www.npmjs.com/package/react-test-renderer)| Provides an experimental React renderer that can be used to render React components to pure JavaScript objects.
+|[chalk](https://www.npmjs.com/package/chalk)| Terminal Styling.
 |[env-cmd](https://www.npmjs.com/package/env-cmd)| Node program for executing commands using an environment from an env file.
 |[aws-deploy-script-fe](https://www.npmjs.com/package/aws-deploy-script-fe)| AWS script for deploying your frontend applications.
-|[node-sass]()| Provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
-|[react-dom]()| Serves as the entry point to the DOM and server renderers for React
+|[node-sass](https://github.com/sass/node-sass)| Provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
+|[react-dom](https://www.npmjs.com/package/react-dom)| Serves as the entry point to the DOM and server renderers for React.
 
 - ### Customized
 
@@ -111,7 +111,7 @@ Additional to clean libraries are added
 |[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
 |[history](https://www.npmjs.com/package/history)| Manage session history anywhere JavaScript runs.
 |[i18next](https://www.i18next.com/)| An internationalization-framework written in and for JavaScript.
-|[react-spinkit](https://kyleamathews.github.io/react-spinkit/)| Spinners library
+|[react-spinkit](https://kyleamathews.github.io/react-spinkit/)| Spinners library.
 |[typescript](https://www.typescriptlang.org/)| Brings you optional static type-checking along with the latest ECMAScript feature.
 
 Also you can select **_optional_** libraries like
