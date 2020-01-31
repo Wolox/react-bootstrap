@@ -23,7 +23,7 @@ function CheckboxContainer({
   required = false,
   onChange
 }: Props) {
-  const [isChecked, setIsChecked] = useState(checked);
+  const [isChecked, setIsChecked] = useState<boolean>(checked);
 
   const handleToggle = (event: React.FormEvent<Element>) => {
     setIsChecked(!isChecked);
