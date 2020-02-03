@@ -1,21 +1,16 @@
 import React from 'react';
 
-interface Props {
-  checked?: boolean;
-  children: React.FunctionComponent;
-  className?: string;
-  disabled?: boolean;
-  key: number;
-  inputClassName?: string;
-  labelClassName?: string;
-  label?: string | undefined;
-  name?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
-  [rest: string]: any; 
-}
+import { IRadioOption } from './interfaces';
 
-function RadioOption({ children, className, inputClassName, labelClassName, label, key, ...rest }: Props) {
+function RadioOption({
+  children,
+  className,
+  inputClassName,
+  labelClassName,
+  label,
+  key,
+  ...rest
+}: IRadioOption) {
   return (
     <div key={key} className={className}>
       <input type="radio" id={label} className={inputClassName} {...rest} />
@@ -30,4 +25,3 @@ function RadioOption({ children, className, inputClassName, labelClassName, labe
 }
 
 export default RadioOption;
-
