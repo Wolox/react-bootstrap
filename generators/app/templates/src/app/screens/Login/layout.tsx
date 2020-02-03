@@ -3,6 +3,8 @@ import i18next from 'i18next';
 
 import InputLabel from '~components/InputLabel';
 import PATHS from '~components/Routes/paths';
+import RadioGroup from '~components/RadioGroup';
+import RadioOption from '~components/RadioGroup/components/RadioOption';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';

@@ -8,6 +8,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     moduleNameMapper: {
       '~screens(.*)': '<rootDir>/src/app/screens/$1',
       '~components(.*)': '<rootDir>/src/app/components/$1',
+      '~hooks(.*)': '<rootDir>/src/app/hooks/$1',
+      '~contexts(.*)': '<rootDir>/src/app/contexts/$1',
       '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
     }
   },
