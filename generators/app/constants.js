@@ -84,10 +84,7 @@ module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
-module.exports.BOOTSTRAP_TYPES = [
-  { name: 'Clean', value: false },
-  { name: 'Customized', value: true }
-];
+module.exports.BOOTSTRAP_TYPES = [{ name: 'Clean', value: false }, { name: 'Customized', value: true }];
 
 module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-import@2.18.2',
