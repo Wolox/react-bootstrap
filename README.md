@@ -48,7 +48,7 @@ You can choose between two creation types: Clean and Customized
 
 - ### Clean
 
-Create a clean project with the most used libraries of React
+Create a clean project using crate-react-app as baseline with some small addition to its configuration.
 
 - ### Customized
 
@@ -83,8 +83,8 @@ Choose your preferred libraries for your project and create a new React project 
 |[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
 |[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without loss of state.
-|[postcss](https://www.npmjs.com/package/postcss)| Is a tool for transforming styles with JS plugins.
-|[enzyme](https://www.npmjs.com/package/enzyme)| Is a JavaScript testing utility for React that makes it easier to test your React Components' output.
+|[postcss](https://www.npmjs.com/package/postcss)| Tool for transforming styles with JS plugins.
+|[enzyme](https://www.npmjs.com/package/enzyme)| JavaScript testing utility for React that makes it easier to test your React Components' output.
 |[react-test-renderer](https://www.npmjs.com/package/react-test-renderer)| Provides an experimental React renderer that can be used to render React components to pure JavaScript objects.
 |[chalk](https://www.npmjs.com/package/chalk)| Terminal Styling.
 |[env-cmd](https://www.npmjs.com/package/env-cmd)| Node program for executing commands using an environment from an env file.
