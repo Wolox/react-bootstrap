@@ -3,24 +3,24 @@ import React from 'react';
 interface Props {
   checked: boolean;
   className?: string;
-  inputClassName?: string;
-  labelClassName?: string;
-  label?: string;
-  name: string;
   disabled?: boolean;
-  required?: boolean;
+  inputClassName?: string;
+  label?: string;
+  labelClassName?: string;
+  name: string;
   onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+  required?: boolean;
 }
 
 function Checkbox({
   checked,
+  className = '',
+  disabled = false,
+  inputClassName = '',
+  label = '',
+  labelClassName = '',
   name,
   onChange,
-  className = '',
-  inputClassName = '',
-  labelClassName = '',
-  label = '',
-  disabled = false,
   required = false
 }: Props) {
   return (
