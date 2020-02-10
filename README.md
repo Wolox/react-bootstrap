@@ -52,7 +52,7 @@ Create a clean project using crate-react-app as baseline with some small additio
 
 - ### Customized
 
-Choose your preferred libraries for your project and create a new React project with standards components, default screens, api services and common utils functions.
+Choose your preferred libraries for your project and create a new React project with standard components, default screens, api services and common utils functions.
 
 ###### Components
 - Checkbox
