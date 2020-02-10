@@ -48,7 +48,7 @@ You can choose between two creation types: Clean and Customized
 
 - ### Clean
 
-Create a clean project using crate-react-app as baseline with some small addition to its configuration.
+Create a clean project using create-react-app as baseline with some small addition to its configuration.
 
 - ### Customized
 
