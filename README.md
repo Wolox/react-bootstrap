@@ -56,7 +56,7 @@ Sometimes when running the generator, you will get an error indicating that `yeo
 NOTE: This solution works only if you have installed node using nvm (node version manager).
 
 #### Step 1: Check if you have the right version of node setted
-It's a common issue having two or more versions of node. What you need to do is make sure that the version that is shown with the command `node --version` is the same as the one in your nmv directory (`nvm list`). If not, you can set it using the command `nvm use -version-` (e.g.: `nvm use v13.8.0`).
+It's a common issue having two or more versions of node. What you need to do is make sure that the version that is shown with the command `node --version` is the same as the one in your nvm directory (`nvm list`). If not, you can set it using the command `nvm use -version-` (e.g.: `nvm use v13.8.0`).
 
 #### Step 2: Add node binaries folder route to PATH
 In the `~/.bashrc`, `~/.zshrc` or the configuration script for your shell you need to add the following line at the end of the file:
