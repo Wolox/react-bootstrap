@@ -1,37 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface Props {
-  checked?: boolean;
+  checked: boolean;
   className?: string;
   inputClassName?: string;
   labelClassName?: string;
-  label?: string | undefined;
-  name?: string;
+  label?: string;
+  name: string;
   disabled?: boolean;
   required?: boolean;
-  onChange?: (event: React.FormEvent<Element>) => void;
+  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
-function CheckboxContainer({
-  checked = false,
+function Checkbox({
+  checked,
+  name,
+  onChange,
   className = '',
   inputClassName = '',
   labelClassName = '',
   label = '',
-  name = '',
   disabled = false,
-  required = false,
-  onChange
+  required = false
 }: Props) {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const handleToggle = (event: React.FormEvent<Element>) => {
-    setIsChecked(!isChecked);
-    if (onChange) {
-      onChange(event);
-    }
-  };
-
   return (
     <div className={className}>
       <input
@@ -40,8 +31,8 @@ function CheckboxContainer({
         id={label}
         name={name}
         value={label}
-        checked={isChecked}
-        onChange={handleToggle}
+        checked={checked}
+        onChange={onChange}
         disabled={disabled}
         required={required}
       />
@@ -54,4 +45,4 @@ function CheckboxContainer({
   );
 }
 
-export default CheckboxContainer;
+export default Checkbox;
