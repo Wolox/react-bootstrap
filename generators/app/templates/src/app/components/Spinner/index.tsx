@@ -17,7 +17,7 @@ export function withSpinner<P>(
   customSpinner: CustomSpinner = {}
 ): React.FC<WithSpinnerProps & P> {
   const { classNameContainer = '', ...rest } = customSpinner;
-  function Spinner({ loading, ...passThroughProps }: WithSpinnerProps) {
+  function WithSpinnerProps({ loading, ...passThroughProps }: WithSpinnerProps) {
     return loading ? (
       <div className={classNameContainer}>
         <Loading {...rest} />
@@ -26,6 +26,6 @@ export function withSpinner<P>(
         <WrappedComponent {...passThroughProps as P} />
       );
   }
-  Spinner.displayName = `Spinner(${getDisplayName(WrappedComponent)})`;
-  return Spinner;
+  WithSpinnerProps.displayName = `Spinner(${getDisplayName(WrappedComponent)})`;
+  return WithSpinnerProps;
 }
