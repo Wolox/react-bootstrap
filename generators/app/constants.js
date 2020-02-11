@@ -118,7 +118,8 @@ module.exports.DEV_DEPENDENCIES = [
   'enzyme-adapter-react-16@^1.15.2',
   'react-test-renderer@^16.12.0',
   '@types/react-test-renderer',
-  '@types/enzyme'
+  '@types/enzyme',
+  '@types/react-spinkit'
 ];
 
 module.exports.DEPENDENCIES = [

@@ -12,4 +12,4 @@ export const TYPE_SPINNER = [
   'folding-cube',
   'ball-triangle-path',
   'ball-pulse-sync'
-];
+] as const;
