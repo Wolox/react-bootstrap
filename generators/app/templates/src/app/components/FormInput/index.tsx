@@ -2,46 +2,39 @@ import React from 'react';
 
 interface Props {
   className?: string;
-  inputClassName?: string;
-  errorClassName?: string;
-  name?: string;
-  label?: string | object | undefined;
-  placeholder?: string;
-  inputType?: string;
   disabled?: boolean;
-  value?: string;
   error?: string | undefined;
-  readOnly?: boolean;
-  labelClassName?: string;
+  errorClassName?: string;
+  inputClassName?: string;
   isTextarea?: boolean;
-  onFocus?: (e: React.FormEvent<Element>) => void;
-  onBlur?: (e: React.FormEvent<Element>) => void;
-  onChange?: (e: React.FormEvent<Element>) => void;
+  inputType: string;
+  label?: string | object | undefined;
+  labelClassName?: string;
+  name: string;
+  onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onFocus?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  placeholder?: string;
+  readOnly?: boolean;
 }
 
 function FormInput({
   className = '',
-  inputClassName = '',
-  errorClassName = '',
-  name = '',
-  label = '',
-  placeholder = '',
-  inputType = '',
-  onFocus,
-  onBlur,
-  onChange: handleOnChange,
   disabled = false,
   error = undefined,
-  readOnly = false,
+  errorClassName = '',
+  inputClassName = '',
+  isTextarea = false,
+  inputType,
+  label = '',
   labelClassName = '',
-  isTextarea = false
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  placeholder = '',
+  readOnly = false
 }: Props) {
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    if (handleOnChange) {
-      handleOnChange(e);
-    }
-  };
-
   const InputComponent = isTextarea ? 'textarea' : 'input';
   return (
     <div className={`column start ${className}`}>
@@ -56,7 +49,7 @@ function FormInput({
         id={name}
         type={inputType}
         placeholder={placeholder}
-        onChange={handleChange}
+        onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
         disabled={disabled}
