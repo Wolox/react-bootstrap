@@ -51,9 +51,9 @@ This script will configure your system to install global npm packages without ha
 
 ### Yeoman not found during project generation
 
-Sometimes when running the generator, you will get an error indicating that `yeoman` is not installed and a prompt with a message like: `-bash: yo: command not found`. This could be due to having more than one node version installed, or not having the right `PATH`. Either way, here is how to fix this issue.
+Sometimes when running the generator, you will get an error indicating that `yeoman` is not installed and a prompt with a message like: `-bash: yo: command not found`. This could be due to having more than one node version installed, or not having the right `PATH` configured. Either way, here is how to fix this issue.
 
-NOTE: This solution works only if you have installed node using nvm (node version manager).
+**NOTE: This solution works only if you have installed node using nvm (node version manager). We are working on a different solution that does not require nvm.**
 
 #### Step 1: Check if you have the right version of node setted
 It's a common issue having two or more versions of node. What you need to do is make sure that the version that is shown with the command `node --version` is the same as the one in your nvm directory (`nvm list`). If not, you can set it using the command `nvm use -version-` (e.g.: `nvm use v13.8.0`).
@@ -65,4 +65,4 @@ In the `~/.bashrc`, `~/.zshrc` or the configuration script for your shell you ne
 export PATH=$NVM_DIR/versions/node/$(node --version)/bin:$PATH
 ```
 
-Save the changes an then open the console. Run `source .bashrc` to apply the changes of the file. Now run the generator again. It should work just fine.
+Save the changes, close and re-open the console or run `source .bashrc` to apply the changes of the file. Now run the generator again. It should work just fine.
