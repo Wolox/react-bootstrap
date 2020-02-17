@@ -1,31 +1,34 @@
 import React from 'react';
 import { SpinnerProps } from 'react-spinkit';
-
 import Loading from './components/loading';
-import { getDisplayName } from './utils';
+import { getDisplayName } from '~utils/displayName';
 
 interface WithSpinnerProps {
   loading: boolean;
 }
 
-interface CustomSpinner extends SpinnerProps {
+interface SpinnerConfig extends SpinnerProps {
   classNameContainer?: string;
 }
 
-export function withSpinner<P>(
-  WrappedComponent: React.ComponentType<P>,
-  customSpinner: CustomSpinner = {}
-): React.FC<WithSpinnerProps & P> {
-  const { classNameContainer = '', ...rest } = customSpinner;
-  function WithSpinnerProps({ loading, ...passThroughProps }: WithSpinnerProps) {
-    return loading ? (
-      <div className={classNameContainer}>
-        <Loading {...rest} />
-      </div>
-    ) : (
-        <WrappedComponent {...passThroughProps as P} />
-      );
+export const withSpinner = (
+  spinnerConfig: SpinnerConfig = {}
+) => <P extends object>(
+  WrappedComponent: React.ComponentType<P>
+): React.FC<WithSpinnerProps & P> => {
+    const WithSpinner = ({
+      loading,
+      ...passThroughProps
+    }: WithSpinnerProps) => {
+      const { classNameContainer = '', ...rest } = spinnerConfig;
+      return loading ? (
+        <div className={classNameContainer}>
+          <Loading {...rest} />
+        </div>
+      ) : (
+          <WrappedComponent {...passThroughProps as P} />
+        );
+    }
+    WithSpinner.displayName = `WithSpinner(${getDisplayName(WrappedComponent)})`;
+    return WithSpinner;
   }
-  WithSpinnerProps.displayName = `Spinner(${getDisplayName(WrappedComponent)})`;
-  return WithSpinnerProps;
-}
