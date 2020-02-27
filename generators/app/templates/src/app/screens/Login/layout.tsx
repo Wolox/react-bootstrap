@@ -1,8 +1,9 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import InputLabel from '~components/InputLabel';
-import Routes from '~constants/routes';
+import InputLabel from '/home/trocchi/Documents/frontend/test/login/src/app/components/InputLabel';
+
+import Routes from '/home/trocchi/Documents/frontend/test/login/src/constants/routes';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
@@ -17,8 +18,8 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
   return (
     <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
-        <h2 className="m-bottom-1">{i18next.t('Login:login')}</h2>
-        <h3>{i18next.t('Login:loginExplanation')}</h3>
+        <h1 className="m-bottom-1">{i18next.t('Login:login')}</h1>
+        <h2>{i18next.t('Login:loginExplanation')}</h2>
       </div>
       <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
         <InputLabel
