@@ -4,6 +4,13 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
   name: projectName,
   title: projectName,
   version: projectVersion,
+  jest: {
+    moduleNameMapper: {
+      '~screens(.*)': '<rootDir>/src/app/screens/$1',
+      '~components(.*)': '<rootDir>/src/app/components/$1',
+      '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
+    }
+  },
   repository: {
     type: 'git',
     url: repoUrl
@@ -60,7 +67,6 @@ module.exports.createJSConfig = function createJSConfig() {
       '~screens/*': ['./src/app/screens/*'],
       '~config/*': ['./src/config/*'],
       '~constants/*': ['./src/constants/*'],
-      '~redux/*': ['./src/redux/*'],
       '~services/*': ['./src/services/*'],
       '~utils/*': ['./src/utils/*'],
       '~assets/*': ['./src/assets/*']

@@ -20,15 +20,3 @@
   onFocus={this.handleFocus}
 />
 ```
-
-If you decided to use redux-form you must add it to the component and use it in this way.
-
-```jsx
-textArea = wrapField(TextArea);
-
-<Field
-  name={fieldName}
-  component={this.textArea}
-  className={styles.textArea}
-/>
-```

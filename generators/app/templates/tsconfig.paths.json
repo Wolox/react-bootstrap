@@ -2,15 +2,15 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "~redux/*": ["redux/*"],
       "~scss/*": ["scss/*"],
       "~constants/*": ["constants/*"],
       "~utils/*": ["utils/*"],
       "~services/*": ["services/*"],
       "~components/*": ["app/components/*"],
       "~screens/*": ["app/screens/*"],
-      "~config/*": ["app/config/*"],
-      "~schema/*": ["schema/*"]
+      "~config/*": ["config/*"],
+      "~schema/*": ["schema/*"],
+      "~app/*": ["app/*"]
     }
   }
 }

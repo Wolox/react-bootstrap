@@ -2,7 +2,7 @@ import React from 'react';
 import i18next from 'i18next';
 
 import InputLabel from '~components/InputLabel';
-import Routes from '~constants/routes';
+import PATHS from '~components/Routes/paths';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
@@ -46,7 +46,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
         <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
           {i18next.t('Login:enter')}
         </button>
-        <a href={Routes.RECOVER_PASSWORD}>{i18next.t('Login:forgotPassword')}</a>
+        <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
       </div>
     </form>
   );

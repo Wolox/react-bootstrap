@@ -1,7 +1,6 @@
 const COMPONENTS_PATH = 'src/app/components';
 const SCREENS_PATH = 'src/app/screens';
 const CONFIG_PATH = 'src/config';
-const REDUX_PATH = 'src/redux';
 const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
@@ -18,13 +17,10 @@ module.exports.NPMRC_PATH = {
   destination: '.npmrc'
 };
 
-module.exports.REDUX_COMPONENTS = [`${COMPONENTS_PATH}/Field/index.js`];
-
 module.exports.FILES = [
   CONFIG_PATH,
   CONSTANTS_PATH,
   DOCS_README_PATH,
-  REDUX_PATH,
   SCREENS_PATH,
   UTILS_PATH,
   'aws.js',
@@ -32,8 +28,10 @@ module.exports.FILES = [
   'tsconfig.paths.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  `${COMPONENTS_PATH}/Routes/components/AuthenticatedRoute.tsx`,
-  `${COMPONENTS_PATH}/Routes/styles.module.scss`,
+  'src/app/index.tsx',
+  'src/app/reducer.ts',
+  'src/app/context.ts',
+  `${COMPONENTS_PATH}/Routes`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/SearchBar`,
@@ -41,8 +39,8 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/TextArea`,
   `${COMPONENTS_PATH}/Checkbox`,
   `${COMPONENTS_PATH}/RadioGroup`,
-  `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/AnalyticsService.js`
+  `${COMPONENTS_PATH}/ProviderWrapper`,
+  `${SERVICES_PATH}/AuthServices.js`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -50,8 +48,6 @@ module.exports.TEMPLATE_FILES = [
   '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
-  'src/app/index.tsx',
-  `${COMPONENTS_PATH}/Routes/index.tsx`,
   `${SERVICES_PATH}/LocalStorageService.js`
 ];
 
@@ -73,7 +69,6 @@ module.exports.WITHOUT_SEAMLESS_FILES = {
 module.exports.OPTIONAL_DEPENDENCIES = {
   moment: { dependencies: ['moment@^2.23.0'] },
   'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
-  reselect: { dependencies: ['reselect@^4.0.0'] },
   'babel-module-resolver': {
     dependencies: ['babel-plugin-module-resolver@^3.1.1'],
     devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
@@ -82,16 +77,8 @@ module.exports.OPTIONAL_DEPENDENCIES = {
 
 module.exports.DEPENDENCIES = [
   'apisauce@^1.0.1',
-  'redux@^4.0.1',
-  'react-redux@^6.0.0',
-  'connected-react-router@^6.0.0',
-  'react-router-dom@^4.3.1',
-  'redux-recompose@^2.1.0',
-  'redux-form@^8.0.4',
-  'redux-thunk@^2.3.0',
-  'react-router@^4.3.1',
-  'redux-beacon@^2.0.3',
-  '@redux-beacon/google-analytics@^1.1.1',
+  'react-router@^5.1.2',
+  'react-router-dom@^5.1.2',
   'seamless-immutable@^7.1.4',
   'history@^4.7.2',
   'i18next@^13.0.0',
@@ -104,8 +91,8 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/node@^12.12.14',
   '@types/react@^16.9.13',
   '@types/react-dom@^16.9.4',
-  '@types/react-redux@^7.1.5',
   '@types/react-router@^5.1.2',
+  '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1'

@@ -1,29 +1,37 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { useDispatch } from '~app/context';
+import { actionCreators } from '~app/reducer';
 
 import Login from './layout';
 
-class LoginContainer extends Component {
-  handleLogin = () => {
-    // TODO implement function
-  };
+function LoginContainer() {
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-  handleEmailChange = () => {
-    // TODO implement function
-  };
+  const handleLogin = useCallback(
+    (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      // TODO: request
+      const user = { id: 1, name: 'Mocked User' };
+      dispatch(actionCreators.setUser(user));
+      history.push('/');
+    },
+    [dispatch, history]
+  );
 
-  handlePasswordChange = () => {
+  const handleEmailChange = useCallback(() => {
     // TODO implement function
-  };
+  }, []);
 
-  render() {
-    return (
-      <Login
-        onEmailChange={this.handleEmailChange}
-        onPasswordChange={this.handlePasswordChange}
-        onLogin={this.handleLogin}
-      />
-    );
-  }
+  const handlePasswordChange = useCallback(() => {
+    // TODO implement function
+  }, []);
+
+  return (
+    <Login onEmailChange={handleEmailChange} onPasswordChange={handlePasswordChange} onLogin={handleLogin} />
+  );
 }
 
 export default LoginContainer;
