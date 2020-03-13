@@ -3,12 +3,12 @@ import React from 'react';
 interface Props {
   className?: string;
   disabled?: boolean;
-  error?: string | undefined;
+  error?: string;
   errorClassName?: string;
   inputClassName?: string;
   isTextarea?: boolean;
   inputType: string;
-  label?: string | object | undefined;
+  label?: string | object;
   labelClassName?: string;
   name: string;
   onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
