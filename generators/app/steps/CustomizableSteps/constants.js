@@ -6,6 +6,8 @@ const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const DOCS_README_PATH = 'docs';
 const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
+const HOOKS_PATH = 'src/hooks';
+const CONTEXT_PATH = 'src/contexts';
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
@@ -23,14 +25,14 @@ module.exports.FILES = [
   DOCS_README_PATH,
   SCREENS_PATH,
   UTILS_PATH,
+  HOOKS_PATH,
+  CONTEXT_PATH,
   'aws.js',
   'tsconfig.json',
   'tsconfig.paths.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
-  'src/app/reducer.ts',
-  'src/app/context.ts',
   `${COMPONENTS_PATH}/Routes`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
@@ -40,9 +42,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Checkbox`,
   `${COMPONENTS_PATH}/RadioGroup`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
-  `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/utils.ts`,
-  `${SERVICES_PATH}/utils.test.tsx`
+  `${SERVICES_PATH}/AuthServices.js`
 ];
 
 module.exports.TEMPLATE_FILES = [

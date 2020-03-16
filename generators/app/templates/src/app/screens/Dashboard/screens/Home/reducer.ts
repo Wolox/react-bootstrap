@@ -11,12 +11,12 @@ enum ActionTypes {
   RESET_FOO = 'RESET_FOO'
 }
 
-export interface SetFoo {
+interface SetFoo {
   type: ActionTypes.SET_FOO;
   payload: string;
 }
 
-export interface ResetFoo {
+interface ResetFoo {
   type: ActionTypes.RESET_FOO;
 }
 

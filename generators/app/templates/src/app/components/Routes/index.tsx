@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import { useSelector } from '~app/context';
+import { useSelector } from '~contexts/UserContext';
 
 import Suspense from '../Suspense';
 
@@ -9,7 +9,7 @@ import { ROUTES } from './constants';
 import RouteItem from './components/RouteItem';
 import styles from './styles.module.scss';
 
-function AppRoutes() {
+function Routes() {
   const user = useSelector(state => state.user);
 
   return (
@@ -27,4 +27,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;
+export default Routes;

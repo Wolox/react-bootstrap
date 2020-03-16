@@ -2,8 +2,8 @@ import React, { ReactNode, useReducer } from 'react';
 import { mount } from 'enzyme';
 import { Switch, BrowserRouter as Router } from 'react-router-dom';
 
-import { globalReducer, INITIAL_STATE } from '~app/reducer';
-import { Context } from '~app/context';
+import { Context } from '~contexts/UserContext';
+import { reducer, INITIAL_STATE } from '~contexts/UserContext/reducer';
 
 type Hook = () => any;
 
@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const RootComponent = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(globalReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   return (
     <Context.Provider value={{ state, dispatch }}>
       <Router>

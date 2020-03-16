@@ -4,7 +4,7 @@ export interface User {
   id: number;
 }
 
-export interface GlobalState {
+export interface UserState {
   user: Nullable<User>;
 }
 
@@ -17,12 +17,12 @@ enum ActionTypes {
   RESET_USER = 'RESET_USER'
 }
 
-export interface SetUser {
+interface SetUser {
   type: ActionTypes.SET_USER;
   payload: User;
 }
 
-export interface ResetUser {
+interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
@@ -33,7 +33,7 @@ export const actionCreators = {
   resetUser: () => ({ type: ActionTypes.RESET_USER })
 };
 
-export const globalReducer = (state: GlobalState, action: Action): GlobalState => {
+export const reducer = (state: UserState, action: Action): UserState => {
   switch (action.type) {
     case 'SET_USER': {
       return { ...state, user: action.payload };

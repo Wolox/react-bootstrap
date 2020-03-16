@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useDispatch } from '~app/context';
-import { actionCreators } from '~app/reducer';
+import { useDispatch } from '~contexts/UserContext';
+import { actionCreators } from '~contexts/UserContext/reducer';
 
 import Login from './layout';
 

@@ -3,12 +3,9 @@ import React, { useEffect } from 'react';
 import { mount } from 'enzyme';
 import { PROBLEM_CODE } from 'apisauce';
 
-import { useRequest, useLazyRequest, Error } from '~services/utils';
+import { useRequest, useLazyRequest, Error } from '~hooks/useRequest';
 import { TestHook, testHook } from '~utils/tests';
 import { Nullable } from '~utils/types';
-
-type True = true;
-type False = false;
 
 interface FooError {
   errorData: string;
@@ -24,7 +21,7 @@ type HookReturnValue = [
 ];
 
 const failureResponse = {
-  ok: false as False,
+  ok: false as false,
   problem: 'CLIENT_ERROR' as PROBLEM_CODE,
   originalError: { config: {}, isAxiosError: false, toJSON: jest.fn(), name: '', message: '' },
   data: { errorData: 'error' },
@@ -35,7 +32,7 @@ const failureResponse = {
 };
 
 const successResponse = {
-  ok: true as True,
+  ok: true as true,
   problem: null,
   originalError: null,
   data: { foo: 'value' },

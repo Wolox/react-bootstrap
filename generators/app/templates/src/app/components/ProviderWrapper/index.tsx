@@ -6,7 +6,7 @@ interface Props<U extends {}> {
   initialState: U;
 }
 
-const withProvider = <T extends any, U>({ Context, reducer, initialState }: Props<U>) => (
+const withProvider = <T extends {}, U>({ Context, reducer, initialState }: Props<U>) => (
   WrappedComponent: React.ComponentType<T>
 ) => {
   function ProviderWrapper(props: T) {

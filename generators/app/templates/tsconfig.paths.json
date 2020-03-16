@@ -10,7 +10,9 @@
       "~screens/*": ["app/screens/*"],
       "~config/*": ["config/*"],
       "~schema/*": ["schema/*"],
-      "~app/*": ["app/*"]
+      "~app/*": ["app/*"],
+      "~hooks/*": ["./src/hooks/*"],
+      "~contexts/*": ["./src/contexts/*"]
     }
   }
 }

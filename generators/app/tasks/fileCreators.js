@@ -69,7 +69,9 @@ module.exports.createJSConfig = function createJSConfig() {
       '~constants/*': ['./src/constants/*'],
       '~services/*': ['./src/services/*'],
       '~utils/*': ['./src/utils/*'],
-      '~assets/*': ['./src/assets/*']
+      '~assets/*': ['./src/assets/*'],
+      '~hooks/*': ['./src/hooks/*'],
+      '~contexts/*': ['./src/contexts/*']
     };
   }
 

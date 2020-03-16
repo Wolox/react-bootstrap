@@ -2,15 +2,16 @@ import React, { useReducer } from 'react';
 
 import '../scss/application.scss';
 
+import { reducer as userReducer, INITIAL_STATE } from '~contexts/UserContext/reducer';
+import { Context } from '~contexts/UserContext';
+
 import Routes from './components/Routes';
-import { globalReducer, INITIAL_STATE } from './reducer';
-import { Context } from './context';
 
 function App() {
-  const [state, dispatch] = useReducer(globalReducer, INITIAL_STATE);
+  const [userState, userDispatch] = useReducer(userReducer, INITIAL_STATE);
 
   return (
-    <Context.Provider value={{ state, dispatch }}>
+    <Context.Provider value={{ state: userState, dispatch: userDispatch }}>
       <Routes />
     </Context.Provider>
   );
