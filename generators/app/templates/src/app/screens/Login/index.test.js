@@ -2,13 +2,19 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
+import { RootComponent } from '~utils/tests';
+
 import Login from './index';
 
 describe('#Login', () => {
   let component = null;
 
   beforeEach(() => {
-    component = mount(<Login />);
+    component = mount(
+      <RootComponent>
+        <Login />
+      </RootComponent>
+    );
   });
 
   afterEach(() => {

@@ -8,6 +8,7 @@ import { useSelector, Context, useDispatch } from './context';
 import { reducer, INITIAL_STATE, actionCreators } from './reducer';
 
 function Home() {
+  // Example of how to use these custom hooks
   const foo = useSelector(state => state.foo);
   const dispatch = useDispatch();
 

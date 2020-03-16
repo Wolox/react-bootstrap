@@ -5,5 +5,10 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     '@typescript-eslint/no-var-requires': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };

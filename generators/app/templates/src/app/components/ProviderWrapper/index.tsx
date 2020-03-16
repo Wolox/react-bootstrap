@@ -1,12 +1,12 @@
 import React, { useReducer } from 'react';
 
-interface Props {
+interface Props<U extends {}> {
   Context: React.Context<any>;
-  reducer: React.Reducer<any, { type: any }>;
-  initialState: any;
+  reducer: React.Reducer<U, { type: string }>;
+  initialState: U;
 }
 
-const withProvider = <T extends any>({ Context, reducer, initialState }: Props) => (
+const withProvider = <T extends any, U>({ Context, reducer, initialState }: Props<U>) => (
   WrappedComponent: React.ComponentType<T>
 ) => {
   function ProviderWrapper(props: T) {

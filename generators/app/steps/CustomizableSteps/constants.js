@@ -40,7 +40,9 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Checkbox`,
   `${COMPONENTS_PATH}/RadioGroup`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
-  `${SERVICES_PATH}/AuthServices.js`
+  `${SERVICES_PATH}/AuthServices.js`,
+  `${SERVICES_PATH}/utils.ts`,
+  `${SERVICES_PATH}/utils.test.tsx`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -95,5 +97,6 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
-  '@types/webpack-env@^1.14.1'
+  '@types/webpack-env@^1.14.1',
+  'eslint-config-wolox-typescript'
 ];
