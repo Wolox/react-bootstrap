@@ -21,7 +21,7 @@ type HookReturnValue = [
 ];
 
 const failureResponse = {
-  ok: false as false,
+  ok: false as const,
   problem: 'CLIENT_ERROR' as PROBLEM_CODE,
   originalError: { config: {}, isAxiosError: false, toJSON: jest.fn(), name: '', message: '' },
   data: { errorData: 'error' },
@@ -32,7 +32,7 @@ const failureResponse = {
 };
 
 const successResponse = {
-  ok: true as true,
+  ok: true as const,
   problem: null,
   originalError: null,
   data: { foo: 'value' },
