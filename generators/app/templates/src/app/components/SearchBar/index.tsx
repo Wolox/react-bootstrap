@@ -4,29 +4,29 @@ interface Props {
   buttonClassName?: string;
   className?: string;
   formClassName?: string;
-  textButtonSearch?: string;
-  children?: React.ReactNode;
-  handleSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+  submitButtonText: string;
+  children: React.ReactNode;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-function SearchBarContainer({
-  textButtonSearch = 'Buscar',
+function SearchBar({
+  submitButtonText,
   className = '',
   formClassName,
   buttonClassName = '',
-  handleSubmit,
+  onSubmit,
   children
 }: Props) {
   return (
     <div className={className}>
-      <form onSubmit={handleSubmit} className={formClassName}>
+      <form onSubmit={onSubmit} className={formClassName}>
         {children}
-        <button className={buttonClassName} type="submit">
-          {textButtonSearch}
+        <button className={buttonClassName} type="submit" data-testid="search-bar-submit-button">
+          {submitButtonText}
         </button>
       </form>
     </div>
   );
 }
 
-export default SearchBarContainer;
+export default SearchBar;
