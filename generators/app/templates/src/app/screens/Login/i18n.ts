@@ -8,5 +8,6 @@ i18next.addResources('es', 'Login', {
   email: 'E-mail',
   emailPlaceholder: 'Ej: nombre@empresa.com',
   password: 'Contraseña',
-  passwordPlaceholder: 'Ingrese su contraseña'
+  passwordPlaceholder: 'Ingrese su contraseña',
+  createAccount: 'Crear cuenta'
 });

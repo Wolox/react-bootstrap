@@ -1,4 +1,3 @@
-export const FIELDS = {
-  email: 'email',
-  password: 'password'
-};
+import { stringArrayToObject } from '../../../utils/array';
+
+export const FIELDS = stringArrayToObject(['name', 'surname', 'email', 'password', 'confirmPassword']);

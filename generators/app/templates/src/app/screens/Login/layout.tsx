@@ -1,9 +1,9 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import InputLabel from '/home/trocchi/Documents/frontend/test/login/src/app/components/InputLabel';
+import InputLabel from '~components/InputLabel';
 
-import Routes from '/home/trocchi/Documents/frontend/test/login/src/constants/routes';
+import Routes from '~constants/routes';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
@@ -48,6 +48,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
           {i18next.t('Login:enter')}
         </button>
         <a href={Routes.RECOVER_PASSWORD}>{i18next.t('Login:forgotPassword')}</a>
+        <a href={Routes.REGISTRATION}>{i18next.t('Login:createAccount')}</a>
       </div>
     </form>
   );

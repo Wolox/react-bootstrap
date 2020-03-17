@@ -7,22 +7,12 @@ class RegistrationContainer extends Component {
     // TODO implement function
   };
 
-  handleEmailChange = () => {
-    // TODO implement function
-  };
-
-  handlePasswordChange = () => {
-    // TODO implement function
+  handleInputChange = () => {
+    // TODO: implement function
   };
 
   render() {
-    return (
-      <Registration
-        onEmailChange={this.handleEmailChange}
-        onPasswordChange={this.handlePasswordChange}
-        onSubmit={this.handleSubmit}
-      />
-    );
+    return <Registration onSubmit={this.handleSubmit} onInputChange={this.handleInputChange} />;
   }
 }
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import InputLabel from '/home/trocchi/Documents/frontend/test/login/src/app/components/InputLabel';
-
-import Routes from '/home/trocchi/Documents/frontend/test/login/src/constants/routes';
+import InputLabel from '~components/InputLabel';
+import Routes from '~constants/routes';
 
 import styles from './styles.module.scss';
 
