@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import SearchBar from './index';
 
-describe('#Login', () => {
+describe('#SearchBar', () => {
   let component = null;
   const handleSubmit = jest.fn();
 
