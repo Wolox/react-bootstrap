@@ -6,8 +6,8 @@ const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const DOCS_README_PATH = 'docs';
 const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
-const HOOKS_PATH = 'src/hooks';
-const CONTEXT_PATH = 'src/contexts';
+const HOOKS_PATH = 'src/app/hooks';
+const CONTEXT_PATH = 'src/app/contexts';
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
