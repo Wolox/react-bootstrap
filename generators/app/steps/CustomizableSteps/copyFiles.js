@@ -7,7 +7,10 @@ const { FILES, FILES_TO_DELETE, TEMPLATE_FILES, WITHOUT_SEAMLESS_FILES } = requi
 module.exports = function copyAllFiles() {
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
 
+  console.log('Deleting default CRA files...');
   deleteFiles.bind(this)(FILES_TO_DELETE);
+
+  console.log('Adding files...');
   copyFiles.bind(this)(FILES);
   copyTemplateFiles.bind(this)(TEMPLATE_FILES);
 
