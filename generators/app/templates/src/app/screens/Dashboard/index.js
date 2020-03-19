@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
-import Routes from '../../../constants/routes';
+import RouteItem from '~components/Routes/components/RouteItem';
+import PATHS from '~components/Routes/paths';
 
 import Home from './screens/Home';
 
 function Dashboard() {
   return (
     <Switch>
-      <Route exact path={Routes.HOME} component={Home} />
-      <Route component={<Redirect to={Routes.HOME} />} />
+      <RouteItem exact path={PATHS.home} component={Home} />
     </Switch>
   );
 }

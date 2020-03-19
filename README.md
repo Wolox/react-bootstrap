@@ -99,15 +99,8 @@ Additional to clean libraries are added
 |Name|Description|
 |----|-----------|
 |[apisauce](https://github.com/infinitered/apisauce)| Talking to APIs doesn't have to be awkward anymore.
-|[redux](https://redux.js.org/)| Helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
-|[react-redux](https://react-redux.js.org/)| Is the official React binding for Redux.
-|[connected-react-router](https://github.com/supasate/connected-react-router)| A Redux binding for React Router v4.
 |[react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)| DOM bindings for React Router.
-|[redux-recompose](https://github.com/Wolox/redux-recompose)| A Redux utility belt for reducers and actions. Inspired by acdlite/recompose.
-|[redux-form](https://github.com/erikras/redux-form)| A Higher Order Component using react-redux to keep form state in a Redux store.
-|[redux-thunk](https://github.com/reduxjs/redux-thunk)| Middlewere for Redux.
 |[react-router](https://github.com/ReactTraining/react-router)| Routing for React.
-|[redux-beacon](https://github.com/rangle/redux-beacon)| Analytics integration for Redux.
 |[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
 |[history](https://www.npmjs.com/package/history)| Manage session history anywhere JavaScript runs.
 |[i18next](https://www.i18next.com/)| An internationalization-framework written in and for JavaScript.
@@ -120,7 +113,6 @@ Also you can select **_optional_** libraries like
 |----|-----------|
 |[moment](https://momentjs.com/)| Parse, validate, manipulate, and display dates and times in JavaScript.
 |[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
-|[reselect](https://github.com/reduxjs/reselect)| Selector library for Redux.
 |[babel-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)| Custom module resolver plugin for Babel.
 
 ## Notes
