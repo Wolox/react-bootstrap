@@ -11,8 +11,8 @@
       "~config/*": ["config/*"],
       "~schema/*": ["schema/*"],
       "~app/*": ["app/*"],
-      "~hooks/*": ["./app/hooks/*"],
-      "~contexts/*": ["./app/contexts/*"]
+      "~hooks/*": ["app/hooks/*"],
+      "~contexts/*": ["app/contexts/*"]
     }
   }
 }
