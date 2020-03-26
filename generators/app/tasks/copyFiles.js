@@ -13,6 +13,8 @@ module.exports = function copyAllFiles() {
   });
 
   bindedCopyTpl('public/_index.html', 'public/index.html', {
-    title: this.projectName
+    title: this.projectName,
+    ga: this.ga,
+    gaID: this.gaID
   });
 };

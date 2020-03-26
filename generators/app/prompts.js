@@ -30,6 +30,19 @@ module.exports.MAIN_PROMPTS = [
         : `${val} is not a valid url. Please enter a valid one.`
   },
   {
+    type: 'confirm',
+    name: 'ga',
+    message: 'Add Google Analytics?',
+    required: true
+  },
+  {
+    when: values => values.ga,
+    type: 'input',
+    name: 'gaID',
+    message: 'Enter your Google Analytics ID (leave blank to add it later)',
+    default: 'UA-XXXXX-Y'
+  },
+  {
     type: 'list',
     name: 'customized',
     message: 'Which type of bootstrap do you want?',
