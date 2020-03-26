@@ -33,14 +33,8 @@ module.exports.MAIN_PROMPTS = [
     type: 'confirm',
     name: 'ga',
     message: 'Add Google Analytics?',
-    required: true
-  },
-  {
-    when: values => values.ga,
-    type: 'input',
-    name: 'gaID',
-    message: 'Enter Google Analytics tracking ID (or press ENTER to add it later)',
-    default: 'UA-XXXXX-Y'
+    required: true,
+    suffix: ' config REACT_APP_GA_TRACK_ID env variable'
   },
   {
     type: 'list',
