@@ -39,7 +39,7 @@ module.exports.MAIN_PROMPTS = [
     when: values => values.ga,
     type: 'input',
     name: 'gaID',
-    message: 'Enter your Google Analytics ID (leave blank to add it later)',
+    message: 'Enter Google Analytics tracking ID (or press ENTER to add it later)',
     default: 'UA-XXXXX-Y'
   },
   {
