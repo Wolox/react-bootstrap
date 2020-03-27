@@ -30,6 +30,13 @@ module.exports.MAIN_PROMPTS = [
         : `${val} is not a valid url. Please enter a valid one.`
   },
   {
+    type: 'confirm',
+    name: 'ga',
+    message: 'Add Google Analytics?',
+    required: true,
+    suffix: ' config REACT_APP_GA_TRACK_ID env variable'
+  },
+  {
     type: 'list',
     name: 'customized',
     message: 'Which type of bootstrap do you want?',
