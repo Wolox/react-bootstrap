@@ -1,14 +1,14 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import InputLabel from '~components/InputLabel';
+import FormInput from '~components/FormInput';
 import PATHS from '~components/Routes/paths';
 
 import styles from './styles.module.scss';
 
 interface Props {
-  onSubmit: (event: React.FormEvent<Element>) => void;
-  onEmailChange: (event: React.FormEvent<Element>) => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  onEmailChange: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
 function RecoverPassword({ onSubmit, onEmailChange }: Props) {
@@ -19,15 +19,13 @@ function RecoverPassword({ onSubmit, onEmailChange }: Props) {
         <h2>{i18next.t('RecoverPassword:recoverPasswordDescription')}</h2>
       </div>
       <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
-        <InputLabel
+        <FormInput
           label={i18next.t('RecoverPassword:email')}
           name="email"
-          inputId="email"
-          dataFor="email"
           inputType="text"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('RecoverPassword:emailPlaceholder') as string}
-          handleChange={onEmailChange}
+          onChange={onEmailChange}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>

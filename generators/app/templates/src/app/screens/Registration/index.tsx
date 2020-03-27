@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 
 import Registration from './layout';
 
-class RegistrationContainer extends Component {
-  handleSubmit = () => {
-    // TODO implement function
-  };
+function RegistrationContainer() {
+  const handleSubmit = useCallback((event: React.FormEvent<Element>) => {
+    event.preventDefault();
+    // TODO: Implement
+  }, []);
 
-  handleInputChange = () => {
-    // TODO: implement function
-  };
+  const handleInputChange = useCallback((event: React.FormEvent<Element>) => {
+    event.preventDefault();
+    // TODO: Implement method
+  }, []);
 
-  render() {
-    return <Registration onSubmit={this.handleSubmit} onInputChange={this.handleInputChange} />;
-  }
+  return <Registration onSubmit={handleSubmit} onInputChange={handleInputChange} />;
 }
 
 export default RegistrationContainer;
