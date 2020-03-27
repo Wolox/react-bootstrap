@@ -8,11 +8,29 @@ import PATHS from './paths';
 
 const Home = lazy(() => import('../../screens/Dashboard'));
 const Login = lazy(() => import('../../screens/Login'));
+const RecoverPassword = lazy(() => import('../../screens/RecoverPassword'));
+const Registration = lazy(() => import('../../screens/Registration'));
 
 const MAIN_PUBLIC_PATH = PATHS.login;
 const MAIN_PRIVATE_PATH = PATHS.home;
 
+/* When adding routes, add them ABOVE the Home route
+ * or it will redirect you to incorrect screens */
 export const ROUTES = [
+  {
+    exact: false,
+    path: PATHS.registration,
+    component: Registration,
+    title: i18next.t('Routes:registrationTitle'),
+    description: i18next.t('Routes:registrationDescription')
+  },
+  {
+    exact: false,
+    path: PATHS.recoverPassword,
+    component: RecoverPassword,
+    title: i18next.t('Routes:recoverPasswordTitle'),
+    description: i18next.t('Routes:recoverPasswordDescription')
+  },
   {
     exact: false,
     path: PATHS.login,
