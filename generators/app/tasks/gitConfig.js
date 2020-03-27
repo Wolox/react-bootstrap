@@ -17,7 +17,7 @@ module.exports.gitInitiation = function gitInitiation() {
         successMessage: 'CRA README.md removed successfully',
         failureMessage: 'CRA README.md removing failed, no README.md found'
         // catching with an empty function to ignore the error
-        // eslint-disable-next-line no-empty-function
+        // eslint-disable-next-line no-empty-function, @typescript-eslint/no-empty-function
       }).catch(() => {})
     );
 };
