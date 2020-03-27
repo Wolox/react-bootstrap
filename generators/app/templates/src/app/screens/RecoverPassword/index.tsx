@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 
 import RecoverPassword from './layout';
 
-class RecoverPasswordContainer extends Component {
-  handleSubmit = () => {
-    // TODO: Implement submit
-  };
+function RecoverPasswordContainer() {
+  const handleSubmit = useCallback((event: React.FormEvent<Element>) => {
+    event.preventDefault();
+    // TODO: Implement
+  }, []);
 
-  handleEmailChange = () => {
+  const handleEmailChange = useCallback((event: React.FormEvent<Element>) => {
+    event.preventDefault();
     // TODO: Implement method
-  };
-
-  render() {
-    return <RecoverPassword onSubmit={this.handleSubmit} onEmailChange={this.handleEmailChange} />;
-  }
+  }, []);
+  return <RecoverPassword onSubmit={handleSubmit} onEmailChange={handleEmailChange} />;
 }
 
 export default RecoverPasswordContainer;

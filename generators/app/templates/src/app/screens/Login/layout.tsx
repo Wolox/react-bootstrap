@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import FormInput from '~components/FormInput';
+import InputLabel from '~components/InputLabel';
 import PATHS from '~components/Routes/paths';
 
 import { FIELDS } from './constants';
@@ -21,21 +21,25 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
         <h2>{i18next.t('Login:loginExplanation')}</h2>
       </div>
       <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
-        <FormInput
+        <InputLabel
           label={i18next.t('Login:email')}
           name={FIELDS.email}
+          inputId={FIELDS.email}
+          dataFor={FIELDS.email}
           inputType="text"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:emailPlaceholder') as string}
-          onChange={onEmailChange}
+          handleChange={onEmailChange}
         />
-        <FormInput
+        <InputLabel
           label={i18next.t('Login:password')}
           name={FIELDS.password}
+          inputId={FIELDS.password}
+          dataFor={FIELDS.password}
           inputType="password"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:passwordPlaceholder') as string}
-          onChange={onPasswordChange}
+          handleChange={onPasswordChange}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
