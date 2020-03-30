@@ -1,8 +1,8 @@
 import React from 'react';
 import i18next from 'i18next';
 
-import InputLabel from '~components/InputLabel';
-import Routes from '~constants/routes';
+import FormInput from '~components/FormInput';
+import PATHS from '~components/Routes/paths';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
@@ -21,32 +21,28 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
         <h3>{i18next.t('Login:loginExplanation')}</h3>
       </div>
       <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
-        <InputLabel
+        <FormInput
           label={i18next.t('Login:email')}
           name={FIELDS.email}
-          inputId={FIELDS.email}
-          dataFor={FIELDS.email}
           inputType="text"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:emailPlaceholder') as string}
-          handleChange={onEmailChange}
+          onChange={onEmailChange}
         />
-        <InputLabel
+        <FormInput
           label={i18next.t('Login:password')}
           name={FIELDS.password}
-          inputId={FIELDS.password}
-          dataFor={FIELDS.password}
           inputType="password"
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:passwordPlaceholder') as string}
-          handleChange={onPasswordChange}
+          onChange={onPasswordChange}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
         <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
           {i18next.t('Login:enter')}
         </button>
-        <a href={Routes.RECOVER_PASSWORD}>{i18next.t('Login:forgotPassword')}</a>
+        <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
       </div>
     </form>
   );

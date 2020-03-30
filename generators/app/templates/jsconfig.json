@@ -11,10 +11,11 @@
       "~screens/*": ["./src/app/screens/*"],
       "~config/*": ["./src/config/*"],
       "~constants/*": ["./src/constants/*"],
-      "~redux/*": ["./src/redux/*"],
       "~services/*": ["./src/services/*"],
       "~utils/*": ["./src/utils/*"],
-      "~assets/*": ["./src/assets/*"]
+      "~assets/*": ["./src/assets/*"],
+      "~hooks/*": ["./src/hooks/*"],
+      "~contexts/*": ["./src/contexts/*"]
     }
   },
   "include": ["src"],

@@ -94,16 +94,15 @@ module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-jsx-a11y@6.2.3',
   'eslint-plugin-prettier@3.1.0',
   'eslint-plugin-react@7.14.3',
-  'eslint-plugin-react-native@3.7.0',
   'eslint-plugin-babel@5.3.0',
-  'eslint-config-wolox-react@2.0.0',
+  'eslint-config-wolox-react@2.0.1',
   'eslint-config-wolox@3.0.2',
   'stylelint-config-wolox@1.0.7',
   'stylelint-no-indistinguishable-colors@1.2.1',
   'stylelint-scss@3.5.4',
   'stylelint@9.10.1',
   'husky@^4.0.3',
-  'prettier@1.18.2',
+  'prettier@1.19.1',
   'prettier-eslint@8.8.2',
   'prettier-stylelint@0.4.2',
   'prettier-eslint-cli@5.0.0',
@@ -121,7 +120,8 @@ module.exports.DEV_DEPENDENCIES = [
   'enzyme-adapter-react-16@^1.15.2',
   'react-test-renderer@^16.12.0',
   '@types/react-test-renderer',
-  '@types/enzyme'
+  '@types/enzyme',
+  '@types/react-spinkit'
 ];
 
 module.exports.DEPENDENCIES = [
