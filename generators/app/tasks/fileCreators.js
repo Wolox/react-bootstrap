@@ -31,11 +31,13 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     'lint-fix':
       "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
-    'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint'
+    'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
+    'coverage-diff': 'rescripts test --env=jsdom --coverage --watchAll=false --changedSince=development'
   },
   husky: {
     hooks: {
-      'pre-commit': 'npm run lint-diff && npm run lint-scss'
+      'pre-commit': 'npm run lint-diff && npm run lint-scss',
+      'pre-push': 'npm run coverage-diff'
     }
   }
 });
