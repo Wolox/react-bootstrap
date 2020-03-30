@@ -9,6 +9,14 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
       '~screens(.*)': '<rootDir>/src/app/screens/$1',
       '~components(.*)': '<rootDir>/src/app/components/$1',
       '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
+    },
+    coverageThreshold: {
+      global: {
+        branches: 70,
+        functions: 70,
+        lines: 70,
+        statements: 70
+      }
     }
   },
   repository: {
