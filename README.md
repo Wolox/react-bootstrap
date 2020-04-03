@@ -56,13 +56,13 @@ Choose your preferred libraries for your project and create a new React project 
 
 ###### Components
 - Checkbox
-- InputLabel
+- FormInput (input and textarea)
+- ProviderWrapper
 - RadioGroup
 - Routes
 - SearchBar
 - Spinner
-- Suspense 
-- TextArea
+- Suspense
 
 ###### Screens
 - Login
