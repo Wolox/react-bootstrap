@@ -1,12 +1,12 @@
 const installDependencies = require('../../tasks/installDependencies');
 
 const copyAllFiles = require('./copyFiles');
-const { CUSTOMIZED_PROMPTS } = require('./prompts');
 const { DEPENDENCIES, DEV_DEPENDENCIES, OPTIONAL_DEPENDENCIES } = require('./constants');
 
 const CustomizableGenerator = {
   prompting() {
-    return this.prompt(CUSTOMIZED_PROMPTS);
+    // TODO: When optional dependencies are required, add them here.
+    return Promise.resolve();
   },
   configuring() {
     const dependencies = [...DEPENDENCIES];
