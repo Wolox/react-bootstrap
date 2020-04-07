@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useDispatch } from '~contexts/UserContext';
 import { actionCreators } from '~contexts/UserContext/reducer';
+import LocalStorageService from '~services/LocalStorageService';
 
 import Login from './layout';
 
@@ -15,7 +16,9 @@ function LoginContainer() {
       event.preventDefault();
       // TODO: request
       const user = { id: 1, name: 'Mocked User' };
-      dispatch(actionCreators.setUser(user));
+      LocalStorageService.setValue('LoggedUser', user);
+      const storedUser = LocalStorageService.getValue('LoggedUser');
+      dispatch(actionCreators.setUser(storedUser));
       history.push('/');
     },
     [dispatch, history]

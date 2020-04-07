@@ -49,7 +49,7 @@ module.exports.TEMPLATE_FILES = [
   '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
-  `${SERVICES_PATH}/LocalStorageService.js`
+  `${SERVICES_PATH}/LocalStorageService.ts`
 ];
 
 module.exports.FILES_TO_DELETE = [

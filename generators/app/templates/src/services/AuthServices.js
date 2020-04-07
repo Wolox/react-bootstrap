@@ -2,12 +2,14 @@ import api from '../config/api';
 
 import * as LocalStorageService from './LocalStorageService';
 
+const TOKEN_FIELD_NAME = 'sessionToken';
+
 export const setCurrentUser = currentUser => {
   api.setHeader('Authorization', currentUser.sessionToken);
-  LocalStorageService.setSessionToken(currentUser.sessionToken);
+  LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 export const getCurrentUser = () => {
-  const currentSessionToken = LocalStorageService.getSessionToken();
+  const currentSessionToken = LocalStorageService.getValue(TOKEN_FIELD_NAME);
 
   if (currentSessionToken) {
     api.setHeader('Authorization', currentSessionToken);
@@ -17,7 +19,7 @@ export const getCurrentUser = () => {
 
   return false;
 };
-export const removeCurrentUser = () => LocalStorageService.removeSessionToken();
+export const removeCurrentUser = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
 
 export const login = () =>
   // TODO: Implement call to authentication API here
