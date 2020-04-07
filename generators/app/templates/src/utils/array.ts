@@ -1,4 +1,4 @@
-import immutable from 'seamless-immutable';
+import Immutable from 'seamless-immutable';
 
 /**
  * Receives an array of strings, and returns an obj with that strings as properties with that string as value.
@@ -13,7 +13,8 @@ export function stringArrayToObject(actionsArray: string[], namespace = ''): { [
     throw new Error('Action names must be strings and must not be empty');
   }
 
-  return immutable<string[]>(actionsArray).asObject((actionName: string) => [
+  // eslint-disable-next-line new-cap
+  return Immutable<string[]>(actionsArray).asObject((actionName: string) => [
     actionName,
     `${namespace}:${actionName}`
   ]);
