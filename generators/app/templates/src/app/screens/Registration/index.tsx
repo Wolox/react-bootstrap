@@ -8,13 +8,12 @@ import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 function RegistrationContainer() {
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const handleSubmit = useCallback((event: React.FormEvent<Element>) => {
-    event.preventDefault();
     // TODO: Implement
   }, []);
 
   const handleInputChange = useCallback((event: React.FormEvent<Element>) => {
-    event.preventDefault();
     // TODO: Implement method
   }, []);
 
