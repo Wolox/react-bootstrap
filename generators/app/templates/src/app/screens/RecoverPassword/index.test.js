@@ -21,7 +21,7 @@ describe('#RecoverPassword', () => {
     component.unmount();
   });
 
-  describe('when mounting the application', () => {
+  describe('When the component is mounted', () => {
     it('matches last snapshot', () => {
       expect(renderer.create(component).toJSON()).toMatchSnapshot();
     });
