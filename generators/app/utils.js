@@ -17,7 +17,7 @@ function copyEjsTpl(filepath) {
   this.fs.copyTpl(
     this.templatePath(...templatePath.split('/')),
     this.destinationPath(this.projectName, ...filepath.split('/')),
-    { projectName: this.projectName, features: { ...this.features, customized: this.customized } }
+    { projectName: this.projectName, features: { customized: this.customized } }
   );
 }
 
