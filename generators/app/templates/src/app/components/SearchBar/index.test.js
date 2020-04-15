@@ -8,15 +8,15 @@ describe('#SearchBar', () => {
   let component = null;
   const handleSubmit = jest.fn();
 
-  beforeAll(() => {
+  beforeEach(() => {
     component = mount(
-      <SearchBar submitButtonText="Search" onSubmit={handleSubmit}>
+      <SearchBar submitButtonContent="Search" onSubmit={handleSubmit}>
         <input />
       </SearchBar>
     );
   });
 
-  afterAll(() => {
+  afterEach(() => {
     component.unmount();
   });
 
@@ -27,7 +27,7 @@ describe('#SearchBar', () => {
   });
 
   describe('when pressing the submit button', () => {
-    beforeAll(() => {
+    beforeEach(() => {
       const button = component.find('[data-testid="search-bar-submit-button"]');
       button.simulate('submit');
     });

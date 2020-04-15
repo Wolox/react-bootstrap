@@ -4,9 +4,8 @@
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
-| textButtonSearch | String | | Text to display inside the submit button |
+| submitButtonContent | React.Node | | Button content |
 | className | String | | Custom styles to apply to the search bar container |
-| formClassName | String | | Custom styles to apply to the form fields |
 | buttonClassName | String | | Custom styles to apply to the submit button |
 | children | Node | | Elements to be rendered inside the search bar |
 | handleSubmit | Func | ✓ | Function to be called on submit |
@@ -14,7 +13,7 @@
 **Usage**
 
 ```jsx
-<SearchBar handleSubmit={this.onSubmit}>
+<SearchBar onSubmit={this.onSubmit}>
   <label for="name" className={styles.labelSearch}>
     Name:
     <input name="name" id="name" type="input" onChange={this.onChange}/>
