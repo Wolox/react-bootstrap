@@ -1,14 +1,14 @@
 module.exports = {
-  extends: ['wolox', 'wolox-react', 'wolox-typescript'],
-  parser: '@typescript-eslint/parser',
+  extends: ["wolox", "wolox-react", "wolox-typescript"],
+  parser: "@typescript-eslint/parser",
   rules: {
-    'import/no-unresolved': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    '@typescript-eslint/no-var-requires': 'off'
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
   settings: {
     react: {
-      version: 'detect'
+      version: "detect"
     }
   }
 };
