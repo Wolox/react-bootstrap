@@ -6,7 +6,7 @@ import Immutable from 'seamless-immutable';
  * stringArrayToObject(['A', 'B', 'C']) // { A: 'A', B: 'B', C: 'C' }
  * @param {array} actionsArray array of values
  * @param {string} namespace prefix for the resulting values
- * @returns {object} (['A', 'B', 'C', 'name']) -> { A: '@name/A', B: '@name/B', C: '@name/C' }
+ * @returns {object} (['A', 'B', 'C'], 'name') -> { A: '@name/A', B: '@name/B', C: '@name/C' }
  */
 export function stringArrayToObject(actionsArray, namespace = '') {
   if (actionsArray.some(actionName => !actionName || typeof actionName !== 'string')) {

@@ -54,3 +54,12 @@ To start the server by default (development) run:
 To start a specific environment, run:
 
 `npm run start-env environment`
+
+## Google Analytics
+
+If you chose to add Google Analytics script to your project, then you need to configure the tracking ID. Set it adding `REACT_APP_GA_TRACK_ID` environment variable and the corresponding ID as value.
+
+```
+// .env.development
+REACT_APP_GA_TRACK_ID=AU-9999999-1
+```
