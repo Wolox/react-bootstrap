@@ -33,12 +33,9 @@ module.exports.FILES = [
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
   `${COMPONENTS_PATH}/Routes`,
-  `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/SearchBar`,
   `${COMPONENTS_PATH}/FormInput`,
-  `${COMPONENTS_PATH}/Checkbox`,
-  `${COMPONENTS_PATH}/RadioGroup`,
+  `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${SERVICES_PATH}/AuthServices.js`
 ];
@@ -61,8 +58,11 @@ module.exports.FILES_TO_DELETE = [
   'src/logo.svg'
 ];
 
-// TODO: When optinal dependencies are required, add them here.
-module.exports.OPTIONAL_DEPENDENCIES = {};
+module.exports.OPTIONAL_COMPONENTS = {
+  Checkbox: `${COMPONENTS_PATH}/Checkbox`,
+  RadioGroup: `${COMPONENTS_PATH}/RadioGroup`,
+  SearchBar: `${COMPONENTS_PATH}/SearchBar`
+};
 
 module.exports.DEPENDENCIES = [
   'apisauce@^1.0.1',

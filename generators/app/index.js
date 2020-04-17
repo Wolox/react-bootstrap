@@ -53,18 +53,17 @@ class GeneratorReact extends Generator {
     }
   }
 
-  configuring() {
-    return Promise.resolve()
-      .then(this.configureGit && gitInitiation.bind(this))
-      .then(installCRA.bind(this))
-      .then(runCRA.bind(this))
-      .then(() =>
-        installDependencies.bind(this)({
-          dependencies: DEPENDENCIES,
-          devDependencies: DEV_DEPENDENCIES
-        })
-      )
-      .then(this.steps.configuring.bind(this));
+  async configuring() {
+    if (this.configureGit) {
+      await gitInitiation.bind(this)();
+    }
+    await installCRA.bind(this)();
+    await runCRA.bind(this)();
+    await installDependencies.bind(this)({
+      dependencies: DEPENDENCIES,
+      devDependencies: DEV_DEPENDENCIES
+    });
+    await this.steps.configuring.bind(this)();
   }
 
   writing() {
@@ -78,18 +77,17 @@ class GeneratorReact extends Generator {
 
   install() {
     this.log('Installing...');
-    this.installDependencies({
-      npm: true,
-      bower: false,
-      yarn: false
+    return new Promise(resolve => {
+      this.spawnCommand('npm', ['install']).on('close', () => resolve());
     });
   }
 
-  end() {
+  async end() {
     this.log('Ending...');
-    return Promise.resolve()
-      .then(this.configureGit && configGit.bind(this))
-      .then(linterAutofix.bind(this));
+    if (this.configureGit) {
+      await configGit.bind(this)();
+    }
+    await linterAutofix.bind(this)();
   }
 }
 
