@@ -23,8 +23,8 @@ interface ResetFoo {
 export type Action = SetFoo | ResetFoo;
 
 export const actionCreators = {
-  setFoo: (foo: string) => ({ type: ActionTypes.SET_FOO, payload: foo }),
-  resetFoo: () => ({ type: ActionTypes.RESET_FOO })
+  setFoo: (foo: string): SetFoo => ({ type: ActionTypes.SET_FOO, payload: foo }),
+  resetFoo: (): ResetFoo => ({ type: ActionTypes.RESET_FOO })
 };
 
 export const reducer = (state: HomeState, action: Action): HomeState => {
