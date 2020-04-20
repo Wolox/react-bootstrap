@@ -5,18 +5,22 @@
 }
 
 .input {
-  height: 30px;
   border: solid 1px;
   border-radius: 5px;
-  padding: 5px;
   font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 100%;
 }
 
 .form-container {
   min-height: 500px;
+  padding-top: 80px;
 }
 
 .section-container {
-  width: 100%;
   max-width: 450px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  width: 100%;
 }

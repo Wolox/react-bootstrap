@@ -7,8 +7,8 @@ import { withSpinner } from '~components/Spinner';
 import { LoginError } from '~services/AuthServices';
 import { Nullable } from '~utils/types';
 import { Error } from '~app/hooks/useRequest';
+import { stringArrayToObject } from '~utils/array';
 
-import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -20,9 +20,10 @@ interface Props {
 }
 
 function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }: Props) {
+  const FIELDS = stringArrayToObject(['email', 'password']);
   const isError = loginError?.errorData?.message;
   return (
-    <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
+    <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
         <h1 className="m-bottom-1">{i18next.t('Login:login')}</h1>
         <h2>{i18next.t('Login:loginExplanation')}</h2>

@@ -13,7 +13,8 @@ export function stringArrayToObject(actionsArray: string[], namespace = ''): { [
     throw new Error('Action names must be strings and must not be empty');
   }
 
-  return new (Immutable as any)(actionsArray).asObject((actionName: string) => [
+  // eslint-disable-next-line new-cap
+  return Immutable<string[]>(actionsArray).asObject((actionName: string) => [
     actionName,
     `${namespace}:${actionName}`
   ]);
