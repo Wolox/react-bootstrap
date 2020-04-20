@@ -29,8 +29,8 @@ interface ResetUser {
 export type Action = SetUser | ResetUser;
 
 export const actionCreators = {
-  setUser: (user: User) => ({ type: ActionTypes.SET_USER, payload: user }),
-  resetUser: () => ({ type: ActionTypes.RESET_USER })
+  setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
+  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER })
 };
 
 export const reducer = (state: UserState, action: Action): UserState => {
