@@ -17,7 +17,7 @@ function RecoverPasswordContainer() {
   }, []);
 
   return (
-    <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={handleSubmit}>
+    <form className={`column center full-width ${styles.formContainer}`} onSubmit={handleSubmit}>
       <div className="column center m-bottom-3">
         <h1 className="m-bottom-1">{i18next.t('RecoverPassword:recoverPassword')}</h1>
         <h2>{i18next.t('RecoverPassword:recoverPasswordDescription')}</h2>

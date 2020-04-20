@@ -3,8 +3,8 @@ import i18next from 'i18next';
 
 import FormInput from '~components/FormInput';
 import PATHS from '~components/Routes/paths';
+import { stringArrayToObject } from '~utils/array';
 
-import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 function RegistrationContainer() {
@@ -17,59 +17,60 @@ function RegistrationContainer() {
     // TODO: Implement method
   }, []);
 
+  const FIELDS = stringArrayToObject(['name', 'surname', 'email', 'password', 'confirmPassword']);
   return (
-    <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={handleSubmit}>
+    <form className={`column center full-width ${styles.formContainer}`} onSubmit={handleSubmit}>
       <div className="column center m-bottom-3">
         <h1 className="m-bottom-1">{i18next.t('Registration:registration')}</h1>
         <h2>{i18next.t('Registration:registrationExplanation')}</h2>
       </div>
-      <div className={`row space-between m-bottom-2 full-width ${styles.sectionContainer}`}>
+      <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
           className="full-width"
           label={i18next.t('Registration:name')}
           name={FIELDS.name}
           inputType="text"
-          inputClassName={`m-right-1 m-bottom-2 full-width ${styles.input}`}
+          inputClassName={styles.input}
           placeholder={i18next.t('Registration:namePlaceholder') as string}
           onChange={handleInputChange}
         />
         <FormInput
-          className="full-width"
+          className="full-width m-left-1"
           label={i18next.t('Registration:surname')}
           name={FIELDS.surname}
           inputType="text"
-          inputClassName={`m-left-1 m-bottom-2 full-width ${styles.input}`}
+          inputClassName={styles.input}
           placeholder={i18next.t('Registration:surnamePlaceholder') as string}
           onChange={handleInputChange}
         />
       </div>
-      <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
+      <div className={`row ${styles.sectionContainer}`}>
         <FormInput
           className="full-width"
           label={i18next.t('Registration:email')}
           name={FIELDS.email}
           inputType="text"
-          inputClassName={`m-bottom-2 full-width ${styles.input}`}
+          inputClassName={styles.input}
           placeholder={i18next.t('Registration:emailPlaceholder') as string}
           onChange={handleInputChange}
         />
       </div>
-      <div className={`row space-between m-bottom-2 full-width ${styles.sectionContainer}`}>
+      <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
           className="full-width"
           label={i18next.t('Registration:password')}
           name={FIELDS.password}
           inputType="password"
-          inputClassName={`m-right-1 m-bottom-2 full-width ${styles.input}`}
+          inputClassName={styles.input}
           placeholder={i18next.t('Registration:passwordPlaceholder') as string}
           onChange={handleInputChange}
         />
         <FormInput
-          className="full-width"
+          className="full-width m-left-1"
           label={i18next.t('Registration:confirmPassword')}
           name={FIELDS.confirmPassword}
           inputType="password"
-          inputClassName={`m-left-1 m-bottom-2 full-width ${styles.input}`}
+          inputClassName={styles.input}
           placeholder={i18next.t('Registration:confirmPasswordPlaceholder') as string}
           onChange={handleInputChange}
         />
