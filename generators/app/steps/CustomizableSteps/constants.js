@@ -5,7 +5,6 @@ const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const DOCS_README_PATH = 'docs';
-const DEPENDENCY_SPECIFIC_PATH = 'src/dependency_specific';
 const HOOKS_PATH = 'src/app/hooks';
 const CONTEXT_PATH = 'src/app/contexts';
 
@@ -34,12 +33,9 @@ module.exports.FILES = [
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
   `${COMPONENTS_PATH}/Routes`,
-  `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/SearchBar`,
   `${COMPONENTS_PATH}/FormInput`,
-  `${COMPONENTS_PATH}/Checkbox`,
-  `${COMPONENTS_PATH}/RadioGroup`,
+  `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${SERVICES_PATH}/AuthServices.ts`
 ];
@@ -62,18 +58,10 @@ module.exports.FILES_TO_DELETE = [
   'src/logo.svg'
 ];
 
-module.exports.WITHOUT_SEAMLESS_FILES = {
-  src: `${DEPENDENCY_SPECIFIC_PATH}/seamless-immutable`,
-  destination: 'src'
-};
-
-module.exports.OPTIONAL_DEPENDENCIES = {
-  moment: { dependencies: ['moment@^2.23.0'] },
-  'seamless-immutable': { dependencies: ['seamless-immutable@^7.1.4'] },
-  'babel-module-resolver': {
-    dependencies: ['babel-plugin-module-resolver@^3.1.1'],
-    devDependencies: ['eslint-import-resolver-babel-module@^5.0.0']
-  }
+module.exports.OPTIONAL_COMPONENTS = {
+  Checkbox: `${COMPONENTS_PATH}/Checkbox`,
+  RadioGroup: `${COMPONENTS_PATH}/RadioGroup`,
+  SearchBar: `${COMPONENTS_PATH}/SearchBar`
 };
 
 module.exports.DEPENDENCIES = [
@@ -84,7 +72,8 @@ module.exports.DEPENDENCIES = [
   'history@^4.7.2',
   'i18next@^13.0.0',
   'react-spinkit@^3.0.0',
-  'typescript@^3.7.2'
+  'typescript@^3.7.2',
+  'babel-plugin-module-resolver@^3.1.1'
 ];
 
 module.exports.DEV_DEPENDENCIES = [
@@ -97,5 +86,6 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1',
-  'eslint-config-wolox-typescript'
+  'eslint-config-wolox-typescript@1.0.1',
+  'eslint-import-resolver-babel-module@^5.0.0'
 ];

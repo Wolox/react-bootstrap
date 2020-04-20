@@ -1,20 +1,18 @@
 const mkdirp = require('mkdirp');
 
-const { copyFiles, deleteFiles, copyFilesToDestination, copyTemplateFiles } = require('../../utils');
+const { copyFiles, deleteFiles, copyTemplateFiles } = require('../../utils');
 
-const { FILES, FILES_TO_DELETE, TEMPLATE_FILES, WITHOUT_SEAMLESS_FILES } = require('./constants');
+const { FILES, FILES_TO_DELETE, TEMPLATE_FILES, OPTIONAL_COMPONENTS } = require('./constants');
 
 module.exports = function copyAllFiles() {
   mkdirp(this.destinationPath(`${this.projectName}/src/app/assets/`));
 
-  console.log('Deleting default CRA files...');
+  this.log('Deleting default CRA files...');
   deleteFiles.bind(this)(FILES_TO_DELETE);
 
-  console.log('Adding files...');
+  this.log('Adding files...');
   copyFiles.bind(this)(FILES);
+  const componentPaths = Object.keys(this.optionalComponents).map(key => OPTIONAL_COMPONENTS[key]);
+  copyFiles.bind(this)(componentPaths);
   copyTemplateFiles.bind(this)(TEMPLATE_FILES);
-
-  if (!this.features['seamless-immutable']) {
-    copyFilesToDestination.bind(this)([WITHOUT_SEAMLESS_FILES]);
-  }
 };
