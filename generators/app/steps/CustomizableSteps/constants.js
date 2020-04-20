@@ -41,7 +41,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Checkbox`,
   `${COMPONENTS_PATH}/RadioGroup`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
-  `${SERVICES_PATH}/AuthServices.js`
+  `${SERVICES_PATH}/AuthServices.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [

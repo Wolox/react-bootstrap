@@ -1,3 +1,5 @@
+@import 'variables/colors';
+
 .button {
   border: solid 1px;
   border-radius: 5px;
@@ -18,4 +20,25 @@
 .section-container {
   width: 100%;
   max-width: 280px;
+}
+
+.error-message {
+  background-color: $red;
+  color: white;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.loading {
+  height: 100px;
+  left: calc(50% - 50px);
+  position: absolute;
+  top: 50%;
+  width: 100px;
 }

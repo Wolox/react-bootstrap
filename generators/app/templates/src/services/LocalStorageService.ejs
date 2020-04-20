@@ -4,7 +4,7 @@ const tempStorage: Storage = {};
 const getEncodedFieldName = (key: string) =>
   window.btoa(`@@${'<%= projectName %>'.replace(/-/g, '_').toUpperCase()}:${key}`);
 
-export const getValue = (key: string) => {
+const getValue = (key: string) => {
   const encodedKey = getEncodedFieldName(key);
   let encodedValue = undefined;
   try {
@@ -17,7 +17,7 @@ export const getValue = (key: string) => {
   return stringValue && JSON.parse(stringValue);
 };
 
-export const setValue = (key: string, value: any) => {
+const setValue = (key: string, value: any) => {
   const encodedKey = getEncodedFieldName(key);
   const stringValue = JSON.stringify(value);
   const encodedValue = window.btoa(stringValue);
@@ -29,11 +29,17 @@ export const setValue = (key: string, value: any) => {
   }
 };
 
-export const removeValue = (key: string) => {
+const removeValue = (key: string) => {
   const encodedKey = getEncodedFieldName(key);
   try {
     window.localStorage.removeItem(encodedKey);
   } catch (e) {
     tempStorage[encodedKey] = undefined;
   }
+};
+
+export default {
+  getValue,
+  setValue,
+  removeValue
 };

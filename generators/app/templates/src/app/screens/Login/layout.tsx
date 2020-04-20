@@ -3,17 +3,24 @@ import i18next from 'i18next';
 
 import FormInput from '~components/FormInput';
 import PATHS from '~components/Routes/paths';
+import { withSpinner } from '~components/Spinner';
+import { LoginError } from '~services/AuthServices';
+import { Nullable } from '~utils/types';
+import { Error } from '~app/hooks/useRequest';
 
 import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 interface Props {
-  onEmailChange: (event: React.FormEvent<Element>) => void;
+  onEmailChange: (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   onLogin: (event: React.FormEvent<HTMLFormElement>) => void;
-  onPasswordChange: (event: React.FormEvent<Element>) => void;
+  onPasswordChange: (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  loading?: boolean;
+  loginError?: Nullable<Error<LoginError>>;
 }
 
-function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
+function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }: Props) {
+  const isError = loginError?.errorData?.message;
   return (
     <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
@@ -28,6 +35,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:emailPlaceholder') as string}
           onChange={onEmailChange}
+          disabled={loading}
         />
         <FormInput
           label={i18next.t('Login:password')}
@@ -36,12 +44,19 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
           inputClassName={`m-bottom-2 full-width ${styles.input}`}
           placeholder={i18next.t('Login:passwordPlaceholder') as string}
           onChange={onPasswordChange}
+          disabled={loading}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
-        <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
+        <button disabled={loading} type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
           {i18next.t('Login:enter')}
         </button>
+        <span
+          className={`row center middle full-width m-top-1 m-bottom-1
+          ${isError ? styles.errorMessage : styles.hidden}`}
+        >
+          {i18next.t(`Login:${loginError?.errorData?.message}`)}
+        </span>
         <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
         <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
       </div>
@@ -49,4 +64,4 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
   );
 }
 
-export default Login;
+export default withSpinner({ classNameContainer: styles.loading })(Login);

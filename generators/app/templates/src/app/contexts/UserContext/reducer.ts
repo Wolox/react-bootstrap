@@ -2,19 +2,28 @@ import { Nullable } from '~utils/types';
 
 export interface User {
   id: number;
+  sessionToken: string;
 }
 
 export interface UserState {
   user: Nullable<User>;
+  authLoading: Nullable<boolean>;
+}
+
+export interface Credentials {
+  username: string;
+  password: string;
 }
 
 export const INITIAL_STATE = {
-  user: null
+  user: null,
+  authLoading: false
 };
 
 enum ActionTypes {
   SET_USER = 'SET_USER',
-  RESET_USER = 'RESET_USER'
+  RESET_USER = 'RESET_USER',
+  LOGIN = 'LOGIN'
 }
 
 interface SetUser {
@@ -26,11 +35,17 @@ interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
-export type Action = SetUser | ResetUser;
+interface Login {
+  type: ActionTypes.LOGIN;
+  payload: Credentials;
+}
+
+export type Action = SetUser | ResetUser | Login;
 
 export const actionCreators = {
-  setUser: (user: User) => ({ type: ActionTypes.SET_USER, payload: user }),
-  resetUser: () => ({ type: ActionTypes.RESET_USER })
+  setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
+  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER }),
+  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials })
 };
 
 export const reducer = (state: UserState, action: Action): UserState => {
@@ -40,6 +55,9 @@ export const reducer = (state: UserState, action: Action): UserState => {
     }
     case 'RESET_USER': {
       return { ...state, user: null };
+    }
+    case 'LOGIN': {
+      return { ...state, authLoading: true };
     }
     default: {
       return state;
