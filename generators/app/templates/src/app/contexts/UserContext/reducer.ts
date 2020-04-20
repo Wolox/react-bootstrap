@@ -7,7 +7,6 @@ export interface User {
 
 export interface UserState {
   user: Nullable<User>;
-  authLoading: Nullable<boolean>;
 }
 
 export interface Credentials {
@@ -16,8 +15,7 @@ export interface Credentials {
 }
 
 export const INITIAL_STATE = {
-  user: null,
-  authLoading: false
+  user: null
 };
 
 enum ActionTypes {
@@ -55,9 +53,6 @@ export const reducer = (state: UserState, action: Action): UserState => {
     }
     case 'RESET_USER': {
       return { ...state, user: null };
-    }
-    case 'LOGIN': {
-      return { ...state, authLoading: true };
     }
     default: {
       return state;
