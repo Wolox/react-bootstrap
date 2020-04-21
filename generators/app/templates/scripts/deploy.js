@@ -36,10 +36,7 @@ exec('git rev-parse --abbrev-ref HEAD', (e, stdout, stderr) => {
     return deployParams;
   };
 
-  const build = spawn('npm run build', [env], {
-    stdio: 'inherit',
-    shell: true
-  });
+  const build = spawn('npm run build', [env], { stdio: 'inherit', shell: true });
 
   build.on('close', code => {
     if (code !== 0) {
@@ -51,9 +48,6 @@ exec('git rev-parse --abbrev-ref HEAD', (e, stdout, stderr) => {
       spawnSync('npm run gzip', { stdio: 'inherit', shell: true });
     }
     success(`Build successful, deploying to environment '${env}'`);
-    spawn('aws-deploy', getDeployParams(deployParams), {
-      stdio: 'inherit',
-      shell: true
-    });
+    spawn('aws-deploy', getDeployParams(deployParams), { stdio: 'inherit', shell: true });
   });
 });
