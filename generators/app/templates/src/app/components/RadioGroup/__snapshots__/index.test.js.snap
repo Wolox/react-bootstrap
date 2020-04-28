@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#RadioGroup when an option is selected matches last snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className=""
+  >
+    <input
+      checked={false}
+      className=""
+      data-testid="radioButton-option1"
+      disabled={false}
+      id="option1"
+      name="radioButton"
+      onChange={[Function]}
+      type="radio"
+      value="option1"
+    />
+    <label
+      className=""
+      htmlFor="radioButton"
+    >
+      Option 1
+    </label>
+  </div>
+  <div
+    className=""
+  >
+    <input
+      checked={true}
+      className=""
+      data-testid="radioButton-option2"
+      disabled={false}
+      id="option2"
+      name="radioButton"
+      onChange={[Function]}
+      type="radio"
+      value="option2"
+    />
+    <label
+      className=""
+      htmlFor="radioButton"
+    >
+      Option 2
+    </label>
+  </div>
+</div>
+`;
+
+exports[`#RadioGroup when the group is disabled matches last snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className=""
+  >
+    <input
+      checked={false}
+      className=""
+      data-testid="radioButton-option1"
+      disabled={true}
+      id="option1"
+      name="radioButton"
+      onChange={[Function]}
+      type="radio"
+      value="option1"
+    />
+    <label
+      className=""
+      htmlFor="radioButton"
+    >
+      Option 1
+    </label>
+  </div>
+  <div
+    className=""
+  >
+    <input
+      checked={true}
+      className=""
+      data-testid="radioButton-option2"
+      disabled={true}
+      id="option2"
+      name="radioButton"
+      onChange={[Function]}
+      type="radio"
+      value="option2"
+    />
+    <label
+      className=""
+      htmlFor="radioButton"
+    >
+      Option 2
+    </label>
+  </div>
+</div>
+`;
