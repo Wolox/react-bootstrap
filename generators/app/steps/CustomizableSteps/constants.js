@@ -39,7 +39,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${COMPONENTS_PATH}/Paginator`,
   `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/ListExampleService.js`
+  `${SERVICES_PATH}/ListExampleService.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [
