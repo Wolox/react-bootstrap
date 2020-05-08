@@ -37,7 +37,9 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/FormInput`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
-  `${SERVICES_PATH}/AuthServices.js`
+  `${COMPONENTS_PATH}/Paginator`,
+  `${SERVICES_PATH}/AuthServices.js`,
+  `${SERVICES_PATH}/ListExampleService.js`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -73,7 +75,9 @@ module.exports.DEPENDENCIES = [
   'i18next@^13.0.0',
   'react-spinkit@^3.0.0',
   'typescript@^3.7.2',
-  'babel-plugin-module-resolver@^3.1.1'
+  'babel-plugin-module-resolver@^3.1.1',
+  // TODO: make optional?
+  'react-paginate@^6.3.2'
 ];
 
 module.exports.DEV_DEPENDENCIES = [
@@ -86,6 +90,7 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1',
+  '@types/react-paginate@^6.2.1',
   'eslint-config-wolox-typescript@1.0.1',
   'eslint-import-resolver-babel-module@^5.0.0'
 ];

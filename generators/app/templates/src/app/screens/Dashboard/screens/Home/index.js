@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import i18next from 'i18next';
 
 import withProvider from '~components/ProviderWrapper';
+import PATHS from '~components/Routes/paths';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -20,12 +23,13 @@ function Home() {
     <div className={styles.app}>
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
+        <p className={styles.text}>{foo}</p>
         <p className={styles.text}>
           Edit <code>src/app/index.js</code> and save to reload.
         </p>
-        <a className={styles.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn {foo}
-        </a>
+        <Link className={styles.appLink} to={PATHS.list}>
+          {i18next.t('ListExample:title')}
+        </Link>
       </header>
     </div>
   );

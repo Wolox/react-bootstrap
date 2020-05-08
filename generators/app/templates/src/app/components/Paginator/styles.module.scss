@@ -1,0 +1,19 @@
+$disabled-color: #DDD;
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  li {
+    margin: 0 5px;
+  }
+}
+
+.active > * {
+  font-weight: 700;
+}
+
+.disabled * {
+  color: $disabled-color;
+}
