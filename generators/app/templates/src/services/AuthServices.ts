@@ -17,20 +17,14 @@ export const setCurrentUser = (currentUser: User) => {
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 
-export const getCurrentUser = () => {
-  const currentSessionToken = LocalStorageService.getValue(TOKEN_FIELD_NAME);
-  if (currentSessionToken) {
-    api.setHeader('Authorization', currentSessionToken);
-    return true;
-  }
-  return false;
-};
+export const getCurrentUser = () => LocalStorageService.getValue(TOKEN_FIELD_NAME);
 
 export const removeCurrentUser = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const login = (credentials: Credentials): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
+  // api.post('/login', credentials );
   new Promise(resolve => {
     setTimeout(() => {
       resolve({
