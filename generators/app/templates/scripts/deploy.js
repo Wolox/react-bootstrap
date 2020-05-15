@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { exec } = require('child_process');
 const { spawn, spawnSync } = require('child_process');
 
