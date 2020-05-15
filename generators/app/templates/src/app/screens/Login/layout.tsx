@@ -13,8 +13,8 @@ interface Props {
   onPasswordChange: (event: React.FormEvent<Element>) => void;
 }
 
+const FIELDS = stringArrayToObject(['email', 'password']);
 function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
-  const FIELDS = stringArrayToObject(['email', 'password']);
   return (
     <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
