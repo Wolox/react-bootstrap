@@ -19,8 +19,8 @@ interface Props {
   loginError?: Nullable<Error<LoginError>>;
 }
 
+const FIELDS = stringArrayToObject(['email', 'password']);
 function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }: Props) {
-  const FIELDS = stringArrayToObject(['email', 'password']);
   const isError = loginError?.errorData?.message;
   return (
     <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>

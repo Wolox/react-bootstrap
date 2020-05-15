@@ -7,6 +7,8 @@ import { stringArrayToObject } from '~utils/array';
 
 import styles from './styles.module.scss';
 
+const FIELDS = stringArrayToObject(['name', 'surname', 'email', 'password', 'confirmPassword']);
+
 function RegistrationContainer() {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   const handleSubmit = useCallback((event: React.FormEvent<Element>) => {
@@ -17,7 +19,6 @@ function RegistrationContainer() {
     // TODO: Implement method
   }, []);
 
-  const FIELDS = stringArrayToObject(['name', 'surname', 'email', 'password', 'confirmPassword']);
   return (
     <form className={`column center full-width ${styles.formContainer}`} onSubmit={handleSubmit}>
       <div className="column center m-bottom-3">
@@ -26,7 +27,7 @@ function RegistrationContainer() {
       </div>
       <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
-          className="full-width"
+          className="full-width m-right-1"
           label={i18next.t('Registration:name')}
           name={FIELDS.name}
           inputType="text"
@@ -35,7 +36,7 @@ function RegistrationContainer() {
           onChange={handleInputChange}
         />
         <FormInput
-          className="full-width m-left-1"
+          className="full-width"
           label={i18next.t('Registration:surname')}
           name={FIELDS.surname}
           inputType="text"
