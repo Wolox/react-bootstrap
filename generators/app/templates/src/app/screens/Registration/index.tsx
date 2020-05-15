@@ -36,7 +36,7 @@ function RegistrationContainer() {
           onChange={handleInputChange}
         />
         <FormInput
-          className="full-width  m-left-1"
+          className="full-width m-left-1"
           label={i18next.t('Registration:surname')}
           name={FIELDS.surname}
           inputType="text"
