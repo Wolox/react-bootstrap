@@ -105,13 +105,8 @@ Additional to clean libraries are added
 |[history](https://www.npmjs.com/package/history)| Manage session history anywhere JavaScript runs.
 |[i18next](https://www.i18next.com/)| An internationalization-framework written in and for JavaScript.
 |[react-spinkit](https://kyleamathews.github.io/react-spinkit/)| Spinners library.
-|[typescript](https://www.typescriptlang.org/)| Brings you optional static type-checking along with the latest ECMAScript feature.
-
-Also you can select **_optional_** libraries like
-
-|Name|Description|
-|----|-----------|
-|[moment](https://momentjs.com/)| Parse, validate, manipulate, and display dates and times in JavaScript.
+|[typescript](https://www.typescriptlang.org/)| Brings you optional static type-checking along with the latest ECMAScript
+feature.
 |[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
 |[babel-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)| Custom module resolver plugin for Babel.
 

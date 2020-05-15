@@ -13,7 +13,7 @@ import styles from './styles.module.scss';
 const colorSpinner = 'steelblue';
 
 storiesOf('SearchBar', module).add('Default', () => (
-  <SearchBar textButtonSearch="Search" className={styles.container} handleSubmit={action('clicked')}>
+  <SearchBar submitButtonContent="Search" className={styles.container} onSubmit={action('clicked')}>
     <input name="input1" className={styles.input} />
     <input name="input2" className={styles.input} />
   </SearchBar>
