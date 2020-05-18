@@ -4,12 +4,16 @@
   height: 40px;
 }
 
+.inputContainer {
+  padding: 5px 0;
+}
+
 .input {
   border: solid 1px;
   border-radius: 5px;
   font-size: 14px;
   height: 30px;
-  padding: 5px;
+  padding: 0 5px;
   width: 100%;
 }
 
