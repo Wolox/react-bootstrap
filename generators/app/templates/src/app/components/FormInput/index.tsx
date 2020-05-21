@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './styles.module.scss';
+
 interface Props {
   className?: string;
   disabled?: boolean;
@@ -16,12 +18,14 @@ interface Props {
   onFocus?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   placeholder?: string;
   readOnly?: boolean;
+  touched?: boolean;
+  submitCount?: number;
 }
 
 function FormInput({
   className = '',
   disabled = false,
-  error = undefined,
+  error = '',
   errorClassName = '',
   inputClassName = '',
   isTextarea = false,
@@ -33,9 +37,13 @@ function FormInput({
   onChange,
   onFocus,
   placeholder = '',
-  readOnly = false
+  readOnly = false,
+  touched,
+  submitCount
 }: Props) {
   const InputComponent = isTextarea ? 'textarea' : 'input';
+  const showError =
+    (touched === undefined || touched) && error && (submitCount === undefined || submitCount > 0);
   return (
     <div className={`column start ${className}`}>
       {label && (
@@ -44,7 +52,7 @@ function FormInput({
         </label>
       )}
       <InputComponent
-        className={inputClassName}
+        className={`${inputClassName} ${styles.input} ${showError ? styles.error : ''}`}
         name={name}
         id={name}
         type={inputType}
@@ -55,7 +63,9 @@ function FormInput({
         disabled={disabled}
         readOnly={readOnly}
       />
-      {error && <p className={errorClassName}>{error}</p>}
+      <span className={`${errorClassName} ${styles.errorText} ${showError ? styles.visible : ''}`}>
+        {error}
+      </span>
     </div>
   );
 }
