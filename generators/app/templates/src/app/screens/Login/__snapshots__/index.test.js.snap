@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Login when mounting the application matches last snapshot 1`] = `
+<form
+  className="column center full-width m-top-8 formContainer"
+  onSubmit={[Function]}
+>
+  <div
+    className="column center m-bottom-3"
+  >
+    <h2
+      className="m-bottom-1"
+    >
+      
+    </h2>
+    <h3>
+      
+    </h3>
+  </div>
+  <div
+    className="column m-bottom-2 sectionContainer"
+  >
+    <div
+      className="column start "
+    >
+      
+      <input
+        className="m-bottom-2 full-width input"
+        disabled={false}
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={false}
+        type="text"
+      />
+    </div>
+    <div
+      className="column start "
+    >
+      
+      <input
+        className="m-bottom-2 full-width input"
+        disabled={false}
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder=""
+        readOnly={false}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="column center sectionContainer"
+  >
+    <button
+      className="full-width m-bottom-1 button"
+      type="submit"
+    >
+      
+    </button>
+    <a
+      href="/recover_password"
+    >
+      
+    </a>
+  </div>
+</form>
+`;
