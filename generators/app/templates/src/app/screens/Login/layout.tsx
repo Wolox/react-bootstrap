@@ -3,8 +3,8 @@ import i18next from 'i18next';
 
 import FormInput from '~components/FormInput';
 import PATHS from '~components/Routes/paths';
+import { stringArrayToObject } from '~utils/array';
 
-import { FIELDS } from './constants';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -13,12 +13,13 @@ interface Props {
   onPasswordChange: (event: React.FormEvent<Element>) => void;
 }
 
+const FIELDS = stringArrayToObject(['email', 'password']);
 function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
   return (
-    <form className={`column center full-width m-top-8 ${styles.formContainer}`} onSubmit={onLogin}>
+    <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>
       <div className="column center m-bottom-3">
-        <h2 className="m-bottom-1">{i18next.t('Login:login')}</h2>
-        <h3>{i18next.t('Login:loginExplanation')}</h3>
+        <h1 className="m-bottom-1">{i18next.t('Login:login')}</h1>
+        <h2>{i18next.t('Login:loginExplanation')}</h2>
       </div>
       <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
         <FormInput
@@ -43,6 +44,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin }: Props) {
           {i18next.t('Login:enter')}
         </button>
         <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
+        <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
       </div>
     </form>
   );
