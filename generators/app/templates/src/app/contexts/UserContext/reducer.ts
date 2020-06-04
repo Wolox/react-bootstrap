@@ -21,7 +21,8 @@ export const INITIAL_STATE = {
 enum ActionTypes {
   SET_USER = 'SET_USER',
   RESET_USER = 'RESET_USER',
-  LOGIN = 'LOGIN'
+  LOGIN = 'LOGIN',
+  LOGOUT = 'LOGOUT'
 }
 
 interface SetUser {
@@ -38,12 +39,17 @@ interface Login {
   payload: Credentials;
 }
 
-export type Action = SetUser | ResetUser | Login;
+interface Logout {
+  type: ActionTypes.LOGOUT;
+}
+
+export type Action = SetUser | ResetUser | Login | Logout;
 
 export const actionCreators = {
   setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
   resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER }),
-  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials })
+  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials }),
+  logout: (): Logout => ({ type: ActionTypes.LOGOUT })
 };
 
 export const reducer = (state: UserState, action: Action): UserState => {

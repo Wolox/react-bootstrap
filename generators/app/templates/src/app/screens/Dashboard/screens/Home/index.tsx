@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 
 import withProvider from '~components/ProviderWrapper';
+import { actionCreators as authActions } from '~contexts/UserContext/reducer';
+import { useDispatch as useUserDispatch } from '~contexts/UserContext';
+import { logout, removeCurrentUser } from '~services/AuthServices';
+import { useRequest } from '~app/hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -11,21 +15,34 @@ function Home() {
   // Example of how to use these custom hooks
   const foo = useSelector(state => state.foo);
   const dispatch = useDispatch();
+  const userDispatch = useUserDispatch();
 
   useEffect(() => {
     dispatch(actionCreators.setFoo('React'));
   }, [dispatch]);
+
+  const handleLogout = () => {
+    userDispatch(authActions.logout());
+    useRequest({
+      request: () => logout(),
+      payload: null,
+      withPostSuccess: () => {
+        userDispatch(authActions.resetUser());
+        removeCurrentUser();
+      }
+    }, [])
+  }; 
 
   return (
     <div className={styles.app}>
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>
-          Edit <code>src/app/index.js</code> and save to reload.
+          You are logged in.
         </p>
-        <a className={styles.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn {foo}
-        </a>
+        <button type="button" className={styles.appLink} onClick={handleLogout}>
+          Logout
+        </button>
       </header>
     </div>
   );

@@ -35,3 +35,16 @@ export const login = (credentials: Credentials): Promise<ApiResponse<User, Login
       });
     }, 1000); // eslint-disable-line no-magic-numbers
   });
+
+
+export const logout = (): Promise<ApiResponse<User, LoginError>> => 
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        ok: true,
+        data: { sessionToken: '', id: 1234 },
+        problem: null,
+        originalError: null
+      });
+    }, 1000); // eslint-disable-line no-magic-numbers
+  });

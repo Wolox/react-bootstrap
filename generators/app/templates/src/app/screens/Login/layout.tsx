@@ -21,14 +21,14 @@ interface Props {
 
 const FIELDS = stringArrayToObject(['email', 'password']);
 function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }: Props) {
-  const isError = loginError?.errorData?.message;
+  const errorMessage = loginError?.errorData?.message;
   return (
-    <form className={`column center full-width ${styles.formContainer}`} onSubmit={onLogin}>
+    <div className={`column center full-width ${styles.container}`}>
       <div className="column center m-bottom-3">
         <h1 className="m-bottom-1">{i18next.t('Login:login')}</h1>
         <h2>{i18next.t('Login:loginExplanation')}</h2>
       </div>
-      <div className={`column m-bottom-2 ${styles.sectionContainer}`}>
+      <form className={`column m-bottom-2 ${styles.formContainer}`} onSubmit={onLogin}>
         <FormInput
           label={i18next.t('Login:email')}
           name={FIELDS.email}
@@ -47,21 +47,18 @@ function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }
           onChange={onPasswordChange}
           disabled={loading}
         />
-      </div>
-      <div className={`column center ${styles.sectionContainer}`}>
-        <button disabled={loading} type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
-          {i18next.t('Login:enter')}
-        </button>
-        <span
-          className={`row center middle full-width m-top-1 m-bottom-1
-          ${isError ? styles.errorMessage : styles.hidden}`}
-        >
-          {i18next.t(`Login:${loginError?.errorData?.message}`)}
-        </span>
-        <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
-        <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
-      </div>
-    </form>
+        <div className="column center">
+          <button disabled={loading} type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
+            {i18next.t('Login:enter')}
+          </button>
+          <span className={`row center middle full-width m-top-1 m-bottom-1 ${errorMessage ? '' : 'hidden'}`}>
+            {i18next.t(`Login:${errorMessage || 'error'}`)}
+          </span>
+          <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
+          <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
+        </div>
+        </form>
+    </div>
   );
 }
 
