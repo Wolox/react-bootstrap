@@ -4,7 +4,7 @@ import withProvider from '~components/ProviderWrapper';
 import { actionCreators as authActions } from '~contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from '~contexts/UserContext';
 import { logout, removeCurrentUser } from '~services/AuthServices';
-import { useRequest } from '~app/hooks/useRequest';
+import { useLazyRequest } from '~app/hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -16,6 +16,13 @@ function Home() {
   const foo = useSelector(state => state.foo);
   const dispatch = useDispatch();
   const userDispatch = useUserDispatch();
+  const [, , , logoutRequest] = useLazyRequest({
+    request: logout,
+    withPostSuccess: () => {
+      userDispatch(authActions.resetUser());
+      removeCurrentUser();
+    }
+  });
 
   useEffect(() => {
     dispatch(actionCreators.setFoo('React'));
@@ -23,23 +30,14 @@ function Home() {
 
   const handleLogout = () => {
     userDispatch(authActions.logout());
-    useRequest({
-      request: () => logout(),
-      payload: null,
-      withPostSuccess: () => {
-        userDispatch(authActions.resetUser());
-        removeCurrentUser();
-      }
-    }, [])
-  }; 
+    logoutRequest(null);
+  };
 
   return (
     <div className={styles.app}>
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
-        <p className={styles.text}>
-          You are logged in.
-        </p>
+        <p className={styles.text}>You are logged in.</p>
         <button type="button" className={styles.appLink} onClick={handleLogout}>
           Logout
         </button>

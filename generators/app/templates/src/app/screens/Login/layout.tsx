@@ -57,7 +57,7 @@ function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }
           <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
           <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
         </div>
-        </form>
+      </form>
     </div>
   );
 }
