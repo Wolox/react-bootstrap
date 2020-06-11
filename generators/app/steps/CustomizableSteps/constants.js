@@ -37,7 +37,7 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/FormInput`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
-  `${SERVICES_PATH}/AuthServices.js`
+  `${SERVICES_PATH}/AuthServices.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -45,7 +45,7 @@ module.exports.TEMPLATE_FILES = [
   '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
-  `${SERVICES_PATH}/LocalStorageService.js`
+  `${SERVICES_PATH}/LocalStorageService.ts`
 ];
 
 module.exports.FILES_TO_DELETE = [

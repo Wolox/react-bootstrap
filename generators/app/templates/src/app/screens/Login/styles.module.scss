@@ -1,3 +1,5 @@
+@import 'variables/colors';
+
 .button {
   border: solid 1px;
   border-radius: 5px;
@@ -11,12 +13,29 @@
   padding: 5px;
 }
 
-.form-container {
+.container {
   min-height: 500px;
   padding-top: 80px;
 }
 
-.section-container {
+.form-container {
   max-width: 280px;
   width: 100%;
+}
+
+.error-message {
+  background-color: $red;
+  border-radius: 4px;
+  color: $white;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.loading {
+  height: 100px;
+  left: calc(50% - 50px);
+  position: absolute;
+  top: 50%;
+  width: 100px;
 }

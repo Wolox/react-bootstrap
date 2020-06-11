@@ -1,9 +1,12 @@
-const tempStorage = {};
+type Storage = { [index: string]: string | undefined };
+const tempStorage: Storage = {};
 
-const getValue = key => {
-  const encodedKey = window.btoa(key);
+const getEncodedFieldName = (key: string) =>
+  window.btoa(`@@${'<%= projectName %>'.replace(/-/g, '_').toUpperCase()}:${key}`);
+
+const getValue = (key: string) => {
+  const encodedKey = getEncodedFieldName(key);
   let encodedValue = undefined;
-
   try {
     encodedValue = window.localStorage.getItem(encodedKey);
   } catch (e) {
@@ -14,8 +17,8 @@ const getValue = key => {
   return stringValue && JSON.parse(stringValue);
 };
 
-const setValue = (key, value) => {
-  const encodedKey = window.btoa(key);
+const setValue = (key: string, value: any) => {
+  const encodedKey = getEncodedFieldName(key);
   const stringValue = JSON.stringify(value);
   const encodedValue = window.btoa(stringValue);
 
@@ -26,9 +29,8 @@ const setValue = (key, value) => {
   }
 };
 
-const removeValue = key => {
-  const encodedKey = window.btoa(key);
-
+const removeValue = (key: string) => {
+  const encodedKey = getEncodedFieldName(key);
   try {
     window.localStorage.removeItem(encodedKey);
   } catch (e) {
@@ -36,19 +38,8 @@ const removeValue = key => {
   }
 };
 
-const defineProperty = (prop, defaultKey = '', tag = '') => {
-  const projectName = '<%= projectName %>'.replace(/-/g, '_').toUpperCase();
-  const capitalizedKey = `${prop[0].toUpperCase()}${prop.substring(1)}`;
-
-  module.exports[`set${capitalizedKey}`] = (val, key = defaultKey) =>
-    setValue(`@@${projectName}:${prop}${tag}${key}`, val);
-  module.exports[`get${capitalizedKey}`] = (key = defaultKey) =>
-    getValue(`@@${projectName}:${prop}${tag}${key}`);
-  module.exports[`remove${capitalizedKey}`] = (key = defaultKey) =>
-    removeValue(`@@${projectName}:${prop}${tag}${key}`);
+export default {
+  getValue,
+  setValue,
+  removeValue
 };
-
-// ------------------------------ LOCAL STORAGE PROPERTIES ------------------------------
-defineProperty('sessionToken');
-defineProperty('currentAccountId', 'Any', 'User');
-defineProperty('adviceSubmittedDate');

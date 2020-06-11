@@ -2,10 +2,16 @@ import { Nullable } from '~utils/types';
 
 export interface User {
   id: number;
+  sessionToken: string;
 }
 
 export interface UserState {
   user: Nullable<User>;
+}
+
+export interface Credentials {
+  username: string;
+  password: string;
 }
 
 export const INITIAL_STATE = {
@@ -14,7 +20,9 @@ export const INITIAL_STATE = {
 
 enum ActionTypes {
   SET_USER = 'SET_USER',
-  RESET_USER = 'RESET_USER'
+  RESET_USER = 'RESET_USER',
+  LOGIN = 'LOGIN',
+  LOGOUT = 'LOGOUT'
 }
 
 interface SetUser {
@@ -26,11 +34,22 @@ interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
-export type Action = SetUser | ResetUser;
+interface Login {
+  type: ActionTypes.LOGIN;
+  payload: Credentials;
+}
+
+interface Logout {
+  type: ActionTypes.LOGOUT;
+}
+
+export type Action = SetUser | ResetUser | Login | Logout;
 
 export const actionCreators = {
   setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
-  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER })
+  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER }),
+  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials }),
+  logout: (): Logout => ({ type: ActionTypes.LOGOUT })
 };
 
 export const reducer = (state: UserState, action: Action): UserState => {
