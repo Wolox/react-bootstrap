@@ -27,7 +27,7 @@ function RegistrationContainer() {
       </div>
       <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
-          className="full-width m-right-1"
+          className={styles.inputContainer}
           label={i18next.t('Registration:name')}
           name={FIELDS.name}
           inputType="text"
@@ -36,7 +36,7 @@ function RegistrationContainer() {
           onChange={handleInputChange}
         />
         <FormInput
-          className="full-width"
+          className="full-width m-left-1"
           label={i18next.t('Registration:surname')}
           name={FIELDS.surname}
           inputType="text"
@@ -47,7 +47,7 @@ function RegistrationContainer() {
       </div>
       <div className={`row ${styles.sectionContainer}`}>
         <FormInput
-          className="full-width"
+          className={styles.inputContainer}
           label={i18next.t('Registration:email')}
           name={FIELDS.email}
           inputType="text"
@@ -58,7 +58,7 @@ function RegistrationContainer() {
       </div>
       <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
-          className="full-width"
+          className={styles.inputContainer}
           label={i18next.t('Registration:password')}
           name={FIELDS.password}
           inputType="password"
