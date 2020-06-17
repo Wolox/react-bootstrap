@@ -2,6 +2,16 @@
   border: solid 1px;
   border-radius: 5px;
   height: 40px;
+  padding: 8px 16px;
+
+  &:disabled {
+    visibility: hidden;
+  }
+}
+
+.form-buttons {
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
 .inputContainer {
@@ -18,8 +28,10 @@
 }
 
 .form-container {
-  min-height: 500px;
+  width: fit-content;
+  min-height: 470px;
   padding-top: 80px;
+  margin: 0 auto;
 }
 
 .section-container {

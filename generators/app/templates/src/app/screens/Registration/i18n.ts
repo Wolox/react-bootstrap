@@ -2,11 +2,17 @@ import i18next from 'i18next';
 
 i18next.addResources('es', 'Registration', {
   registration: 'Creación de cuenta',
-  registrationExplanation: 'Ingrese los siguientes datos para crear su cuenta',
-  name: 'Nombre',
-  namePlaceholder: 'Ingrese su nombre',
-  surname: 'Apellido',
-  surnamePlaceholder: 'Ingrese su apellido',
+  registrationDescription: 'Ingrese los siguientes datos',
+  firstName: 'Nombre',
+  firstNamePlaceholder: 'Ingrese su nombre',
+  lastName: 'Apellido',
+  lastNamePlaceholder: 'Ingrese su apellido',
+  streetAndNumber: 'Dirección y número',
+  streetAndNumberPlaceholder: 'Ingrese su dirección y número',
+  postCode: 'Código postal',
+  postCodePlaceholder: 'Ingrese su código postal',
+  city: 'Ciudad',
+  cityPlaceholder: 'Ingrese su ciudad',
   email: 'E-mail',
   emailPlaceholder: 'Ingrese su e-mail',
   password: 'Contraseña',
@@ -14,5 +20,7 @@ i18next.addResources('es', 'Registration', {
   confirmPassword: 'Confirmar contraseña',
   confirmPasswordPlaceholder: 'Vuelva a ingresar su contraseña',
   required: '* Requerido',
+  previous: 'Anterior',
+  next: 'Siguiente',
   submit: 'Enviar'
 });
