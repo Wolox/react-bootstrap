@@ -5,6 +5,17 @@ export interface User {
   sessionToken: string;
 }
 
+export interface UserData {
+  firstName: string;
+  lastName: string;
+  streetAndNumber: string;
+  postCode: string;
+  city: string;
+  email: string;
+  password?: string;
+  confirmPassword?: string;
+}
+
 export interface UserState {
   user: Nullable<User>;
 }
