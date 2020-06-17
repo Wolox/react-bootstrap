@@ -4,7 +4,7 @@ import i18next from 'i18next';
 import FormInput from '~components/FormInput';
 import PATHS from '~components/Routes/paths';
 import { withSpinner } from '~components/Spinner';
-import { LoginError } from '~services/AuthServices';
+import { AuthError } from '~services/AuthServices';
 import { Nullable } from '~utils/types';
 import { Error } from '~app/hooks/useRequest';
 import { stringArrayToObject } from '~utils/array';
@@ -16,7 +16,7 @@ interface Props {
   onLogin: (event: React.FormEvent<HTMLFormElement>) => void;
   onPasswordChange: (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   loading?: boolean;
-  loginError?: Nullable<Error<LoginError>>;
+  loginError?: Nullable<Error<AuthError>>;
 }
 
 const FIELDS = stringArrayToObject(['email', 'password']);
