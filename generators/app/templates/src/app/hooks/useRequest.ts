@@ -108,7 +108,7 @@ export const useRequest = <P, D, E>(
     withPostFetch,
     transformResponse = response => response
   }: AsyncRequestHookParamsWithPayload<P, D, E>,
-  dependencies: []
+  dependencies: any[]
 ): [Nullable<D>, boolean, Nullable<Error<E>>, (params: P) => void] => {
   const [state, loading, error, sendRequest] = useLazyRequest({
     request,
