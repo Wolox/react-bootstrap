@@ -12,6 +12,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
       '~contexts(.*)': '<rootDir>/src/app/contexts/$1',
       '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
     },
+    snapshotSerializers: ['enzyme-to-json/serializer'],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     coverageThreshold: {
       global: {
