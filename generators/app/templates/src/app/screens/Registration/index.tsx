@@ -12,7 +12,7 @@ import { steps, formFields } from './constants';
 import { validate } from './validations';
 import styles from './styles.module.scss';
 
-function RegistrationContainer() {
+function Registration() {
   const history = useHistory();
   const [currentStep, setStep] = useState(0);
 
@@ -87,4 +87,4 @@ function RegistrationContainer() {
   );
 }
 
-export default RegistrationContainer;
+export default Registration;
