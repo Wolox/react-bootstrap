@@ -129,5 +129,6 @@ module.exports.DEPENDENCIES = [
   'react@^16.6.3',
   'react-dom@^16.6.3',
   'wolox-equalizer@^0.0.3',
-  'node-sass@^4.11.0'
+  'node-sass@^4.11.0',
+  'formik@^2.1.4'
 ];
