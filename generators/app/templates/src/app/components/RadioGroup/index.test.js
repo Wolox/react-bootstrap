@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
 
 import RadioOption from './components/RadioOption';
 
@@ -34,7 +33,7 @@ describe('#RadioGroup', () => {
     });
 
     it('matches last snapshot', () => {
-      expect(renderer.create(component).toJSON()).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
   });
 
@@ -55,7 +54,7 @@ describe('#RadioGroup', () => {
     });
 
     it('matches last snapshot', () => {
-      expect(renderer.create(component).toJSON()).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
   });
 });

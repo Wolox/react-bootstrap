@@ -117,6 +117,7 @@ module.exports.DEV_DEPENDENCIES = [
   'postcss-syntax@^0.36.2',
   'postcss-html@^0.36.0',
   'enzyme@^3.11.0',
+  'enzyme-to-json@^3.5.0',
   'enzyme-adapter-react-16@^1.15.2',
   'react-test-renderer@^16.12.0',
   '@types/react-test-renderer',
