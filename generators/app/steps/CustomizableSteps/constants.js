@@ -76,7 +76,6 @@ module.exports.DEPENDENCIES = [
   'react-spinkit@^3.0.0',
   'typescript@^3.7.2',
   'babel-plugin-module-resolver@^3.1.1',
-  // TODO: make optional?
   'react-paginate@^6.3.2'
 ];
 
