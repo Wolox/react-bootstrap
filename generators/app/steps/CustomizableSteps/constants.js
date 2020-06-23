@@ -38,7 +38,6 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${COMPONENTS_PATH}/Paginator`,
-  `${SERVICES_PATH}/AuthServices.js`,
   `${SERVICES_PATH}/ListExampleService.ts`,
   `${SERVICES_PATH}/AuthServices.ts`
 ];
