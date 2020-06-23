@@ -39,7 +39,8 @@ module.exports.FILES = [
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${COMPONENTS_PATH}/Paginator`,
   `${SERVICES_PATH}/AuthServices.js`,
-  `${SERVICES_PATH}/ListExampleService.ts`
+  `${SERVICES_PATH}/ListExampleService.ts`,
+  `${SERVICES_PATH}/AuthServices.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -47,7 +48,7 @@ module.exports.TEMPLATE_FILES = [
   '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
-  `${SERVICES_PATH}/LocalStorageService.js`
+  `${SERVICES_PATH}/LocalStorageService.ts`
 ];
 
 module.exports.FILES_TO_DELETE = [

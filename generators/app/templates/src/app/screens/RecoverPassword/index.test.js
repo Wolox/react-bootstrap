@@ -3,15 +3,15 @@ import { mount } from 'enzyme';
 
 import { RootComponent } from '~utils/tests';
 
-import Login from './index';
+import RecoverPassword from './index';
 
-describe('#Login', () => {
+describe('#RecoverPassword', () => {
   let component = null;
 
   beforeEach(() => {
     component = mount(
       <RootComponent>
-        <Login />
+        <RecoverPassword />
       </RootComponent>
     );
   });

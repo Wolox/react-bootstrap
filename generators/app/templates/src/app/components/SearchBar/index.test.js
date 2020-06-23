@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
 
 import SearchBar from './index';
 
@@ -22,7 +21,7 @@ describe('#SearchBar', () => {
 
   describe('when mounting', () => {
     it('matches last snapshot', () => {
-      expect(renderer.create(component).toJSON()).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
   });
 

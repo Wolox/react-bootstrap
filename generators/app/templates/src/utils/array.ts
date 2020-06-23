@@ -8,12 +8,16 @@ import Immutable from 'seamless-immutable';
  * @param {string} namespace prefix for the resulting values
  * @returns {object} (['A', 'B', 'C'], 'name') -> { A: '@name/A', B: '@name/B', C: '@name/C' }
  */
-export function stringArrayToObject(actionsArray, namespace = '') {
-  if (actionsArray.some(actionName => !actionName || typeof actionName !== 'string')) {
+export function stringArrayToObject(actionsArray: string[], namespace = ''): { [key: string]: string } {
+  if (actionsArray.some((actionName: string) => !actionName || typeof actionName !== 'string')) {
     throw new Error('Action names must be strings and must not be empty');
   }
 
-  return new Immutable(actionsArray).asObject(actionName => [actionName, `${namespace}:${actionName}`]);
+  // eslint-disable-next-line new-cap
+  return Immutable<string[]>(actionsArray).asObject((actionName: string) => [
+    actionName,
+    `${namespace}:${actionName}`
+  ]);
 }
 
 /**
@@ -26,7 +30,7 @@ export function stringArrayToObject(actionsArray, namespace = '') {
  *
  * @see https://github.com/airbnb/javascript#iterators--nope
  */
-export function arrayOfIndices(length) {
+export function arrayOfIndices(length: number): number[] {
   // .fill(<something not undefined>) is required for map, map ignore undefined indexes
   return Array(length)
     .fill(null)
