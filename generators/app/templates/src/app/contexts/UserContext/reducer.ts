@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 import { Nullable } from '~utils/types';
 
 export interface User {
@@ -52,16 +54,18 @@ export const actionCreators = {
   logout: (): Logout => ({ type: ActionTypes.LOGOUT })
 };
 
-export const reducer = (state: UserState, action: Action): UserState => {
-  switch (action.type) {
-    case 'SET_USER': {
-      return { ...state, user: action.payload };
-    }
-    case 'RESET_USER': {
-      return { ...state, user: null };
-    }
-    default: {
-      return state;
+export const reducer = produce(
+  (state: UserState, action: Action): UserState => {
+    switch (action.type) {
+      case 'SET_USER': {
+        return { ...state, user: action.payload };
+      }
+      case 'RESET_USER': {
+        return { ...state, user: null };
+      }
+      default: {
+        return state;
+      }
     }
   }
-};
+);

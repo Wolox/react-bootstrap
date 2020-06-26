@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 export interface HomeState {
   foo: string;
 }
@@ -27,16 +29,18 @@ export const actionCreators = {
   resetFoo: (): ResetFoo => ({ type: ActionTypes.RESET_FOO })
 };
 
-export const reducer = (state: HomeState, action: Action): HomeState => {
-  switch (action.type) {
-    case ActionTypes.SET_FOO: {
-      return { ...state, foo: action.payload };
-    }
-    case ActionTypes.RESET_FOO: {
-      return { ...state, foo: '' };
-    }
-    default: {
-      return state;
+export const reducer = produce(
+  (state: HomeState, action: Action): HomeState => {
+    switch (action.type) {
+      case ActionTypes.SET_FOO: {
+        return { ...state, foo: action.payload };
+      }
+      case ActionTypes.RESET_FOO: {
+        return { ...state, foo: '' };
+      }
+      default: {
+        return state;
+      }
     }
   }
-};
+);
