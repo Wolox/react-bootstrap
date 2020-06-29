@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useFormik } from 'formik';
+import i18next from 'i18next';
 
+import FormInput from '~components/FormInput';
+import PATHS from '~components/Routes/paths';
 import { useDispatch } from '~contexts/UserContext';
 import { actionCreators, Credentials, User } from '~contexts/UserContext/reducer';
 import { useLazyRequest } from '~app/hooks/useRequest';
 import { login, setCurrentUser } from '~services/AuthServices';
+import { stringArrayToObject } from '~utils/array';
 
-import Login from './layout';
+import styles from './styles.module.scss';
+
+const FIELDS = stringArrayToObject(['email', 'password']);
 
 function LoginContainer() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [, loading, loginError, loginRequest] = useLazyRequest({
     request: (credentials: Credentials) => login(credentials),
     withPostSuccess: response => {
@@ -23,28 +28,54 @@ function LoginContainer() {
     }
   });
 
-  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const credentials = { username: email, password };
-    dispatch(actionCreators.login(credentials));
-    loginRequest(credentials);
+  const handleLogin = ({ email, password }: { email: string; password: string }) => {
+    loginRequest({ username: email, password });
   };
 
-  const handleEmailChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setEmail((e.target as HTMLInputElement).value || '');
+  const { handleChange, handleSubmit } = useFormik({
+    initialValues: { email: '', password: '' },
+    onSubmit: handleLogin
+  });
 
-  const handlePasswordChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setPassword((e.target as HTMLInputElement).value || '');
-  };
+  const errorMessage = loginError?.errorData?.message;
 
   return (
-    <Login
-      onEmailChange={handleEmailChange}
-      onPasswordChange={handlePasswordChange}
-      onLogin={handleLogin}
-      loading={loading}
-      loginError={loginError}
-    />
+    <div className={`column center full-width ${styles.container}`}>
+      <div className="column center m-bottom-3">
+        <h1 className="m-bottom-1">{i18next.t('Login:login')}</h1>
+        <h2>{i18next.t('Login:loginExplanation')}</h2>
+      </div>
+      <form className={`column m-bottom-2 ${styles.formContainer}`} onSubmit={handleSubmit}>
+        <FormInput
+          label={i18next.t('Login:email')}
+          name={FIELDS.email}
+          inputType="text"
+          inputClassName={`m-bottom-2 full-width ${styles.input}`}
+          placeholder={i18next.t('Login:emailPlaceholder') as string}
+          onChange={handleChange}
+          disabled={loading}
+        />
+        <FormInput
+          label={i18next.t('Login:password')}
+          name={FIELDS.password}
+          inputType="password"
+          inputClassName={`m-bottom-2 full-width ${styles.input}`}
+          placeholder={i18next.t('Login:passwordPlaceholder') as string}
+          onChange={handleChange}
+          disabled={loading}
+        />
+        <div className="column center">
+          <button disabled={loading} type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
+            {i18next.t('Login:enter')}
+          </button>
+          <span className={`row center middle full-width m-top-1 m-bottom-1 ${errorMessage ? '' : 'hidden'}`}>
+            {i18next.t(`Login:${errorMessage || 'error'}`)}
+          </span>
+          <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
+          <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
+        </div>
+      </form>
+    </div>
   );
 }
 
