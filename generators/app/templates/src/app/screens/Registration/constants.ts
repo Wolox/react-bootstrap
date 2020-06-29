@@ -73,4 +73,10 @@ const credentials = {
 
 export const steps: any[] = [personalData, address, credentials];
 
-export const formFields: string[] = steps.flatMap((step: any) => step.fields.map((field: any) => field.name));
+export const initialValues = steps.reduce(
+  (acum, step) => ({
+    ...acum,
+    ...step.fields.reduce((acu: any, field: any) => ({ ...acu, [field.name]: field.initialValue }), {})
+  }),
+  {}
+);

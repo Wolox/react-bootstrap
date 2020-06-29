@@ -8,7 +8,7 @@ import { signUp } from '~services/AuthServices';
 import { UserData } from '~contexts/UserContext/reducer';
 
 import FormStep from './components/FormStep';
-import { steps, formFields } from './constants';
+import { steps, initialValues } from './constants';
 import { validate } from './validations';
 import styles from './styles.module.scss';
 
@@ -40,11 +40,7 @@ function Registration() {
     signUpRequest(values);
   };
 
-  const formik = useFormik({
-    initialValues: formFields.reduce((acum: any, field: string) => ({ ...acum, [field]: '' }), {}),
-    onSubmit: handleFormSubmit,
-    validate
-  });
+  const formik = useFormik({ initialValues, onSubmit: handleFormSubmit, validate });
 
   const { handleChange, handleSubmit, values, errors, isValid } = formik;
   const { id, name, fields } = steps[currentStep];
