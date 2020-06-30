@@ -40,9 +40,12 @@ function Registration() {
     signUpRequest(values);
   };
 
-  const formik = useFormik({ initialValues, onSubmit: handleFormSubmit, validate });
+  const { handleChange, handleSubmit, values, errors, isValid } = useFormik({
+    initialValues,
+    onSubmit: handleFormSubmit,
+    validate
+  });
 
-  const { handleChange, handleSubmit, values, errors, isValid } = formik;
   const { id, name, fields } = steps[currentStep];
 
   const errorMessage = signUpError?.errorData?.message;
