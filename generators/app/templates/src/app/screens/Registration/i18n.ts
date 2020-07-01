@@ -15,6 +15,7 @@ i18next.addResources('es', 'Registration', {
   cityPlaceholder: 'Ingrese su ciudad',
   email: 'E-mail',
   emailPlaceholder: 'Ingrese su e-mail',
+  emailError: 'E-mail incorrecto',
   password: 'Contraseña',
   passwordPlaceholder: 'Ingrese su contraseña',
   confirmPassword: 'Confirmar contraseña',

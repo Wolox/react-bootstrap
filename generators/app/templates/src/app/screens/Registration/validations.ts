@@ -1,3 +1,5 @@
+import i18next from 'i18next';
+
 import { required, email } from '~utils/inputValidations';
 
 interface Validations {
@@ -5,8 +7,8 @@ interface Validations {
 }
 
 const validations: Validations = {
-  firstName: [required('Requerido')],
-  email: [required('Requerido'), email('Email incorrecto')]
+  firstName: [required(i18next.t('Registration:required'))],
+  email: [required(i18next.t('Registration:required')), email(i18next.t('Registration:emailError'))]
 };
 
 export const validate = (values: any) => {
