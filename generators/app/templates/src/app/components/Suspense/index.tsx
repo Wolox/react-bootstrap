@@ -7,8 +7,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-function CustomSuspense({ fallback = Loading, children }: Props) {
-  return <Suspense fallback={fallback}>{children}</Suspense>;
+function CustomSuspense({ fallback: Fallback = Loading, children }: Props) {
+  return <Suspense fallback={<Fallback />}>{children}</Suspense>;
 }
 
 export default CustomSuspense;
