@@ -16,16 +16,12 @@ function Registration() {
   const history = useHistory();
   const [currentStep, setStep] = useState(0);
 
-  const handleNextStep = () => {
-    if (currentStep < steps.length - 1) {
-      setStep(currentStep + 1);
-    }
+    const handleNextStep = () => {
+    setStep(Math.min(currentStep + 1, steps.length - 1));
   };
 
   const handlePrevStep = () => {
-    if (currentStep > 0) {
-      setStep(currentStep - 1);
-    }
+    setStep(Math.max(0, currentStep - 1));
   };
 
   const [, , signUpError, signUpRequest] = useLazyRequest({
@@ -64,7 +60,7 @@ function Registration() {
         errors={errors}
       />
       <div className={`row space-between full-width ${styles.formButtons}`}>
-        <button className={styles.button} type="button" onClick={handlePrevStep} disabled={currentStep === 0}>
+        <button className={styles.button} type="button" onClick={handlePrevStep} disabled={!currentStep}>
           {i18next.t('Registration:previous')}
         </button>
         <button
