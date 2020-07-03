@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import i18next from 'i18next';
 
@@ -71,8 +71,8 @@ function LoginContainer() {
           <span className={`row center middle full-width m-top-1 m-bottom-1 ${errorMessage ? '' : 'hidden'}`}>
             {i18next.t(`Login:${errorMessage || 'error'}`)}
           </span>
-          <a href={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</a>
-          <a href={PATHS.registration}>{i18next.t('Login:createAccount')}</a>
+          <Link to={PATHS.recoverPassword}>{i18next.t('Login:forgotPassword')}</Link>
+          <Link to={PATHS.registration}>{i18next.t('Login:createAccount')}</Link>
         </div>
       </form>
     </div>
