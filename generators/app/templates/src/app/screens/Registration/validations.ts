@@ -1,3 +1,5 @@
+import i18next from 'i18next';
+
 import { required, email } from '~utils/inputValidations';
 
 interface Validations {
@@ -5,19 +7,17 @@ interface Validations {
 }
 
 const validations: Validations = {
-  firstName: [required('Requerido')],
-  email: [required('Requerido'), email('Email incorrecto')]
+  firstName: [required(i18next.t('Registration:required'))],
+  email: [required(i18next.t('Registration:required')), email(i18next.t('Registration:emailError'))]
 };
 
-export const validate = (values: any) => {
-  const errors: { [key: string]: string } = {};
-  Object.keys(values).forEach((key: string) => {
-    validations[key]?.forEach((validation: (arg: string) => string) => {
-      const valResult = validation(values[key]);
-      if (valResult) {
-        errors[key] = valResult;
+export const validate = (values: { [key: string]: string }) =>
+  Object.keys(values).reduce((acum, key) => {
+    let error = '';
+    for (const val of validations[key] || []) {
+      if ((error = val(values[key]))) {
+        break;
       }
-    });
-  });
-  return errors;
-};
+    }
+    return { ...acum, [key]: error };
+  }, {});
