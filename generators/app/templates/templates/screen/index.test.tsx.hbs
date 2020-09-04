@@ -1,0 +1,23 @@
+import React from 'react';
+import { mount, ReactWrapper } from 'enzyme';
+
+import {{name}} from './index';
+
+// This is only an example
+describe('#{{name}}', () => {
+  let component: ReactWrapper | null = null;
+
+  beforeEach(() => {
+    component = mount(<{{name}} />);
+  });
+
+  afterEach(() => {
+    component?.unmount();
+  });
+
+  describe('When the component is mounted', () => {
+    it('matches last snapshot', () => {
+      expect(component).toMatchSnapshot();
+    });
+  });
+});

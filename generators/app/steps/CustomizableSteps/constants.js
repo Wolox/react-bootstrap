@@ -7,6 +7,7 @@ const CONSTANTS_PATH = 'src/constants';
 const DOCS_README_PATH = 'docs';
 const HOOKS_PATH = 'src/app/hooks';
 const CONTEXT_PATH = 'src/app/contexts';
+const TEMPLATES_PATH = 'templates';
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
@@ -26,9 +27,11 @@ module.exports.FILES = [
   UTILS_PATH,
   HOOKS_PATH,
   CONTEXT_PATH,
+  TEMPLATES_PATH,
   'aws.js',
   'tsconfig.json',
   'tsconfig.paths.json',
+  'plopfile.ts',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
