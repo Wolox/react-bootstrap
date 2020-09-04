@@ -87,5 +87,6 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1',
   'eslint-config-wolox-typescript@1.0.1',
-  'eslint-import-resolver-babel-module@^5.0.0'
+  'eslint-import-resolver-babel-module@^5.0.0',
+  'plop@^2.7.4'
 ];

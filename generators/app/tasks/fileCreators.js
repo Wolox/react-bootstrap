@@ -44,7 +44,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
       "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
     'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
-    'coverage-diff': 'rescripts test --env=jsdom --coverage --watchAll=false --changedSince=development'
+    'coverage-diff': 'rescripts test --env=jsdom --coverage --watchAll=false --changedSince=development',
+    ...(this.customized && { plop: 'plop' })
   },
   husky: {
     hooks: {
