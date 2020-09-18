@@ -32,9 +32,7 @@ module.exports.FILES = [
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
-  `${COMPONENTS_PATH}/Routes`,
   `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/FormInput`,
   `${COMPONENTS_PATH}/Spinner`,
   `${COMPONENTS_PATH}/ProviderWrapper`,
   `${SERVICES_PATH}/AuthServices.ts`
