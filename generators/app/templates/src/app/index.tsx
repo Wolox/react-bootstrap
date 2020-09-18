@@ -1,20 +1,11 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
 import '../scss/application.scss';
 
-import { reducer as userReducer, INITIAL_STATE } from '~contexts/UserContext/reducer';
-import { Context } from '~contexts/UserContext';
-
-import Routes from './components/Routes';
+import Home from './screens/Home';
 
 function App() {
-  const [userState, userDispatch] = useReducer(userReducer, INITIAL_STATE);
-
-  return (
-    <Context.Provider value={{ state: userState, dispatch: userDispatch }}>
-      <Routes />
-    </Context.Provider>
-  );
+  return <Home />;
 }
 
 export default App;

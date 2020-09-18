@@ -23,6 +23,7 @@ module.exports.FILES = [
   CONSTANTS_PATH,
   DOCS_README_PATH,
   SCREENS_PATH,
+  COMPONENTS_PATH,
   UTILS_PATH,
   HOOKS_PATH,
   CONTEXT_PATH,
@@ -32,9 +33,6 @@ module.exports.FILES = [
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   'src/app/index.tsx',
-  `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/Spinner`,
-  `${COMPONENTS_PATH}/ProviderWrapper`,
   `${SERVICES_PATH}/AuthServices.ts`
 ];
 
