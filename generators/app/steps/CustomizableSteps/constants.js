@@ -32,8 +32,7 @@ module.exports.FILES = [
   'tsconfig.paths.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  'src/app/index.tsx',
-  `${SERVICES_PATH}/AuthServices.ts`
+  'src/app/index.tsx'
 ];
 
 module.exports.TEMPLATE_FILES = [
