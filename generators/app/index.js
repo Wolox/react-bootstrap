@@ -78,7 +78,9 @@ class GeneratorReact extends Generator {
   install() {
     this.log('Installing...');
     return new Promise(resolve => {
-      this.spawnCommand('npm', ['install']).on('close', () => resolve());
+      this.spawnCommand('npm', ['install'], { cwd: `${process.cwd()}/${this.projectName}` }).on('close', () =>
+        resolve()
+      );
     });
   }
 
