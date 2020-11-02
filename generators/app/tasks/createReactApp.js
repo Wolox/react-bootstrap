@@ -12,7 +12,7 @@ module.exports.installCRA = function installCRA() {
 
 module.exports.runCRA = function runCRA() {
   return runCommand({
-    command: ['create-react-app', [this.projectName]],
+    command: ['create-react-app', [this.projectName, '--scripts-version=react-scripts@^3.0.0']],
     loadingMessage: 'Creating app with create-react-app',
     successMessage: 'Created app with create-react-app successfully',
     failureMessage: 'App creation with create-react-app failed',
