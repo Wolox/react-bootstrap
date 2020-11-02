@@ -36,8 +36,7 @@ export const login = (credentials: Credentials): Promise<ApiResponse<User, Login
     }, 1000); // eslint-disable-line no-magic-numbers
   });
 
-
-export const logout = (): Promise<ApiResponse<User, LoginError>> => 
+export const logout = (): Promise<ApiResponse<User, LoginError>> =>
   new Promise(resolve => {
     setTimeout(() => {
       resolve({
