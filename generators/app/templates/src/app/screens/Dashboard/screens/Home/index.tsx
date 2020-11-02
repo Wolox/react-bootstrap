@@ -38,6 +38,7 @@ function Home() {
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>You are logged in.</p>
+        <p className={styles.text}>Foo value is: {foo}.</p>
         <button type="button" className={styles.appLink} onClick={handleLogout}>
           Logout
         </button>
