@@ -55,6 +55,11 @@ const TESTS_SETUP_PATH = {
   destination: 'src/setupTests.js'
 };
 
+const GITIGNORE_PATH = {
+  src: 'gitignore',
+  destination: '.gitignore'
+};
+
 module.exports.BABELRC_PATH = {
   src: 'babelrc',
   destination: '.babelrc'
@@ -80,7 +85,13 @@ module.exports.TEMPLATE_FILES = [
   'src/index.js'
 ];
 
-module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC_PATH, TESTS_SETUP_PATH];
+module.exports.FILES_TO_DESTINATION = [
+  LINTER_IGNORE_PATH,
+  RESCRIPTS_PATH,
+  NPMRC_PATH,
+  TESTS_SETUP_PATH,
+  GITIGNORE_PATH
+];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
