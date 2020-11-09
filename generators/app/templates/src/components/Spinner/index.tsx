@@ -1,7 +1,6 @@
 import React from 'react';
 import { SpinnerProps } from 'react-spinkit';
-
-import { getDisplayName } from '~utils/displayName';
+import { getDisplayName } from 'utils/displayName';
 
 import Loading from './components/loading';
 

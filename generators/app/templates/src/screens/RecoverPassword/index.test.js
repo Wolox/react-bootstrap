@@ -1,17 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { RootComponent } from 'utils/tests';
 
-import { RootComponent } from '~utils/tests';
+import RecoverPassword from './index';
 
-import Login from './index';
-
-describe('#Login', () => {
+describe('#RecoverPassword', () => {
   let component = null;
 
   beforeEach(() => {
     component = mount(
       <RootComponent>
-        <Login />
+        <RecoverPassword />
       </RootComponent>
     );
   });

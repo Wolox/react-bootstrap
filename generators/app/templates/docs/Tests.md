@@ -43,7 +43,7 @@ describe('<TextArea />', () => {
 This is the output
 
 ```
- PASS  src/app/components/TextArea/index.test.js
+ PASS  src/components/TextArea/index.test.js
   <TextArea />
     ✓ should contain <textArea /> (8ms)
 

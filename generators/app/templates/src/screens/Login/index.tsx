@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-import { useDispatch } from '~contexts/UserContext';
-import { actionCreators, Credentials, User } from '~contexts/UserContext/reducer';
-import { useLazyRequest } from '~app/hooks/useRequest';
-import { login, setCurrentUser } from '~services/AuthServices';
+import { useDispatch } from 'contexts/UserContext';
+import { actionCreators, Credentials, User } from 'contexts/UserContext/reducer';
+import { useLazyRequest } from 'hooks/useRequest';
+import { login, setCurrentUser } from 'services/AuthServices';
 
 import Login from './layout';
 

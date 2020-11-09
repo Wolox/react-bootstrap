@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import { mount } from 'enzyme';
 import { PROBLEM_CODE } from 'apisauce';
 
-import { useRequest, useLazyRequest, Error } from '~hooks/useRequest';
-import { TestHook, testHook } from '~utils/tests';
-import { Nullable } from '~utils/types';
+import { useRequest, useLazyRequest, Error } from 'hooks/useRequest';
+import { TestHook, testHook } from 'utils/tests';
+import { Nullable } from 'utils/types';
 
 interface FooError {
   errorData: string;

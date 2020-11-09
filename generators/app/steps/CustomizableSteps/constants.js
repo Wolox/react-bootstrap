@@ -1,12 +1,12 @@
-const COMPONENTS_PATH = 'src/app/components';
-const SCREENS_PATH = 'src/app/screens';
+const COMPONENTS_PATH = 'src/components';
+const SCREENS_PATH = 'src/screens';
 const CONFIG_PATH = 'src/config';
 const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const DOCS_README_PATH = 'docs';
-const HOOKS_PATH = 'src/app/hooks';
-const CONTEXT_PATH = 'src/app/contexts';
+const HOOKS_PATH = 'src/hooks';
+const CONTEXT_PATH = 'src/contexts';
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
@@ -30,7 +30,7 @@ module.exports.FILES = [
   'tsconfig.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  'src/app/index.tsx',
+  'src/index.tsx',
   `${COMPONENTS_PATH}/Routes`,
   `${COMPONENTS_PATH}/Suspense`,
   `${COMPONENTS_PATH}/FormInput`,
@@ -65,8 +65,7 @@ module.exports.DEPENDENCIES = [
   'history@^4.7.2',
   'i18next@^13.0.0',
   'react-spinkit@^3.0.0',
-  'typescript@^3.7.2',
-  'babel-plugin-module-resolver@^3.1.1'
+  'typescript@^3.7.2'
 ];
 
 module.exports.DEV_DEPENDENCIES = [

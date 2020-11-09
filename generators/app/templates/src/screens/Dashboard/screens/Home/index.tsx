@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-
-import withProvider from '~components/ProviderWrapper';
-import { actionCreators as authActions } from '~contexts/UserContext/reducer';
-import { useDispatch as useUserDispatch } from '~contexts/UserContext';
-import { logout, removeCurrentUser } from '~services/AuthServices';
-import { useLazyRequest } from '~app/hooks/useRequest';
+import withProvider from 'components/ProviderWrapper';
+import { actionCreators as authActions } from 'contexts/UserContext/reducer';
+import { useDispatch as useUserDispatch } from 'contexts/UserContext';
+import { logout, removeCurrentUser } from 'services/AuthServices';
+import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';

@@ -1,4 +1,4 @@
-import { contextFactory } from '~config/context';
+import { contextFactory } from 'config/context';
 
 import { HomeState, Action, INITIAL_STATE } from './reducer';
 

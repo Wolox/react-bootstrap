@@ -109,7 +109,6 @@ module.exports.DEV_DEPENDENCIES = [
   'react-hot-loader@^4.6.1',
   '@rescripts/cli@^0.0.13',
   'prop-types@^15.6.2',
-  '@babel/plugin-proposal-optional-chaining@^7.2.0',
   'env-cmd@^10.0.1',
   'aws-deploy-script-fe@1.0.8',
   'chalk@^3.0.0',

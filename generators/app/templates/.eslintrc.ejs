@@ -4,25 +4,7 @@ module.exports = {
   settings: {
     'react': {
       'version': 'detect'
-    }<% if (features && features.customized) { %>,
-    'import/resolver': {
-      'babel-module': {
-        root: ['./src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        alias: {
-          '~components': './src/app/components',
-          '~screens': './src/app/screens',
-          '~config': './src/config',
-          '~constants': './src/constants',
-          '~services': './src/services',
-          '~utils': './src/utils',
-          '~app': './src/app',
-          '~assets': './src/assets',
-          '~hooks': './src/app/hooks',
-          '~contexts': './src/app/contexts'
-        }
-      }
-    }<%} %>
+    }
   }<% if (features && features.jest) { %>,
   env: {
     jest: true

@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import i18next from 'i18next';
 
-import FormInput from '~components/FormInput';
-import PATHS from '~components/Routes/paths';
+import FormInput from 'components/FormInput';
+import PATHS from 'components/Routes/paths';
 
 import styles from './styles.module.scss';
 
