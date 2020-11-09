@@ -22,6 +22,7 @@ module.exports.FILES = [
   CONFIG_PATH,
   CONSTANTS_PATH,
   DOCS_README_PATH,
+  COMPONENTS_PATH,
   SCREENS_PATH,
   UTILS_PATH,
   HOOKS_PATH,
@@ -30,12 +31,6 @@ module.exports.FILES = [
   'tsconfig.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  'src/index.tsx',
-  `${COMPONENTS_PATH}/Routes`,
-  `${COMPONENTS_PATH}/Suspense`,
-  `${COMPONENTS_PATH}/FormInput`,
-  `${COMPONENTS_PATH}/Spinner`,
-  `${COMPONENTS_PATH}/ProviderWrapper`,
   `${SERVICES_PATH}/AuthServices.ts`
 ];
 

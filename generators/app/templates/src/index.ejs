@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 <% if (features && features.customized) { %>
 import App from 'components/App';
-import './config/i18n';<% } else {%>
+import 'config/i18n';<% } else {%>
 import App from './App';<% }%>
-import './scss/application.scss';
+import 'scss/application.scss';
 
 const render = () => {
   ReactDOM.render(
     <React.StrictMode>
       <AppContainer>
         <App />
-      </AppContainer>,
-    </React.StrictMode>
+      </AppContainer>
+    </React.StrictMode>,
     document.getElementById('root')
   );
 };
