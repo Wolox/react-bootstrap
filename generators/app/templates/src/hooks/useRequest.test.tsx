@@ -105,28 +105,6 @@ describe('#useRequest', () => {
     });
   });
 
-  describe('when request has failed', () => {
-    const component = (
-      <TestHook
-        hook={() => {
-          hookValues = useRequest({ request: FailureMockService.fetchFoo, payload: 1 }, []);
-        }}
-      />
-    );
-
-    beforeEach(() => {
-      mount(component);
-    });
-
-    it('has correct error', () => {
-      const values = hookValues as HookReturnValue;
-      const [state, loading, error] = values;
-      expect(state).toBe(null);
-      expect(loading).toBe(false);
-      expect(error?.errorData).toBe(failureResponse.data);
-    });
-  });
-
   describe('when request is loading', () => {
     const component = (
       <TestHook
