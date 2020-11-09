@@ -1,6 +1,6 @@
 // const installDependencies = require('../../tasks/installDependencies');
 
-// const copyAllFiles = require('./copyFiles');
+const copyAllFiles = require('./copyFiles');
 // const { DEPENDENCIES, DEV_DEPENDENCIES } = require('./constants');
 
 const CustomizableGenerator = {
@@ -12,8 +12,7 @@ const CustomizableGenerator = {
     // await installDependencies.bind(this)({ dependencies: DEPENDENCIES, devDependencies: DEV_DEPENDENCIES });
   },
   writing() {
-    return Promise.resolve();
-    // return Promise.resolve().then(copyAllFiles.bind(this));
+    return Promise.resolve().then(copyAllFiles.bind(this));
   }
 };
 

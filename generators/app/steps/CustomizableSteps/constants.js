@@ -48,11 +48,11 @@ module.exports.TEMPLATE_FILES = [
 ];
 
 module.exports.FILES_TO_DELETE = [
-  'jsconfig.json',
-  'src/index.js',
+  'tsconfig.json',
+  'src/index.tsx',
   'src/App.css',
-  'src/App.js',
-  'src/App.test.js',
+  'src/App.tsx',
+  'src/App.test.tsx',
   'src/index.css',
   'src/logo.svg'
 ];
