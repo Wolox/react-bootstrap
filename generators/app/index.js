@@ -2,9 +2,9 @@ const Generator = require('yeoman-generator');
 require('colors');
 
 // const { createPackageJson } = require('./tasks/fileCreators');
-const copyFiles = require('./tasks/copyFiles');
+// const copyFiles = require('./tasks/copyFiles');
 // const installDependencies = require('./tasks/installDependencies');
-const linterAutofix = require('./tasks/linterAutofix');
+// const linterAutofix = require('./tasks/linterAutofix');
 const { MAIN_PROMPTS } = require('./prompts');
 const { KICKOFF_MESSAGE /* , DEV_DEPENDENCIES, DEPENDENCIES */ } = require('./constants');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
@@ -69,9 +69,8 @@ class GeneratorReact extends Generator {
   writing() {
     this.log('Copying base project files...');
     // .then(createPackageJson.bind(this))
-    return Promise.resolve()
-      .then(copyFiles.bind(this))
-      .then(this.steps.writing.bind(this));
+    // .then(copyFiles.bind(this))
+    return Promise.resolve().then(this.steps.writing.bind(this));
   }
 
   install() {
@@ -88,7 +87,7 @@ class GeneratorReact extends Generator {
     if (this.configureGit) {
       await configGit.bind(this)();
     }
-    await linterAutofix.bind(this)();
+    // await linterAutofix.bind(this)();
   }
 }
 
