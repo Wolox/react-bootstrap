@@ -1,5 +1,22 @@
 const chalk = require('chalk');
 
+// module.exports.KICKOFF_MESSAGE = `${chalk.blue('\n                 __                               ') +
+//   chalk.blue('\n _      ______  / /___  _  __                     ') +
+//   chalk.blue('\n| | /| / / __ \\/ / __ \\| |/_/                     ') +
+//   chalk.blue('\n| |/ |/ / /_/ / / /_/ />  <                       ') +
+//   chalk.blue('\n|__/|__/\\____/_/\\____/_/|_|                       ') +
+//   chalk.white('\n   ________  ____ ______/ /_                      ') +
+//   chalk.white('\n  / ___/ _ \\/ __ `/ ___/ __/                      ') +
+//   chalk.white('\n / /  /  __/ /_/ / /__/ /_                        ') +
+//   chalk.white('\n/_/ __\\___/\\__,_/\\___/\\__/     __                 ') +
+//   chalk.white('\n   / /_  ____  ____  / /______/ /__________ _____ ') +
+//   chalk.white('\n  / __ \\/ __ \\/ __ \\/ __/ ___/ __/ ___/ __ `/ __ \\') +
+//   chalk.white('\n / /_/ / /_/ / /_/ / /_(__  ) /_/ /  / /_/ / /_/ /') +
+//   chalk.white('\n/_.___/\\____/\\____/\\__/____/\\__/_/   \\__,_/ .___/ ') +
+//   chalk.white('\n                                         /_/      ')}\n\n  ${chalk.blue.bold(
+//   'Welcome to the wolox react-bootstrap'
+// )}\n\n  `;
+
 module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            ║║║       ') +
   chalk.cyan('\n       ║    ║║║    ║║║    ║      ') +
   chalk.cyan('\n       ║       ║║║║       ║       ') +
