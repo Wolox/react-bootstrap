@@ -1,12 +1,12 @@
 const Generator = require('yeoman-generator');
 require('colors');
 
-const { createPackageJson, createJSConfig } = require('./tasks/fileCreators');
+// const { createPackageJson } = require('./tasks/fileCreators');
 const copyFiles = require('./tasks/copyFiles');
-const installDependencies = require('./tasks/installDependencies');
+// const installDependencies = require('./tasks/installDependencies');
 const linterAutofix = require('./tasks/linterAutofix');
 const { MAIN_PROMPTS } = require('./prompts');
-const { KICKOFF_MESSAGE, DEV_DEPENDENCIES, DEPENDENCIES } = require('./constants');
+const { KICKOFF_MESSAGE /* , DEV_DEPENDENCIES, DEPENDENCIES */ } = require('./constants');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
 const { gitInitiation, configGit } = require('./tasks/gitConfig');
 const CleanGenerator = require('./steps/CleanSteps');
@@ -59,18 +59,17 @@ class GeneratorReact extends Generator {
     }
     await installCRA.bind(this)();
     await runCRA.bind(this)();
-    await installDependencies.bind(this)({
-      dependencies: DEPENDENCIES,
-      devDependencies: DEV_DEPENDENCIES
-    });
+    // await installDependencies.bind(this)({
+    //   dependencies: DEPENDENCIES,
+    //   devDependencies: DEV_DEPENDENCIES
+    // });
     await this.steps.configuring.bind(this)();
   }
 
   writing() {
     this.log('Copying base project files...');
+    // .then(createPackageJson.bind(this))
     return Promise.resolve()
-      .then(createPackageJson.bind(this))
-      .then(createJSConfig.bind(this))
       .then(copyFiles.bind(this))
       .then(this.steps.writing.bind(this));
   }

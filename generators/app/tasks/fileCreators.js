@@ -60,34 +60,3 @@ module.exports.createPackageJson = function createPackageJson() {
 
   this.fs.writeJSON(`./${this.projectName}/package.json`, newpjson);
 };
-
-module.exports.createJSConfig = function createJSConfig() {
-  const config = {
-    compilerOptions: {
-      target: 'esnext',
-      module: 'commonjs',
-      jsx: 'react',
-      allowSyntheticDefaultImports: true,
-      baseUrl: 'src'
-    },
-    include: ['src'],
-    exclude: ['node_modules', '.history']
-  };
-
-  if (this.customized) {
-    config.compilerOptions.paths = {
-      '~app/*': ['./src/app/*'],
-      '~components/*': ['./src/app/components/*'],
-      '~screens/*': ['./src/app/screens/*'],
-      '~config/*': ['./src/config/*'],
-      '~constants/*': ['./src/constants/*'],
-      '~services/*': ['./src/services/*'],
-      '~utils/*': ['./src/utils/*'],
-      '~assets/*': ['./src/assets/*'],
-      '~hooks/*': ['./src/app/hooks/*'],
-      '~contexts/*': ['./src/app/contexts/*']
-    };
-  }
-
-  this.fs.writeJSON(`./${this.projectName}/jsconfig.json`, config);
-};
