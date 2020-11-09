@@ -41,6 +41,7 @@ module.exports.MAIN_PROMPTS = [
     name: 'customized',
     message: 'Which type of bootstrap do you want?',
     required: true,
-    choices: BOOTSTRAP_TYPES
+    choices: BOOTSTRAP_TYPES,
+    default: 1
   }
 ];

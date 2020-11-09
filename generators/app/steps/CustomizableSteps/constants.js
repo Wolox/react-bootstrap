@@ -58,12 +58,6 @@ module.exports.FILES_TO_DELETE = [
   'src/logo.svg'
 ];
 
-module.exports.OPTIONAL_COMPONENTS = {
-  Checkbox: `${COMPONENTS_PATH}/Checkbox`,
-  RadioGroup: `${COMPONENTS_PATH}/RadioGroup`,
-  SearchBar: `${COMPONENTS_PATH}/SearchBar`
-};
-
 module.exports.DEPENDENCIES = [
   'apisauce@^1.0.1',
   'react-router@^5.1.2',
