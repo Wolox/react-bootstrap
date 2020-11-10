@@ -53,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.23.0",
     "apisauce": "^1.1.1",
+    "typescript": "^4.0.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "enzyme": "^3.11.0",
