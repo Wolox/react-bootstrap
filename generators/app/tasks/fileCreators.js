@@ -28,7 +28,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     npm: '>= 6.9.0'
   },
   scripts: {
-    start: 'node ./scripts/start.js development',
+    // start: 'node ./scripts/start.js development',
+    start: 'rescripts start',
     'start-env': 'node ./scripts/start.js',
     build: 'node ./scripts/build.js',
     // eslint-disable-next-line no-extra-parens

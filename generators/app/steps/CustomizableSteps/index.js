@@ -11,7 +11,7 @@ const CustomizableGenerator = {
     return installDependencies.bind(this)({ dependencies: DEPENDENCIES, devDependencies: DEV_DEPENDENCIES });
   },
   writing() {
-    return Promise.resolve().then(copyAllFiles.bind(this));
+    return copyAllFiles.bind(this);
   }
 };
 
