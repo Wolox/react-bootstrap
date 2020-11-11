@@ -2,7 +2,7 @@ const Generator = require('yeoman-generator');
 require('colors');
 
 const { createPackageJson } = require('./tasks/fileCreators');
-const copyFiles = require('./tasks/copyAllFiles');
+const copyAllFiles = require('./tasks/copyAllFiles');
 const installDependencies = require('./tasks/installDependencies');
 // const linterAutofix = require('./tasks/linterAutofix');
 const { MAIN_PROMPTS } = require('./prompts');
@@ -69,9 +69,9 @@ class GeneratorReact extends Generator {
   writing() {
     this.log('Copying base project files...');
     return Promise.resolve()
-      .then(this.steps.writing.bind(this))
-      .then(copyFiles.bind(this))
-      .then(createPackageJson.bind(this));
+      .then(createPackageJson.bind(this))
+      .then(copyAllFiles.bind(this))
+      .then(this.steps.writing.bind(this));
   }
 
   install() {
