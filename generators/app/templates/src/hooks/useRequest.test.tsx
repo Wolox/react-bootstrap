@@ -199,7 +199,7 @@ describe('#useLazyRequest', () => {
       });
     });
 
-    it('it sets the error', () => {
+    it('sets the error', () => {
       const values = hookValues as HookReturnValue;
       const [state, loading, error] = values;
       expect(state).toBe(null);

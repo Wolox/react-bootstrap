@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+// import { AppContainer } from 'react-hot-loader';
 <% if (features && features.customized) { %>
 import App from 'components/App';
 import 'config/i18n';<% } else {%>
@@ -9,12 +9,11 @@ import 'scss/application.scss';
 
 import reportWebVitals from './reportWebVitals';
 
+// TODO: Fix AppContainer error
 const render = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <AppContainer>
-        <App />
-      </AppContainer>
+      <App />
     </React.StrictMode>,
     document.getElementById('root')
   );
