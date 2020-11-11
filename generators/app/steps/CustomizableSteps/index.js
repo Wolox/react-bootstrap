@@ -1,6 +1,6 @@
 const installDependencies = require('../../tasks/installDependencies');
 
-const copyAllFiles = require('./copyFiles');
+const copyAllFiles = require('./copyAllFiles');
 const { DEPENDENCIES, DEV_DEPENDENCIES } = require('./constants');
 
 const CustomizableGenerator = {
