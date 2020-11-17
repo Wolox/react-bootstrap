@@ -70,7 +70,7 @@ module.exports.FILES = [
   'README.md',
   'Jenkinsfile',
   '.stylelintrc.js',
-  '.eslintrc.js',
+  // '.eslintrc.js',
   '.env.development',
   `${SCRIPTS_PATH}/build.js`,
   `${SCRIPTS_PATH}/start.js`,
@@ -101,14 +101,16 @@ module.exports.BOOTSTRAP_TYPES = [
 ];
 
 module.exports.DEV_DEPENDENCIES = [
-  'eslint-plugin-import@2.18.2',
+  'eslint-plugin-import@2.22.1',
   'eslint-plugin-jsx-a11y@6.2.3',
   'eslint-plugin-prettier@3.1.0',
   'eslint-plugin-react@7.14.3',
   // TODO: Do we need this?
   'eslint-plugin-babel@5.3.0',
-  'eslint-config-wolox-react@2.1.1',
+  'eslint-config-wolox-react@2.1.2',
   'eslint-config-wolox@3.0.2',
+  'eslint-import-resolver-typescript@^2.3.0',
+  '@typescript-eslint/parser@^4.7.0',
   'stylelint-config-wolox@1.0.7',
   'stylelint-no-indistinguishable-colors@1.2.1',
   'stylelint-scss@3.5.4',
