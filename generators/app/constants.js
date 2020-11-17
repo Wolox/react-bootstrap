@@ -70,6 +70,7 @@ module.exports.FILES = [
   'README.md',
   'Jenkinsfile',
   '.stylelintrc.js',
+  '.eslintrc.js',
   '.env.development',
   `${SCRIPTS_PATH}/build.js`,
   `${SCRIPTS_PATH}/start.js`,
@@ -80,7 +81,6 @@ module.exports.FILES = [
 
 module.exports.TEMPLATE_FILES = [
   // Insert here all template ejs files
-  '.eslintrc.js',
   '.babelrc.js',
   'src/index.js'
 ];
@@ -107,7 +107,7 @@ module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-react@7.14.3',
   // TODO: Do we need this?
   'eslint-plugin-babel@5.3.0',
-  'eslint-config-wolox-react@2.0.1',
+  'eslint-config-wolox-react@2.1.1',
   'eslint-config-wolox@3.0.2',
   'stylelint-config-wolox@1.0.7',
   'stylelint-no-indistinguishable-colors@1.2.1',
@@ -123,14 +123,14 @@ module.exports.DEV_DEPENDENCIES = [
   'env-cmd@^10.0.1',
   'aws-deploy-script-fe@1.0.8',
   'minimist@1.2.0',
-  // 'postcss-syntax@^0.36.2',
-  // 'postcss-html@^0.36.0',
-  // 'enzyme@^3.11.0',
-  // 'enzyme-to-json@^3.5.0',
-  // 'enzyme-adapter-react-16@^1.15.2',
-  // 'react-test-renderer@^16.12.0',
-  // '@types/react-test-renderer',
-  // '@types/enzyme',
+  'postcss-syntax@^0.36.2',
+  'postcss-html@^0.36.0',
+  'enzyme@^3.11.0',
+  'enzyme-to-json@^3.5.0',
+  'enzyme-adapter-react-16@^1.15.2',
+  'react-test-renderer@^16.12.0',
+  '@types/react-test-renderer',
+  '@types/enzyme',
   '@types/react-spinkit'
 ];
 

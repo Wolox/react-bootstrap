@@ -10,7 +10,7 @@ interface Props {
   inputClassName?: string;
   isTextarea?: boolean;
   inputType: string;
-  label?: string | object;
+  label?: React.ReactNode;
   labelClassName?: string;
   name: string;
   onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;

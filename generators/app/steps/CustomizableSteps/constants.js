@@ -38,7 +38,6 @@ module.exports.FILES = [
 
 module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
-  '.eslintrc.js',
   '.babelrc.js',
   'src/index.tsx',
   `${SERVICES_PATH}/LocalStorageService.ts`
@@ -75,5 +74,5 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router-dom@^5.1.3',
   '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1',
-  'eslint-config-wolox-typescript@1.0.1'
+  '@wolox/eslint-config-typescript@1.1.1'
 ];
