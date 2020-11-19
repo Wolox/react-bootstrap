@@ -13,7 +13,7 @@ interface SpinnerConfig extends SpinnerProps {
   classNameContainer?: string;
 }
 
-export const withSpinner = (spinnerConfig: SpinnerConfig = {}) => <P extends object>(
+export const withSpinner = (spinnerConfig: SpinnerConfig = {}) => <P extends {}>(
   WrappedComponent: React.ComponentType<P>
 ): React.FC<WithSpinnerProps & P> => {
   const WithSpinner = ({ loading, ...passThroughProps }: WithSpinnerProps) => {

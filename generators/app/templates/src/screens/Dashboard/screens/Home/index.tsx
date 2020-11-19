@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import withProvider from 'components/ProviderWrapper';
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
@@ -46,4 +47,5 @@ function Home() {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export default withProvider({ Context, reducer, initialState: INITIAL_STATE })(Home);

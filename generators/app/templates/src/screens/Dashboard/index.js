@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
+
 import RouteItem from 'components/Routes/components/RouteItem';
 import PATHS from 'components/Routes/paths';
 

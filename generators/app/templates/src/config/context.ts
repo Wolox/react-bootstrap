@@ -22,5 +22,6 @@ export const contextFactory = <State, Action>(initialState: State) => {
     return dispatch;
   };
 
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   return { useSelector, Context, useDispatch };
 };

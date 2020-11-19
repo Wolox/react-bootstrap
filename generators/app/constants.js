@@ -81,8 +81,9 @@ module.exports.FILES = [
 
 module.exports.TEMPLATE_FILES = [
   // Insert here all template ejs files
-  '.babelrc.js',
-  'src/index.js'
+  '.babelrc.js'
+  // TODO: Test clean
+  // 'src/index.js'
 ];
 
 module.exports.FILES_TO_DESTINATION = [

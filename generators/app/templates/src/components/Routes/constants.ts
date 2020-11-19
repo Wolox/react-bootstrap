@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import i18next from 'i18next';
+
 import { Nullable } from 'utils/types';
 import { User } from 'contexts/UserContext/reducer';
 

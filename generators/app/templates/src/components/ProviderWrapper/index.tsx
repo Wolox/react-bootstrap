@@ -5,13 +5,13 @@ interface ActionType {
 }
 
 interface Props<U extends {}, V> {
-  Context: React.Context<any>;
+  context: React.Context<any>;
   reducer: React.Reducer<U, V>;
   initialState: U;
 }
 
 const withProvider = <T extends {}, U, V extends ActionType>({
-  Context,
+  context: Context,
   reducer,
   initialState
 }: Props<U, V>) => (WrappedComponent: React.ComponentType<T>) => {
