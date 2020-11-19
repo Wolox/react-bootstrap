@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/no-named-as-default
 import Spinner, { SpinnerProps } from 'react-spinkit';
 
 import { COLOR_SPINNER, SPINNER_DEFAULT } from './constants';

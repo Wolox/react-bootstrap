@@ -1,5 +1,6 @@
 import React from 'react';
 import i18next from 'i18next';
+
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 import { withSpinner } from 'components/Spinner';
@@ -7,7 +8,6 @@ import { LoginError } from 'services/AuthServices';
 import { Nullable } from 'utils/types';
 import { Error } from 'hooks/useRequest';
 import { stringArrayToObject } from 'utils/array';
-
 
 import styles from './styles.module.scss';
 
