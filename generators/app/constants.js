@@ -55,6 +55,11 @@ const TESTS_SETUP_PATH = {
   destination: 'src/setupTests.js'
 };
 
+const ESLINTRC_PATH = {
+  src: 'eslintrc.js',
+  destination: '.eslintrc.js'
+};
+
 const GITIGNORE_PATH = {
   src: 'gitignore',
   destination: '.gitignore'
@@ -70,7 +75,6 @@ module.exports.FILES = [
   'README.md',
   'Jenkinsfile',
   '.stylelintrc.js',
-  // '.eslintrc.js',
   '.env.development',
   `${SCRIPTS_PATH}/build.js`,
   `${SCRIPTS_PATH}/start.js`,
@@ -91,7 +95,8 @@ module.exports.FILES_TO_DESTINATION = [
   RESCRIPTS_PATH,
   NPMRC_PATH,
   TESTS_SETUP_PATH,
-  GITIGNORE_PATH
+  GITIGNORE_PATH,
+  ESLINTRC_PATH
 ];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;

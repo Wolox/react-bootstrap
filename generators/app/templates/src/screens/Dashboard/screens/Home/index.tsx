@@ -47,5 +47,4 @@ function Home() {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export default withProvider({ Context, reducer, initialState: INITIAL_STATE })(Home);
+export default withProvider({ context: Context, reducer, initialState: INITIAL_STATE })(Home);

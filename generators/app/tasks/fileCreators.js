@@ -48,50 +48,13 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
       'pre-commit': 'npm run lint-diff && npm run lint-scss',
       'pre-push': 'npm run coverage-diff'
     }
-  },
-  eslintConfig: {
-    extends: ['wolox-react', '@wolox/eslint-config-typescript'],
-    settings: {
-      'import/resolver': 'typescript'
-    },
-    rules: {
-      'no-shadow': 'off',
-      '@typescript-eslint/no-shadow': ['error'],
-      '@typescript-eslint/ban-types': [
-        'error',
-        {
-          extendDefaults: true,
-          types: {
-            '{}': false
-          }
-        }
-      ],
-      '@typescript-eslint/naming-convention': [
-        'error',
-        {
-          selector: 'default',
-          format: ['camelCase']
-        },
-        {
-          selector: 'variableLike',
-          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-          leadingUnderscore: 'allow'
-        },
-        {
-          selector: 'typeLike',
-          format: ['PascalCase']
-        },
-        {
-          selector: 'enumMember',
-          format: ['UPPER_CASE']
-        }
-      ]
-    }
   }
 });
 
 module.exports.createPackageJson = function createPackageJson() {
   const pjson = this.fs.readJSON(`./${this.projectName}/package.json`);
+  // Remove default eslintConfig to use .eslintrc.js
+  delete pjson.eslintConfig;
   const newpjson = Object.assign(pjson, getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl));
 
   this.fs.writeJSON(`./${this.projectName}/package.json`, newpjson);
