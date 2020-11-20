@@ -57,22 +57,16 @@ module.exports.DEPENDENCIES = [
   'apisauce@^1.0.1',
   'react-router@^5.1.2',
   'react-router-dom@^5.1.2',
-  'seamless-immutable@^7.1.4',
   'history@^4.7.2',
   'i18next@^13.0.0',
-  'react-spinkit@^3.0.0'
-  // 'typescript@^3.7.2'
+  'react-spinkit@^3.0.0',
+  'typescript@4.0.5'
 ];
 
 module.exports.DEV_DEPENDENCIES = [
-  // '@types/jest@^24.0.23',
-  // '@types/node@^12.12.14',
-  // '@types/react@^16.9.13',
-  // '@types/react-dom@^16.9.4',
   '@types/react-router@^5.1.2',
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
-  '@types/seamless-immutable@^7.1.11',
   '@types/webpack-env@^1.14.1',
   '@wolox/eslint-config-typescript@1.1.1'
 ];

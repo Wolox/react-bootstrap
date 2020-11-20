@@ -4,11 +4,11 @@ require('colors');
 const { createPackageJson } = require('./tasks/fileCreators');
 const copyAllFiles = require('./tasks/copyAllFiles');
 const installDependencies = require('./tasks/installDependencies');
-// const linterAutofix = require('./tasks/linterAutofix');
+const linterAutofix = require('./tasks/linterAutofix');
 const { MAIN_PROMPTS } = require('./prompts');
 const { KICKOFF_MESSAGE, DEV_DEPENDENCIES, DEPENDENCIES } = require('./constants');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
-const { gitInitiation, configGit } = require('./tasks/gitConfig');
+const { gitInitiation, configGit, configGitNoRepo } = require('./tasks/gitConfig');
 const CleanGenerator = require('./steps/CleanSteps');
 const CustomizableGenerator = require('./steps/CustomizableSteps');
 
@@ -85,10 +85,17 @@ class GeneratorReact extends Generator {
 
   async end() {
     this.log('Ending...');
+    await linterAutofix
+      .bind(this)()
+      // catching with an empty function to ignore the error
+      // eslint-disable-next-line no-empty-function, @typescript-eslint/no-empty-function
+      .catch(() => {});
+
     if (this.configureGit) {
       await configGit.bind(this)();
+    } else {
+      await configGitNoRepo.bind(this)();
     }
-    // await linterAutofix.bind(this)();
   }
 }
 

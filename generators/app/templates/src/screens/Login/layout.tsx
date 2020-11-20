@@ -7,7 +7,6 @@ import { withSpinner } from 'components/Spinner';
 import { LoginError } from 'services/AuthServices';
 import { Nullable } from 'utils/types';
 import { Error } from 'hooks/useRequest';
-import { stringArrayToObject } from 'utils/array';
 
 import styles from './styles.module.scss';
 
@@ -19,7 +18,8 @@ interface Props {
   loginError?: Nullable<Error<LoginError>>;
 }
 
-const FIELDS = stringArrayToObject(['email', 'password']);
+const FIELDS = { email: 'email', password: 'password' };
+
 function Login({ onEmailChange, onPasswordChange, onLogin, loginError, loading }: Props) {
   const errorMessage = loginError?.errorData?.message;
   return (

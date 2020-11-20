@@ -36,9 +36,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     ...(this.customized && { deploy: 'node ./scripts/deploy.js' }),
     test: generateRSScript('test', '--env=jsdom'),
     eject: './node_modules/react-scripts/bin/react-scripts.js eject',
-    lint: './node_modules/eslint/bin/eslint.js src',
-    'lint-fix':
-      "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
+    lint: './node_modules/eslint/bin/eslint.js . --ext .js --ext .ts --ext .tsx',
+    'lint-fix': "npm run lint -- --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
     'lint-diff':
       'git diff --name-only --cached --relative --diff-filter=ACM | grep -e \\.js$ -e \\.tsx$ -e \\.ts$ | xargs eslint',

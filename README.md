@@ -101,13 +101,11 @@ Additional to clean libraries are added
 |[apisauce](https://github.com/infinitered/apisauce)| Talking to APIs doesn't have to be awkward anymore.
 |[react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)| DOM bindings for React Router.
 |[react-router](https://github.com/ReactTraining/react-router)| Routing for React.
-|[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
 |[history](https://www.npmjs.com/package/history)| Manage session history anywhere JavaScript runs.
 |[i18next](https://www.i18next.com/)| An internationalization-framework written in and for JavaScript.
 |[react-spinkit](https://kyleamathews.github.io/react-spinkit/)| Spinners library.
 |[typescript](https://www.typescriptlang.org/)| Brings you optional static type-checking along with the latest ECMAScript
 feature.
-|[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)| Immutable data structures for JavaScript.
 |[babel-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)| Custom module resolver plugin for Babel.
 
 ## Notes

@@ -3,11 +3,16 @@ import i18next from 'i18next';
 
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
-import { stringArrayToObject } from 'utils/array';
 
 import styles from './styles.module.scss';
 
-const FIELDS = stringArrayToObject(['name', 'surname', 'email', 'password', 'confirmPassword']);
+const FIELDS = {
+  name: 'name',
+  surname: 'surname',
+  email: 'email',
+  password: 'password',
+  confirmPassword: 'confirmPassword'
+};
 
 function RegistrationContainer() {
   /* eslint-disable @typescript-eslint/no-unused-vars */
