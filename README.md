@@ -106,7 +106,6 @@ Additional to clean libraries are added
 |[react-spinkit](https://kyleamathews.github.io/react-spinkit/)| Spinners library.
 |[typescript](https://www.typescriptlang.org/)| Brings you optional static type-checking along with the latest ECMAScript
 feature.
-|[babel-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)| Custom module resolver plugin for Babel.
 
 ## Notes
 
