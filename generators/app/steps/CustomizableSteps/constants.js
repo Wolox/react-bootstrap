@@ -38,7 +38,6 @@ module.exports.FILES = [
 
 module.exports.TEMPLATE_FILES = [
   // TODO: Insert here all template ejs files
-  '.babelrc.js',
   'src/index.tsx',
   `${SERVICES_PATH}/LocalStorageService.ts`
 ];
