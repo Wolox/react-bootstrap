@@ -51,8 +51,8 @@ const NPMRC_PATH = {
 };
 
 const TESTS_SETUP_PATH = {
-  src: 'setupTests.js',
-  destination: 'src/setupTests.js'
+  src: 'setupTests.ts',
+  destination: 'src/setupTests.ts'
 };
 
 const ESLINTRC_PATH = {

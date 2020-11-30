@@ -13,6 +13,8 @@ interface SpinnerConfig extends SpinnerProps {
   classNameContainer?: string;
 }
 
+// {} is valid as props
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const withSpinner = (spinnerConfig: SpinnerConfig = {}) => <P extends {}>(
   WrappedComponent: React.ComponentType<P>
 ): React.FC<WithSpinnerProps & P> => {
