@@ -67,5 +67,5 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/webpack-env@^1.14.1',
-  '@wolox/eslint-config-typescript@1.1.1'
+  '@wolox/eslint-config-typescript@1.1.3'
 ];
