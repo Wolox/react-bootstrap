@@ -123,7 +123,6 @@ module.exports.DEV_DEPENDENCIES = [
   'prettier-eslint@8.8.2',
   'prettier-stylelint@0.4.2',
   'prettier-eslint-cli@5.0.0',
-  'react-hot-loader@^4.6.1',
   '@rescripts/cli@^0.0.14',
   'env-cmd@^10.0.1',
   'aws-deploy-script-fe@1.0.8',

@@ -82,7 +82,6 @@ Choose your preferred libraries for your project and create a new React project 
 |[eslint-config-wolox](https://github.com/Wolox/eslint-config-wolox)| Wolox eslint standard rules.
 |[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
-|[react-hot-loader](https://www.npmjs.com/package/react-hot-loader)| Allow live reloaded without loss of state.
 |[postcss](https://www.npmjs.com/package/postcss)| Tool for transforming styles with JS plugins.
 |[enzyme](https://www.npmjs.com/package/enzyme)| JavaScript testing utility for React that makes it easier to test your React Components' output.
 |[react-test-renderer](https://www.npmjs.com/package/react-test-renderer)| Provides an experimental React renderer that can be used to render React components to pure JavaScript objects.
