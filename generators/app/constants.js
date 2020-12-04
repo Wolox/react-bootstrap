@@ -138,10 +138,4 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-spinkit'
 ];
 
-module.exports.DEPENDENCIES = [
-  // 'postcss@^7.0.7',
-  // 'react@^16.6.3',
-  // 'react-dom@^16.6.3',
-  'wolox-equalizer@^0.0.3',
-  'node-sass@^4.11.0'
-];
+module.exports.DEPENDENCIES = ['wolox-equalizer@^0.0.3', 'node-sass@^4.11.0'];
