@@ -42,45 +42,30 @@ After that, every time you want to run it you may execute the run script: with t
 ./react-bootstrap/run.sh -l
 ```
 
-## Bootstrap options
-
-You can choose between two creation types: Clean and Customized
-
-- ### Clean
-
-Create a clean project using create-react-app as baseline with some small addition to its configuration.
-
-- ### Customized
-
-Choose your preferred libraries for your project and create a new React project with standard components, default screens, api services and common utils functions.
-
 ###### Components
-- Checkbox
 - FormInput (input and textarea)
 - ProviderWrapper
-- RadioGroup
 - Routes
-- SearchBar
 - Spinner
 - Suspense
 
 ###### Screens
 - Login
+- Registration
 - Dashboard
 
 ## Bootstrap libraries
 
 |||
 |----|-----------|
-|[react]()| v16.6.3
+|[react]()| ^17.0.1
 
-
-- ### Clean
 
 |Name|Description|
 |----|-----------|
 |[eslint-config-wolox](https://github.com/Wolox/eslint-config-wolox)| Wolox eslint standard rules.
 |[eslint-config-wolox-react](https://github.com/Wolox/eslint-config-wolox-react)| Wolox eslint React rules.
+|[@wolox/eslint-config-typescript](https://github.com/Wolox/eslint-config-wolox-typescript)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
 |[postcss](https://www.npmjs.com/package/postcss)| Tool for transforming styles with JS plugins.
 |[enzyme](https://www.npmjs.com/package/enzyme)| JavaScript testing utility for React that makes it easier to test your React Components' output.
@@ -90,13 +75,6 @@ Choose your preferred libraries for your project and create a new React project 
 |[aws-deploy-script-fe](https://www.npmjs.com/package/aws-deploy-script-fe)| AWS script for deploying your frontend applications.
 |[node-sass](https://github.com/sass/node-sass)| Provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
 |[react-dom](https://www.npmjs.com/package/react-dom)| Serves as the entry point to the DOM and server renderers for React.
-
-- ### Customized
-
-Additional to clean libraries are added 
-
-|Name|Description|
-|----|-----------|
 |[apisauce](https://github.com/infinitered/apisauce)| Talking to APIs doesn't have to be awkward anymore.
 |[react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)| DOM bindings for React Router.
 |[react-router](https://github.com/ReactTraining/react-router)| Routing for React.

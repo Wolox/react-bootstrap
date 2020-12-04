@@ -44,6 +44,8 @@ class GeneratorReact extends Generator {
 
   async prompting() {
     const mainAnswers = await this.prompt(MAIN_PROMPTS);
+    // Ignore clean for now
+    mainAnswers.customized = true;
     this.steps = mainAnswers.customized ? CustomizableGenerator : CleanGenerator;
     Object.keys(mainAnswers).forEach(answerKey => (this[answerKey] = mainAnswers[answerKey]));
 

@@ -83,10 +83,7 @@ module.exports.FILES = [
   SCSS_PATH
 ];
 
-module.exports.TEMPLATE_FILES = [
-  // TODO: Test clean
-  // 'src/index.js'
-];
+module.exports.TEMPLATE_FILES = [];
 
 module.exports.FILES_TO_DESTINATION = [
   LINTER_IGNORE_PATH,

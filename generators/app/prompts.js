@@ -1,5 +1,3 @@
-const { BOOTSTRAP_TYPES } = require('./constants');
-
 module.exports.MAIN_PROMPTS = [
   {
     type: 'input',
@@ -35,13 +33,13 @@ module.exports.MAIN_PROMPTS = [
     message: 'Add Google Analytics?',
     required: true,
     suffix: ' config REACT_APP_GA_TRACK_ID env variable'
-  },
-  {
-    type: 'list',
-    name: 'customized',
-    message: 'Which type of bootstrap do you want?',
-    required: true,
-    choices: BOOTSTRAP_TYPES,
-    default: 1
   }
+  // {
+  //   type: 'list',
+  //   name: 'customized',
+  //   message: 'Which type of bootstrap do you want?',
+  //   required: true,
+  //   choices: BOOTSTRAP_TYPES,
+  //   default: 1
+  // }
 ];
