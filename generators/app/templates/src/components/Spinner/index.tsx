@@ -18,7 +18,7 @@ interface SpinnerConfig extends SpinnerProps {
 export const withSpinner = (spinnerConfig: SpinnerConfig = {}) => <P extends {}>(
   WrappedComponent: React.ComponentType<P>
 ): React.FC<WithSpinnerProps & P> => {
-  const WithSpinner = ({ loading, ...passThroughProps }: WithSpinnerProps) => {
+  function WithSpinner({ loading, ...passThroughProps }: WithSpinnerProps) {
     const { classNameContainer = '', ...rest } = spinnerConfig;
     return loading ? (
       <div className={classNameContainer}>
@@ -27,7 +27,7 @@ export const withSpinner = (spinnerConfig: SpinnerConfig = {}) => <P extends {}>
     ) : (
       <WrappedComponent {...(passThroughProps as P)} />
     );
-  };
+  }
   WithSpinner.displayName = `WithSpinner(${getDisplayName(WrappedComponent)})`;
   return WithSpinner;
 };

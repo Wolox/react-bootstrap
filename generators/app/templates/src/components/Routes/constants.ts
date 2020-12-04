@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { lazy } from 'react';
 import i18next from 'i18next';
 
