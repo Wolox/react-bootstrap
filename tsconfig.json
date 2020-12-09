@@ -22,6 +22,8 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "src",
+    "generators/**/*.js",
+    "index.js"
   ]
 }
