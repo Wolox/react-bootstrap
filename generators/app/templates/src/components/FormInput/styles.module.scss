@@ -1,0 +1,28 @@
+@import 'scss/variables/_colors';
+
+.input {
+  background-color: $white;
+  border-radius: 5px;
+  border-bottom: 2px solid $gray;
+  height: 30px;
+  padding: 0 12px;
+
+  &:focus {
+    border-bottom: 2px solid $blue;
+  }
+
+  &.error {
+    border-bottom: 2px solid $red;
+  }
+}
+
+.error-text {
+  color: $red;
+  font-size: 12px;
+  height: 20px;
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
+}

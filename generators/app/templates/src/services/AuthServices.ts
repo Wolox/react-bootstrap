@@ -1,6 +1,6 @@
 import { ApiResponse } from 'apisauce';
 
-import { User, Credentials } from '~app/contexts/UserContext/reducer';
+import { User, Credentials } from 'contexts/UserContext/reducer';
 
 import api from '../config/api';
 

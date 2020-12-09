@@ -6,10 +6,6 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
   version: projectVersion,
   jest: {
     moduleNameMapper: {
-      '~screens(.*)': '<rootDir>/src/app/screens/$1',
-      '~components(.*)': '<rootDir>/src/app/components/$1',
-      '~hooks(.*)': '<rootDir>/src/app/hooks/$1',
-      '~contexts(.*)': '<rootDir>/src/app/contexts/$1',
       '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
     },
     snapshotSerializers: ['enzyme-to-json/serializer'],
@@ -32,18 +28,19 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     npm: '>= 6.9.0'
   },
   scripts: {
-    start: 'node ./scripts/start.js development',
+    // start: 'node ./scripts/start.js development',
+    start: 'rescripts start',
     'start-env': 'node ./scripts/start.js',
     build: 'node ./scripts/build.js',
     // eslint-disable-next-line no-extra-parens
     ...(this.customized && { deploy: 'node ./scripts/deploy.js' }),
     test: generateRSScript('test', '--env=jsdom'),
     eject: './node_modules/react-scripts/bin/react-scripts.js eject',
-    lint: './node_modules/eslint/bin/eslint.js src',
-    'lint-fix':
-      "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
+    lint: './node_modules/eslint/bin/eslint.js src --ext .js --ext .ts --ext .tsx',
+    'lint-fix': "npm run lint -- --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     'lint-scss': "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
-    'lint-diff': 'git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint',
+    'lint-diff':
+      'git diff --name-only --cached --relative --diff-filter=ACM | grep -e \\.js$ -e \\.tsx$ -e \\.ts$ | xargs eslint',
     'coverage-diff': 'rescripts test --env=jsdom --coverage --watchAll=false --changedSince=development'
   },
   husky: {
@@ -56,38 +53,9 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
 
 module.exports.createPackageJson = function createPackageJson() {
   const pjson = this.fs.readJSON(`./${this.projectName}/package.json`);
+  // Remove default eslintConfig to use .eslintrc.js
+  delete pjson.eslintConfig;
   const newpjson = Object.assign(pjson, getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl));
 
   this.fs.writeJSON(`./${this.projectName}/package.json`, newpjson);
-};
-
-module.exports.createJSConfig = function createJSConfig() {
-  const config = {
-    compilerOptions: {
-      target: 'esnext',
-      module: 'commonjs',
-      jsx: 'react',
-      allowSyntheticDefaultImports: true,
-      baseUrl: 'src'
-    },
-    include: ['src'],
-    exclude: ['node_modules', '.history']
-  };
-
-  if (this.customized) {
-    config.compilerOptions.paths = {
-      '~app/*': ['./src/app/*'],
-      '~components/*': ['./src/app/components/*'],
-      '~screens/*': ['./src/app/screens/*'],
-      '~config/*': ['./src/config/*'],
-      '~constants/*': ['./src/constants/*'],
-      '~services/*': ['./src/services/*'],
-      '~utils/*': ['./src/utils/*'],
-      '~assets/*': ['./src/assets/*'],
-      '~hooks/*': ['./src/app/hooks/*'],
-      '~contexts/*': ['./src/app/contexts/*']
-    };
-  }
-
-  this.fs.writeJSON(`./${this.projectName}/jsconfig.json`, config);
 };

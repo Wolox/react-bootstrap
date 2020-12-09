@@ -51,8 +51,18 @@ const NPMRC_PATH = {
 };
 
 const TESTS_SETUP_PATH = {
-  src: 'setupTests.js',
-  destination: 'src/setupTests.js'
+  src: 'setupTests.ts',
+  destination: 'src/setupTests.ts'
+};
+
+const ESLINTRC_PATH = {
+  src: 'eslintrc.js',
+  destination: '.eslintrc.js'
+};
+
+const GITIGNORE_PATH = {
+  src: 'gitignore',
+  destination: '.gitignore'
 };
 
 module.exports.BABELRC_PATH = {
@@ -73,14 +83,16 @@ module.exports.FILES = [
   SCSS_PATH
 ];
 
-module.exports.TEMPLATE_FILES = [
-  // Insert here all template ejs files
-  '.eslintrc.js',
-  '.babelrc.js',
-  'src/index.js'
-];
+module.exports.TEMPLATE_FILES = [];
 
-module.exports.FILES_TO_DESTINATION = [LINTER_IGNORE_PATH, RESCRIPTS_PATH, NPMRC_PATH, TESTS_SETUP_PATH];
+module.exports.FILES_TO_DESTINATION = [
+  LINTER_IGNORE_PATH,
+  RESCRIPTS_PATH,
+  NPMRC_PATH,
+  TESTS_SETUP_PATH,
+  GITIGNORE_PATH,
+  ESLINTRC_PATH
+];
 
 module.exports.CI_CONFIG_FILE = `${CI_PATH}/config.yml`;
 
@@ -90,13 +102,15 @@ module.exports.BOOTSTRAP_TYPES = [
 ];
 
 module.exports.DEV_DEPENDENCIES = [
-  'eslint-plugin-import@2.18.2',
+  'eslint-plugin-import@2.22.1',
   'eslint-plugin-jsx-a11y@6.2.3',
   'eslint-plugin-prettier@3.1.0',
   'eslint-plugin-react@7.14.3',
   'eslint-plugin-babel@5.3.0',
-  'eslint-config-wolox-react@2.0.1',
+  'eslint-config-wolox-react@2.1.2',
   'eslint-config-wolox@3.0.2',
+  'eslint-import-resolver-typescript@^2.3.0',
+  '@typescript-eslint/parser@^4.7.0',
   'stylelint-config-wolox@1.0.7',
   'stylelint-no-indistinguishable-colors@1.2.1',
   'stylelint-scss@3.5.4',
@@ -106,13 +120,9 @@ module.exports.DEV_DEPENDENCIES = [
   'prettier-eslint@8.8.2',
   'prettier-stylelint@0.4.2',
   'prettier-eslint-cli@5.0.0',
-  'react-hot-loader@^4.6.1',
-  '@rescripts/cli@^0.0.13',
-  'prop-types@^15.6.2',
-  '@babel/plugin-proposal-optional-chaining@^7.2.0',
+  '@rescripts/cli@^0.0.14',
   'env-cmd@^10.0.1',
   'aws-deploy-script-fe@1.0.8',
-  'chalk@^3.0.0',
   'minimist@1.2.0',
   'postcss-syntax@^0.36.2',
   'postcss-html@^0.36.0',
@@ -125,10 +135,4 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-spinkit'
 ];
 
-module.exports.DEPENDENCIES = [
-  'postcss@^7.0.7',
-  'react@^16.6.3',
-  'react-dom@^16.6.3',
-  'wolox-equalizer@^0.0.3',
-  'node-sass@^4.11.0'
-];
+module.exports.DEPENDENCIES = ['wolox-equalizer@^0.0.3', 'node-sass@^4.11.0'];

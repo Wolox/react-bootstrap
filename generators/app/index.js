@@ -1,14 +1,14 @@
 const Generator = require('yeoman-generator');
 require('colors');
 
-const { createPackageJson, createJSConfig } = require('./tasks/fileCreators');
-const copyFiles = require('./tasks/copyFiles');
+const { createPackageJson } = require('./tasks/fileCreators');
+const copyAllFiles = require('./tasks/copyAllFiles');
 const installDependencies = require('./tasks/installDependencies');
 const linterAutofix = require('./tasks/linterAutofix');
 const { MAIN_PROMPTS } = require('./prompts');
 const { KICKOFF_MESSAGE, DEV_DEPENDENCIES, DEPENDENCIES } = require('./constants');
 const { installCRA, runCRA } = require('./tasks/createReactApp');
-const { gitInitiation, configGit } = require('./tasks/gitConfig');
+const { gitInitiation, configGit, configGitNoRepo } = require('./tasks/gitConfig');
 const CleanGenerator = require('./steps/CleanSteps');
 const CustomizableGenerator = require('./steps/CustomizableSteps');
 
@@ -44,6 +44,8 @@ class GeneratorReact extends Generator {
 
   async prompting() {
     const mainAnswers = await this.prompt(MAIN_PROMPTS);
+    // Ignore clean for now
+    mainAnswers.customized = true;
     this.steps = mainAnswers.customized ? CustomizableGenerator : CleanGenerator;
     Object.keys(mainAnswers).forEach(answerKey => (this[answerKey] = mainAnswers[answerKey]));
 
@@ -70,24 +72,32 @@ class GeneratorReact extends Generator {
     this.log('Copying base project files...');
     return Promise.resolve()
       .then(createPackageJson.bind(this))
-      .then(createJSConfig.bind(this))
-      .then(copyFiles.bind(this))
+      .then(copyAllFiles.bind(this))
       .then(this.steps.writing.bind(this));
   }
 
   install() {
     this.log('Installing...');
     return new Promise(resolve => {
-      this.spawnCommand('npm', ['install']).on('close', () => resolve());
+      this.spawnCommand('npm', ['install'], { cwd: `${process.cwd()}/${this.projectName}` }).on('close', () =>
+        resolve()
+      );
     });
   }
 
   async end() {
     this.log('Ending...');
+    await linterAutofix
+      .bind(this)()
+      // catching with an empty function to ignore the error
+      // eslint-disable-next-line no-empty-function, @typescript-eslint/no-empty-function
+      .catch(() => {});
+
     if (this.configureGit) {
       await configGit.bind(this)();
+    } else {
+      await configGitNoRepo.bind(this)();
     }
-    await linterAutofix.bind(this)();
   }
 }
 

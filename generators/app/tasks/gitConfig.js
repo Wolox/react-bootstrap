@@ -54,3 +54,23 @@ module.exports.configGit = function configGit() {
       })
     );
 };
+
+module.exports.configGitNoRepo = function configGitNoRepo() {
+  return runCommand({
+    command: ['git', ['add', '--all'], { cwd: `${process.cwd()}/${this.projectName}` }],
+    loadingMessage: 'Adding all files to commit',
+    successMessage: 'All files added successfully',
+    failureMessage: 'Files additions has failed'
+  }).then(() =>
+    runCommand({
+      command: [
+        'git',
+        ['commit', '--amend', '-m', 'Initial react-bootstrap commit'],
+        { cwd: `${process.cwd()}/${this.projectName}` }
+      ],
+      loadingMessage: 'Commiting all files',
+      successMessage: 'All files commited successfully',
+      failureMessage: 'Files commit has failed'
+    })
+  );
+};

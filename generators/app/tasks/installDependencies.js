@@ -5,7 +5,7 @@ function npmInstall(projectName, deps, options, dev) {
 
   return runCommand({
     command: ['npm', npmArgs, { cwd: `${process.cwd()}/${projectName}` }],
-    loadingMessage: `Fetching ${dev ? 'dev dependencies' : 'dependencies'}`,
+    loadingMessage: `Installing ${dev ? 'dev dependencies' : 'dependencies'}`,
     successMessage: `${dev ? 'Dev dependencies' : 'Dependencies'} ready!`,
     failureMessage: `${
       dev ? 'Dev dependencies' : 'Dependencies'

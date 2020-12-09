@@ -38,8 +38,10 @@ const removeValue = (key: string) => {
   }
 };
 
-export default {
+const LocalStorageService = {
   getValue,
   setValue,
   removeValue
 };
+
+export default LocalStorageService;

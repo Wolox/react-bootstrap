@@ -7,6 +7,7 @@ module.exports = {
     }],
     'scss/no-duplicate-dollar-variables': [ true, {
       ignoreInsideAtRules: ['if', 'mixin', 'media']
-    }]
+    }],
+    'scss/at-import-no-partial-leading-underscore': null,
   }
 };
