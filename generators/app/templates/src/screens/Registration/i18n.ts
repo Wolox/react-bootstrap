@@ -3,10 +3,10 @@ import i18next from 'i18next';
 i18next.addResources('es', 'Registration', {
   registration: 'Creación de cuenta',
   registrationExplanation: 'Ingrese los siguientes datos para crear su cuenta',
-  name: 'Nombre',
-  namePlaceholder: 'Ingrese su nombre',
-  surname: 'Apellido',
-  surnamePlaceholder: 'Ingrese su apellido',
+  firstName: 'Nombre',
+  firstNamePlaceholder: 'Ingrese su nombre',
+  lastName: 'Apellido',
+  lastNamePlaceholder: 'Ingrese su apellido',
   email: 'E-mail',
   emailPlaceholder: 'Ingrese su e-mail',
   password: 'Contraseña',
@@ -14,5 +14,9 @@ i18next.addResources('es', 'Registration', {
   confirmPassword: 'Confirmar contraseña',
   confirmPasswordPlaceholder: 'Vuelva a ingresar su contraseña',
   required: '* Requerido',
-  submit: 'Enviar'
+  submit: 'Enviar',
+  emailFormatError: 'El formato es inválido',
+  requiredError: 'El campo es requerido',
+  confirmPasswordError: 'Las contraseñas no coinciden',
+  passwordLengthError: 'Debe tener al menos {{amount}} caracteres'
 });

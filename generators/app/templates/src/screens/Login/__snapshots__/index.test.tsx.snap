@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Login when mounting shows valid content 1`] = `
+<div
+  class="column center full-width container"
+>
+  <div
+    class="column center m-bottom-3"
+  >
+    <h1
+      class="m-bottom-1"
+    >
+      Login:login
+    </h1>
+    <h2>
+      Login:loginExplanation
+    </h2>
+  </div>
+  <form
+    aria-label="login-form"
+    class="column m-bottom-2 formContainer"
+    novalidate=""
+  >
+    <div
+      class="column start "
+    >
+      <label
+        class=" m-bottom-1"
+        for="email"
+      >
+        Login:email
+      </label>
+      <input
+        class="m-bottom-2 full-width input input "
+        id="email"
+        name="email"
+        placeholder="Login:emailPlaceholder"
+        type="email"
+      />
+      <span
+        aria-hidden="true"
+        class=" errorText "
+        id="email-error"
+        role="alert"
+      />
+    </div>
+    <div
+      class="column start "
+    >
+      <label
+        class=" m-bottom-1"
+        for="password"
+      >
+        Login:password
+      </label>
+      <input
+        class="m-bottom-2 full-width input input "
+        id="password"
+        name="password"
+        placeholder="Login:passwordPlaceholder"
+        type="password"
+      />
+      <span
+        aria-hidden="true"
+        class=" errorText "
+        id="password-error"
+        role="alert"
+      />
+    </div>
+    <div
+      class="column center"
+    >
+      <button
+        class="full-width m-bottom-1 button"
+        type="submit"
+      >
+        Login:enter
+      </button>
+      <span
+        class="row center middle full-width m-top-1 m-bottom-1 hidden"
+      >
+        Login:error
+      </span>
+      <a
+        href="/recover_password"
+      >
+        Login:forgotPassword
+      </a>
+      <a
+        href="/registration"
+      >
+        Login:createAccount
+      </a>
+    </div>
+  </form>
+</div>
+`;

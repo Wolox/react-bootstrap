@@ -11,5 +11,7 @@ i18next.addResources('es', 'Login', {
   passwordPlaceholder: 'Ingrese su contraseña',
   createAccount: 'Crear cuenta',
   invalidCredentials: 'Credenciales incorrectas',
-  error: 'Ocurrió un error en el login'
+  error: 'Ocurrió un error en el login',
+  emailFormatError: 'El formato es inválido',
+  requiredError: 'El campo es requerido'
 });
