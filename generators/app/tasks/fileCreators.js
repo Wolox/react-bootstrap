@@ -8,7 +8,6 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     moduleNameMapper: {
       '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
     },
-    snapshotSerializers: ['enzyme-to-json/serializer'],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     coverageThreshold: {
       global: {

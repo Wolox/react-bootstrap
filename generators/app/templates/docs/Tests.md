@@ -1,15 +1,15 @@
 ## Testing
 
-This bootstrap uses [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) to test Components.
+This bootstrap uses [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) to test Components.
 
 **Usage**
 
 Run the project tests running the `npm test` command.
 This command is defined by Create React App and Jest will look for test files with any of the following popular naming conventions:
 
-* Files with .js suffix in \_\_tests__ folders.
-* Files with .test.js suffix.
-* Files with .spec.js suffix.
+* Files with .(js|ts|ts) suffix in \_\_tests__ folders.
+* Files with .test.(js|ts|ts) suffix.
+* Files with .spec.(js|ts|ts) suffix.
 
 For checking the code coverage of the project run `npm test -- --coverage`.
 
@@ -30,12 +30,12 @@ function TextArea({ className, onChange, onBlur, onFocus, value }) {
 And create a test for it
 
 ```jsx
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 describe('<TextArea />', () => {
-  it('should contain <textArea />', () => {
-    const component = shallow(<TextArea value={testText} onChange={testFunc} />);
-    expect(component.containsMatchingElement(<textarea />)).toBeTruthy();
+  it('should contain a text box', () => {
+    render(<TextArea value={testText} onChange={testFunc} />);
+    expect(screen.getByRole('textbox')).toBeInDocument();
   });
 });
 ```
@@ -43,9 +43,9 @@ describe('<TextArea />', () => {
 This is the output
 
 ```
- PASS  src/components/TextArea/index.test.js
+ PASS  src/components/TextArea/index.test.tsx
   <TextArea />
-    ✓ should contain <textArea /> (8ms)
+    ✓ should contain a text box (8ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
