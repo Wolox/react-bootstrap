@@ -128,6 +128,7 @@ module.exports.DEV_DEPENDENCIES = [
   'postcss-html@^0.36.0',
   'mutationobserver-shim@^0.3.7',
   '@testing-library/react-hooks@^3.7.0',
+  'react-test-renderer@^17.0.1',
   '@types/react-spinkit'
 ];
 
