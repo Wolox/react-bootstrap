@@ -5,10 +5,6 @@ import 'mutationobserver-shim';
 
 import Login from './index';
 
-jest.mock('i18next', () => ({
-  t: (key: string) => key
-}));
-
 const mockSetStateUser = jest.fn();
 const mockSetPersistantUser = jest.fn();
 
@@ -30,8 +26,6 @@ jest.mock('~services/AuthServices', () => ({
     ),
   setCurrentUser: (values: any) => mockSetPersistantUser(values)
 }));
-
-global.MutationObserver = window.MutationObserver;
 
 describe('#Login', () => {
   const component = <Login />;
