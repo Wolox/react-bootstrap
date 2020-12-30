@@ -3,10 +3,6 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 
 import Registration from './index';
 
-jest.mock('i18next', () => ({
-  t: (key: string) => key
-}));
-
 const mockSetStateUser = jest.fn();
 const mockSetPersistantUser = jest.fn();
 

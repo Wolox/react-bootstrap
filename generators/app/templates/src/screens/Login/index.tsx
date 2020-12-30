@@ -36,7 +36,7 @@ function LoginContainer() {
       dispatch(actionCreators.setUser(userResponse));
       setCurrentUser(userResponse);
 
-      history?.push('/');
+      history.push('/');
     }
   });
   const { register, handleSubmit, errors } = useForm();
