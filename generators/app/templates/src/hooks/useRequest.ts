@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ApiErrorResponse, ApiOkResponse, PROBLEM_CODE, ApiResponse } from 'apisauce';
 
-import { Nullable } from 'utils/types';
+import { Nullable } from '~utils/types';
+
+import { useMountedRef } from './useMountedRef';
 
 export type Error<E> = { problem: PROBLEM_CODE; errorData?: E };
 type Request<P, D, E> = (params: P) => Promise<ApiResponse<D, E>>;
@@ -21,7 +23,6 @@ interface AsyncRequestHookParams<P, D, E, T> {
 interface AsyncRequestHookParamsWithPayload<P, D, E, T> extends AsyncRequestHookParams<P, D, E, T> {
   payload: P;
 }
-
 interface AsyncRequest<P, D, E> {
   values: P;
   request: Request<P, D, E>;
@@ -30,7 +31,6 @@ interface AsyncRequest<P, D, E> {
   onError: Failure<E>;
   onPostFetch: PostFetch<ApiOkResponse<D>, ApiErrorResponse<E>>;
 }
-
 const executeAsyncRequest = async <P, D, E>({
   values,
   request,
@@ -48,7 +48,6 @@ const executeAsyncRequest = async <P, D, E>({
   }
   onPostFetch(response);
 };
-
 // Returns a request to execute manually at some point, and the variables that will be updated when it does
 export const useLazyRequest = <P, D, E, T = D>({
   request,
@@ -61,9 +60,9 @@ export const useLazyRequest = <P, D, E, T = D>({
   const [state, setState] = useState<Nullable<T>>(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Nullable<Error<E>>>(null);
-
+  const isMounted = useMountedRef();
   const sendRequest = useCallback(
-    values => {
+    (values: P) => {
       executeAsyncRequest({
         values,
         request,
@@ -73,19 +72,25 @@ export const useLazyRequest = <P, D, E, T = D>({
           setError(null);
         },
         onSuccess: data => {
-          const successData = data as D;
-          const transformedResponse = successData ? transformResponse(successData) : undefined;
-          setState(transformedResponse || null);
-          withPostSuccess?.(transformedResponse);
+          if (isMounted.current) {
+            const successData = data as D;
+            const transformedResponse = successData ? transformResponse(successData) : undefined;
+            setState(transformedResponse || null);
+            withPostSuccess?.(transformedResponse);
+          }
         },
         onError: errorInfo => {
-          setError(() => errorInfo);
-          withPostFailure?.(errorInfo);
+          if (isMounted.current) {
+            setError(() => errorInfo);
+            withPostFailure?.(errorInfo);
+          }
         },
         onPostFetch: response => {
-          setLoading(false);
-          if (response.data) {
-            withPostFetch?.(transformResponse(response.data));
+          if (isMounted.current) {
+            setLoading(false);
+            if (response.data) {
+              withPostFetch?.(transformResponse(response.data));
+            }
           }
         }
       });
@@ -93,10 +98,8 @@ export const useLazyRequest = <P, D, E, T = D>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [initialState, request, withPostFailure, withPostSuccess]
   );
-
   return [state, loading, error, sendRequest];
 };
-
 // Executes a request each time a dependency changes and returns the values and the refetch function
 // in case you want to execute it again
 export const useRequest = <P, D, E, T = D>(
@@ -119,7 +122,6 @@ export const useRequest = <P, D, E, T = D>(
     withPostFetch,
     transformResponse
   });
-
   useEffect(
     () => {
       sendRequest(payload);
@@ -127,6 +129,5 @@ export const useRequest = <P, D, E, T = D>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
     dependencies
   );
-
   return [state, loading, error, sendRequest];
 };
