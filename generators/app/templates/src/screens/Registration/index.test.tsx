@@ -1,5 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+import { Router } from 'react-router-dom';
 
 import Registration from './index';
 
@@ -26,7 +28,12 @@ jest.mock('~services/AuthServices', () => ({
 }));
 
 describe('#Registration', () => {
-  const component = <Registration />;
+  const component = (
+    <Router history={createMemoryHistory()}>
+      <Registration />
+    </Router>
+  );
+
   const validValues = {
     firstName: 'John',
     lastName: 'Doe',

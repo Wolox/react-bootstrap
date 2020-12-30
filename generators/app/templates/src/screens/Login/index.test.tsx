@@ -1,5 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 import 'mutationobserver-shim';
 
@@ -28,7 +30,11 @@ jest.mock('~services/AuthServices', () => ({
 }));
 
 describe('#Login', () => {
-  const component = <Login />;
+  const component = (
+    <Router history={createMemoryHistory()}>
+      <Login />
+    </Router>
+  );
 
   describe('when mounting', () => {
     it('shows valid content', () => {
