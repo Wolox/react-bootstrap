@@ -126,12 +126,9 @@ module.exports.DEV_DEPENDENCIES = [
   'minimist@1.2.0',
   'postcss-syntax@^0.36.2',
   'postcss-html@^0.36.0',
-  'enzyme@^3.11.0',
-  'enzyme-to-json@^3.5.0',
-  'enzyme-adapter-react-16@^1.15.2',
-  'react-test-renderer@^16.12.0',
-  '@types/react-test-renderer',
-  '@types/enzyme',
+  'mutationobserver-shim@^0.3.7',
+  '@testing-library/react-hooks@^3.7.0',
+  'react-test-renderer@^17.0.1',
   '@types/react-spinkit'
 ];
 

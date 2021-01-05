@@ -59,7 +59,8 @@ module.exports.DEPENDENCIES = [
   'history@^4.7.2',
   'i18next@^13.0.0',
   'react-spinkit@^3.0.0',
-  'typescript@4.0.5'
+  'typescript@^4.1.0',
+  'react-hook-form@^6.12.2'
 ];
 
 module.exports.DEV_DEPENDENCIES = [

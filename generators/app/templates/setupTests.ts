@@ -1,8 +1,6 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
+import '@testing-library/jest-dom';
+import 'mutationobserver-shim';
 
 jest.mock('i18next', () => ({
-  t: () => ''
+  t: (key: string, params: Record<string, string>) => (params ? `${key} ${JSON.stringify(params)}` : key)
 }));

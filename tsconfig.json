@@ -23,7 +23,7 @@
   },
   "include": [
     "src",
-    "generators/**/*.js",
+    "generators",
     ".eslintrc.js",
     "index.js"
   ]

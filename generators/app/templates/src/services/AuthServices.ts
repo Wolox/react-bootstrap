@@ -12,6 +12,14 @@ export interface LoginError {
   message: string;
 }
 
+export interface RegistrationUser {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+}
+
 export const setCurrentUser = (currentUser: User) => {
   api.setHeader('Authorization', currentUser.sessionToken);
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
@@ -21,15 +29,28 @@ export const getCurrentUser = () => LocalStorageService.getValue(TOKEN_FIELD_NAM
 
 export const removeCurrentUser = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const login = (credentials: Credentials): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
-  // api.post('/login', credentials );
+  // api.post('/login', credentials);
   new Promise(resolve => {
     setTimeout(() => {
       resolve({
         ok: true,
         data: { sessionToken: credentials.password === 'asd1' ? 'invalid' : 'token', id: 1234 },
+        problem: null,
+        originalError: null
+      });
+    }, 1000); // eslint-disable-line no-magic-numbers
+  });
+
+export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginError>> =>
+  // TODO: Implement call to authentication API here
+  // api.post('/sign_up', credentials);
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        ok: true,
+        data: { sessionToken: user.password === 'asd1' ? 'invalid' : 'token', id: 1234 },
         problem: null,
         originalError: null
       });

@@ -14,12 +14,13 @@ interface Props {
   labelClassName?: string;
   name: string;
   onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onChange: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   onFocus?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   placeholder?: string;
   readOnly?: boolean;
   touched?: boolean;
   submitCount?: number;
+  inputRef?: any;
 }
 
 function FormInput({
@@ -39,7 +40,8 @@ function FormInput({
   placeholder = '',
   readOnly = false,
   touched,
-  submitCount
+  submitCount,
+  inputRef
 }: Props) {
   const InputComponent = isTextarea ? 'textarea' : 'input';
   const showError =
@@ -62,8 +64,14 @@ function FormInput({
         onBlur={onBlur}
         disabled={disabled}
         readOnly={readOnly}
+        ref={inputRef}
       />
-      <span className={`${errorClassName} ${styles.errorText} ${showError ? styles.visible : ''}`}>
+      <span
+        id={`${name}-error`}
+        role="alert"
+        aria-hidden={!showError}
+        className={`${errorClassName} ${styles.errorText} ${showError ? styles.visible : ''}`}
+      >
         {error}
       </span>
     </div>
