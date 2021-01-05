@@ -98,7 +98,7 @@ describe('#useLazyRequest', () => {
   });
 
   describe('when request is called and it is loading', () => {
-    it('it starts loading', () => {
+    it('starts loading', () => {
       const { result } = renderHook(() => useLazyRequest({ request: MockService.fetchFoo }));
       const [, , , request] = result.current;
       act(async () => {
@@ -113,7 +113,7 @@ describe('#useLazyRequest', () => {
   });
 
   describe('when request is called and it succeeds', () => {
-    it('is has the correct state', async () => {
+    it('has the correct state', async () => {
       const { result } = renderHook(() => useLazyRequest({ request: MockService.fetchFoo }));
       const [, , , request] = result.current;
       await act(async () => {
@@ -128,7 +128,7 @@ describe('#useLazyRequest', () => {
   });
 
   describe('when request is called and it fails', () => {
-    it('it sets the error', async () => {
+    it('sets the error', async () => {
       const { result } = renderHook(() => useLazyRequest({ request: FailureMockService.fetchFoo }));
       const [, , , request] = result.current;
       await act(async () => {
