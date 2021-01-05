@@ -1,13 +1,11 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 import 'mutationobserver-shim';
 
 import Login from './index';
-
-jest.mock('i18next', () => ({
-  t: (key: string) => key
-}));
 
 const mockSetStateUser = jest.fn();
 const mockSetPersistantUser = jest.fn();
@@ -31,10 +29,12 @@ jest.mock('~services/AuthServices', () => ({
   setCurrentUser: (values: any) => mockSetPersistantUser(values)
 }));
 
-global.MutationObserver = window.MutationObserver;
-
 describe('#Login', () => {
-  const component = <Login />;
+  const component = (
+    <Router history={createMemoryHistory()}>
+      <Login />
+    </Router>
+  );
 
   describe('when mounting', () => {
     it('shows valid content', () => {

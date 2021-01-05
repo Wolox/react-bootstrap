@@ -50,7 +50,7 @@ function RegistrationContainer() {
       dispatch(actionCreators.setUser(userResponse));
       setCurrentUser(userResponse);
 
-      history?.push('/');
+      history.push('/');
     }
   });
 

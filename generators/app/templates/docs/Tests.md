@@ -11,7 +11,7 @@ This command is defined by Create React App and Jest will look for test files wi
 * Files with .test.(js|ts|ts) suffix.
 * Files with .spec.(js|ts|ts) suffix.
 
-For checking the code coverage of the project run `npm test -- --coverage`.
+For checking the code coverage of the project run `npm run coverage`.
 
 Refer to CRA tests [documentation](https://facebook.github.io/create-react-app/docs/running-tests) for further explanation.
 
