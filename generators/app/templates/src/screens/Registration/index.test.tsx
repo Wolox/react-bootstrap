@@ -51,32 +51,32 @@ describe('#Registration', () => {
   describe('when values are empty and form is submitted', () => {
     it('shows the required message for each required field', async () => {
       const { getByRole, getByLabelText } = render(component);
-      const firstName = await getByLabelText('Registration:firstName');
-      const lastName = await getByLabelText('Registration:lastName');
-      const email = await getByLabelText('Registration:email');
-      const password = await getByLabelText('Registration:password');
-      const passwordConfirmation = await getByLabelText('Registration:confirmPassword');
+      const firstName = await getByLabelText('firstName');
+      const lastName = await getByLabelText('lastName');
+      const email = await getByLabelText('email');
+      const password = await getByLabelText('password');
+      const passwordConfirmation = await getByLabelText('confirmPassword');
       const form = await getByRole('form', { name: 'registration-form' });
 
       // eslint-disable-next-line max-nested-callbacks
       await waitFor(() => fireEvent.submit(form));
 
-      expect(firstName.parentElement?.innerHTML).toMatch('Registration:requiredError');
-      expect(lastName.parentElement?.innerHTML).toMatch('Registration:requiredError');
-      expect(email.parentElement?.innerHTML).toMatch('Registration:requiredError');
-      expect(password.parentElement?.innerHTML).toMatch('Registration:requiredError');
-      expect(passwordConfirmation.parentElement?.innerHTML).toMatch('Registration:requiredError');
+      expect(firstName.parentElement?.innerHTML).toMatch('requiredError');
+      expect(lastName.parentElement?.innerHTML).toMatch('requiredError');
+      expect(email.parentElement?.innerHTML).toMatch('requiredError');
+      expect(password.parentElement?.innerHTML).toMatch('requiredError');
+      expect(passwordConfirmation.parentElement?.innerHTML).toMatch('requiredError');
     });
   });
 
   describe('when email format is invalid and form is submitted', () => {
     it('shows the email error', async () => {
       const { getByRole, getByLabelText, getAllByRole } = render(component);
-      const firstName = await getByLabelText('Registration:firstName');
-      const lastName = await getByLabelText('Registration:lastName');
-      const email = await getByLabelText('Registration:email');
-      const password = await getByLabelText('Registration:password');
-      const passwordConfirmation = await getByLabelText('Registration:confirmPassword');
+      const firstName = await getByLabelText('firstName');
+      const lastName = await getByLabelText('lastName');
+      const email = await getByLabelText('email');
+      const password = await getByLabelText('password');
+      const passwordConfirmation = await getByLabelText('confirmPassword');
       const form = await getByRole('form', { name: 'registration-form' });
 
       await fireEvent.change(firstName, { target: { value: validValues.firstName } });
@@ -89,7 +89,7 @@ describe('#Registration', () => {
       await waitFor(() => fireEvent.submit(form));
       const errors = await getAllByRole('alert');
 
-      expect(email.parentElement?.innerHTML).toMatch('Registration:emailFormatError');
+      expect(email.parentElement?.innerHTML).toMatch('emailFormatError');
       expect(errors.length).toBe(1);
     });
   });
@@ -97,11 +97,11 @@ describe('#Registration', () => {
   describe('when password length is too short and form is submitted', () => {
     it('shows the password error', async () => {
       const { getByRole, getByLabelText, getAllByRole } = render(component);
-      const firstName = await getByLabelText('Registration:firstName');
-      const lastName = await getByLabelText('Registration:lastName');
-      const email = await getByLabelText('Registration:email');
-      const password = await getByLabelText('Registration:password');
-      const passwordConfirmation = await getByLabelText('Registration:confirmPassword');
+      const firstName = await getByLabelText('firstName');
+      const lastName = await getByLabelText('lastName');
+      const email = await getByLabelText('email');
+      const password = await getByLabelText('password');
+      const passwordConfirmation = await getByLabelText('confirmPassword');
       const form = await getByRole('form', { name: 'registration-form' });
 
       await fireEvent.change(firstName, { target: { value: validValues.firstName } });
@@ -114,7 +114,7 @@ describe('#Registration', () => {
       await waitFor(() => fireEvent.submit(form));
       const errors = await getAllByRole('alert');
 
-      expect(password.parentElement?.innerHTML).toMatch('Registration:passwordLengthError');
+      expect(password.parentElement?.innerHTML).toMatch('passwordLengthError');
       expect(errors.length).toBe(1);
     });
   });
@@ -122,11 +122,11 @@ describe('#Registration', () => {
   describe('when password confirmation does not match password and form is submitted', () => {
     it('shows the password confirmation error', async () => {
       const { getByRole, getByLabelText, getAllByRole } = render(component);
-      const firstName = await getByLabelText('Registration:firstName');
-      const lastName = await getByLabelText('Registration:lastName');
-      const email = await getByLabelText('Registration:email');
-      const password = await getByLabelText('Registration:password');
-      const passwordConfirmation = await getByLabelText('Registration:confirmPassword');
+      const firstName = await getByLabelText('firstName');
+      const lastName = await getByLabelText('lastName');
+      const email = await getByLabelText('email');
+      const password = await getByLabelText('password');
+      const passwordConfirmation = await getByLabelText('confirmPassword');
       const form = await getByRole('form', { name: 'registration-form' });
 
       await fireEvent.change(firstName, { target: { value: validValues.firstName } });
@@ -140,7 +140,7 @@ describe('#Registration', () => {
 
       const errors = await getAllByRole('alert');
 
-      expect(passwordConfirmation.parentElement?.innerHTML).toMatch('Registration:confirmPasswordError');
+      expect(passwordConfirmation.parentElement?.innerHTML).toMatch('confirmPasswordError');
       expect(errors.length).toBe(1);
     });
   });
@@ -148,11 +148,11 @@ describe('#Registration', () => {
   describe('when values are valid and form is submitted', () => {
     it('created the user', async () => {
       const { getByRole, getByLabelText } = render(component);
-      const firstName = await getByLabelText('Registration:firstName');
-      const lastName = await getByLabelText('Registration:lastName');
-      const email = await getByLabelText('Registration:email');
-      const password = await getByLabelText('Registration:password');
-      const passwordConfirmation = await getByLabelText('Registration:confirmPassword');
+      const firstName = await getByLabelText('firstName');
+      const lastName = await getByLabelText('lastName');
+      const email = await getByLabelText('email');
+      const password = await getByLabelText('password');
+      const passwordConfirmation = await getByLabelText('confirmPassword');
       const form = await getByRole('form', { name: 'registration-form' });
 
       await fireEvent.change(firstName, { target: { value: validValues.firstName } });

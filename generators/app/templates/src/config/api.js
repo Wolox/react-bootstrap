@@ -25,7 +25,7 @@ export const apiSetup = dispatch => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*
        * TODO: These callbacks should only be called if no other callback was asigned for the response.
-       * - dispatch(alertActions.error(i18next.t('apiErrors:expired')));
+       * - dispatch(alertActions.error(t('apiErrors:expired')));
        */
     }
   });

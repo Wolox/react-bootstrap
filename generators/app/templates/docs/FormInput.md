@@ -27,11 +27,11 @@
 
 ```jsx
 <FormInput
-  label={i18next.t('Login:email')}
+  label={t('Login:email')}
   name={FIELDS.email}
   inputType="text"
   inputClassName={styles.inputClassName}
-  placeholder={i18next.t('Login:emailPlaceholder')}
+  placeholder={t('Login:emailPlaceholder')}
   onChange={onEmailChange}
   error={error}
 />

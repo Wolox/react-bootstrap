@@ -20,3 +20,24 @@ i18next.addResources('es', 'Registration', {
   confirmPasswordError: 'Las contraseñas no coinciden',
   passwordLengthError: 'Debe tener al menos {{amount}} caracteres'
 });
+
+i18next.addResources('en', 'Registration', {
+  registration: 'New account',
+  registrationExplanation: 'Enter the following information to create your account',
+  firstName: 'Name',
+  firstNamePlaceholder: 'Enter your name',
+  lastName: 'Lastname',
+  lastNamePlaceholder: 'Enter your lastname',
+  email: 'E-mail',
+  emailPlaceholder: 'Enter your e-mail',
+  password: 'Password',
+  passwordPlaceholder: 'Enter your password',
+  confirmPassword: 'Confirm password',
+  confirmPasswordPlaceholder: 'Repeat passworrd',
+  required: '* Required',
+  submit: 'Register',
+  emailFormatError: 'Invalid format',
+  requiredError: 'Field is required',
+  confirmPasswordError: 'Your password does not match',
+  passwordLengthError: 'At least {{amount}} characters'
+});
