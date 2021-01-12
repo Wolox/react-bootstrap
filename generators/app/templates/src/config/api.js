@@ -25,7 +25,7 @@ export const apiSetup = callback => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*
        * TODO: These callbacks should only be called if no other callback was asigned for the response.
-       * - i.e: callback(response)
+       * - i.e: callback?.(response)
        */
     }
   });
