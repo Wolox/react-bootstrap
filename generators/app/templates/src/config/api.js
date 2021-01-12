@@ -20,12 +20,12 @@ const api = create({
 });
 
 // eslint-disable-next-line no-unused-vars, prettier/prettier, @typescript-eslint/no-unused-vars
-export const apiSetup = dispatch => {
+export const apiSetup = callback => {
   api.addMonitor(response => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*
        * TODO: These callbacks should only be called if no other callback was asigned for the response.
-       * - dispatch(alertActions.error(t('apiErrors:expired')));
+       * - i.e: callback(response)
        */
     }
   });
