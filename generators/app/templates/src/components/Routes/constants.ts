@@ -23,14 +23,16 @@ export const ROUTES = [
     path: PATHS.registration,
     component: Registration,
     title: i18next.t('Routes:registrationTitle'),
-    description: i18next.t('Routes:registrationDescription')
+    description: i18next.t('Routes:registrationDescription'),
+    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
     path: PATHS.recoverPassword,
     component: RecoverPassword,
     title: i18next.t('Routes:recoverPasswordTitle'),
-    description: i18next.t('Routes:recoverPasswordDescription')
+    description: i18next.t('Routes:recoverPasswordDescription'),
+    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
