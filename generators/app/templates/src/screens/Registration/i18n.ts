@@ -18,7 +18,8 @@ i18next.addResources('es', 'Registration', {
   emailFormatError: 'El formato es inválido',
   requiredError: 'El campo es requerido',
   confirmPasswordError: 'Las contraseñas no coinciden',
-  passwordLengthError: 'Debe tener al menos {{amount}} caracteres'
+  passwordLengthError: 'Debe tener al menos {{amount}} caracteres',
+  returnToLogin: 'Volver al login'
 });
 
 i18next.addResources('en', 'Registration', {
@@ -39,5 +40,6 @@ i18next.addResources('en', 'Registration', {
   emailFormatError: 'Invalid format',
   requiredError: 'Field is required',
   confirmPasswordError: 'Your password does not match',
-  passwordLengthError: 'At least {{amount}} characters'
+  passwordLengthError: 'At least {{amount}} characters',
+  returnToLogin: 'Return to login'
 });

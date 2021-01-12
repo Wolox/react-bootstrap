@@ -50,7 +50,7 @@ function Registration() {
   const { register, handleSubmit, errors, watch } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
-  const { t } = useTranslation(['Registration', 'RecoverPassword']);
+  const { t } = useTranslation(['Registration']);
 
   const [, , , signupRequest] = useLazyRequest({
     request: signup,
@@ -144,9 +144,9 @@ function Registration() {
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
         <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
-          {t('RecoverPassword:enter')}
+          {t('submit')}
         </button>
-        <a href={PATHS.login}>{t('RecoverPassword:returnToLogin')}</a>
+        <a href={PATHS.login}>{t('returnToLogin')}</a>
       </div>
     </form>
   );
