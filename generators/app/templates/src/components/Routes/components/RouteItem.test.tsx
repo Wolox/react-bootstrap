@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 import RouteItem from './RouteItem';
 
@@ -13,23 +14,30 @@ function RedirectScreen() {
   return <span>Redirect Screen</span>;
 }
 
+const history = createMemoryHistory();
+
 beforeEach(() => {
-  window.history.pushState({}, '', '/screen');
+  history.push('/screen');
 });
 
 test('renders the route with the component when there is no redirect path', () => {
-  render(<RouteItem path="/screen" component={TestScreen} />, { wrapper: BrowserRouter });
+  render(
+    <Router history={history}>
+      <RouteItem path="/screen" component={TestScreen} />
+    </Router>
+  );
   const screenText = screen.queryByText('Screen');
   expect(screenText).toBeInTheDocument();
 });
 
 test('redirects to another path when there is a redirect path', () => {
   render(
-    <Switch>
-      <RouteItem path="/screen" component={TestScreen} redirectTo="/redirect-path" />
-      <RouteItem path="/redirect-path" component={RedirectScreen} />
-    </Switch>,
-    { wrapper: BrowserRouter }
+    <Router history={history}>
+      <Switch>
+        <RouteItem path="/screen" component={TestScreen} redirectTo="/redirect-path" />
+        <RouteItem path="/redirect-path" component={RedirectScreen} />
+      </Switch>
+    </Router>
   );
   const screenText = screen.queryByText('Screen');
   const redirectText = screen.queryByText('Redirect Screen');

@@ -16,6 +16,9 @@ function WrappedRoutes({ userState }: { userState: UserState }) {
   );
 }
 
+// Since The BrowserRouter component is inside out Router, we can't use memory history.
+// That's why I use window to navigate
+
 describe('when there is a user', () => {
   const userState = { user: { id: 1, sessionToken: 'token' } };
 
