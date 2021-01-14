@@ -7,14 +7,20 @@ import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 import { useDispatch } from 'contexts/UserContext';
 import { useLazyRequest } from 'hooks/useRequest';
-import { signup, setCurrentUser, RegistrationUser } from 'services/AuthServices';
+import { signup, setCurrentUserToken, RegistrationUser } from 'services/AuthService';
 import { actionCreators, User } from 'contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
 
 const PASSWORD_LENGTH = 8;
 
-const FIELDS = {firstName: 'firstName', lastName: 'lastName', email: 'email', password: 'password', confirmPassword: 'confirmPassword'};
+const FIELDS = {
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  password: 'password',
+  confirmPassword: 'confirmPassword'
+};
 
 const requiredValidation = { required: i18next.t('Registration:requiredError') as string };
 
@@ -48,7 +54,7 @@ function RegistrationContainer() {
     withPostSuccess: response => {
       const userResponse = response as User;
       dispatch(actionCreators.setUser(userResponse));
-      setCurrentUser(userResponse);
+      setCurrentUserToken(userResponse);
 
       history.push('/');
     }

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useLazyRequest } from 'hooks/useRequest';
 import { useDispatch } from 'contexts/UserContext';
 import { actionCreators, Credentials, User } from 'contexts/UserContext/reducer';
-import { login, setCurrentUser } from 'services/AuthServices';
+import { login, setCurrentUserToken } from 'services/AuthService';
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 

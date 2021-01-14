@@ -16,7 +16,7 @@ jest.mock('~contexts/UserContext/reducer', () => ({
   }
 }));
 
-jest.mock('~services/AuthServices', () => ({
+jest.mock('~services/AuthService', () => ({
   login: () =>
     new Promise(resolve =>
       resolve({
@@ -26,7 +26,7 @@ jest.mock('~services/AuthServices', () => ({
         originalError: null
       })
     ),
-  setCurrentUser: (values: any) => mockSetPersistantUser(values)
+  setCurrentUserToken: (values: any) => mockSetPersistantUser(values)
 }));
 
 describe('#Login', () => {

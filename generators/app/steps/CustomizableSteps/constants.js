@@ -33,7 +33,9 @@ module.exports.FILES = [
   'tsconfig.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  `${SERVICES_PATH}/AuthServices.ts`
+  `${SERVICES_PATH}/AuthService.ts`,
+  `${SERVICES_PATH}/AuthService.test.ts`,
+  `${SERVICES_PATH}/LocalStorageService.test.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [
