@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ApiErrorResponse, ApiOkResponse, PROBLEM_CODE, ApiResponse } from 'apisauce';
-
-import { Nullable } from '~utils/types';
+import { Nullable } from 'utils/types';
 
 import { useMountedRef } from './useMountedRef';
 

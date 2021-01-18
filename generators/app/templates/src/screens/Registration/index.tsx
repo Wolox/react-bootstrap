@@ -14,7 +14,13 @@ import styles from './styles.module.scss';
 
 const PASSWORD_LENGTH = 8;
 
-const FIELDS = {firstName: 'firstName', lastName: 'lastName', email: 'email', password: 'password', confirmPassword: 'confirmPassword'};
+const FIELDS = {
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  password: 'password',
+  confirmPassword: 'confirmPassword'
+};
 
 const requiredValidation = { required: i18next.t('Registration:requiredError') as string };
 
