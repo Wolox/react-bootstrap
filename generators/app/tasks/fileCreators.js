@@ -53,7 +53,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
 
 module.exports.createPackageJson = function createPackageJson() {
   const pjson = this.fs.readJSON(`./${this.projectName}/package.json`);
-  // Remove default eslintConfig to use .eslintrc.js
+  // Remove default eslintConfig to use .eslintrc
   delete pjson.eslintConfig;
   const newpjson = Object.assign(pjson, getPackageJsonAttributes(this.projectName, '1.0.0', this.repoUrl));
 
