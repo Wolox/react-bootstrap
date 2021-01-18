@@ -44,7 +44,7 @@ const VALIDATIONS = {
   confirmPassword: requiredValidation
 };
 
-function RegistrationContainer() {
+function Registration() {
   const { register, handleSubmit, errors, watch } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -147,4 +147,4 @@ function RegistrationContainer() {
   );
 }
 
-export default RegistrationContainer;
+export default Registration;
