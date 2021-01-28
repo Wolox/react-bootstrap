@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 
-import withProvider from 'components/ProviderWrapper';
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
 import { logout, removeCurrentUser } from 'services/AuthServices';
@@ -8,14 +7,16 @@ import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
-import { useSelector, Context, useDispatch } from './context';
-import { reducer, INITIAL_STATE, actionCreators } from './reducer';
+import { withContext, useSelector, useDispatch } from './context';
+import { actionCreators } from './reducer';
 
 function Home() {
   // Example of how to use these custom hooks
-  const foo = useSelector(state => state.foo);
+  const tech = useSelector(state => state.tech);
   const dispatch = useDispatch();
   const userDispatch = useUserDispatch();
+  const techInputRef = useRef<HTMLInputElement>(null);
+
   const [, , , logoutRequest] = useLazyRequest({
     request: logout,
     withPostSuccess: () => {
@@ -23,10 +24,6 @@ function Home() {
       removeCurrentUser();
     }
   });
-
-  useEffect(() => {
-    dispatch(actionCreators.setFoo('React'));
-  }, [dispatch]);
 
   const handleLogout = () => {
     userDispatch(authActions.logout());
@@ -38,7 +35,20 @@ function Home() {
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>You are logged in.</p>
-        <p className={styles.text}>Foo value is: {foo}.</p>
+        <p className={styles.text}>Tech is: {tech}.</p>
+        <div className="row m-bottom-3">
+          <form
+            onSubmit={e => {
+              if (techInputRef.current?.value) {
+                dispatch(actionCreators.setTech(techInputRef.current?.value));
+              }
+              e.preventDefault();
+            }}
+          >
+            <input ref={techInputRef} name="tech" type="text" />
+            <button type="submit">Change Tech</button>
+          </form>
+        </div>
         <button type="button" className={styles.appLink} onClick={handleLogout}>
           Logout
         </button>
@@ -47,4 +57,4 @@ function Home() {
   );
 }
 
-export default withProvider({ context: Context, reducer, initialState: INITIAL_STATE })(Home);
+export default withContext(Home);

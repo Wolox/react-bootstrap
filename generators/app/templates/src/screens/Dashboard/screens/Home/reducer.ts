@@ -1,39 +1,39 @@
 export interface HomeState {
-  foo: string;
+  tech: string;
 }
 
 export const INITIAL_STATE = {
-  foo: ''
+  tech: 'React'
 };
 
 enum ActionTypes {
-  SET_FOO = 'SET_FOO',
-  RESET_FOO = 'RESET_FOO'
+  SET_TECH = 'SET_TECH',
+  RESET_TECH = 'RESET_TECH'
 }
 
-interface SetFoo {
-  type: ActionTypes.SET_FOO;
-  payload: string;
+interface SetTech {
+  type: ActionTypes.SET_TECH;
+  tech: string;
 }
 
-interface ResetFoo {
-  type: ActionTypes.RESET_FOO;
+interface ResetTech {
+  type: ActionTypes.RESET_TECH;
 }
 
-export type Action = SetFoo | ResetFoo;
+export type Action = SetTech | ResetTech;
 
 export const actionCreators = {
-  setFoo: (foo: string): SetFoo => ({ type: ActionTypes.SET_FOO, payload: foo }),
-  resetFoo: (): ResetFoo => ({ type: ActionTypes.RESET_FOO })
+  setTech: (tech: string): SetTech => ({ type: ActionTypes.SET_TECH, tech }),
+  resetTech: (): ResetTech => ({ type: ActionTypes.RESET_TECH })
 };
 
 export const reducer = (state: HomeState, action: Action): HomeState => {
   switch (action.type) {
-    case ActionTypes.SET_FOO: {
-      return { ...state, foo: action.payload };
+    case ActionTypes.SET_TECH: {
+      return { ...state, tech: action.tech };
     }
-    case ActionTypes.RESET_FOO: {
-      return { ...state, foo: '' };
+    case ActionTypes.RESET_TECH: {
+      return { ...state, tech: '' };
     }
     default: {
       return state;
