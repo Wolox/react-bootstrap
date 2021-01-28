@@ -7,7 +7,7 @@ import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
-import { withContext, useSelector, useDispatch } from './context';
+import { withContextProvider, useSelector, useDispatch } from './context';
 import { actionCreators } from './reducer';
 
 function Home() {
@@ -57,4 +57,4 @@ function Home() {
   );
 }
 
-export default withContext(Home);
+export default withContextProvider(Home);
