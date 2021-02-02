@@ -50,7 +50,7 @@ function Registration() {
   const { register, handleSubmit, errors, watch } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
-  const { t } = useTranslation(['Registration']);
+  const { t } = useTranslation('Registration');
 
   const [, , , signupRequest] = useLazyRequest({
     request: signup,
