@@ -14,7 +14,13 @@ import styles from './styles.module.scss';
 
 const PASSWORD_LENGTH = 8;
 
-const FIELDS = {firstName: 'firstName', lastName: 'lastName', email: 'email', password: 'password', confirmPassword: 'confirmPassword'};
+const FIELDS = {
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  password: 'password',
+  confirmPassword: 'confirmPassword'
+};
 
 const requiredValidation = { required: i18next.t('Registration:requiredError') as string };
 
@@ -38,7 +44,7 @@ const VALIDATIONS = {
   confirmPassword: requiredValidation
 };
 
-function RegistrationContainer() {
+function Registration() {
   const { register, handleSubmit, errors, watch } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -141,4 +147,4 @@ function RegistrationContainer() {
   );
 }
 
-export default RegistrationContainer;
+export default Registration;
