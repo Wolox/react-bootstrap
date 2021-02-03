@@ -10,10 +10,10 @@ exports[`#Login when mounting shows valid content 1`] = `
     <h1
       class="m-bottom-1"
     >
-      Login:login
+      login
     </h1>
     <h2>
-      Login:loginExplanation
+      loginExplanation
     </h2>
   </div>
   <form
@@ -28,13 +28,13 @@ exports[`#Login when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="email"
       >
-        Login:email
+        email
       </label>
       <input
         class="m-bottom-2 full-width input input "
         id="email"
         name="email"
-        placeholder="Login:emailPlaceholder"
+        placeholder="emailPlaceholder"
         type="email"
       />
       <span
@@ -51,13 +51,13 @@ exports[`#Login when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="password"
       >
-        Login:password
+        password
       </label>
       <input
         class="m-bottom-2 full-width input input "
         id="password"
         name="password"
-        placeholder="Login:passwordPlaceholder"
+        placeholder="passwordPlaceholder"
         type="password"
       />
       <span
@@ -74,22 +74,22 @@ exports[`#Login when mounting shows valid content 1`] = `
         class="full-width m-bottom-1 button"
         type="submit"
       >
-        Login:enter
+        enter
       </button>
       <span
         class="row center middle full-width m-top-1 m-bottom-1 hidden"
       >
-        Login:error
+        error
       </span>
       <a
         href="/recover_password"
       >
-        Login:forgotPassword
+        forgotPassword
       </a>
       <a
         href="/registration"
       >
-        Login:createAccount
+        createAccount
       </a>
     </div>
   </form>
