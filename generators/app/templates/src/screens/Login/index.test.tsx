@@ -46,18 +46,18 @@ describe('#Login', () => {
   describe('when filling invalid fields without submitting', () => {
     it('does not show the field errors', async () => {
       const { container, getByLabelText } = render(component);
-      const email = getByLabelText('Login:email');
+      const email = getByLabelText('email');
 
       await fireEvent.change(email, { target: { value: 'invalid email' } });
 
-      expect(container.innerHTML).not.toMatch('Login:emailFormatError');
+      expect(container.innerHTML).not.toMatch('emailFormatError');
     });
   });
 
   describe('when filling invalid email and no password and submitting', () => {
     it('shows the field errors', async () => {
       const { container, getByRole, getByLabelText } = render(component);
-      const email = getByLabelText('Login:email');
+      const email = getByLabelText('email');
       const form = getByRole('form', { name: 'login-form' });
 
       await fireEvent.change(email, { target: { value: 'invalid email' } });
@@ -65,8 +65,8 @@ describe('#Login', () => {
       // eslint-disable-next-line max-nested-callbacks
       await waitFor(() => fireEvent.submit(form));
 
-      expect(container.innerHTML).toMatch('Login:emailFormatError');
-      expect(container.innerHTML).toMatch('Login:required');
+      expect(container.innerHTML).toMatch('emailFormatError');
+      expect(container.innerHTML).toMatch('required');
     });
   });
 
@@ -78,15 +78,15 @@ describe('#Login', () => {
       // eslint-disable-next-line max-nested-callbacks
       await waitFor(() => fireEvent.submit(form));
 
-      expect(container.innerHTML).toMatch('Login:required');
+      expect(container.innerHTML).toMatch('required');
     });
   });
 
   describe('when valid email and password', () => {
     it('executes the request and saves user', async () => {
       const { getByRole, getByLabelText } = render(component);
-      const email = getByLabelText('Login:email');
-      const password = getByLabelText('Login:password');
+      const email = getByLabelText('email');
+      const password = getByLabelText('password');
       const form = getByRole('form', { name: 'login-form' });
       await fireEvent.change(email, { target: { value: 'someone@wolox.com' } });
       await fireEvent.change(password, { target: { value: 'myPassword' } });

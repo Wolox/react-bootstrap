@@ -12,10 +12,10 @@ exports[`#Registration when mounting shows valid content 1`] = `
     <h1
       class="m-bottom-1"
     >
-      Registration:registration
+      registration
     </h1>
     <h2>
-      Registration:registrationExplanation
+      registrationExplanation
     </h2>
   </div>
   <div
@@ -28,13 +28,13 @@ exports[`#Registration when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="firstName"
       >
-        Registration:firstName
+        firstName
       </label>
       <input
         class="input input "
         id="firstName"
         name="firstName"
-        placeholder="Registration:firstNamePlaceholder"
+        placeholder="firstNamePlaceholder"
         type="text"
       />
       <span
@@ -51,13 +51,13 @@ exports[`#Registration when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="lastName"
       >
-        Registration:lastName
+        lastName
       </label>
       <input
         class="input input "
         id="lastName"
         name="lastName"
-        placeholder="Registration:lastNamePlaceholder"
+        placeholder="lastNamePlaceholder"
         type="text"
       />
       <span
@@ -78,13 +78,13 @@ exports[`#Registration when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="email"
       >
-        Registration:email
+        email
       </label>
       <input
         class="input input "
         id="email"
         name="email"
-        placeholder="Registration:emailPlaceholder"
+        placeholder="emailPlaceholder"
         type="email"
       />
       <span
@@ -105,13 +105,13 @@ exports[`#Registration when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="password"
       >
-        Registration:password
+        password
       </label>
       <input
         class="input input "
         id="password"
         name="password"
-        placeholder="Registration:passwordPlaceholder"
+        placeholder="passwordPlaceholder"
         type="password"
       />
       <span
@@ -128,13 +128,13 @@ exports[`#Registration when mounting shows valid content 1`] = `
         class=" m-bottom-1"
         for="confirmPassword"
       >
-        Registration:confirmPassword
+        confirmPassword
       </label>
       <input
         class="input input "
         id="confirmPassword"
         name="confirmPassword"
-        placeholder="Registration:confirmPasswordPlaceholder"
+        placeholder="confirmPasswordPlaceholder"
         type="password"
       />
       <span
