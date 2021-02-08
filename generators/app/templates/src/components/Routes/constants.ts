@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { lazy } from 'react';
-
 import { Nullable } from 'utils/types';
 import { User } from 'contexts/UserContext/reducer';
 
@@ -22,14 +21,16 @@ export const ROUTES = [
     path: PATHS.registration,
     component: Registration,
     title: 'Routes:registrationTitle',
-    description: 'Routes:registrationDescription'
+    description: 'Routes:registrationDescription',
+    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
     path: PATHS.recoverPassword,
     component: RecoverPassword,
     title: 'Routes:recoverPasswordTitle',
-    description: 'Routes:recoverPasswordDescription'
+    description: 'Routes:recoverPasswordDescription',
+    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
