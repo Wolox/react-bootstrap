@@ -3,12 +3,11 @@ import { TFunction } from 'i18next';
 import { useHistory } from 'react-router';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 import { useDispatch } from 'contexts/UserContext';
 import { useLazyRequest } from 'hooks/useRequest';
-import { signup, setCurrentUser, RegistrationUser } from 'services/AuthServices';
+import { signup, setCurrentUserToken, RegistrationUser } from 'services/AuthService';
 import { actionCreators, User } from 'contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
@@ -57,7 +56,7 @@ function Registration() {
     withPostSuccess: response => {
       const userResponse = response as User;
       dispatch(actionCreators.setUser(userResponse));
-      setCurrentUser(userResponse);
+      setCurrentUserToken(userResponse);
 
       history.push('/');
     }
