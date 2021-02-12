@@ -56,8 +56,8 @@ const TESTS_SETUP_PATH = {
 };
 
 const ESLINTRC_PATH = {
-  src: 'eslintrc.js',
-  destination: '.eslintrc.js'
+  src: '.eslintrc',
+  destination: '.eslintrc'
 };
 
 const GITIGNORE_PATH = {
