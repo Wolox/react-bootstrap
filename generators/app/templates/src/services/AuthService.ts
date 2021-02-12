@@ -20,14 +20,14 @@ export interface RegistrationUser {
   passwordConfirmation: string;
 }
 
-export const setCurrentUser = (currentUser: User) => {
+export const setCurrentUserToken = (currentUser: User) => {
   api.setHeader('Authorization', currentUser.sessionToken);
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 
-export const getCurrentUser = () => LocalStorageService.getValue(TOKEN_FIELD_NAME);
+export const getCurrentUserToken = () => LocalStorageService.getValue(TOKEN_FIELD_NAME);
 
-export const removeCurrentUser = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
+export const removeCurrentUserToken = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
 
 export const login = (credentials: Credentials): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
