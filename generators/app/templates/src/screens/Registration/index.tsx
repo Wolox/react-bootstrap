@@ -1,54 +1,62 @@
 import React, { useCallback } from 'react';
-import i18next from 'i18next';
+import { TFunction } from 'i18next';
 import { useHistory } from 'react-router';
 import { useForm } from 'react-hook-form';
-
+import { useTranslation } from 'react-i18next';
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 import { useDispatch } from 'contexts/UserContext';
 import { useLazyRequest } from 'hooks/useRequest';
-import { signup, setCurrentUser, RegistrationUser } from 'services/AuthServices';
+import { signup, setCurrentUserToken, RegistrationUser } from 'services/AuthService';
 import { actionCreators, User } from 'contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
 
 const PASSWORD_LENGTH = 8;
 
-const FIELDS = {firstName: 'firstName', lastName: 'lastName', email: 'email', password: 'password', confirmPassword: 'confirmPassword'};
-
-const requiredValidation = { required: i18next.t('Registration:requiredError') as string };
-
-const VALIDATIONS = {
-  firstName: requiredValidation,
-  lastName: requiredValidation,
-  email: {
-    pattern: {
-      value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      message: i18next.t('Registration:emailFormatError') as string
-    },
-    ...requiredValidation
-  },
-  password: {
-    ...requiredValidation,
-    minLength: {
-      value: 8,
-      message: i18next.t('Registration:passwordLengthError', { amount: PASSWORD_LENGTH }) as string
-    }
-  },
-  confirmPassword: requiredValidation
+const FIELDS = {
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  password: 'password',
+  confirmPassword: 'confirmPassword'
 };
 
-function RegistrationContainer() {
+const getValidations = (t: TFunction) => {
+  const requiredValidation = { required: t('requiredError') };
+  return {
+    firstName: requiredValidation,
+    lastName: requiredValidation,
+    email: {
+      pattern: {
+        value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        message: t('emailFormatError') as string
+      },
+      ...requiredValidation
+    },
+    password: {
+      ...requiredValidation,
+      minLength: {
+        value: 8,
+        message: t('passwordLengthError', { amount: PASSWORD_LENGTH }) as string
+      }
+    },
+    confirmPassword: requiredValidation
+  };
+};
+
+function Registration() {
   const { register, handleSubmit, errors, watch } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
+  const { t } = useTranslation('Registration');
 
   const [, , , signupRequest] = useLazyRequest({
     request: signup,
     withPostSuccess: response => {
       const userResponse = response as User;
       dispatch(actionCreators.setUser(userResponse));
-      setCurrentUser(userResponse);
+      setCurrentUserToken(userResponse);
 
       history.push('/');
     }
@@ -62,7 +70,9 @@ function RegistrationContainer() {
   );
 
   const validateConfirmPassword = (value: string) =>
-    value === watch('password') || (i18next.t('Registration:confirmPasswordError') as string);
+    value === watch('password') || (t('confirmPasswordError') as string);
+
+  const validations = getValidations(t);
 
   return (
     <form
@@ -72,73 +82,73 @@ function RegistrationContainer() {
       noValidate
     >
       <div className="column center m-bottom-3">
-        <h1 className="m-bottom-1">{i18next.t('Registration:registration')}</h1>
-        <h2>{i18next.t('Registration:registrationExplanation')}</h2>
+        <h1 className="m-bottom-1">{t('registration')}</h1>
+        <h2>{t('registrationExplanation')}</h2>
       </div>
       <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
           className={`${styles.inputContainer} item-1 m-right-2`}
-          label={i18next.t('Registration:firstName')}
+          label={t('firstName')}
           name={FIELDS.firstName}
           inputType="text"
           inputClassName={styles.input}
-          placeholder={i18next.t('Registration:firstNamePlaceholder') as string}
-          inputRef={register(VALIDATIONS.firstName)}
+          placeholder={t('firstNamePlaceholder') as string}
+          inputRef={register(validations.firstName)}
           error={errors?.firstName?.message}
         />
         <FormInput
           className={`${styles.inputContainer} item-1`}
-          label={i18next.t('Registration:lastName')}
+          label={t('lastName')}
           name={FIELDS.lastName}
           inputType="text"
           inputClassName={styles.input}
-          placeholder={i18next.t('Registration:lastNamePlaceholder') as string}
-          inputRef={register(VALIDATIONS.lastName)}
+          placeholder={t('lastNamePlaceholder') as string}
+          inputRef={register(validations.lastName)}
           error={errors?.lastName?.message}
         />
       </div>
       <div className={`row ${styles.sectionContainer}`}>
         <FormInput
           className={`${styles.inputContainer} item-1`}
-          label={i18next.t('Registration:email')}
+          label={t('email')}
           name={FIELDS.email}
           inputType="email"
           inputClassName={styles.input}
-          placeholder={i18next.t('Registration:emailPlaceholder') as string}
-          inputRef={register(VALIDATIONS.email)}
+          placeholder={t('emailPlaceholder') as string}
+          inputRef={register(validations.email)}
           error={errors?.email?.message}
         />
       </div>
       <div className={`row space-between ${styles.sectionContainer}`}>
         <FormInput
           className={`${styles.inputContainer} item-1 m-right-2`}
-          label={i18next.t('Registration:password')}
+          label={t('password')}
           name={FIELDS.password}
           inputType="password"
           inputClassName={styles.input}
-          placeholder={i18next.t('Registration:passwordPlaceholder') as string}
-          inputRef={register(VALIDATIONS.password)}
+          placeholder={t('passwordPlaceholder') as string}
+          inputRef={register(validations.password)}
           error={errors?.password?.message}
         />
         <FormInput
           className={`${styles.inputContainer} item-1`}
-          label={i18next.t('Registration:confirmPassword')}
+          label={t('confirmPassword')}
           name={FIELDS.confirmPassword}
           inputType="password"
           inputClassName={styles.input}
-          placeholder={i18next.t('Registration:confirmPasswordPlaceholder') as string}
-          inputRef={register({ ...VALIDATIONS.confirmPassword, validate: validateConfirmPassword })}
+          placeholder={t('confirmPasswordPlaceholder') as string}
+          inputRef={register({ ...validations.confirmPassword, validate: validateConfirmPassword })}
           error={errors?.confirmPassword?.message}
         />
       </div>
       <div className={`column center ${styles.sectionContainer}`}>
         <button type="submit" className={`full-width m-bottom-1 ${styles.button}`}>
-          {i18next.t('RecoverPassword:enter')}
+          {t('submit')}
         </button>
-        <a href={PATHS.login}>{i18next.t('RecoverPassword:returnToLogin')}</a>
+        <a href={PATHS.login}>{t('returnToLogin')}</a>
       </div>
     </form>
   );
 }
 
-export default RegistrationContainer;
+export default Registration;

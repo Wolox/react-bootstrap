@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
-import { logout, removeCurrentUser } from 'services/AuthServices';
+import { logout, removeCurrentUserToken } from 'services/AuthService';
 import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
@@ -21,7 +21,7 @@ function Home() {
     request: logout,
     withPostSuccess: () => {
       userDispatch(authActions.resetUser());
-      removeCurrentUser();
+      removeCurrentUserToken();
     }
   });
 

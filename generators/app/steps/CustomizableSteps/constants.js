@@ -33,7 +33,9 @@ module.exports.FILES = [
   'tsconfig.json',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
-  `${SERVICES_PATH}/AuthServices.ts`
+  `${SERVICES_PATH}/AuthService.ts`,
+  `${SERVICES_PATH}/AuthService.test.ts`,
+  `${SERVICES_PATH}/LocalStorageService.test.ts`
 ];
 
 module.exports.TEMPLATE_FILES = [
@@ -57,7 +59,8 @@ module.exports.DEPENDENCIES = [
   'react-router@^5.1.2',
   'react-router-dom@^5.1.2',
   'history@^4.7.2',
-  'i18next@^13.0.0',
+  'i18next@^19.8.0',
+  'react-i18next@^11.8.0',
   'react-spinkit@^3.0.0',
   'typescript@^4.1.0',
   'react-hook-form@^6.12.2'
