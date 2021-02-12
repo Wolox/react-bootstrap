@@ -7,7 +7,7 @@ import { TFunction } from 'i18next';
 import { useLazyRequest } from 'hooks/useRequest';
 import { useDispatch } from 'contexts/UserContext';
 import { actionCreators, Credentials, User } from 'contexts/UserContext/reducer';
-import { login, setCurrentUser } from 'services/AuthServices';
+import { login, setCurrentUserToken } from 'services/AuthService';
 import FormInput from 'components/FormInput';
 import PATHS from 'components/Routes/paths';
 import i18n from 'config/i18n';
