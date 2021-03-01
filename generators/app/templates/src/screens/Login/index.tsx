@@ -37,7 +37,7 @@ function LoginContainer() {
     withPostSuccess: response => {
       const userResponse = response as User;
       dispatch(actionCreators.setUser(userResponse));
-      setCurrentUser(userResponse);
+      setCurrentUserToken(userResponse);
 
       history.push('/');
     }
