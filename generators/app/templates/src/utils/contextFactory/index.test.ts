@@ -13,5 +13,5 @@ test('useSelector returns the state', () => {
   expect(result.current).toEqual(INITIAL_STATE);
 });
 
-// TODO: We eed to rethink this test if we don't want to export the contexts
+// TODO: We need to rethink this test if we don't want to export the contexts
 test.todo("useDispatch returns the context's dispatch");
