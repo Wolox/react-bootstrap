@@ -21,7 +21,6 @@ export default <State, Action extends ActionWithType>(
     return dispatch;
   };
 
-  // TODO: Create screenFactory that wraps provider with memo?? or add param to context factory
   const withContextProvider = withProvider({
     stateContext: StateContext,
     dispatchContext: DispatchContext,
@@ -30,5 +29,5 @@ export default <State, Action extends ActionWithType>(
   });
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  return { withContextProvider, useSelector, useDispatch };
+  return { withContextProvider, useSelector, useDispatch, StateContext, DispatchContext };
 };

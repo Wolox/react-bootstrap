@@ -79,7 +79,7 @@ exports[`#Login when mounting shows valid content 1`] = `
       <span
         class="row center middle full-width m-top-1 m-bottom-1 hidden"
       >
-        error
+        :error
       </span>
       <a
         href="/recover_password"
@@ -91,6 +91,11 @@ exports[`#Login when mounting shows valid content 1`] = `
       >
         createAccount
       </a>
+      <button
+        type="button"
+      >
+        changeLang
+      </button>
     </div>
   </form>
 </div>

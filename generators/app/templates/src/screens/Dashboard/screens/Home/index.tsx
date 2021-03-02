@@ -36,19 +36,20 @@ function Home() {
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>You are logged in.</p>
         <p className={styles.text}>Tech is: {tech}.</p>
-        <div className="row m-bottom-3">
-          <form
-            onSubmit={e => {
-              if (techInputRef.current?.value) {
-                dispatch(actionCreators.setTech(techInputRef.current?.value));
-              }
-              e.preventDefault();
-            }}
-          >
-            <input ref={techInputRef} name="tech" type="text" />
-            <button type="submit">Change Tech</button>
-          </form>
-        </div>
+        <form
+          className="column m-bottom-3"
+          onSubmit={e => {
+            if (techInputRef.current?.value) {
+              dispatch(actionCreators.setTech(techInputRef.current?.value));
+            }
+            e.preventDefault();
+          }}
+        >
+          <input className="m-bottom-2" placeholder="New tech" ref={techInputRef} name="tech" type="text" />
+          <button className={styles.appLink} type="submit">
+            Set new tech
+          </button>
+        </form>
         <button type="button" className={styles.appLink} onClick={handleLogout}>
           Logout
         </button>
