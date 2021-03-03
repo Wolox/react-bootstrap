@@ -1,0 +1,19 @@
+import React from 'react';
+
+import styles from './styles.module.scss';
+
+interface Props {
+  someProp: number;
+  someOptionalProp?: number;
+}
+
+function {{name}}({ someProp, someOptionalProp }: Props) {
+  return (
+    <div className={styles.container}>
+      This is a {{name}} with {someProp}
+      {someOptionalProp && <p> and {someOptionalProp}</p>}
+    </div>
+  );
+}
+
+export default {{name}};
