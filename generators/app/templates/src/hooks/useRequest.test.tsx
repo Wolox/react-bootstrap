@@ -1,7 +1,6 @@
 /* eslint-disable max-nested-callbacks, @typescript-eslint/no-empty-function */
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { PROBLEM_CODE } from 'apisauce';
-import { act } from '@testing-library/react';
 
 import { useRequest, useLazyRequest } from 'hooks/useRequest';
 
@@ -29,6 +28,10 @@ const successResponse = {
 
 const MockService = {
   fetchFoo: () => Promise.resolve(successResponse)
+};
+
+const LoadingMockService = {
+  fetchFoo: () => new Promise<typeof successResponse>(() => {})
 };
 
 const FailureMockService = {
@@ -98,10 +101,10 @@ describe('#useLazyRequest', () => {
   });
 
   describe('when request is called and it is loading', () => {
-    it('starts loading', () => {
-      const { result } = renderHook(() => useLazyRequest({ request: MockService.fetchFoo }));
+    it('starts loading', async () => {
+      const { result } = renderHook(() => useLazyRequest({ request: LoadingMockService.fetchFoo }));
       const [, , , request] = result.current;
-      act(async () => {
+      await act(async () => {
         await request(1);
       });
 

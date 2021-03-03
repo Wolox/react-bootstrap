@@ -1,5 +1,11 @@
-import { contextFactory } from 'config/context';
+import contextFactory from 'utils/contextFactory';
 
-import { UserState, Action, INITIAL_STATE } from './reducer';
+import { INITIAL_STATE, reducer } from './reducer';
 
-export const { useSelector, Context, useDispatch } = contextFactory<UserState, Action>(INITIAL_STATE);
+export const {
+  withContextProvider,
+  useSelector,
+  useDispatch,
+  StateContext,
+  DispatchContext
+} = contextFactory(reducer, INITIAL_STATE);

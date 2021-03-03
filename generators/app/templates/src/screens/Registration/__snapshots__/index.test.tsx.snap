@@ -152,12 +152,12 @@ exports[`#Registration when mounting shows valid content 1`] = `
       class="full-width m-bottom-1 button"
       type="submit"
     >
-      RecoverPassword:enter
+      submit
     </button>
     <a
       href="/login"
     >
-      RecoverPassword:returnToLogin
+      returnToLogin
     </a>
   </div>
 </form>
