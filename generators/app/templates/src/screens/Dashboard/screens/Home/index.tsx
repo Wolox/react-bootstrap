@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 
 import withProvider from 'components/ProviderWrapper';
-import { actionCreators as authActions } from 'contexts/UserContext/reducer';
-import { useDispatch as useUserDispatch } from 'contexts/UserContext';
-import { logout, removeCurrentUserToken } from 'services/AuthService';
-import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -13,24 +9,17 @@ import { reducer, INITIAL_STATE, actionCreators } from './reducer';
 
 function Home() {
   // Example of how to use these custom hooks
-  const foo = useSelector(state => state.foo);
+  const foo = useSelector((state) => state.foo);
   const dispatch = useDispatch();
-  const userDispatch = useUserDispatch();
-  const [, , , logoutRequest] = useLazyRequest({
-    request: logout,
-    withPostSuccess: () => {
-      userDispatch(authActions.resetUser());
-      removeCurrentUserToken();
-    }
-  });
 
   useEffect(() => {
     dispatch(actionCreators.setFoo('React'));
   }, [dispatch]);
 
   const handleLogout = () => {
-    userDispatch(authActions.logout());
-    logoutRequest(null);
+    // Perform logout request and on success add the following:
+    // userDispatch(authActions.resetUser());
+    // removeCurrentUserToken();
   };
 
   return (

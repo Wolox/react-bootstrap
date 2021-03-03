@@ -10,7 +10,7 @@ import RouteItem from './components/RouteItem';
 import styles from './styles.module.scss';
 
 function Routes() {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
 
   return (
     <Router>

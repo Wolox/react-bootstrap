@@ -42,7 +42,7 @@ module.exports = function runCommand(options) {
       refreshKillTimeout();
     }
 
-    command.stdout.on('data', data => {
+    command.stdout.on('data', (data) => {
       if (options.timeout) {
         refreshKillTimeout();
       }
@@ -54,7 +54,7 @@ module.exports = function runCommand(options) {
       }
     });
 
-    command.stderr.on('data', data => {
+    command.stderr.on('data', (data) => {
       if (options.timeout) {
         refreshKillTimeout();
       }
@@ -65,7 +65,7 @@ module.exports = function runCommand(options) {
       }
     });
 
-    command.on('close', code => {
+    command.on('close', (code) => {
       if (options.timeout) {
         clearTimeout(killTimeout);
       }

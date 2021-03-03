@@ -1,12 +1,10 @@
-import { Nullable } from 'utils/types';
-
 export interface User {
   id: number;
   sessionToken: string;
 }
 
 export interface UserState {
-  user: Nullable<User>;
+  user: User | null;
 }
 
 export interface Credentials {

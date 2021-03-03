@@ -7,7 +7,7 @@ module.exports.gitInitiation = function gitInitiation() {
     successMessage: 'Repository cloned successfully',
     failureMessage: 'Repository cloning has failed, it may not exist'
   })
-    .catch(error => {
+    .catch((error) => {
       this.handleError(error.failureMessage);
     })
     .then(() =>

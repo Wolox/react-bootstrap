@@ -5,9 +5,6 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
   title: projectName,
   version: projectVersion,
   jest: {
-    moduleNameMapper: {
-      '^~(.*)/(.*)$': '<rootDir>/src/$1/$2'
-    },
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     coverageThreshold: {
       global: {

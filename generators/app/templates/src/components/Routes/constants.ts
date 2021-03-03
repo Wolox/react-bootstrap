@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { lazy } from 'react';
-import { Nullable } from 'utils/types';
+
 import { User } from 'contexts/UserContext/reducer';
 
 import PATHS from './paths';
@@ -22,7 +22,7 @@ export const ROUTES = [
     component: Registration,
     title: 'Routes:registrationTitle',
     description: 'Routes:registrationDescription',
-    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
+    redirectTo: (user: User | null) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
@@ -30,7 +30,7 @@ export const ROUTES = [
     component: RecoverPassword,
     title: 'Routes:recoverPasswordTitle',
     description: 'Routes:recoverPasswordDescription',
-    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
+    redirectTo: (user: User | null) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
@@ -38,7 +38,7 @@ export const ROUTES = [
     component: Login,
     title: 'Routes:loginTitle',
     description: 'Routes:loginDescription',
-    redirectTo: (user: Nullable<User>) => (user ? MAIN_PRIVATE_PATH : undefined)
+    redirectTo: (user: User | null) => (user ? MAIN_PRIVATE_PATH : undefined)
   },
   {
     exact: false,
@@ -46,6 +46,6 @@ export const ROUTES = [
     component: Home,
     title: 'Routes:homeTitle',
     description: 'Routes:homeDescription',
-    redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH)
+    redirectTo: (user: User | null) => (user ? undefined : MAIN_PUBLIC_PATH)
   }
 ];
