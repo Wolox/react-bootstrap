@@ -10,6 +10,7 @@ const Home = lazy(() => import('../../screens/Dashboard'));
 const Login = lazy(() => import('../../screens/Login'));
 const RecoverPassword = lazy(() => import('../../screens/RecoverPassword'));
 const Registration = lazy(() => import('../../screens/Registration'));
+// Add imports for screens above (FOR GENERATORS DO NOT REMOVE)
 
 const MAIN_PUBLIC_PATH = PATHS.login;
 const MAIN_PRIVATE_PATH = PATHS.home;
