@@ -1,13 +1,12 @@
 import React, { Suspense as ReactSuspense } from 'react';
 
 interface Props {
-  fallback?: React.ElementType;
+  fallback?: React.ReactNode;
   children: React.ReactNode;
 }
 
-// eslint-disable-next-line react/no-multi-comp
-function Suspense({ fallback: Fallback = () => <div>Loading...</div>, children }: Props) {
-  return <ReactSuspense fallback={<Fallback />}>{children}</ReactSuspense>;
+function Suspense({ fallback, children }: Props) {
+  return <ReactSuspense fallback={fallback || <div>Loading...</div>}>{children}</ReactSuspense>;
 }
 
 export default Suspense;
