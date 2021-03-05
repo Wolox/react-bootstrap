@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-
 import withProvider from 'components/ProviderWrapper';
+import { actionCreators as authActions } from 'contexts/UserContext/reducer';
+import { useDispatch as useUserDispatch } from 'contexts/UserContext';
+import { logout, removeCurrentUserToken } from 'services/AuthService';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -11,15 +13,16 @@ function Home() {
   // Example of how to use these custom hooks
   const foo = useSelector((state) => state.foo);
   const dispatch = useDispatch();
+  const userDispatch = useUserDispatch();
 
   useEffect(() => {
     dispatch(actionCreators.setFoo('React'));
   }, [dispatch]);
 
-  const handleLogout = () => {
-    // Perform logout request and on success add the following:
-    // userDispatch(authActions.resetUser());
-    // removeCurrentUserToken();
+  const handleLogout = async () => {
+    await logout();
+    userDispatch(authActions.resetUser());
+    removeCurrentUserToken();
   };
 
   return (

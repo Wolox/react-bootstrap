@@ -1,10 +1,12 @@
 const COMPONENTS_PATH = 'src/components';
 const SCREENS_PATH = 'src/screens';
 const CONFIG_PATH = 'src/config';
+const UTILS_PATH = 'src/utils';
 const SERVICES_PATH = 'src/services';
 const CONSTANTS_PATH = 'src/constants';
 const STYLES_PATH = 'src/scss';
 const DOCS_README_PATH = 'docs';
+const HOOKS_PATH = 'src/hooks';
 const CONTEXT_PATH = 'src/contexts';
 
 module.exports.RESCRIPTS_PATH = {
@@ -23,6 +25,8 @@ module.exports.FILES = [
   DOCS_README_PATH,
   COMPONENTS_PATH,
   SCREENS_PATH,
+  UTILS_PATH,
+  HOOKS_PATH,
   CONTEXT_PATH,
   STYLES_PATH,
   'aws.js',
