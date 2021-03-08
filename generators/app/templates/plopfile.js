@@ -11,17 +11,17 @@ module.exports = function plopConfig(plop) {
     actions: [
       {
         type: 'add',
-        path: 'src/app/components/{{name}}/index.tsx',
+        path: 'src/components/{{name}}/index.tsx',
         templateFile: 'templates/component/index.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'src/app/components/{{name}}/index.test.tsx',
+        path: 'src/components/{{name}}/index.test.tsx',
         templateFile: 'templates/component/index.test.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'src/app/components/{{name}}/styles.module.scss',
+        path: 'src/components/{{name}}/styles.module.scss',
         templateFile: 'templates/component/styles.module.scss.hbs'
       }
     ]
@@ -38,71 +38,70 @@ module.exports = function plopConfig(plop) {
       {
         type: 'input',
         name: 'route',
-        message: 'Route name'
+        message: 'Route name (in kebab-case)',
+        default: data => plop.getHelper('kebabCase')(data.name)
       },
       {
         type: 'input',
         name: 'routeTitle',
-        message: 'Route title'
+        message: 'Route title',
+        default: data => plop.getHelper('sentenceCase')(data.name)
       },
       {
         type: 'input',
         name: 'routeDescription',
-        message: 'Route description'
+        message: 'Route description',
+        default: data => plop.getHelper('sentenceCase')(data.name)
       }
     ],
     actions: [
       {
         type: 'add',
-        path: 'src/app/screens/{{name}}/index.tsx',
+        path: 'src/screens/{{name}}/index.tsx',
         templateFile: 'templates/screen/index.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'src/app/screens/{{name}}/index.test.tsx',
+        path: 'src/screens/{{name}}/index.test.tsx',
         templateFile: 'templates/screen/index.test.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'src/app/screens/{{name}}/styles.module.scss',
+        path: 'src/screens/{{name}}/styles.module.scss',
         templateFile: 'templates/screen/styles.module.scss.hbs'
       },
       {
-        type: 'append',
-        path: 'src/constants/routes.js',
-        pattern: 'const Routes = {',
-        // separator: ',\n',
-        template: "{{upperCase name}}: '/{{route}}',"
-      },
-      {
-        type: 'transform',
-        path: 'src/app/components/Routes/constants.ts',
-        pattern: '// Add imports for screens above (FOR GENERATORS DO NOT REMOVE)',
+        type: 'modify',
+        path: 'src/components/Routes/constants.ts',
+        pattern: '// Add imports for screens above (FOR GENERATORS, DO NOT REMOVE)',
         template:
-          "const {{name}} = lazy(() => import('../../screens/{{name}}'));\n// Add imports for screens above (FOR GENERATORS DO NOT REMOVE)"
+          "const {{name}} = lazy(() => import('../../screens/{{name}}'));\n// Add imports for screens above (FOR GENERATORS, DO NOT REMOVE)"
+      },
+      {
+        type: 'modify',
+        path: 'src/components/Routes/paths.ts',
+        pattern: '\n};',
+        template: ",\n  {{camelCase name}}: '/{{route}}'\n};"
       },
       {
         type: 'append',
-        path: 'src/app/components/Routes/constants.ts',
+        path: 'src/components/Routes/constants.ts',
         pattern: 'export const ROUTES = [',
-        // separator: ',\n',
-        // TODO: Add prompt for authenticated?
-        template: `
-          {
-            exact: false,
-            path: PATHS.{{name}},
-            component: {{name}},
-            title: 'Routes:{{name}}Title',
-            description: 'Routes:{{name}}Description',
-            redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH)
-          },
-          `
+        template: `  {
+    exact: false,
+    path: PATHS.{{camelCase name}},
+    component: {{name}},
+    title: 'Routes:{{camelCase name}}Title',
+    description: 'Routes:{{camelCase name}}Description'
+    // redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH)
+  },`
       },
       {
-        type: 'transform',
-        path: 'src/app/components/Routes/i18n.ts',
-        pattern: '});',
-        template: "{{name}}Title: 'Recuperar Contraseña',\n{{name}}Description: ''\n});"
+        type: 'modify',
+        path: 'src/components/Routes/i18n.ts',
+        pattern: '\n});',
+        template:
+          ",\n  {{camelCase name}}Title: '{{routeTitle}}',\n  {{camelCase name}}Description: '{{routeDescription}}'\n});"
       }
     ]
   });
