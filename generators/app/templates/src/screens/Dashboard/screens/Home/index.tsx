@@ -39,10 +39,10 @@ function Home() {
         <form
           className="column m-bottom-3"
           onSubmit={e => {
+            e.preventDefault();
             if (techInputRef.current?.value) {
               dispatch(actionCreators.setTech(techInputRef.current?.value));
             }
-            e.preventDefault();
           }}
         >
           <input className="m-bottom-2" placeholder="New tech" ref={techInputRef} name="tech" type="text" />
