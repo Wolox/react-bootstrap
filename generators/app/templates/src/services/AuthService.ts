@@ -1,8 +1,5 @@
 import { ApiResponse } from 'apisauce';
-
 import { User, Credentials } from 'contexts/UserContext/reducer';
-
-import api from '../config/api';
 
 import LocalStorageService from './LocalStorageService';
 
@@ -21,7 +18,8 @@ export interface RegistrationUser {
 }
 
 export const setCurrentUserToken = (currentUser: User) => {
-  api.setHeader('Authorization', currentUser.sessionToken);
+  // TODO: Implement call to authentication API here
+  // api.setHeader('Authorization', currentUser.sessionToken);
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 

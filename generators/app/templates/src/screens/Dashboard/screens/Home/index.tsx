@@ -1,23 +1,19 @@
-import React, { useEffect } from 'react';
-import withProvider from 'components/ProviderWrapper';
+import React, { useRef } from 'react';
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
 import { logout, removeCurrentUserToken } from 'services/AuthService';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
-import { useSelector, Context, useDispatch } from './context';
-import { reducer, INITIAL_STATE, actionCreators } from './reducer';
+import { withContextProvider, useSelector, useDispatch } from './context';
+import { actionCreators } from './reducer';
 
 function Home() {
   // Example of how to use these custom hooks
-  const foo = useSelector((state) => state.foo);
+  const tech = useSelector((state) => state.tech);
   const dispatch = useDispatch();
   const userDispatch = useUserDispatch();
-
-  useEffect(() => {
-    dispatch(actionCreators.setFoo('React'));
-  }, [dispatch]);
+  const techInputRef = useRef<HTMLInputElement>(null);
 
   const handleLogout = async () => {
     await logout();
@@ -30,7 +26,21 @@ function Home() {
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
         <p className={styles.text}>You are logged in.</p>
-        <p className={styles.text}>Foo value is: {foo}.</p>
+        <p className={styles.text}>Tech is: {tech}.</p>
+        <form
+          className="column m-bottom-3"
+          onSubmit={e => {
+            e.preventDefault();
+            if (techInputRef.current?.value) {
+              dispatch(actionCreators.setTech(techInputRef.current?.value));
+            }
+          }}
+        >
+          <input className="m-bottom-2" placeholder="New tech" ref={techInputRef} name="tech" type="text" />
+          <button className={styles.appLink} type="submit">
+            Set new tech
+          </button>
+        </form>
         <button type="button" className={styles.appLink} onClick={handleLogout}>
           Logout
         </button>
@@ -39,4 +49,4 @@ function Home() {
   );
 }
 
-export default withProvider({ context: Context, reducer, initialState: INITIAL_STATE })(Home);
+export default withContextProvider(Home);

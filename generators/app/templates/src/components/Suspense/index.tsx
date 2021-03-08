@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react';
+import React, { Suspense as ReactSuspense } from 'react';
 
 interface Props {
-  fallback?: React.ElementType;
+  fallback?: React.ReactNode;
   children: React.ReactNode;
 }
 
-function CustomSuspense({ fallback: Fallback = () => <div>Loading...</div>, children }: Props) {
-  return <Suspense fallback={<Fallback />}>{children}</Suspense>;
+function Suspense({ fallback, children }: Props) {
+  return <ReactSuspense fallback={fallback || <div>Loading...</div>}>{children}</ReactSuspense>;
 }
 
-export default CustomSuspense;
+export default Suspense;
