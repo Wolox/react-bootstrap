@@ -98,13 +98,8 @@ module.exports = function plopConfig(plop) {
     path: PATHS.{{camelCase name}},
     component: {{name}},
     title: 'Routes:{{camelCase name}}Title',
-<<<<<<< Updated upstream
-    description: 'Routes:{{camelCase name}}Description'
-    // redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH)
-=======
     description: 'Routes:{{camelCase name}}Description'{{#if authenticated}},
-    redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH){{/if}}
->>>>>>> Stashed changes
+    redirectTo: (user: User | null) => (user ? undefined : MAIN_PUBLIC_PATH){{/if}}
   },`
       },
       {
