@@ -36,6 +36,12 @@ module.exports = function plopConfig(plop) {
         message: 'Screen name (in PascalCase)'
       },
       {
+        type: 'confirm',
+        name: 'authenticated',
+        default: false,
+        message: 'Does the route require authentication?'
+      },
+      {
         type: 'input',
         name: 'route',
         message: 'Route name (in kebab-case)',
@@ -92,8 +98,13 @@ module.exports = function plopConfig(plop) {
     path: PATHS.{{camelCase name}},
     component: {{name}},
     title: 'Routes:{{camelCase name}}Title',
+<<<<<<< Updated upstream
     description: 'Routes:{{camelCase name}}Description'
     // redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH)
+=======
+    description: 'Routes:{{camelCase name}}Description'{{#if authenticated}},
+    redirectTo: (user: Nullable<User>) => (user ? undefined : MAIN_PUBLIC_PATH){{/if}}
+>>>>>>> Stashed changes
   },`
       },
       {
