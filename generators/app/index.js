@@ -25,7 +25,7 @@ class GeneratorReact extends Generator {
 
     this.conflicter.force = true;
 
-    this.handleError = error => {
+    this.handleError = (error) => {
       /* eslint-disable no-console */
       if (error) {
         console.error('\nFound the following error:'.red);
@@ -47,11 +47,11 @@ class GeneratorReact extends Generator {
     // Ignore clean for now
     mainAnswers.customized = true;
     this.steps = mainAnswers.customized ? CustomizableGenerator : CleanGenerator;
-    Object.keys(mainAnswers).forEach(answerKey => (this[answerKey] = mainAnswers[answerKey]));
+    Object.keys(mainAnswers).forEach((answerKey) => (this[answerKey] = mainAnswers[answerKey]));
 
     const answers = await this.steps.prompting.bind(this)();
     if (answers) {
-      Object.keys(answers).forEach(answerKey => (this[answerKey] = answers[answerKey]));
+      Object.keys(answers).forEach((answerKey) => (this[answerKey] = answers[answerKey]));
     }
   }
 
@@ -78,7 +78,7 @@ class GeneratorReact extends Generator {
 
   install() {
     this.log('Installing...');
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.spawnCommand('npm', ['install'], { cwd: `${process.cwd()}/${this.projectName}` }).on('close', () =>
         resolve()
       );

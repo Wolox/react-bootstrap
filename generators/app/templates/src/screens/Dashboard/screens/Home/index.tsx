@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
-
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
 import { logout, removeCurrentUserToken } from 'services/AuthService';
-import { useLazyRequest } from 'hooks/useRequest';
 
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
@@ -12,22 +10,15 @@ import { actionCreators } from './reducer';
 
 function Home() {
   // Example of how to use these custom hooks
-  const tech = useSelector(state => state.tech);
+  const tech = useSelector((state) => state.tech);
   const dispatch = useDispatch();
   const userDispatch = useUserDispatch();
   const techInputRef = useRef<HTMLInputElement>(null);
 
-  const [, , , logoutRequest] = useLazyRequest({
-    request: logout,
-    withPostSuccess: () => {
-      userDispatch(authActions.resetUser());
-      removeCurrentUserToken();
-    }
-  });
-
-  const handleLogout = () => {
-    userDispatch(authActions.logout());
-    logoutRequest(null);
+  const handleLogout = async () => {
+    await logout();
+    userDispatch(authActions.resetUser());
+    removeCurrentUserToken();
   };
 
   return (

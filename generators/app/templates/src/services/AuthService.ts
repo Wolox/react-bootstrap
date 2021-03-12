@@ -1,8 +1,5 @@
 import { ApiResponse } from 'apisauce';
-
 import { User, Credentials } from 'contexts/UserContext/reducer';
-
-import api from '../config/api';
 
 import LocalStorageService from './LocalStorageService';
 
@@ -21,7 +18,8 @@ export interface RegistrationUser {
 }
 
 export const setCurrentUserToken = (currentUser: User) => {
-  api.setHeader('Authorization', currentUser.sessionToken);
+  // TODO: Implement call to authentication API here
+  // api.setHeader('Authorization', currentUser.sessionToken);
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 
@@ -32,7 +30,7 @@ export const removeCurrentUserToken = () => LocalStorageService.removeValue(TOKE
 export const login = (credentials: Credentials): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
   // api.post('/login', credentials);
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         ok: true,
@@ -46,7 +44,7 @@ export const login = (credentials: Credentials): Promise<ApiResponse<User, Login
 export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
   // api.post('/sign_up', credentials);
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         ok: true,
@@ -58,7 +56,7 @@ export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginE
   });
 
 export const logout = (): Promise<ApiResponse<User, LoginError>> =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         ok: true,

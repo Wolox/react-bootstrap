@@ -45,19 +45,19 @@ module.exports = function plopConfig(plop) {
         type: 'input',
         name: 'route',
         message: 'Route name (in kebab-case)',
-        default: data => plop.getHelper('kebabCase')(data.name)
+        default: (data) => plop.getHelper('kebabCase')(data.name)
       },
       {
         type: 'input',
         name: 'routeTitle',
         message: 'Route title',
-        default: data => plop.getHelper('sentenceCase')(data.name)
+        default: (data) => plop.getHelper('sentenceCase')(data.name)
       },
       {
         type: 'input',
         name: 'routeDescription',
         message: 'Route description',
-        default: data => plop.getHelper('sentenceCase')(data.name)
+        default: (data) => plop.getHelper('sentenceCase')(data.name)
       }
     ],
     actions: [

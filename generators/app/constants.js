@@ -1,6 +1,7 @@
 const chalk = require('chalk');
 
-module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            ║║║       ') +
+module.exports.KICKOFF_MESSAGE = `${
+  chalk.cyan('\n        ║║║            ║║║       ') +
   chalk.cyan('\n       ║    ║║║    ║║║    ║      ') +
   chalk.cyan('\n       ║       ║║║║       ║       ') +
   chalk.cyan('\n        ║    ║║ ║║ ║║    ║           ') +
@@ -26,9 +27,8 @@ module.exports.KICKOFF_MESSAGE = `${chalk.cyan('\n        ║║║            �
   chalk.cyan('\n        ║    ║║ ║║ ║║    ║         ') +
   chalk.cyan('\n       ║       ║║║║       ║          ') +
   chalk.cyan('\n       ║    ║║║    ║║║    ║        ') +
-  chalk.cyan('\n        ║║║            ║║║      ')}\n\n  ${chalk.blue.bold(
-  'Welcome to the React kickoff'
-)}\n\n  `;
+  chalk.cyan('\n        ║║║            ║║║      ')
+}\n\n  ${chalk.blue.bold('Welcome to the React kickoff')}\n\n  `;
 
 const LINTER_IGNORE_PATH = {
   src: 'eslintignore',
@@ -103,24 +103,26 @@ module.exports.BOOTSTRAP_TYPES = [
 
 module.exports.DEV_DEPENDENCIES = [
   'eslint-plugin-import@2.22.1',
-  'eslint-plugin-jsx-a11y@6.2.3',
-  'eslint-plugin-prettier@3.1.0',
-  'eslint-plugin-react@7.14.3',
-  'eslint-plugin-babel@5.3.0',
-  'eslint-config-wolox-react@2.1.2',
-  'eslint-config-wolox@3.0.2',
+  'eslint-plugin-jsx-a11y@6.4.1',
+  'eslint-plugin-prettier@3.3.1',
+  'eslint-plugin-react@7.22.0',
+  'eslint-plugin-babel@5.3.1',
+  '@wolox/eslint-config-react@1.0.0',
+  '@wolox/eslint-config@1.0.0',
+  '@wolox/eslint-config-typescript@2.0.0',
+  'eslint-plugin-testing-library@3.10.1',
   'eslint-import-resolver-typescript@^2.3.0',
-  '@typescript-eslint/parser@^4.7.0',
+  '@typescript-eslint/parser@^4.14.2',
   'stylelint-config-wolox@1.0.7',
   'stylelint-no-indistinguishable-colors@1.2.1',
   'stylelint-scss@3.5.4',
   'stylelint@9.10.1',
   'husky@^4.0.3',
-  'prettier@1.19.1',
-  'prettier-eslint@8.8.2',
+  'prettier@2.2.1',
+  'prettier-eslint@12.0.0',
   'prettier-stylelint@0.4.2',
   'prettier-eslint-cli@5.0.0',
-  '@rescripts/cli@^0.0.14',
+  '@rescripts/cli@^0.0.16',
   'env-cmd@^10.0.1',
   'aws-deploy-script-fe@1.0.8',
   'minimist@1.2.0',

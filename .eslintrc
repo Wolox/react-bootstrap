@@ -1,5 +1,9 @@
 {
-  "extends": ["wolox", "wolox-react", "@wolox/eslint-config-typescript"],
+  "extends": [
+    "@wolox/eslint-config",
+    "@wolox/eslint-config-react",
+    "@wolox/eslint-config-typescript"
+  ],
   "rules": {
     "import/order": "off",
     "import/no-unresolved": "off",
