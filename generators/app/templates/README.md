@@ -1,10 +1,20 @@
 This project was bootstrapped with [REACT-BOOTSTRAP-WOLOX](https://github.com/Wolox/react-bootstrap).
 
-## Screens
+## Starting
 
-This are the screens you can to choose for your app.
+To start the server by default (development) run:
 
-- [Login](docs/Login.md)
+`npm run start`
+
+To start a specific environment, run:
+
+`npm run start-env environment`
+
+## Generators
+
+You can use `npm run generate` to add different components to your app like:
+* Components
+* Screens
 
 ## Base Styles
 
@@ -32,16 +42,6 @@ Then, run `npm run deploy development`
 To only build the application in a specific env, run:
 
 `npm run build environment`
-
-#### Starting
-
-To start the server by default (development) run:
-
-`npm run start`
-
-To start a specific environment, run:
-
-`npm run start-env environment`
 
 ## Google Analytics
 

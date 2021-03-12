@@ -1,0 +1,18 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import {{name}} from './index';
+
+// You can test simple components with snapshots but if
+// your component has interactions add tests for them!
+test('renders correctly without the optionalProp', () => {
+  const { container } = render(<{{name}} someProp={1} />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('renders correctly with the optionalProp', () => {
+  const { container } = render(<{{name}} someProp={1} someOptionalProp={2} />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test.todo('test additional functionality here');

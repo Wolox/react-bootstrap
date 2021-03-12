@@ -8,6 +8,7 @@ const STYLES_PATH = 'src/scss';
 const DOCS_README_PATH = 'docs';
 const HOOKS_PATH = 'src/hooks';
 const CONTEXT_PATH = 'src/contexts';
+const TEMPLATES_PATH = 'templates';
 
 module.exports.RESCRIPTS_PATH = {
   src: 'rescriptsrc.js',
@@ -29,8 +30,10 @@ module.exports.FILES = [
   HOOKS_PATH,
   CONTEXT_PATH,
   STYLES_PATH,
+  TEMPLATES_PATH,
   'aws.js',
   'tsconfig.json',
+  'plopfile.js',
   'scripts/deploy.js',
   'src/react-app-env.d.ts',
   `${SERVICES_PATH}/AuthService.ts`,
@@ -71,5 +74,6 @@ module.exports.DEV_DEPENDENCIES = [
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/webpack-env@^1.14.1',
-  '@wolox/eslint-config-typescript@1.1.3'
+  '@wolox/eslint-config-typescript@1.1.3',
+  'plop@^2.7.4'
 ];

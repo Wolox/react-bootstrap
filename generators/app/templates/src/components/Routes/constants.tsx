@@ -5,6 +5,7 @@ import { User } from 'contexts/UserContext/reducer';
 import PATHS from './paths';
 
 const Home = lazy(() => import('../../screens/Dashboard'));
+// Add imports for screens above (FOR GENERATORS, DO NOT REMOVE)
 
 const MAIN_PUBLIC_PATH = PATHS.login;
 const MAIN_PRIVATE_PATH = PATHS.home;

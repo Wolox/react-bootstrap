@@ -1,0 +1,24 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import {{name}} from './index';
+
+// You can test simple components with snapshots but if
+// your component has interactions add tests for them!
+test('renders correctly', () => {
+  const { container } = render(<{{name}} />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+/*
+  Render example with router
+    render(
+    <Router history={createMemoryHistory()}>
+      <{{name}} />
+    </Router>
+  );
+*/
+
+test.todo('test additional functionality here');
+
+test.todo('If this screen has redirections add tests to src/components/Routes/index.test.tsx')
