@@ -14,6 +14,7 @@ To start a specific environment, run:
 
 You can use `npm run generate` to add different components to your app like:
 * Components
+* Screens
 
 ## Base Styles
 
