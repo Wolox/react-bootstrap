@@ -1,3 +1,6 @@
+import { produce } from 'immer';
+import { Reducer } from 'react';
+
 export interface User {
   id: number;
   sessionToken: string;
@@ -50,16 +53,16 @@ export const actionCreators = {
   logout: (): Logout => ({ type: ActionTypes.LOGOUT })
 };
 
-export const reducer = (state: UserState, action: Action): UserState => {
+export const reducer: Reducer<UserState, Action> = produce((draft, action) => {
   switch (action.type) {
-    case 'SET_USER': {
-      return { ...state, user: action.payload };
+    case ActionTypes.SET_USER: {
+      draft.user = action.payload;
+      break;
     }
-    case 'RESET_USER': {
-      return { ...state, user: null };
+    case ActionTypes.RESET_USER: {
+      draft.user = null;
+      break;
     }
-    default: {
-      return state;
-    }
+    // no default
   }
-};
+}, INITIAL_STATE);

@@ -1,9 +1,8 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Router, Switch } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import RouteItem from './RouteItem';
+import RouteItem from '.';
 
 function TestScreen() {
   return <span>Screen</span>;

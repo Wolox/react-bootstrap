@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import React from 'react';
+
 import { StateContext } from 'contexts/UserContext';
 import { UserState } from 'contexts/UserContext/reducer';
 

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import React, { lazy } from 'react';
+import { lazy } from 'react';
+
 import { User } from 'contexts/UserContext/reducer';
 
 import PATHS from './paths';

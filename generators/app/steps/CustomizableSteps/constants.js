@@ -69,8 +69,8 @@ module.exports.DEPENDENCIES = [
   'react-hook-form@^6.12.2'
 ];
 
+// TODO: What to do here about dev dependencies when using customizable, why is plop here? shouldn't it be on generators/app/constants.js ?
 module.exports.DEV_DEPENDENCIES = [
-  '@types/react-router@^5.1.2',
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/webpack-env@^1.14.1',

@@ -1,13 +1,13 @@
-import React, { useReducer } from 'react';
+import { Context, Dispatch, Reducer, ComponentType, useReducer } from 'react';
 
 import { ActionWithType } from './interfaces';
 
 // {} is valid as props
 // eslint-disable-next-line @typescript-eslint/ban-types
 interface Props<State extends {}, Action> {
-  stateContext: React.Context<State>;
-  dispatchContext: React.Context<React.Dispatch<Action>>;
-  reducer: React.Reducer<State, Action>;
+  stateContext: Context<State>;
+  dispatchContext: Context<Dispatch<Action>>;
+  reducer: Reducer<State, Action>;
   initialState: State;
 }
 
@@ -18,7 +18,7 @@ const withProvider = <ComponentProps extends {}, State, Action extends ActionWit
   dispatchContext: DispatchContext,
   reducer,
   initialState
-}: Props<State, Action>) => (WrappedComponent: React.ComponentType<ComponentProps>) => {
+}: Props<State, Action>) => (WrappedComponent: ComponentType<ComponentProps>) => {
   function ProviderWrapper(props: ComponentProps) {
     // TODO: Validate singleton?
     const [state, dispatch] = useReducer(reducer, initialState);

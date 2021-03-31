@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
 import { logout, removeCurrentUserToken } from 'services/AuthService';
@@ -29,7 +30,7 @@ function Home() {
         <p className={styles.text}>Tech is: {tech}.</p>
         <form
           className="column m-bottom-3"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault();
             if (techInputRef.current?.value) {
               dispatch(actionCreators.setTech(techInputRef.current?.value));

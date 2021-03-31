@@ -68,7 +68,7 @@ After that, every time you want to run it you may execute the run script: with t
 |[@wolox/eslint-config-typescript](https://github.com/Wolox/eslint-config-wolox-typescript)| Wolox eslint React rules.
 |[prettier]()| Code formatter.
 |[postcss](https://www.npmjs.com/package/postcss)| Tool for transforming styles with JS plugins.
-|[react-testing-library]https://github.com/testing-library/react-testing-library)| Simple and complete React DOM testing utilities that encourage good testing practices.
+|[react-testing-library](https://github.com/testing-library/react-testing-library)| Simple and complete React DOM testing utilities that encourage good testing practices.
 |[chalk](https://www.npmjs.com/package/chalk)| Terminal Styling.
 |[env-cmd](https://www.npmjs.com/package/env-cmd)| Node program for executing commands using an environment from an env file.
 |[aws-deploy-script-fe](https://www.npmjs.com/package/aws-deploy-script-fe)| AWS script for deploying your frontend applications.
