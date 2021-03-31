@@ -1,4 +1,5 @@
 import { ApiResponse } from 'apisauce';
+
 import { User, Credentials } from 'contexts/UserContext/reducer';
 
 import LocalStorageService from './LocalStorageService';

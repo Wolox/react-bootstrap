@@ -30,7 +30,10 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     build: 'node ./scripts/build.js',
     // eslint-disable-next-line no-extra-parens
     ...(this.customized && { deploy: 'node ./scripts/deploy.js' }),
-    test: generateRSScript('test', '--env=jsdom'),
+    'ts-check': 'tsc',
+    test: generateRSScript('test', '--env=jsdom --coverage --passWithNoTests --watchAll=false'),
+    'test-interactive': generateRSScript('test', '--env=jsdom --coverage --passWithNoTests'),
+    'test-no-coverage': generateRSScript('test', '--env=jsdom --passWithNoTests'),
     eject: './node_modules/react-scripts/bin/react-scripts.js eject',
     lint: './node_modules/eslint/bin/eslint.js src --ext .js --ext .ts --ext .tsx',
     'lint-fix': "npm run lint -- --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
