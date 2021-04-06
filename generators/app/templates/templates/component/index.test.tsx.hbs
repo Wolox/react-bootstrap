@@ -9,14 +9,14 @@ test('renders correctly without the optionalProp', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('shows someProp', () => {
-  const { getByText } = render(<{{name}} someProp={3} />);
-  expect(getByText(/This is a test with 3/i)).toBeInTheDocument();
-});
-
 test('renders correctly with the optionalProp', () => {
   const { container } = render(<{{name}} someProp={1} someOptionalProp={2} />);
   expect(container.firstChild).toMatchSnapshot();
+});
+
+test('shows someProp', () => {
+  const { getByText } = render(<{{name}} someProp={3} />);
+  expect(getByText(/This is a test with 3/i)).toBeInTheDocument();
 });
 
 test('shows optionalProp when sent', () => {

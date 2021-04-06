@@ -117,7 +117,6 @@ module.exports.DEV_DEPENDENCIES = [
   'stylelint-scss@^3.18.0',
   'stylelint@^13.7.0',
   'husky@^4.0.3',
-  'immer@^9.0.1',
   'prettier@2.2.1',
   'prettier-eslint@12.0.0',
   'prettier-stylelint@0.4.2',
