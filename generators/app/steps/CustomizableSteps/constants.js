@@ -63,6 +63,7 @@ module.exports.DEPENDENCIES = [
   'react-router-dom@^5.1.2',
   'history@^4.7.2',
   'i18next@^19.8.0',
+  'immer@^9.0.1',
   'react-i18next@^11.8.0',
   'react-spinkit@^3.0.0',
   'typescript@^4.1.0',
@@ -70,7 +71,6 @@ module.exports.DEPENDENCIES = [
 ];
 
 module.exports.DEV_DEPENDENCIES = [
-  '@types/react-router@^5.1.2',
   '@types/react-router@^5.1.4',
   '@types/react-router-dom@^5.1.3',
   '@types/webpack-env@^1.14.1',

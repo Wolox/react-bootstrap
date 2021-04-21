@@ -1,3 +1,6 @@
+import { produce } from 'immer';
+import { Reducer } from 'react';
+
 export interface HomeState {
   tech: string;
 }
@@ -27,16 +30,16 @@ export const actionCreators = {
   resetTech: (): ResetTech => ({ type: ActionTypes.RESET_TECH })
 };
 
-export const reducer = (state: HomeState, action: Action): HomeState => {
+export const reducer: Reducer<HomeState, Action> = produce((draft, action) => {
   switch (action.type) {
     case ActionTypes.SET_TECH: {
-      return { ...state, tech: action.tech };
+      draft.tech = action.tech;
+      break;
     }
     case ActionTypes.RESET_TECH: {
-      return { ...state, tech: '' };
+      draft.tech = '';
+      break;
     }
-    default: {
-      return state;
-    }
+    // no default
   }
-};
+}, INITIAL_STATE);

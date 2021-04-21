@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { render } from 'react-dom';
 <% if (features && features.customized) { %>
 import App from 'components/App';
@@ -10,9 +10,9 @@ import reportWebVitals from './reportWebVitals';
 
 const renderApp = () => {
   render(
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root')
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, FormEvent } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -10,12 +10,12 @@ interface Props {
   inputClassName?: string;
   isTextarea?: boolean;
   inputType: string;
-  label?: React.ReactNode;
+  label?: ReactNode;
   labelClassName?: string;
   name: string;
-  onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onChange?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onFocus?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onBlur?: (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange?: (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onFocus?: (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   placeholder?: string;
   readOnly?: boolean;
   touched?: boolean;
