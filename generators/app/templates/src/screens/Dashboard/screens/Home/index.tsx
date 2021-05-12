@@ -7,7 +7,7 @@ import { logout, removeCurrentUserToken } from 'services/AuthService';
 import logo from './assets/logo.svg';
 import styles from './styles.module.scss';
 import { withContextProvider, useSelector, useDispatch } from './context';
-import { actionCreators } from './reducer';
+import { actionCreators } from './context/reducer';
 
 function Home() {
   // Example of how to use these custom hooks

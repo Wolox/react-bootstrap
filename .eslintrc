@@ -2,13 +2,17 @@
   "extends": [
     "@wolox/eslint-config",
     "@wolox/eslint-config-react",
-    "@wolox/eslint-config-typescript"
+    "@wolox/eslint-config-typescript",
+    "plugin:testing-library/react"
+  ],
+  "plugins": [
+    "testing-library"
   ],
   "rules": {
-    "import/order": "off",
-    "import/no-unresolved": "off",
-    "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    // "import/order": "off",
+    // "import/no-unresolved": "off",
+    // "import/no-extraneous-dependencies": "off",
+    // "@typescript-eslint/no-var-requires": "off"
   },
   "settings": {
     "react": {

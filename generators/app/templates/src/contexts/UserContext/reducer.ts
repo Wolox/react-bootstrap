@@ -19,7 +19,7 @@ export const INITIAL_STATE = {
   user: null
 };
 
-enum ActionTypes {
+export enum ActionTypes {
   SET_USER = 'SET_USER',
   RESET_USER = 'RESET_USER',
   LOGIN = 'LOGIN',
@@ -31,26 +31,15 @@ interface SetUser {
   payload: User;
 }
 
-interface ResetUser {
+export interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
-interface Login {
-  type: ActionTypes.LOGIN;
-  payload: Credentials;
-}
-
-interface Logout {
-  type: ActionTypes.LOGOUT;
-}
-
-export type Action = SetUser | ResetUser | Login | Logout;
+export type Action = SetUser | ResetUser;
 
 export const actionCreators = {
   setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
-  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER }),
-  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials }),
-  logout: (): Logout => ({ type: ActionTypes.LOGOUT })
+  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER })
 };
 
 export const reducer: Reducer<UserState, Action> = produce((draft, action) => {
