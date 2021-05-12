@@ -16,7 +16,7 @@ function WrappedRoutes({ userState }: { userState: UserState }) {
 }
 
 // Since The BrowserRouter component is inside out Router, we can't use memory history.
-// That's why I use window to navigate
+// That's why we use window to navigate
 
 describe('when there is a user', () => {
   const userState = { user: { id: 1, sessionToken: 'token' } };
@@ -24,7 +24,7 @@ describe('when there is a user', () => {
   test('shows Home screen when being on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await waitFor(() => expect(screen.getByText('You are logged in.')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(/Home:loggedIn/)).toBeInTheDocument());
   });
 });
 
@@ -34,6 +34,6 @@ describe('when there is no user', () => {
   test('redirects to Login screen when on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await waitFor(() => expect(screen.getByText('login')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(/login/)).toBeInTheDocument());
   });
 });

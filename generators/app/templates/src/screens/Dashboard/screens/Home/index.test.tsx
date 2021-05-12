@@ -26,7 +26,7 @@ describe('Home component', () => {
     const RenderHOC = withUserContext(Home);
     render(<RenderHOC />);
 
-    const logoutButton = screen.getByRole('button', { name: /Logout/ });
+    const logoutButton = screen.getByRole('button', { name: /Home:logout/ });
     userEvent.click(logoutButton);
 
     await waitFor(() => expect(logout).toHaveBeenCalled());
@@ -38,17 +38,29 @@ describe('Home component', () => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RenderHOC = withTechContext(Home);
     render(<RenderHOC />);
-    userEvent.type(screen.getByPlaceholderText(/New tech/), 'Angular');
-    userEvent.click(screen.getByRole('button', { name: /Set new tech/ }));
-    expect(screen.queryByText(/Tech is: Angular/)).toBeInTheDocument();
+    userEvent.type(screen.getByPlaceholderText(/Home:newTech/), 'Angular');
+    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    expect(screen.queryByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
   });
 
   test('does not set tech if not typed', () => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RenderHOC = withTechContext(Home);
     render(<RenderHOC />);
-    userEvent.type(screen.getByPlaceholderText(/New tech/), '');
-    userEvent.click(screen.getByRole('button', { name: /Set new tech/ }));
-    expect(screen.queryByText(/Tech is: React/)).toBeInTheDocument();
+    userEvent.type(screen.getByPlaceholderText(/Home:newTech/), '');
+    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    expect(screen.queryByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
+  });
+
+  test('Calls change language', () => {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    const RenderHOC = withTechContext(Home);
+    render(<RenderHOC />);
+    // Calls once for first lang change
+    userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
+    expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument();
+    // Calls again for returning lang to original
+    userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
+    expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument();
   });
 });

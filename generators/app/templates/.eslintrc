@@ -2,14 +2,15 @@
   "extends": [
     "@wolox/eslint-config",
     "@wolox/eslint-config-react",
-    "@wolox/eslint-config-typescript"
+    "@wolox/eslint-config-typescript",
+    "plugin:testing-library/react"
+  ],
+  "plugins": [
+    "testing-library"
   ],
   "settings": {
     "react": {
       "version": "detect"
     }
-  },
-  "rules": {
-    "react/react-in-jsx-scope": "off"
   }
 }

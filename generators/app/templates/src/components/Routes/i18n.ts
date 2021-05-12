@@ -7,3 +7,10 @@ i18next.addResources('es', 'Routes', {
   loginTitle: 'Iniciar sesión',
   loginDescription: ''
 });
+
+i18next.addResources('en', 'Routes', {
+  homeTitle: 'Name of the app',
+  homeDescription: '',
+  loginTitle: 'Sign in',
+  loginDescription: ''
+});

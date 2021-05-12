@@ -5,6 +5,7 @@ import { User, Credentials } from 'contexts/UserContext/reducer';
 import LocalStorageService from './LocalStorageService';
 
 const TOKEN_FIELD_NAME = 'sessionToken';
+const TIMEOUT_TIME = 1000;
 
 export interface LoginError {
   message: string;
@@ -39,7 +40,7 @@ export const login = (credentials: Credentials): Promise<ApiResponse<User, Login
         problem: null,
         originalError: null
       });
-    }, 1000); // eslint-disable-line no-magic-numbers
+    }, TIMEOUT_TIME);
   });
 
 export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginError>> =>
@@ -53,7 +54,7 @@ export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginE
         problem: null,
         originalError: null
       });
-    }, 1000); // eslint-disable-line no-magic-numbers
+    }, TIMEOUT_TIME);
   });
 
 export const logout = (): Promise<ApiResponse<User, LoginError>> =>
@@ -65,5 +66,5 @@ export const logout = (): Promise<ApiResponse<User, LoginError>> =>
         problem: null,
         originalError: null
       });
-    }, 1000); // eslint-disable-line no-magic-numbers
+    }, TIMEOUT_TIME);
   });
