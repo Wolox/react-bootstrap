@@ -15,8 +15,9 @@ export interface Credentials {
   password: string;
 }
 
-export const INITIAL_STATE = {
-  user: null
+export const INITIAL_STATE: UserState = {
+  // TODO: set to null when using in project and populate with backend response using actionCreators
+  user: { id: 1, sessionToken: 'aSessionToken' }
 };
 
 export enum ActionTypes {

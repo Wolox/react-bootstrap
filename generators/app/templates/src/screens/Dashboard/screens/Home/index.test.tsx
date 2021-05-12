@@ -34,33 +34,39 @@ describe('Home component', () => {
     expect(removeCurrentUserToken).toHaveBeenCalled();
   });
 
-  test('sets the tech when tech is typed', () => {
+  test('sets the tech when tech is typed', async () => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RenderHOC = withTechContext(Home);
     render(<RenderHOC />);
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), 'Angular');
-    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
     expect(screen.queryByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
   });
 
-  test('does not set tech if not typed', () => {
+  test('does not set tech if not typed', async () => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RenderHOC = withTechContext(Home);
     render(<RenderHOC />);
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), '');
-    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
     expect(screen.queryByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
   });
 
-  test('Calls change language', () => {
+  test('Calls change language from es to en', async () => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const RenderHOC = withTechContext(Home);
     render(<RenderHOC />);
-    // Calls once for first lang change
+    // Calls once for first lang change to en
     userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
-    expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument();
-    // Calls again for returning lang to original
+    await waitFor(() => expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument());
+  });
+
+  test('Calls change language from en to es', async () => {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    const RenderHOC = withTechContext(Home);
+    render(<RenderHOC />);
+    // Calls once for changing mocked en lang to es
     userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
-    expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument());
   });
 });
