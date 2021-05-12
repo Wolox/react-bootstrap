@@ -16,6 +16,17 @@ You can use `npm run generate` to add different components to your app like:
 * Components
 * Screens
 
+## Using react-i18next
+
+Add your resource boundle translations on component level and import that file on top of that component to include translations.
+
+`import './i18n';`
+
+Remember to use `useTranslation` hook from `react-i18next`;
+
+`import { useTranslation } from 'react-i18next';`
+`const { t } = useTranslation()`
+ 
 ## Base Styles
 
 [BaseStyles](docs/BaseStyles.md)
