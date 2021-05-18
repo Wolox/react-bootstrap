@@ -9,6 +9,11 @@ import { withContextProvider as withTechContext } from './context';
 
 import Home from '.';
 
+/* eslint-disable @typescript-eslint/naming-convention */
+const HomeWithUserContext = withUserContext(Home);
+const HomeWithTechContext = withTechContext(Home);
+/* eslint-enable @typescript-eslint/naming-convention */
+
 describe('Home component', () => {
   afterAll(() => {
     jest.clearAllMocks();
@@ -22,9 +27,7 @@ describe('Home component', () => {
     jest.spyOn(authActions, 'resetUser').mockImplementationOnce(resetUser);
     jest.spyOn(AuthService, 'removeCurrentUserToken').mockImplementationOnce(removeCurrentUserToken);
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const RenderHOC = withUserContext(Home);
-    render(<RenderHOC />);
+    render(<HomeWithUserContext />);
 
     const logoutButton = screen.getByRole('button', { name: /Home:logout/ });
     userEvent.click(logoutButton);
@@ -35,36 +38,32 @@ describe('Home component', () => {
   });
 
   test('sets the tech when tech is typed', async () => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const RenderHOC = withTechContext(Home);
-    render(<RenderHOC />);
+    render(<HomeWithTechContext />);
+
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), 'Angular');
     await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
     expect(screen.queryByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
   });
 
   test('does not set tech if not typed', async () => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const RenderHOC = withTechContext(Home);
-    render(<RenderHOC />);
+    render(<HomeWithTechContext />);
+
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), '');
     await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
     expect(screen.queryByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
   });
 
   test('Calls change language from es to en', async () => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const RenderHOC = withTechContext(Home);
-    render(<RenderHOC />);
+    render(<HomeWithTechContext />);
+
     // Calls once for first lang change to en
     userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
     await waitFor(() => expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument());
   });
 
   test('Calls change language from en to es', async () => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const RenderHOC = withTechContext(Home);
-    render(<RenderHOC />);
+    render(<HomeWithTechContext />);
+
     // Calls once for changing mocked en lang to es
     userEvent.click(screen.getByRole('button', { name: /Home:changeLang/ }));
     await waitFor(() => expect(screen.queryByText(/Home:loggedIn/)).toBeInTheDocument());

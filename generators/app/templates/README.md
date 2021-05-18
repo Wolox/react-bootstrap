@@ -18,7 +18,7 @@ You can use `npm run generate` to add different components to your app like:
 
 ## Using react-i18next
 
-Add your resource boundle translations on component level and import that file on top of that component to include translations.
+Add your resource bundle translations on the component level and import that file in the component to include translations.
 
 `import './i18n';`
 

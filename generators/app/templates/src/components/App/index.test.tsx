@@ -10,9 +10,7 @@ jest.mock(
     }
 );
 
-describe('App component', () => {
-  test('Renders without errors', () => {
-    render(<App />);
-    expect(screen.getByText('Routes')).toBeInTheDocument();
-  });
+test('renders without errors', () => {
+  render(<App />);
+  expect(screen.getByText('Routes')).toBeInTheDocument();
 });
