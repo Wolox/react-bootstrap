@@ -20,7 +20,7 @@ export const INITIAL_STATE: UserState = {
   user: { id: 1, sessionToken: 'aSessionToken' }
 };
 
-export enum ActionTypes {
+enum ActionTypes {
   SET_USER = 'SET_USER',
   RESET_USER = 'RESET_USER',
   LOGIN = 'LOGIN',
@@ -32,7 +32,7 @@ interface SetUser {
   payload: User;
 }
 
-export interface ResetUser {
+interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
