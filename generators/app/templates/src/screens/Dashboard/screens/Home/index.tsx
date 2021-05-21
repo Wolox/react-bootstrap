@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 
-import './i18n';
 import { actionCreators as authActions } from 'contexts/UserContext/reducer';
 import { useDispatch as useUserDispatch } from 'contexts/UserContext';
 import { logout, removeCurrentUserToken } from 'services/AuthService';

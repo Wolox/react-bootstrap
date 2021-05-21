@@ -4,7 +4,6 @@ import { useSelector } from 'contexts/UserContext';
 
 import Suspense from '../Suspense';
 
-import './i18n';
 import { ROUTES } from './constants';
 import RouteItem from './components/RouteItem';
 import styles from './styles.module.scss';
