@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-unction requireAll(requireContext) {
+function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
