@@ -11,7 +11,8 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
       '!src/reportWebVitals.ts',
       '!src/index.tsx',
       '!src/config/api.js',
-      '!src/config/i18n.js'
+      '!src/config/i18n.js',
+      '!**/i18n.{js,ts}'
     ],
     coverageThreshold: {
       global: {
