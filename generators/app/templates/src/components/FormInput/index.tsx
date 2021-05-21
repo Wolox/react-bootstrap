@@ -46,6 +46,7 @@ function FormInput({
   const InputComponent = isTextarea ? 'textarea' : 'input';
   const showError =
     (touched === undefined || touched) && error && (submitCount === undefined || submitCount > 0);
+
   return (
     <div className={`column start ${className}`}>
       {label && (

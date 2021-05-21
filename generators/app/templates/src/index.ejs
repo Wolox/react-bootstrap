@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-<% if (features && features.customized) { %>
-import App from 'components/App';
-import 'config/i18n';<% } else {%>
-import App from './App';<% }%>
+
 import 'scss/application.scss';
+<% if (features && features.customized) { %>
+import 'config/i18n';
+import App from 'components/App';<% } else {%>
+import App from './App';<% }%>
 
 import reportWebVitals from './reportWebVitals';
 

@@ -2,14 +2,12 @@
   "extends": [
     "@wolox/eslint-config",
     "@wolox/eslint-config-react",
-    "@wolox/eslint-config-typescript"
+    "@wolox/eslint-config-typescript",
+    "plugin:testing-library/react"
   ],
-  "rules": {
-    "import/order": "off",
-    "import/no-unresolved": "off",
-    "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/no-var-requires": "off"
-  },
+  "plugins": [
+    "testing-library"
+  ],
   "settings": {
     "react": {
       "version": "detect"

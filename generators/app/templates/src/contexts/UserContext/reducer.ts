@@ -15,8 +15,9 @@ export interface Credentials {
   password: string;
 }
 
-export const INITIAL_STATE = {
-  user: null
+export const INITIAL_STATE: UserState = {
+  // TODO: set to null when using in project and populate with backend response using actionCreators
+  user: { id: 1, sessionToken: 'aSessionToken' }
 };
 
 enum ActionTypes {
@@ -35,22 +36,11 @@ interface ResetUser {
   type: ActionTypes.RESET_USER;
 }
 
-interface Login {
-  type: ActionTypes.LOGIN;
-  payload: Credentials;
-}
-
-interface Logout {
-  type: ActionTypes.LOGOUT;
-}
-
-export type Action = SetUser | ResetUser | Login | Logout;
+export type Action = SetUser | ResetUser;
 
 export const actionCreators = {
   setUser: (user: User): SetUser => ({ type: ActionTypes.SET_USER, payload: user }),
-  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER }),
-  login: (credentials: Credentials): Login => ({ type: ActionTypes.LOGIN, payload: credentials }),
-  logout: (): Logout => ({ type: ActionTypes.LOGOUT })
+  resetUser: (): ResetUser => ({ type: ActionTypes.RESET_USER })
 };
 
 export const reducer: Reducer<UserState, Action> = produce((draft, action) => {

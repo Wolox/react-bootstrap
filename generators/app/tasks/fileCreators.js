@@ -5,7 +5,15 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
   title: projectName,
   version: projectVersion,
   jest: {
-    collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+    resetMocks: true,
+    collectCoverageFrom: [
+      'src/**/*.{js,jsx,ts,tsx}',
+      '!src/reportWebVitals.ts',
+      '!src/index.tsx',
+      '!src/config/api.js',
+      '!src/config/i18n.js',
+      '!**/i18n.{js,ts}'
+    ],
     coverageThreshold: {
       global: {
         branches: 70,
