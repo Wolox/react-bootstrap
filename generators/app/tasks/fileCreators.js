@@ -28,7 +28,7 @@ const getPackageJsonAttributes = (projectName, projectVersion, repoUrl) => ({
     url: repoUrl
   },
   engines: {
-    node: '>= 10.15.3',
+    node: '14.x',
     npm: '>= 6.9.0'
   },
   scripts: {
