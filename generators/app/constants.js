@@ -76,9 +76,7 @@ module.exports.FILES = [
   'Jenkinsfile',
   '.stylelintrc.js',
   '.env.development',
-  `${SCRIPTS_PATH}/build.js`,
-  `${SCRIPTS_PATH}/start.js`,
-  `${SCRIPTS_PATH}/utils.js`,
+  SCRIPTS_PATH,
   CI_PATH,
   SCSS_PATH
 ];
@@ -130,7 +128,10 @@ module.exports.DEV_DEPENDENCIES = [
   'mutationobserver-shim@^0.3.7',
   '@testing-library/react-hooks@^3.7.0',
   'react-test-renderer@^17.0.1',
-  '@types/react-spinkit'
+  '@types/react-spinkit',
+  "lighthouse@^8.0.0",
+  "chrome-launcher@^0.14.0",
+  "serve@12.0.0"
 ];
 
 module.exports.DEPENDENCIES = ['wolox-equalizer@^0.0.3', 'node-sass@^4.11.0'];
