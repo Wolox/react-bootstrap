@@ -8,6 +8,7 @@ steps:
     - npm run ts-check
     - npm run lint
     - npm run lint-scss
+    - npm run performance
 
 environment:
   GIT_COMMITTER_NAME: a
