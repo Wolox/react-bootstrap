@@ -9,7 +9,7 @@ system_has() {
 }
 
 currentnodeversion="$(node --version)"
-requirednodeversion="v10.15.3"
+requirednodeversion="v14.x"
 
 currentnpmversion="$(npm --version)"
 requirednpmversion="6.9.0"
@@ -31,7 +31,7 @@ if ! system_has git; then
   exit 1
 
 elif [ "$(printf '%s\n' "$requirednodeversion" "$currentnodeversion" | sort -V | head -n1)" != "$requirednodeversion" ]; then 
-  echo "The node version must be >= v10.15.3"
+  echo "The node version must be = v14.0.0"
   exit 1
 elif [ "$(printf '%s\n' "$requirednpmversion" "$currentnpmversion" | sort -V | head -n1)" != "$requirednpmversion" ]; then 
   echo "The npm version must be >= v6.9.0"
