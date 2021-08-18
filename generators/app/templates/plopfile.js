@@ -78,7 +78,7 @@ module.exports = function plopConfig(plop) {
       },
       {
         type: 'modify',
-        path: 'src/components/Routes/constants.ts',
+        path: 'src/components/Routes/constants.tsx',
         pattern: '// Add imports for screens above (FOR GENERATORS, DO NOT REMOVE)',
         template:
           "const {{name}} = lazy(() => import('../../screens/{{name}}'));\n// Add imports for screens above (FOR GENERATORS, DO NOT REMOVE)"
@@ -91,7 +91,7 @@ module.exports = function plopConfig(plop) {
       },
       {
         type: 'append',
-        path: 'src/components/Routes/constants.ts',
+        path: 'src/components/Routes/constants.tsx',
         pattern: 'export const ROUTES = [',
         template: `  {
     exact: false,
