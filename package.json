@@ -51,7 +51,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^26.0.2",
     "@types/react": "^16.9.23",
-    "@types/react-router-dom": "^6.2.1",
+    "@types/react-router-dom": "^5.1.3",
     "@typescript-eslint/parser": "4.20.0",
     "@wolox/eslint-config": "^1.0.0",
     "@wolox/eslint-config-react": "^2.0.0",
