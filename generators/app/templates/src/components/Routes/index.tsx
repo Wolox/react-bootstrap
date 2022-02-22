@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes as RoutesSwitch, Route, Navigate } from 'react-router-dom';
 
 import { useSelector } from 'contexts/UserContext';
 
 import Suspense from '../Suspense';
 
 import { ROUTES } from './constants';
-import RouteItem from './components/RouteItem';
 import styles from './styles.module.scss';
 
 function Routes() {
@@ -15,11 +14,16 @@ function Routes() {
     <Router>
       <div className={styles.container}>
         <Suspense>
-          <Switch>
-            {ROUTES.map(({ redirectTo, path, ...config }) => (
-              <RouteItem key={path} path={path} redirectTo={redirectTo?.(user)} {...config} />
+        <RoutesSwitch>
+            {ROUTES.map(({ redirectTo, path, element, ...config }) => (
+              <Route
+                key={path}
+                path={path}
+                element={redirectTo?.(user) ? <Navigate to="/logout" /> : element}
+                {...config}
+              />
             ))}
-          </Switch>
+          </RoutesSwitch>
         </Suspense>
       </div>
     </Router>

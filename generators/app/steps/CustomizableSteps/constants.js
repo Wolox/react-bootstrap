@@ -59,15 +59,15 @@ module.exports.FILES_TO_DELETE = [
 
 module.exports.DEPENDENCIES = [
   'apisauce@^1.0.1',
-  'react-router@^5.1.2',
-  'react-router-dom@^5.1.2',
+  'react-router@^6.2.1',
+  'react-router-dom@^6.2.1',
   'history@^4.7.2',
   'i18next@^19.8.0',
   'immer@^9.0.1',
   'react-i18next@^11.8.0',
   'react-spinkit@^3.0.0',
   'typescript@^4.1.0',
-  'react-hook-form@^6.12.2'
+  'react-hook-form@^7.27.0'
 ];
 
 module.exports.DEV_DEPENDENCIES = [
