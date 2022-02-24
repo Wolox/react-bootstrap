@@ -6,6 +6,7 @@ import Suspense from '../Suspense';
 
 import { ROUTES } from './constants';
 import styles from './styles.module.scss';
+import Dashboard from "screens/Dashboard";
 
 function Routes() {
   const user = useSelector((state) => state.user);
@@ -15,6 +16,7 @@ function Routes() {
       <div className={styles.container}>
         <Suspense>
         <RoutesSwitch>
+        <Route path="/" element={<Dashboard />}>
             {ROUTES.map(({ redirectTo, path, element, ...config }) => (
               <Route
                 key={path}
@@ -23,6 +25,7 @@ function Routes() {
                 {...config}
               />
             ))}
+       </Route>  
           </RoutesSwitch>
         </Suspense>
       </div>
