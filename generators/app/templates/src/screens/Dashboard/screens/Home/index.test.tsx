@@ -31,16 +31,19 @@ describe('Home component', () => {
     render(<Home />);
 
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), 'Angular');
-    await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
-    expect(screen.queryByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    await waitFor(() => {
+      expect(screen.getByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
+    });
   });
 
   test('does not set tech if not typed', async () => {
     render(<Home />);
-
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), '');
-    await waitFor(() => userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ })));
-    expect(screen.queryByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
+    await waitFor(() => {
+      expect(screen.getByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
+    });
   });
 
   test('Calls change language from es to en', async () => {

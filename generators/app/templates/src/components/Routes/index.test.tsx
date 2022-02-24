@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { StateContext } from 'contexts/UserContext';
 import { UserState } from 'contexts/UserContext/reducer';
@@ -24,7 +24,7 @@ describe('when there is a user', () => {
   test('shows Home screen when being on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await waitFor(() => expect(screen.getByText(/Home:loggedIn/)).toBeInTheDocument());
+    await screen.findByText(/Home:loggedIn/);
   });
 });
 
@@ -34,6 +34,6 @@ describe('when there is no user', () => {
   test('redirects to Login screen when on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await waitFor(() => expect(screen.getByText(/login/)).toBeInTheDocument());
+    await screen.findByText(/login/);
   });
 });
