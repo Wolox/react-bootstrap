@@ -21,7 +21,7 @@ function Routes() {
               <Route
                 key={path}
                 path={path}
-                element={redirectTo?.(user) ? <Navigate to={redirectTo?.(user) as any} /> : element}
+                element={redirectTo?.(user) ? <Navigate to={redirectTo?.(user) as string} /> : element}
                 {...config}
               />
             ))}
