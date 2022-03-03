@@ -50,7 +50,7 @@ function Home() {
           <FormInput
             className="m-bottom-2"
             placeholder={t('Home:newTech')}
-            inputRef={register()}
+            inputRef={register('tech')}
             name="tech"
             inputType="text"
           />

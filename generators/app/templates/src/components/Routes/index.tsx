@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes as RoutesSwitch, Route, Navigate } from 'react-router-dom';
 
 import { useSelector } from 'contexts/UserContext';
 
 import Suspense from '../Suspense';
 
 import { ROUTES } from './constants';
-import RouteItem from './components/RouteItem';
 import styles from './styles.module.scss';
+import Dashboard from "screens/Dashboard";
 
 function Routes() {
   const user = useSelector((state) => state.user);
@@ -15,11 +15,18 @@ function Routes() {
     <Router>
       <div className={styles.container}>
         <Suspense>
-          <Switch>
-            {ROUTES.map(({ redirectTo, path, ...config }) => (
-              <RouteItem key={path} path={path} redirectTo={redirectTo?.(user)} {...config} />
+        <RoutesSwitch>
+        <Route path="/" element={<Dashboard />}>
+            {ROUTES.map(({ redirectTo, path, element, ...config }) => (
+              <Route
+                key={path}
+                path={path}
+                element={redirectTo?.(user) ? <Navigate to={redirectTo?.(user) as string} /> : element}
+                {...config}
+              />
             ))}
-          </Switch>
+       </Route>  
+          </RoutesSwitch>
         </Suspense>
       </div>
     </Router>
