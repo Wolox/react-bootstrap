@@ -24,7 +24,7 @@ describe('when there is a user', () => {
   test('shows Home screen when being on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await screen.findByText(/Home:loggedIn/);
+    expect(await screen.findByText(/Home:loggedIn/)).toBeInTheDocument();
   });
 });
 
@@ -34,6 +34,6 @@ describe('when there is no user', () => {
   test('redirects to Login screen when on the home path', async () => {
     window.history.pushState({}, '', PATHS.home);
     render(<WrappedRoutes userState={userState} />);
-    await screen.findByText(/login/);
+    expect(await screen.findByText(/login/)).toBeInTheDocument();
   });
 });
