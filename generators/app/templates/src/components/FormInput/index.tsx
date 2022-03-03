@@ -65,7 +65,7 @@ function FormInput({
         onBlur={onBlur}
         disabled={disabled}
         readOnly={readOnly}
-        ref={inputRef}
+        {...inputRef}
       />
       <span
         id={`${name}-error`}

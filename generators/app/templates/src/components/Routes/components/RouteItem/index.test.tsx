@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Router, Switch } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import { HashRouter, Routes, useNavigate } from 'react-router-dom';
 
 import RouteItem from '.';
 
@@ -13,17 +12,17 @@ function RedirectScreen() {
   return <span>Redirect Screen</span>;
 }
 
-const history = createMemoryHistory();
+const history = useNavigate();
 
 beforeEach(() => {
-  history.push('/screen');
+  history('/screen');
 });
 
 test('renders the route with the component when there is no redirect path', () => {
   render(
-    <Router history={history}>
-      <RouteItem path="/screen" component={TestScreen} />
-    </Router>
+    <HashRouter>
+      <RouteItem path="/screen" element={TestScreen} />
+    </HashRouter>
   );
   const screenText = screen.queryByText('Screen');
   expect(screenText).toBeInTheDocument();
@@ -31,12 +30,12 @@ test('renders the route with the component when there is no redirect path', () =
 
 test('redirects to another path when there is a redirect path', () => {
   render(
-    <Router history={history}>
-      <Switch>
-        <RouteItem path="/screen" component={TestScreen} redirectTo="/redirect-path" />
-        <RouteItem path="/redirect-path" component={RedirectScreen} />
-      </Switch>
-    </Router>
+    <HashRouter>
+      <Routes>
+        <RouteItem path="/screen" element={TestScreen} redirectTo="/redirect-path" />
+        <RouteItem path="/redirect-path" element={RedirectScreen} />
+      </Routes>
+    </HashRouter>
   );
   const screenText = screen.queryByText('Screen');
   const redirectText = screen.queryByText('Redirect Screen');
