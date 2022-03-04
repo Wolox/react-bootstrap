@@ -39,7 +39,6 @@ describe('Home component', () => {
 
   test('does not set tech if not typed', async () => {
     render(<Home />);
-    userEvent.type(screen.getByPlaceholderText(/Home:newTech/), '');
     userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
     await waitFor(() => {
       expect(screen.getByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
