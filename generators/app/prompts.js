@@ -28,6 +28,20 @@ module.exports.MAIN_PROMPTS = [
         : `${val} is not a valid url. Please enter a valid one.`
   },
   {
+    when: (values) => values.configureGit,
+    type: 'input',
+    name: 'gitUserName',
+    message: 'Enter your git username',
+    required: true
+  },
+  {
+    when: (values) => values.configureGit,
+    type: 'input',
+    name: 'gitEmail',
+    message: 'Enter your git user email',
+    required: true
+  },
+  {
     type: 'confirm',
     name: 'ga',
     message: 'Add Google Analytics?',

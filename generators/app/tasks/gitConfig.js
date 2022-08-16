@@ -24,11 +24,43 @@ module.exports.gitInitiation = function gitInitiation() {
 
 module.exports.configGit = function configGit() {
   return runCommand({
-    command: ['git', ['add', '--all'], { cwd: `${process.cwd()}/${this.projectName}` }],
-    loadingMessage: 'Adding all files to commit',
-    successMessage: 'All files added successfully',
-    failureMessage: 'Files additions has failed'
+    command: [
+      'git',
+      ['config', 'user.name', this.gitUserName],
+      { cwd: `${process.cwd()}/${this.projectName}` }
+    ],
+    loadingMessage: 'Setting git username',
+    successMessage: `Git username set: ${this.gitUserName}`,
+    failureMessage: 'Git user config failed'
   })
+    .then(() =>
+      runCommand({
+        command: [
+          'git',
+          ['config', 'user.email', this.gitEmail],
+          { cwd: `${process.cwd()}/${this.projectName}` }
+        ],
+        loadingMessage: 'Setting git user email',
+        successMessage: `Git user email set: ${this.gitEmail}`,
+        failureMessage: 'Git mail config failed'
+      })
+    )
+    .then(() =>
+      runCommand({
+        command: ['git', ['checkout', '-b', 'master'], { cwd: `${process.cwd()}/${this.projectName}` }],
+        loadingMessage: 'Creating master branch',
+        successMessage: '"master" branch created successfully',
+        failureMessage: 'Failed to create master branch'
+      })
+    )
+    .then(() =>
+      runCommand({
+        command: ['git', ['add', '--all'], { cwd: `${process.cwd()}/${this.projectName}` }],
+        loadingMessage: 'Adding all files to commit',
+        successMessage: 'All files added successfully',
+        failureMessage: 'Files additions has failed'
+      })
+    )
     .then(() =>
       runCommand({
         command: [
@@ -43,11 +75,7 @@ module.exports.configGit = function configGit() {
     )
     .then(() =>
       runCommand({
-        command: [
-          'git',
-          ['push', '-f', 'origin', 'development:repository-initiation'],
-          { cwd: `${process.cwd()}/${this.projectName}` }
-        ],
+        command: ['git', ['push', '-f', 'origin', 'master'], { cwd: `${process.cwd()}/${this.projectName}` }],
         loadingMessage: 'Pushing all files to repository',
         successMessage: 'All files pushed successfully',
         failureMessage: 'Files push has failed'
