@@ -96,7 +96,8 @@ class GeneratorReact extends Generator {
     if (this.configureGit) {
       await configGit.bind(this)();
     } else {
-      await configGitNoRepo.bind(this)();
+      // TODO: Not working because at this point the is not initialized
+      // await configGitNoRepo.bind(this)();
     }
   }
 }
