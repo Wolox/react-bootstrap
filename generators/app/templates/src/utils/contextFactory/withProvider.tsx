@@ -4,7 +4,7 @@ import { ActionWithType } from './interfaces';
 
 // {} is valid as props
 // eslint-disable-next-line @typescript-eslint/ban-types
-interface Props<State extends {}, Action> {
+interface Props<State, Action> {
   stateContext: Context<State>;
   dispatchContext: Context<Dispatch<Action>>;
   reducer: Reducer<State, Action>;
