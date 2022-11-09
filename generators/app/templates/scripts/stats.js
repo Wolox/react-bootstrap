@@ -41,7 +41,7 @@ const runLighthouse = async () => {
 const buildAndServe = async (afterServe) => {
   await runCommand('npm run build development');
 
-  const serve = spawn('serve -s build', undefined, { stdio: 'ignore', shell: true, detached: true });
+  const serve = spawn('http-server', ['./build', '-p', port], undefined, { stdio: 'ignore', shell: true, detached: true });
   serve.unref();
 
   afterServe().then((result) => {

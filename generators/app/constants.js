@@ -129,7 +129,7 @@ module.exports.DEV_DEPENDENCIES = [
   'prettier-stylelint@0.4.2',
   'prettier@2.2.1',
   'react-test-renderer@^18.2.0',
-  'serve@12.0.0',
+  'http-server@^14.1.1',
   'stylelint-config-wolox@^1.1.0',
   'stylelint-scss@^3.18.0',
   'stylelint@^13.7.0'

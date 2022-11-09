@@ -61,13 +61,7 @@ else
   npm install -g yo
 fi
 
-if [[ "$local" == "true" ]]
-then
-  yo ./react-bootstrap/generators/app $verbose
-else
-  yo react-bootstrap $verbose
-fi
-
+yo ./react-bootstrap/generators/app $verbose
 
 wait $!
 
