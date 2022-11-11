@@ -20,7 +20,7 @@ const runCommand = (command) =>
 
 const runLighthouse = async () => {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless', '--no-sandbox'] });
-  const options = {logLevel: 'silent', onlyCategories: ['performance'], port: chrome.port };
+  const options = {logLevel: 'info', onlyCategories: ['performance'], port: chrome.port };
   const runnerResult = await lighthouse(`http://localhost:${port}`, options);
   const performanceResult = runnerResult.lhr.categories.performance.score * 100;
 

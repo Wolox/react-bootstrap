@@ -49,23 +49,24 @@ module.exports = function runCommand(options) {
       if (data) {
         result.push(data);
         if (options.context && options.context.verbose) {
-          console.log(data.toString()); // eslint-disable-line no-console
         }
       }
     });
-
+    
     command.stderr.on('data', (data) => {
+      console.log('sterr[61]', data.toString()); // eslint-disable-line no-console
       if (options.timeout) {
         refreshKillTimeout();
       }
       if (options.context && options.context.verbose && data) {
         const msg = data.toString();
-
+        
         console.log(/warning/.test(msg) ? msg.yellow : msg.red); // eslint-disable-line no-console
       }
     });
-
+    
     command.on('close', (code) => {
+      console.log('close[74]', code); // eslint-disable-line no-console
       if (options.timeout) {
         clearTimeout(killTimeout);
       }
