@@ -30,6 +30,8 @@ Optional parameters:
 
 ## Run locally
 
+If you're using a Windows machine, please check the [Windows guide](./windows-wsl.md)
+
 To setup a local version of the bootstrap, you may clone it and do the following:
 ```bash
 cd ./react-bootstrap
