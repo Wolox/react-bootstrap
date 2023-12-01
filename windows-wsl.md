@@ -61,18 +61,18 @@ export NVM_DIR="/home/your-user/.nvm"
 Next, we must close the app and open it again. And run the following commands:
 
 ```bash
-nvm install v14.20.0
+nvm install 18
 node  --version
 ```
 
-This last command should show the version v14.20.0, if not you must repeat the nvm section process again.
+This last command should show the version v18.X.X, if not you must repeat the nvm section process again.
 
 ### [SSH creation](#ssh-creation)
 The SSH key is necessary in order to authenticate you github user with your local wsl machine. 
 Let's run the following commands from the root of the Ubuntu console:
 
 ```bash
-ssh-keygen -t ed25519 -C "you_email@accenture.com"
+ssh-keygen -t ed25519 -C "you@email.com"
 
 eval "$(ssh-agent -s)"
 
