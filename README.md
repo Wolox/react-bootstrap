@@ -51,9 +51,6 @@ After that, every time you want to run it you may execute the run script: with t
 - Spinner
 - Suspense
 
-###### Screens
-- Dashboard
-
 ## Bootstrap libraries
 
 |||
